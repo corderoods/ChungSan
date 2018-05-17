@@ -1,0 +1,37 @@
+﻿FONDOS
+1 --> INICIAL
+0 --> FINAL
+
+INTRO-SALE
+0 --> INRTODUCCIONES
+1 --> SALIDAS
+
+VENTAS
+0 --> EFECTIVO
+1 --> TARJETA
+
+cocina 
+	0 - creada y sin mostrar en cocina
+	1 - mostrada en cocina
+	2 - orden terminada en cocina
+
+detalle_eliminado
+	0 - no hay productos eliminados
+	1 - se elimino un producto
+
+mesero
+	0 - no hay llamada al mesero
+	1 - el mesero ha sido llamado
+	2 - llama todos los meseros
+
+preparado 
+	0 - pedido aun no preparado
+	1 - en preparacion
+	2 - 
+
+en_cocina
+	0 - creado en ordenes
+	1 - mostrado en cocina
+
+cantidad_lista
+	#numero de productos que estan ya listos
