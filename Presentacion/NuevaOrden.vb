@@ -147,7 +147,7 @@ Public Class NuevaOrden
                 mensaje.ShowDialog()
             Else
                 insertarSalon()
-            End If
+            End If 'Fin del salon
         ElseIf S.Name = "E" Then
             If txtDireccion.Text.Trim.Length = 0 Then
                 mensaje.lblMensaje.Text = "Debe ingesar una direccion"
@@ -157,14 +157,19 @@ Public Class NuevaOrden
                 mensaje.ShowDialog()
             Else
                 insertarExpress()
-            End If
+            End If 'Express
         ElseIf S.Name = "L" Then
             If txtNombre.Text.Trim.Length = 0 Then
                 mensaje.lblMensaje.Text = "Debe ingresar el nombre"
                 mensaje.ShowDialog()
             Else
                 insertarLlevar()
-            End If
+            End If 'llevar
+        ElseIf S.Name = "U" Then
+
+
+
+
         End If
     End Sub
 
@@ -241,6 +246,21 @@ Public Class NuevaOrden
             End If
         Next i
     End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles UberEats.Click
+        Me.pnlExpress.Visible = False
+        Me.pnlSalon.Visible = True
+        Me.lblSalonero.Visible = False
+        Me.cbxSalonero.Visible = False
+        Me.btnMesa.Visible = False
+        S.Text = "Uber Eats"
+        S.Name = "U"
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
 
     'Private Sub txtTelefono_TextChanged(sender As Object, e As EventArgs) Handles txtTelefono.TextChanged
     '    If txtTelefono.Text.Trim.Length > 7 And var Then
