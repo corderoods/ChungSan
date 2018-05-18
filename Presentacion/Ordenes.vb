@@ -147,7 +147,8 @@
                         Else
                             text = "Mesa " & ordenes(i).NumMesa & "  " & ordenes(i).NombreCliente_
                         End If
-                    End If
+                    End If 'fin del salon
+
                 ElseIf ordenes(i).Ubicacion_ = "E" Then
                     'si la orden es express, va a buscar el nombre 
                     'del Cliente al que pertenece la orden para ponerle el nombre
@@ -155,7 +156,7 @@
                         text = "Express " & clienteDatos.obtenerClientePorId(ordenes(i).CodCliente).NombreClienteSG
                     Else
                         text = "Express " & ordenes(i).NombreCliente_
-                    End If
+                    End If ' fin delexpress
 
                 ElseIf ordenes(i).Ubicacion_ = "L" Then
                     'si la orden es para llevar, le pone el numero de la orden
@@ -163,7 +164,16 @@
                         text = "Llevar " & ordenes(i).NumOrden
                     Else
                         text = "Llevar " & ordenes(i).NombreCliente_
+                    End If 'Fin de llevar
+
+                ElseIf ordenes(i).Ubicacion_ = "U" Then
+                    'si la orden es para Uber, le pone el numero de la orden
+                    If ordenes(i).NombreCliente_ = "UBER" Then
+                        text = "Uber Eats " & ordenes(i).NumOrden
+                    Else
+                        text = "Uber Eats " & ordenes(i).NombreCliente_
                     End If
+
                 End If
 
                 'se le pone al boton el nombre calculado anteriormente

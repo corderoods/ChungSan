@@ -18,7 +18,7 @@ Public Class Facturacion
     'declara la ventana de mensaje
     Dim mensaje As Mensaje
     'declara las variables de los pagos
-    Dim pagoEfectivo = False, pagoTarjeta = True
+    Dim pagoEfectivo = False, pagoTarjeta = True, pagoUber = False
     'variable de la capa de datos
     Dim facturaDatos As FacturacionDatos
     'declara el objeto de la orden a pagar
@@ -319,6 +319,10 @@ Public Class Facturacion
             pagoTarjeta = False
             pnlTarjeta.Visible = False
             txtTarjeta.Text = 0.ToString("C")
+        ElseIf (pagoUber = True) Then
+            pnlEfectivo.Visible = False
+            pnlTarjeta.Visible = False
+
         End If
         btnAgregarPago.Visible = False
     End Sub
@@ -735,7 +739,12 @@ Public Class Facturacion
                 totalPagoUnitario = tarjeta
                 'declara el tipo de pago
                 pago.TipoPago = "T"
-            Else
+            ElseIf (pagoUber = True) Then
+                tarjeta = If(txtTarjeta.Text = "", 0, txtTarjeta.Text)
+                totalPagoUnitario = tarjeta
+                'declara el tipo de pago
+                pago.TipoPago = "U"
+            ElseIf (pagoEfectivo = True) Then
                 Try
                     efectivo = If(txtEfectivo.Text = "", 0, txtEfectivo.Text)
                 Catch ex As OverflowException
@@ -748,6 +757,7 @@ Public Class Facturacion
                 totalPagoUnitario = efectivo - vuelto
                 'declara el tipo de pago
                 pago.TipoPago = "E"
+
             End If
 
             pago.NumPago = id
@@ -915,8 +925,10 @@ Public Class Facturacion
         lblMedio.TabIndex = 5
         If (medio.CompareTo("T") = 0) Then
             lblMedio.Text = "Tarjeta"
-        Else
+        ElseIf (medio.CompareTo("E") = 0) Then
             lblMedio.Text = "Efectivo"
+        ElseIf (medio.CompareTo("U") = 0) Then
+            lblMedio.Text = "Uber"
         End If
         '
         'lblVuelto
@@ -942,6 +954,19 @@ Public Class Facturacion
         lblVuelto.Size = New System.Drawing.Size(18, 20)
         lblVuelto.TabIndex = 6
         lblVuelto.Text = vuelto.ToString("C")
+        '
+        'lblUber
+        '
+        Dim lblUber As New Label
+        lblUber.AutoSize = True
+        lblUber.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        lblUber.ForeColor = System.Drawing.Color.White
+        lblUber.Location = New System.Drawing.Point(240, posYEtiquetas)
+        lblUber.Name = "lblUber"
+        lblUber.Size = New System.Drawing.Size(18, 20)
+        lblUber.TabIndex = 6
+        lblUber.Text = vuelto.ToString("C")
+
         '
         'btnEliminarPago
         '
@@ -1079,15 +1104,17 @@ Public Class Facturacion
                 facturaDatos.ingresarFacturaDetalle(facturaDetalle)
             Next
 
-            'declara la variable a guardar la totalidad de montos pagados en efectivo y tarjeta
-            Dim totalEfectivo = 0, totalTarjeta = 0
+            'declara la variable a guardar la totalidad de montos pagados en efectivo, uber y tarjeta
+            Dim totalEfectivo = 0, totalTarjeta = 0, totalUber = 0
             'recorre todos los pagos de la factura y hace el llamado al metodo que lo ingresa en la BD
             For Each pago In pagosFactura
                 facturaDatos.ingresarPagoFactura(pago)
                 If (pago.TipoPago.CompareTo("E") = 0) Then
                     totalEfectivo = totalEfectivo + pago.Monto_
-                Else
+                ElseIf (pago.TipoPago.CompareTo("T") = 0) Then
                     totalTarjeta = totalTarjeta + pago.Monto_
+                ElseIf (pago.TipoPago.CompareTo("U") = 0) Then
+                    totalUber = totalTarjeta + pago.Monto_
                 End If
             Next
 
@@ -1099,6 +1126,8 @@ Public Class Facturacion
 
             orden.Descuento_ = Double.Parse(desc)
             orden.Tarjeta_ = totalTarjeta
+
+            orden.Uber_ = totalUber
 
             'ingresa los datos de la factura en la orden_m
             facturaDatos.ingresarDatosFacturaEnOrden(orden)
@@ -1155,11 +1184,15 @@ Public Class Facturacion
 
     Private Sub btnEfectivo_Click(sender As Object, e As EventArgs) Handles btnEfectivo.Click
         mostrarPagoEfectivo()
+        Me.btnDividirFactura.Enabled = True
         btnAgregarPago.Visible = True
+        Me.lblUber.Visible = False
     End Sub
 
     Private Sub btnTarjeta_Click(sender As Object, e As EventArgs) Handles btnTarjeta.Click
         mostrarPagoTarjeta()
+        Me.btnDividirFactura.Enabled = True
+        Me.lblUber.Visible = False
         btnAgregarPago.Visible = True
     End Sub
 
@@ -1169,6 +1202,7 @@ Public Class Facturacion
 
         pagoEfectivo = True
         pagoTarjeta = False
+        pagoUber = False
 
         pnlTarjeta.Visible = False
         txtTarjeta.Text = 0.ToString("C")
@@ -1260,6 +1294,7 @@ Public Class Facturacion
 
         pagoTarjeta = True
         pagoEfectivo = False
+        pagoUber = False
 
         pnlEfectivo.Visible = False
         txtMontoPagar.Text = 0.ToString("C")
@@ -1361,6 +1396,32 @@ Public Class Facturacion
 
         Return True
     End Function
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnUber.Click
+        Me.lblUber.Visible = True
+        Me.pnlEfectivo.Visible = False
+        Me.pnlTarjeta.Visible = False
+        Me.btnDividirFactura.Enabled = False
+
+        Me.btnAgregarPago.Visible = True
+        mostrarPagoTarjeta()
+
+
+    End Sub
+
+    Public Sub mostrarPagoUber()
+        pnlTarjeta.Visible = False
+        txtTarjeta.Text = saldoFactura.ToString("C")
+
+        pagoTarjeta = False
+        pagoEfectivo = False
+        pagoUber = True
+
+        pnlEfectivo.Visible = False
+        txtMontoPagar.Text = 0.ToString("C")
+        txtEfectivo.Text = 0.ToString("C")
+    End Sub
+
 
     ' metodo para imprimir la factura
     ' llama al reporte de Facturas que obtiene los datos de la base de datos

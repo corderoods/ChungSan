@@ -1,7 +1,7 @@
 ﻿Public Class Orden
     Private num_orden, num_mesa, cod_empleado, cod_cliente, descuento, ind_pago, orden_dia,
         express, cod_salonero As Integer
-    Private total, efectivo, tarjeta, cheque, impserv, impvtas, paga_con As Decimal
+    Private total, efectivo, tarjeta, cheque, impserv, impvtas, paga_con, uber As Decimal
     Private telefono, ubicacion, direccion, nombreCliente As String
     Private fecha As DateTime
 
@@ -114,6 +114,15 @@
         End Get
         Set(value As Decimal)
             tarjeta = value
+        End Set
+    End Property
+
+    Public Property Uber_ As Decimal
+        Get
+            Return uber
+        End Get
+        Set(value As Decimal)
+            uber = value
         End Set
     End Property
 

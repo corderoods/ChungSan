@@ -33,7 +33,8 @@ Public Class NuevaOrden
     Private Sub btn1_Click(sender As Object, e As EventArgs) Handles btnSalon.Click
         Me.pnlExpress.Visible = False
         Me.pnlSalon.Visible = True
-
+        Me.txtNombre.Text = "CONTADO"
+        Me.txtNombre.Enabled = True
         Me.lblSalonero.Visible = True
         Me.cbxSalonero.Visible = True
         Me.btnMesa.Visible = True
@@ -48,6 +49,7 @@ Public Class NuevaOrden
         S.Text = "Orden Express"
         S.Name = "E"
 
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnLlevar.Click
@@ -56,6 +58,9 @@ Public Class NuevaOrden
         Me.lblSalonero.Visible = False
         Me.cbxSalonero.Visible = False
         Me.btnMesa.Visible = False
+        Me.txtNombre.Text = "CONTADO"
+        Me.txtNombre.Enabled = True
+
         S.Text = "Orden Llevar"
         S.Name = "L"
     End Sub
@@ -166,7 +171,12 @@ Public Class NuevaOrden
                 insertarLlevar()
             End If 'llevar
         ElseIf S.Name = "U" Then
-
+            If txtNombre.Text.Trim.Length = 0 Then
+                mensaje.lblMensaje.Text = "Debe ingresar el nombre"
+                mensaje.ShowDialog()
+            Else
+                insertarUber()
+            End If 'llevar
 
 
 
@@ -199,6 +209,15 @@ Public Class NuevaOrden
         Me.Close()
 
     End Sub
+
+    Public Sub insertarUber()
+        ordenDatos.insertarOrden(S.Name, cbxSalonero.SelectedValue, mesa,
+                                 InicioSesion.session.EmpleadoSG.Cod_empleadoSG,
+                                 clienteActivo.CodClienteSG, txtDireccion.Text, txtTelefono.Text, txtNombre.Text)
+        ordenes1.mostrarOrdenes(1)
+        Me.Close()
+    End Sub
+
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         Dim nuevoCliente As New NuevoCliente(Me, Nothing)
@@ -248,6 +267,8 @@ Public Class NuevaOrden
     End Sub
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles UberEats.Click
+        Me.txtNombre.Text = "UBER"
+        Me.txtNombre.Enabled = False
         Me.pnlExpress.Visible = False
         Me.pnlSalon.Visible = True
         Me.lblSalonero.Visible = False
@@ -257,9 +278,6 @@ Public Class NuevaOrden
         S.Name = "U"
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs)
-
-    End Sub
 
 
     'Private Sub txtTelefono_TextChanged(sender As Object, e As EventArgs) Handles txtTelefono.TextChanged

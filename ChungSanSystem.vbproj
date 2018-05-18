@@ -639,6 +639,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\Logo Chung San.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -713,6 +714,8 @@
   <ItemGroup>
     <Content Include="DBScripts\procedures.sql" />
     <Content Include="DBScripts\procedures2.sql" />
+    <None Include="Resources\uberEats.png" />
+    <None Include="Resources\uberEats1.png" />
     <Content Include="Utilidades\Parametros.txt" />
     <None Include="Resources\iconExito.png" />
     <None Include="Resources\odsLogo.png" />
@@ -781,7 +784,11 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Analyzer Include="packages\SonarAnalyzer.VisualBasic.7.1.0.5212\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="packages\SonarAnalyzer.VisualBasic.7.1.0.5212\analyzers\SonarAnalyzer.dll" />
+    <Analyzer Include="packages\SonarAnalyzer.VisualBasic.7.1.0.5212\analyzers\SonarAnalyzer.VisualBasic.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

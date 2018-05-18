@@ -368,12 +368,12 @@ Partial Class NuevaOrden
         '
         Me.UberEats.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
         Me.UberEats.ForeColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.UberEats.Location = New System.Drawing.Point(634, 15)
+        Me.UberEats.Image = Global.SunChangSystem.My.Resources.Resources.uberEats1
+        Me.UberEats.Location = New System.Drawing.Point(703, 37)
         Me.UberEats.Margin = New System.Windows.Forms.Padding(4)
         Me.UberEats.Name = "UberEats"
-        Me.UberEats.Size = New System.Drawing.Size(207, 78)
+        Me.UberEats.Size = New System.Drawing.Size(222, 41)
         Me.UberEats.TabIndex = 15
-        Me.UberEats.Text = "Uber Eats"
         Me.UberEats.UseVisualStyleBackColor = True
         '
         'NuevaOrden
