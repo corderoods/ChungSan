@@ -2,7 +2,7 @@
 
 Public Class CierreCaja
     ' variables publicas a utilizar
-    Public subtotalIngresos, subtotalEgresos, ventasTarjeta, introducciones, pagosFacturas, impuestosServicio, impuestoVentas, express As Double
+    Public subtotalIngresos, subtotalEgresos, ventasTarjeta, introducciones, pagosFacturas, impuestosServicio, impuestoVentas, express, uber As Double
     Public ventasEfectivo, fondoInicial, impuestoVentasEfectivo, expressEfectivo, bonos, vales, salidasEfectivo, impuestosServicioEfectivo, fondoFinal As Double
     Public ventasBrutas As Double
     Public monto_total_efectivo As Double = 0
@@ -48,18 +48,18 @@ Public Class CierreCaja
 
         lblFondoInicialCompEfec.Text = fondoInicial.ToString("C")
         lblIntroduccionesCompEfec.Text = introducciones.ToString("C")
-        lblExpressCompEfec.Text = expressEfectivo.ToString("C")
+        lblExpressCompEfec.Text = express.ToString("C")
         lblVentasEfectivoCompEfec.Text = ventasEfectivo.ToString("C")
-        lblImpServicioCompEfec.Text = impuestosServicioEfectivo.ToString("C")
+        lblImpServicioCompEfec.Text = impuestosServicio.ToString("C")
         lblCuentasCanceladasCompEfec.Text = (pagosFacturas + salidasEfectivo).ToString("C")
         lblFondoFinalCompEfec.Text = fondoFinal.ToString("C")
         lblImpVtasCompEfec.Text = impuestoVentasEfectivo.ToString("C")
-        lblValesTotalesEfectivo.Text = vales.ToString("C")
-        lblBonosTotalesEfectivo.Text = bonos.ToString("C")
+        'lblValesTotalesEfectivo.Text = vales.ToString("C")
+        'lblBonosTotalesEfectivo.Text = bonos.ToString("C")
 
 
-        monto_total_efectivo = ((fondoInicial + introducciones + bonos + expressEfectivo + ventasEfectivo + impuestoVentasEfectivo) -
-                                (impuestosServicioEfectivo + pagosFacturas + salidasEfectivo + vales))
+        monto_total_efectivo = ((fondoInicial + introducciones + expressEfectivo + ventasEfectivo + impuestoVentasEfectivo) -
+                                (impuestosServicioEfectivo + pagosFacturas + salidasEfectivo))
         diferencia = fondoFinal - monto_total_efectivo
         lblDiferenciaCompEfec.Text = (diferencia).ToString("C")
 
@@ -93,7 +93,7 @@ Public Class CierreCaja
         ' esta da como en el excel
         'lblTotalVentasCompVtas.Text = ((fondoFinal + pagosFacturas + salidasEfectivo + ventasTarjeta) - (fondoInicial + expressEfectivo + introducciones)).ToString("C")
 
-        monto_total = (fondoFinal - fondoInicial + vales - bonos + pagosFacturas + salidasEfectivo - expressEfectivo - impuestosServicio + ventasTarjeta - introducciones)
+        monto_total = (fondoFinal - fondoInicial + pagosFacturas + salidasEfectivo - expressEfectivo - impuestosServicio + ventasTarjeta - introducciones)
         ventas_sistema = ventasBrutas + (impuestoVentas - impuestoVentasEfectivo)
         diferenciaVentas = monto_total - ventas_sistema
 
@@ -133,12 +133,11 @@ Public Class CierreCaja
         ' monto total de la apertura de la caja
         fondoInicial = Me.cargarFondoInicial
         ' monto total del servicio de express
-        expressEfectivo = Me.cargarServicioExpressEfectivo
-        ' monto total correspondiente a los impuestos de servicios pagados en efectivo
+        expressEfectivo = Me.cargarServicioExpress
+        ' monto total correspondiente a los impuestos de servicios pagados 
         impuestosServicioEfectivo = Me.cargarImpuestoServicio
-
         ' monto total correspondiente al impuesto de ventas 
-        impuestoVentasEfectivo = Me.cargarImpuestoVentas(1)
+        impuestoVentasEfectivo = Me.cargarImpuestoVentas(0)
 
     End Sub
 
@@ -192,7 +191,7 @@ Public Class CierreCaja
         bonos = Me.cargarBonos
         ' monto total correspondiente a los impuestos de servicios 
         impuestosServicio = Me.cargarImpuestoServicio
-        ' monto total de los impuestos de ventas realizadas por el cajero
+        ' monto total de los impuestos de ventas realizadas por el cajero si se pone 1 agarra regresa solo en efectivo, con el 0 agarra todos
         impuestoVentas = Me.cargarImpuestoVentas(0)
         ' monto total de los impuestos de express
         express = Me.cargarServicioExpress
