@@ -808,4 +808,9 @@
         Dim ordenesFacturadas As New ModificarOrdenesFacturadas
         ordenesFacturadas.ShowDialog()
     End Sub
+
+    Private Sub CierreDeCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CierreDeCajaToolStripMenuItem.Click
+        Dim formularioDeVenta As New CierreCaja
+        formularioDeVenta.ShowDialog()
+    End Sub
 End Class

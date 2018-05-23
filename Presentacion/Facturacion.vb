@@ -320,8 +320,10 @@ Public Class Facturacion
             pnlTarjeta.Visible = False
             txtTarjeta.Text = 0.ToString("C")
         ElseIf (pagoUber = True) Then
+            pagoUber = False
             pnlEfectivo.Visible = False
             pnlTarjeta.Visible = False
+            txtUber.Text = 0.ToString("C")
 
         End If
         btnAgregarPago.Visible = False
@@ -723,13 +725,14 @@ Public Class Facturacion
 
     'METODO QUE AGREGA PAGOS DE LA FACTURA
     Public Sub agregarPago()
-        If (txtTarjeta.Text <> "" Or txtEfectivo.Text <> "" Or txtMontoPagar.Text <> "") Then
+        If (txtTarjeta.Text <> "" Or txtEfectivo.Text <> "" Or txtMontoPagar.Text <> "" Or txtUber.Text <> "") Then
             'declara las variables que conforman el vector de pago            
             Dim efectivo = 0
             Dim tarjeta = 0
             Dim vuelto = 0
             Dim montoAPagar = 0
             Dim totalPagoUnitario = 0
+            Dim uber = 0
             Dim pago As New Pago
             'obtiene el numero de pago, recorriendo la lista
             Dim id = pagosFactura.Count + 1
@@ -740,8 +743,8 @@ Public Class Facturacion
                 'declara el tipo de pago
                 pago.TipoPago = "T"
             ElseIf (pagoUber = True) Then
-                tarjeta = If(txtTarjeta.Text = "", 0, txtTarjeta.Text)
-                totalPagoUnitario = tarjeta
+                uber = If(txtUber.Text = "", 0, txtUber.Text)
+                totalPagoUnitario = uber
                 'declara el tipo de pago
                 pago.TipoPago = "U"
             ElseIf (pagoEfectivo = True) Then
@@ -928,7 +931,7 @@ Public Class Facturacion
         ElseIf (medio.CompareTo("E") = 0) Then
             lblMedio.Text = "Efectivo"
         ElseIf (medio.CompareTo("U") = 0) Then
-            lblMedio.Text = "Uber"
+            lblMedio.Text = "Uber Eats"
         End If
         '
         'lblVuelto
@@ -1186,18 +1189,17 @@ Public Class Facturacion
         mostrarPagoEfectivo()
         Me.btnDividirFactura.Enabled = True
         btnAgregarPago.Visible = True
-        Me.lblUber.Visible = False
     End Sub
 
     Private Sub btnTarjeta_Click(sender As Object, e As EventArgs) Handles btnTarjeta.Click
         mostrarPagoTarjeta()
         Me.btnDividirFactura.Enabled = True
-        Me.lblUber.Visible = False
         btnAgregarPago.Visible = True
     End Sub
 
     Public Sub mostrarPagoEfectivo()
         pnlEfectivo.Visible = True
+        Me.pnlUber.Visible = False
         txtMontoPagar.Text = saldoFactura.ToString("C")
 
         pagoEfectivo = True
@@ -1291,12 +1293,13 @@ Public Class Facturacion
     Public Sub mostrarPagoTarjeta()
         pnlTarjeta.Visible = True
         txtTarjeta.Text = saldoFactura.ToString("C")
-
+        Me.pnlUber.Visible = False
         pagoTarjeta = True
         pagoEfectivo = False
         pagoUber = False
 
         pnlEfectivo.Visible = False
+
         txtMontoPagar.Text = 0.ToString("C")
         txtEfectivo.Text = 0.ToString("C")
     End Sub
@@ -1398,26 +1401,27 @@ Public Class Facturacion
     End Function
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnUber.Click
-        Me.lblUber.Visible = True
-        Me.pnlEfectivo.Visible = False
-        Me.pnlTarjeta.Visible = False
-        Me.btnDividirFactura.Enabled = False
 
+        Me.btnDividirFactura.Enabled = False
         Me.btnAgregarPago.Visible = True
-        mostrarPagoTarjeta()
+        mostrarPagoUber()
+
 
 
     End Sub
 
+
+
     Public Sub mostrarPagoUber()
-        pnlTarjeta.Visible = False
-        txtTarjeta.Text = saldoFactura.ToString("C")
+        Me.pnlUber.Visible = True
+        txtUber.Text = saldoFactura.ToString("C")
+        'txtTarjeta.Text = saldoFactura.ToString("C")
 
         pagoTarjeta = False
         pagoEfectivo = False
         pagoUber = True
-
-        pnlEfectivo.Visible = False
+        Me.pnlTarjeta.Visible = False
+        Me.pnlEfectivo.Visible = False
         txtMontoPagar.Text = 0.ToString("C")
         txtEfectivo.Text = 0.ToString("C")
     End Sub

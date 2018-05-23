@@ -89,7 +89,7 @@ Partial Class MovimientosEfectivo
         Me.lblTipoMovimiento.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTipoMovimiento.Location = New System.Drawing.Point(12, 15)
         Me.lblTipoMovimiento.Name = "lblTipoMovimiento"
-        Me.lblTipoMovimiento.Size = New System.Drawing.Size(0, 24)
+        Me.lblTipoMovimiento.Size = New System.Drawing.Size(0, 29)
         Me.lblTipoMovimiento.TabIndex = 1
         '
         'Label2
@@ -99,7 +99,7 @@ Partial Class MovimientosEfectivo
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(12, 52)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(229, 24)
+        Me.Label2.Size = New System.Drawing.Size(295, 29)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Contraseña administrador:"
         '
@@ -109,7 +109,7 @@ Partial Class MovimientosEfectivo
         Me.txtAdminPassword.Location = New System.Drawing.Point(253, 49)
         Me.txtAdminPassword.Name = "txtAdminPassword"
         Me.txtAdminPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtAdminPassword.Size = New System.Drawing.Size(189, 29)
+        Me.txtAdminPassword.Size = New System.Drawing.Size(189, 34)
         Me.txtAdminPassword.TabIndex = 5
         Me.txtAdminPassword.Text = "gidcasaw"
         '
@@ -120,7 +120,7 @@ Partial Class MovimientosEfectivo
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(13, 14)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(75, 24)
+        Me.Label1.Size = New System.Drawing.Size(96, 29)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Recibe:"
         '
@@ -131,7 +131,7 @@ Partial Class MovimientosEfectivo
         Me.cbxAdministrador.FormattingEnabled = True
         Me.cbxAdministrador.Location = New System.Drawing.Point(108, 10)
         Me.cbxAdministrador.Name = "cbxAdministrador"
-        Me.cbxAdministrador.Size = New System.Drawing.Size(334, 32)
+        Me.cbxAdministrador.Size = New System.Drawing.Size(334, 37)
         Me.cbxAdministrador.TabIndex = 0
         '
         'rbDolares
@@ -141,7 +141,7 @@ Partial Class MovimientosEfectivo
         Me.rbDolares.ForeColor = System.Drawing.Color.White
         Me.rbDolares.Location = New System.Drawing.Point(168, 12)
         Me.rbDolares.Name = "rbDolares"
-        Me.rbDolares.Size = New System.Drawing.Size(92, 28)
+        Me.rbDolares.Size = New System.Drawing.Size(118, 33)
         Me.rbDolares.TabIndex = 13
         Me.rbDolares.TabStop = True
         Me.rbDolares.Text = "Dólares"
@@ -154,7 +154,7 @@ Partial Class MovimientosEfectivo
         Me.rbColones.ForeColor = System.Drawing.Color.White
         Me.rbColones.Location = New System.Drawing.Point(30, 12)
         Me.rbColones.Name = "rbColones"
-        Me.rbColones.Size = New System.Drawing.Size(98, 28)
+        Me.rbColones.Size = New System.Drawing.Size(124, 33)
         Me.rbColones.TabIndex = 14
         Me.rbColones.TabStop = True
         Me.rbColones.Text = "Colones"
@@ -178,7 +178,7 @@ Partial Class MovimientosEfectivo
         Me.Label23.ForeColor = System.Drawing.Color.White
         Me.Label23.Location = New System.Drawing.Point(277, 8)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(69, 20)
+        Me.Label23.Size = New System.Drawing.Size(84, 25)
         Me.Label23.TabIndex = 2
         Me.Label23.Text = "Subtotal"
         '
@@ -189,7 +189,7 @@ Partial Class MovimientosEfectivo
         Me.Label22.ForeColor = System.Drawing.Color.White
         Me.Label22.Location = New System.Drawing.Point(163, 8)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(73, 20)
+        Me.Label22.Size = New System.Drawing.Size(91, 25)
         Me.Label22.TabIndex = 1
         Me.Label22.Text = "Cantidad"
         '
@@ -200,7 +200,7 @@ Partial Class MovimientosEfectivo
         Me.lbl21.ForeColor = System.Drawing.Color.White
         Me.lbl21.Location = New System.Drawing.Point(22, 8)
         Me.lbl21.Name = "lbl21"
-        Me.lbl21.Size = New System.Drawing.Size(111, 20)
+        Me.lbl21.Size = New System.Drawing.Size(137, 25)
         Me.lbl21.TabIndex = 0
         Me.lbl21.Text = "Denominación"
         '
@@ -222,7 +222,7 @@ Partial Class MovimientosEfectivo
         Me.Label25.ForeColor = System.Drawing.Color.White
         Me.Label25.Location = New System.Drawing.Point(22, 8)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(111, 20)
+        Me.Label25.Size = New System.Drawing.Size(137, 25)
         Me.Label25.TabIndex = 3
         Me.Label25.Text = "Denominación"
         '
@@ -233,7 +233,7 @@ Partial Class MovimientosEfectivo
         Me.Label21.ForeColor = System.Drawing.Color.White
         Me.Label21.Location = New System.Drawing.Point(277, 8)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(69, 20)
+        Me.Label21.Size = New System.Drawing.Size(84, 25)
         Me.Label21.TabIndex = 2
         Me.Label21.Text = "Subtotal"
         '
@@ -244,7 +244,7 @@ Partial Class MovimientosEfectivo
         Me.Label24.ForeColor = System.Drawing.Color.White
         Me.Label24.Location = New System.Drawing.Point(163, 8)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(73, 20)
+        Me.Label24.Size = New System.Drawing.Size(91, 25)
         Me.Label24.TabIndex = 1
         Me.Label24.Text = "Cantidad"
         '
@@ -255,7 +255,7 @@ Partial Class MovimientosEfectivo
         Me.lblCambio.ForeColor = System.Drawing.Color.White
         Me.lblCambio.Location = New System.Drawing.Point(265, 17)
         Me.lblCambio.Name = "lblCambio"
-        Me.lblCambio.Size = New System.Drawing.Size(63, 20)
+        Me.lblCambio.Size = New System.Drawing.Size(80, 25)
         Me.lblCambio.TabIndex = 20
         Me.lblCambio.Text = "Cambio"
         Me.lblCambio.Visible = False
@@ -265,7 +265,7 @@ Partial Class MovimientosEfectivo
         Me.txtTipoCambio.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTipoCambio.Location = New System.Drawing.Point(334, 15)
         Me.txtTipoCambio.Name = "txtTipoCambio"
-        Me.txtTipoCambio.Size = New System.Drawing.Size(71, 23)
+        Me.txtTipoCambio.Size = New System.Drawing.Size(71, 27)
         Me.txtTipoCambio.TabIndex = 21
         Me.txtTipoCambio.Text = "0.0"
         Me.txtTipoCambio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -340,7 +340,7 @@ Partial Class MovimientosEfectivo
         Me.lblMoneda.ForeColor = System.Drawing.Color.White
         Me.lblMoneda.Location = New System.Drawing.Point(26, 3)
         Me.lblMoneda.Name = "lblMoneda"
-        Me.lblMoneda.Size = New System.Drawing.Size(75, 24)
+        Me.lblMoneda.Size = New System.Drawing.Size(96, 29)
         Me.lblMoneda.TabIndex = 7
         Me.lblMoneda.Text = "Recibe:"
         '
@@ -386,7 +386,7 @@ Partial Class MovimientosEfectivo
         Me.Label8.ForeColor = System.Drawing.Color.White
         Me.Label8.Location = New System.Drawing.Point(23, 8)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(70, 24)
+        Me.Label8.Size = New System.Drawing.Size(93, 29)
         Me.Label8.TabIndex = 6
         Me.Label8.Text = "Salidas"
         '
@@ -397,7 +397,7 @@ Partial Class MovimientosEfectivo
         Me.lblSalidaCajaTotal.ForeColor = System.Drawing.Color.White
         Me.lblSalidaCajaTotal.Location = New System.Drawing.Point(155, 84)
         Me.lblSalidaCajaTotal.Name = "lblSalidaCajaTotal"
-        Me.lblSalidaCajaTotal.Size = New System.Drawing.Size(20, 24)
+        Me.lblSalidaCajaTotal.Size = New System.Drawing.Size(26, 29)
         Me.lblSalidaCajaTotal.TabIndex = 5
         Me.lblSalidaCajaTotal.Text = "0"
         '
@@ -408,7 +408,7 @@ Partial Class MovimientosEfectivo
         Me.Label20.ForeColor = System.Drawing.Color.White
         Me.Label20.Location = New System.Drawing.Point(22, 35)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(115, 20)
+        Me.Label20.Size = New System.Drawing.Size(148, 25)
         Me.Label20.TabIndex = 0
         Me.Label20.Text = "Salida Caja (c):"
         '
@@ -419,7 +419,7 @@ Partial Class MovimientosEfectivo
         Me.Label19.ForeColor = System.Drawing.Color.White
         Me.Label19.Location = New System.Drawing.Point(22, 58)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(116, 20)
+        Me.Label19.Size = New System.Drawing.Size(149, 25)
         Me.Label19.TabIndex = 1
         Me.Label19.Text = "Salida Caja ($):"
         '
@@ -430,7 +430,7 @@ Partial Class MovimientosEfectivo
         Me.lblSalidaCajaDolares.ForeColor = System.Drawing.Color.White
         Me.lblSalidaCajaDolares.Location = New System.Drawing.Point(156, 58)
         Me.lblSalidaCajaDolares.Name = "lblSalidaCajaDolares"
-        Me.lblSalidaCajaDolares.Size = New System.Drawing.Size(18, 20)
+        Me.lblSalidaCajaDolares.Size = New System.Drawing.Size(23, 25)
         Me.lblSalidaCajaDolares.TabIndex = 4
         Me.lblSalidaCajaDolares.Text = "0"
         '
@@ -441,7 +441,7 @@ Partial Class MovimientosEfectivo
         Me.Label18.ForeColor = System.Drawing.Color.White
         Me.Label18.Location = New System.Drawing.Point(21, 84)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(116, 24)
+        Me.Label18.Size = New System.Drawing.Size(154, 29)
         Me.Label18.TabIndex = 2
         Me.Label18.Text = "Salidas Total"
         '
@@ -452,7 +452,7 @@ Partial Class MovimientosEfectivo
         Me.lblSalidaCajaColones.ForeColor = System.Drawing.Color.White
         Me.lblSalidaCajaColones.Location = New System.Drawing.Point(156, 35)
         Me.lblSalidaCajaColones.Name = "lblSalidaCajaColones"
-        Me.lblSalidaCajaColones.Size = New System.Drawing.Size(18, 20)
+        Me.lblSalidaCajaColones.Size = New System.Drawing.Size(23, 25)
         Me.lblSalidaCajaColones.TabIndex = 3
         Me.lblSalidaCajaColones.Text = "0"
         '
@@ -478,7 +478,7 @@ Partial Class MovimientosEfectivo
         Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(18, 8)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(134, 24)
+        Me.Label7.Size = New System.Drawing.Size(170, 29)
         Me.Label7.TabIndex = 7
         Me.Label7.Text = "Introducciones"
         '
@@ -489,7 +489,7 @@ Partial Class MovimientosEfectivo
         Me.lblIntroduccionCajaTotal.ForeColor = System.Drawing.Color.White
         Me.lblIntroduccionCajaTotal.Location = New System.Drawing.Point(219, 84)
         Me.lblIntroduccionCajaTotal.Name = "lblIntroduccionCajaTotal"
-        Me.lblIntroduccionCajaTotal.Size = New System.Drawing.Size(20, 24)
+        Me.lblIntroduccionCajaTotal.Size = New System.Drawing.Size(26, 29)
         Me.lblIntroduccionCajaTotal.TabIndex = 5
         Me.lblIntroduccionCajaTotal.Text = "0"
         '
@@ -499,7 +499,7 @@ Partial Class MovimientosEfectivo
         Me.Label14.ForeColor = System.Drawing.Color.White
         Me.Label14.Location = New System.Drawing.Point(16, 35)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(159, 20)
+        Me.Label14.Size = New System.Drawing.Size(199, 25)
         Me.Label14.TabIndex = 0
         Me.Label14.Text = "Introducción Caja (c):"
         '
@@ -509,7 +509,7 @@ Partial Class MovimientosEfectivo
         Me.lblIntroduccionCajaDolares.ForeColor = System.Drawing.Color.White
         Me.lblIntroduccionCajaDolares.Location = New System.Drawing.Point(219, 58)
         Me.lblIntroduccionCajaDolares.Name = "lblIntroduccionCajaDolares"
-        Me.lblIntroduccionCajaDolares.Size = New System.Drawing.Size(18, 20)
+        Me.lblIntroduccionCajaDolares.Size = New System.Drawing.Size(23, 25)
         Me.lblIntroduccionCajaDolares.TabIndex = 4
         Me.lblIntroduccionCajaDolares.Text = "0"
         '
@@ -519,7 +519,7 @@ Partial Class MovimientosEfectivo
         Me.Label13.ForeColor = System.Drawing.Color.White
         Me.Label13.Location = New System.Drawing.Point(16, 59)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(160, 20)
+        Me.Label13.Size = New System.Drawing.Size(200, 25)
         Me.Label13.TabIndex = 1
         Me.Label13.Text = "Introducción Caja ($):"
         '
@@ -529,7 +529,7 @@ Partial Class MovimientosEfectivo
         Me.lblIntroduccionCajaColones.ForeColor = System.Drawing.Color.White
         Me.lblIntroduccionCajaColones.Location = New System.Drawing.Point(219, 35)
         Me.lblIntroduccionCajaColones.Name = "lblIntroduccionCajaColones"
-        Me.lblIntroduccionCajaColones.Size = New System.Drawing.Size(18, 20)
+        Me.lblIntroduccionCajaColones.Size = New System.Drawing.Size(23, 25)
         Me.lblIntroduccionCajaColones.TabIndex = 3
         Me.lblIntroduccionCajaColones.Text = "0"
         '
@@ -540,7 +540,7 @@ Partial Class MovimientosEfectivo
         Me.Label12.ForeColor = System.Drawing.Color.White
         Me.Label12.Location = New System.Drawing.Point(16, 84)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(195, 24)
+        Me.Label12.Size = New System.Drawing.Size(246, 29)
         Me.Label12.TabIndex = 2
         Me.Label12.Text = "Fondo Introducciones"
         '
@@ -569,7 +569,7 @@ Partial Class MovimientosEfectivo
         Me.Label9.ForeColor = System.Drawing.Color.White
         Me.Label9.Location = New System.Drawing.Point(19, 8)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(72, 24)
+        Me.Label9.Size = New System.Drawing.Size(92, 29)
         Me.Label9.TabIndex = 7
         Me.Label9.Text = "Montos"
         '
@@ -580,7 +580,7 @@ Partial Class MovimientosEfectivo
         Me.lblFonfoCajaTotal.ForeColor = System.Drawing.Color.White
         Me.lblFonfoCajaTotal.Location = New System.Drawing.Point(152, 84)
         Me.lblFonfoCajaTotal.Name = "lblFonfoCajaTotal"
-        Me.lblFonfoCajaTotal.Size = New System.Drawing.Size(20, 24)
+        Me.lblFonfoCajaTotal.Size = New System.Drawing.Size(26, 29)
         Me.lblFonfoCajaTotal.TabIndex = 5
         Me.lblFonfoCajaTotal.Text = "0"
         '
@@ -590,7 +590,7 @@ Partial Class MovimientosEfectivo
         Me.Label16.ForeColor = System.Drawing.Color.White
         Me.Label16.Location = New System.Drawing.Point(19, 38)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(117, 20)
+        Me.Label16.Size = New System.Drawing.Size(149, 25)
         Me.Label16.TabIndex = 0
         Me.Label16.Text = "Fondo Caja (c):"
         '
@@ -600,7 +600,7 @@ Partial Class MovimientosEfectivo
         Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(19, 38)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(117, 20)
+        Me.Label3.Size = New System.Drawing.Size(149, 25)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Fondo Caja (c):"
         '
@@ -610,7 +610,7 @@ Partial Class MovimientosEfectivo
         Me.lblFonfoCajaDolares.ForeColor = System.Drawing.Color.White
         Me.lblFonfoCajaDolares.Location = New System.Drawing.Point(153, 61)
         Me.lblFonfoCajaDolares.Name = "lblFonfoCajaDolares"
-        Me.lblFonfoCajaDolares.Size = New System.Drawing.Size(18, 20)
+        Me.lblFonfoCajaDolares.Size = New System.Drawing.Size(23, 25)
         Me.lblFonfoCajaDolares.TabIndex = 4
         Me.lblFonfoCajaDolares.Text = "0"
         '
@@ -620,7 +620,7 @@ Partial Class MovimientosEfectivo
         Me.Label11.ForeColor = System.Drawing.Color.White
         Me.Label11.Location = New System.Drawing.Point(18, 61)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(118, 20)
+        Me.Label11.Size = New System.Drawing.Size(150, 25)
         Me.Label11.TabIndex = 1
         Me.Label11.Text = "Fondo Caja ($):"
         '
@@ -630,7 +630,7 @@ Partial Class MovimientosEfectivo
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(18, 61)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(118, 20)
+        Me.Label4.Size = New System.Drawing.Size(150, 25)
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "Fondo Caja ($):"
         '
@@ -640,7 +640,7 @@ Partial Class MovimientosEfectivo
         Me.lblFonfoCajaColones.ForeColor = System.Drawing.Color.White
         Me.lblFonfoCajaColones.Location = New System.Drawing.Point(153, 38)
         Me.lblFonfoCajaColones.Name = "lblFonfoCajaColones"
-        Me.lblFonfoCajaColones.Size = New System.Drawing.Size(18, 20)
+        Me.lblFonfoCajaColones.Size = New System.Drawing.Size(23, 25)
         Me.lblFonfoCajaColones.TabIndex = 3
         Me.lblFonfoCajaColones.Text = "0"
         '
@@ -651,7 +651,7 @@ Partial Class MovimientosEfectivo
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(18, 84)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(112, 24)
+        Me.Label5.Size = New System.Drawing.Size(144, 29)
         Me.Label5.TabIndex = 2
         Me.Label5.Text = "Fondo Total"
         '

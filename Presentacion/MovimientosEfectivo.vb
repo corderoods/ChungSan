@@ -802,4 +802,8 @@ Public Class MovimientosEfectivo
         Next
 
     End Sub
+
+    Private Sub pnlDenominacionesColones_Paint(sender As Object, e As PaintEventArgs) Handles pnlDenominacionesColones.Paint
+
+    End Sub
 End Class

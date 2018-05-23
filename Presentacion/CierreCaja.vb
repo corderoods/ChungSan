@@ -135,7 +135,8 @@ Public Class CierreCaja
         ' monto total del servicio de express
         expressEfectivo = Me.cargarServicioExpressEfectivo
         ' monto total correspondiente a los impuestos de servicios pagados en efectivo
-        impuestosServicioEfectivo = Me.cargarImpuestoServicioEfectivo
+        impuestosServicioEfectivo = Me.cargarImpuestoServicio
+
         ' monto total correspondiente al impuesto de ventas 
         impuestoVentasEfectivo = Me.cargarImpuestoVentas(1)
 
@@ -372,8 +373,18 @@ Public Class CierreCaja
     End Sub
 
     Private Sub lblImpuestoServicio_Click(sender As Object, e As EventArgs) Handles lblImpServicioCompEfec.Click
-        ' llama al metodo para crear el reporte de los impuestos de servicio
-        crear_reportes.reporteImpServEfectivo()
+        ' llama al metodo para crear el reporte de los impuestos de servicio ya INICIO
+        ' crear_reportes.reporteImpServEfectivo()
+        crear_reportes.reporteImpServ()
+    End Sub
+
+    Private Sub CierreCaja_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cargarInformacion()
+
+    End Sub
+
+    Private Sub lblMontoTotalCompEfec_Click(sender As Object, e As EventArgs) Handles lblMontoTotalCompEfec.Click
+
     End Sub
 
     Private Sub lblImpVtasCompEfec_Click(sender As Object, e As EventArgs) Handles lblImpVtasCompEfec.Click

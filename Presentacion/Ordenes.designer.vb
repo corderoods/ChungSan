@@ -72,6 +72,7 @@ Partial Class Ordenes
         Me.txtNombreCajero = New System.Windows.Forms.Label()
         Me.timerLlamaMesero = New System.Windows.Forms.Timer(Me.components)
         Me.TimerReproduceSonido = New System.Windows.Forms.Timer(Me.components)
+        Me.CierreDeCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlPrinOrdenes.SuspendLayout()
@@ -90,9 +91,10 @@ Partial Class Ordenes
         Me.Panel1.Controls.Add(Me.btnBorrar)
         Me.Panel1.Controls.Add(Me.btnNuevaOrden)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 33)
+        Me.Panel1.Location = New System.Drawing.Point(0, 40)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1352, 83)
+        Me.Panel1.Size = New System.Drawing.Size(1803, 102)
         Me.Panel1.TabIndex = 0
         '
         'btnLimpiar
@@ -101,9 +103,10 @@ Partial Class Ordenes
         Me.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnLimpiar.Image = Global.SunChangSystem.My.Resources.Resources.btnOcultar
-        Me.btnLimpiar.Location = New System.Drawing.Point(548, 8)
+        Me.btnLimpiar.Location = New System.Drawing.Point(731, 10)
+        Me.btnLimpiar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(157, 64)
+        Me.btnLimpiar.Size = New System.Drawing.Size(209, 79)
         Me.btnLimpiar.TabIndex = 9
         Me.btnLimpiar.UseVisualStyleBackColor = True
         '
@@ -120,18 +123,20 @@ Partial Class Ordenes
         Me.btnCerrarSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCerrarSesion.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnCerrarSesion.Image = Global.SunChangSystem.My.Resources.Resources.btnLogout1
-        Me.btnCerrarSesion.Location = New System.Drawing.Point(980, 8)
+        Me.btnCerrarSesion.Location = New System.Drawing.Point(1307, 10)
+        Me.btnCerrarSesion.Margin = New System.Windows.Forms.Padding(4)
         Me.btnCerrarSesion.Name = "btnCerrarSesion"
-        Me.btnCerrarSesion.Size = New System.Drawing.Size(159, 62)
+        Me.btnCerrarSesion.Size = New System.Drawing.Size(212, 76)
         Me.btnCerrarSesion.TabIndex = 5
         Me.btnCerrarSesion.UseVisualStyleBackColor = False
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SunChangSystem.My.Resources.Resources.cover21
-        Me.PictureBox1.Location = New System.Drawing.Point(1157, 3)
+        Me.PictureBox1.Location = New System.Drawing.Point(1543, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(192, 76)
+        Me.PictureBox1.Size = New System.Drawing.Size(256, 94)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
@@ -149,9 +154,10 @@ Partial Class Ordenes
         Me.btnImprimir.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnImprimir.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnImprimir.Image = Global.SunChangSystem.My.Resources.Resources.btnImprimirOrden1
-        Me.btnImprimir.Location = New System.Drawing.Point(376, 8)
+        Me.btnImprimir.Location = New System.Drawing.Point(501, 10)
+        Me.btnImprimir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(155, 62)
+        Me.btnImprimir.Size = New System.Drawing.Size(207, 76)
         Me.btnImprimir.TabIndex = 2
         Me.btnImprimir.UseVisualStyleBackColor = False
         '
@@ -168,9 +174,10 @@ Partial Class Ordenes
         Me.btnBorrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBorrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnBorrar.Image = Global.SunChangSystem.My.Resources.Resources.btnBorrarOrden1
-        Me.btnBorrar.Location = New System.Drawing.Point(197, 8)
+        Me.btnBorrar.Location = New System.Drawing.Point(263, 10)
+        Me.btnBorrar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBorrar.Name = "btnBorrar"
-        Me.btnBorrar.Size = New System.Drawing.Size(155, 63)
+        Me.btnBorrar.Size = New System.Drawing.Size(207, 78)
         Me.btnBorrar.TabIndex = 1
         Me.btnBorrar.UseVisualStyleBackColor = False
         '
@@ -187,9 +194,10 @@ Partial Class Ordenes
         Me.btnNuevaOrden.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNuevaOrden.ForeColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnNuevaOrden.Image = Global.SunChangSystem.My.Resources.Resources.btnNuevaOrden2
-        Me.btnNuevaOrden.Location = New System.Drawing.Point(16, 7)
+        Me.btnNuevaOrden.Location = New System.Drawing.Point(21, 9)
+        Me.btnNuevaOrden.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNuevaOrden.Name = "btnNuevaOrden"
-        Me.btnNuevaOrden.Size = New System.Drawing.Size(155, 64)
+        Me.btnNuevaOrden.Size = New System.Drawing.Size(207, 79)
         Me.btnNuevaOrden.TabIndex = 0
         Me.btnNuevaOrden.UseVisualStyleBackColor = False
         '
@@ -198,9 +206,10 @@ Partial Class Ordenes
         Me.txtHora.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.txtHora.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtHora.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtHora.Location = New System.Drawing.Point(925, 4)
+        Me.txtHora.Location = New System.Drawing.Point(1233, 5)
+        Me.txtHora.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.txtHora.Name = "txtHora"
-        Me.txtHora.Size = New System.Drawing.Size(419, 29)
+        Me.txtHora.Size = New System.Drawing.Size(559, 36)
         Me.txtHora.TabIndex = 6
         Me.txtHora.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -216,9 +225,10 @@ Partial Class Ordenes
         Me.pnlPrinOrdenes.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.pnlPrinOrdenes.Controls.Add(Me.pnlOrdenes)
         Me.pnlPrinOrdenes.Controls.Add(Me.Label1)
-        Me.pnlPrinOrdenes.Location = New System.Drawing.Point(0, 122)
+        Me.pnlPrinOrdenes.Location = New System.Drawing.Point(0, 150)
+        Me.pnlPrinOrdenes.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlPrinOrdenes.Name = "pnlPrinOrdenes"
-        Me.pnlPrinOrdenes.Size = New System.Drawing.Size(178, 603)
+        Me.pnlPrinOrdenes.Size = New System.Drawing.Size(237, 742)
         Me.pnlPrinOrdenes.TabIndex = 3
         '
         'pnlOrdenes
@@ -226,9 +236,10 @@ Partial Class Ordenes
         Me.pnlOrdenes.AutoScroll = True
         Me.pnlOrdenes.BackColor = System.Drawing.Color.Transparent
         Me.pnlOrdenes.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.pnlOrdenes.Location = New System.Drawing.Point(12, 39)
+        Me.pnlOrdenes.Location = New System.Drawing.Point(16, 48)
+        Me.pnlOrdenes.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlOrdenes.Name = "pnlOrdenes"
-        Me.pnlOrdenes.Size = New System.Drawing.Size(163, 530)
+        Me.pnlOrdenes.Size = New System.Drawing.Size(217, 652)
         Me.pnlOrdenes.TabIndex = 1
         '
         'Label1
@@ -236,9 +247,10 @@ Partial Class Ordenes
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(3, 7)
+        Me.Label1.Location = New System.Drawing.Point(4, 9)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(161, 24)
+        Me.Label1.Size = New System.Drawing.Size(204, 29)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Ordenes Actuales"
         '
@@ -250,27 +262,30 @@ Partial Class Ordenes
         Me.pnlPrinProd.Controls.Add(Me.lblDetalleOrden)
         Me.pnlPrinProd.Controls.Add(Me.Label14)
         Me.pnlPrinProd.Controls.Add(Me.Label13)
-        Me.pnlPrinProd.Location = New System.Drawing.Point(181, 114)
+        Me.pnlPrinProd.Location = New System.Drawing.Point(241, 140)
+        Me.pnlPrinProd.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlPrinProd.Name = "pnlPrinProd"
-        Me.pnlPrinProd.Size = New System.Drawing.Size(530, 603)
+        Me.pnlPrinProd.Size = New System.Drawing.Size(707, 742)
         Me.pnlPrinProd.TabIndex = 5
         '
         'pnlDetalle
         '
         Me.pnlDetalle.AutoScroll = True
         Me.pnlDetalle.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.pnlDetalle.Location = New System.Drawing.Point(3, 61)
+        Me.pnlDetalle.Location = New System.Drawing.Point(4, 75)
+        Me.pnlDetalle.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlDetalle.Name = "pnlDetalle"
-        Me.pnlDetalle.Size = New System.Drawing.Size(527, 508)
+        Me.pnlDetalle.Size = New System.Drawing.Size(703, 625)
         Me.pnlDetalle.TabIndex = 8
         '
         'lblDetalleOrden
         '
         Me.lblDetalleOrden.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDetalleOrden.ForeColor = System.Drawing.Color.White
-        Me.lblDetalleOrden.Location = New System.Drawing.Point(6, 7)
+        Me.lblDetalleOrden.Location = New System.Drawing.Point(8, 9)
+        Me.lblDetalleOrden.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDetalleOrden.Name = "lblDetalleOrden"
-        Me.lblDetalleOrden.Size = New System.Drawing.Size(483, 24)
+        Me.lblDetalleOrden.Size = New System.Drawing.Size(644, 30)
         Me.lblDetalleOrden.TabIndex = 3
         Me.lblDetalleOrden.Text = "Detalle de la orden:"
         '
@@ -279,9 +294,10 @@ Partial Class Ordenes
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(6, 34)
+        Me.Label14.Location = New System.Drawing.Point(8, 42)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(48, 24)
+        Me.Label14.Size = New System.Drawing.Size(62, 29)
         Me.Label14.TabIndex = 6
         Me.Label14.Text = "Cant"
         '
@@ -290,9 +306,10 @@ Partial Class Ordenes
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(160, 35)
+        Me.Label13.Location = New System.Drawing.Point(213, 43)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(79, 24)
+        Me.Label13.Size = New System.Drawing.Size(101, 29)
         Me.Label13.TabIndex = 5
         Me.Label13.Text = "Nombre" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
@@ -305,9 +322,10 @@ Partial Class Ordenes
         Me.pnlPrinCategorias.Controls.Add(Me.lblCategorias)
         Me.pnlPrinCategorias.Controls.Add(Me.pnlCategorias)
         Me.pnlPrinCategorias.Dock = System.Windows.Forms.DockStyle.Right
-        Me.pnlPrinCategorias.Location = New System.Drawing.Point(714, 116)
+        Me.pnlPrinCategorias.Location = New System.Drawing.Point(952, 142)
+        Me.pnlPrinCategorias.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlPrinCategorias.Name = "pnlPrinCategorias"
-        Me.pnlPrinCategorias.Size = New System.Drawing.Size(638, 613)
+        Me.pnlPrinCategorias.Size = New System.Drawing.Size(851, 755)
         Me.pnlPrinCategorias.TabIndex = 6
         '
         'btnAgregar
@@ -317,9 +335,10 @@ Partial Class Ordenes
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Image = Global.SunChangSystem.My.Resources.Resources.btnAgregar1
         Me.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnAgregar.Location = New System.Drawing.Point(531, 27)
+        Me.btnAgregar.Location = New System.Drawing.Point(708, 33)
+        Me.btnAgregar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(100, 45)
+        Me.btnAgregar.Size = New System.Drawing.Size(133, 55)
         Me.btnAgregar.TabIndex = 13
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
@@ -328,9 +347,10 @@ Partial Class Ordenes
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label2.Location = New System.Drawing.Point(12, 35)
+        Me.Label2.Location = New System.Drawing.Point(16, 43)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(91, 24)
+        Me.Label2.Size = New System.Drawing.Size(116, 29)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Producto:"
         '
@@ -341,10 +361,11 @@ Partial Class Ordenes
         Me.cbxProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxProducto.FormattingEnabled = True
         Me.cbxProducto.IntegralHeight = False
-        Me.cbxProducto.Location = New System.Drawing.Point(109, 32)
+        Me.cbxProducto.Location = New System.Drawing.Point(145, 39)
+        Me.cbxProducto.Margin = New System.Windows.Forms.Padding(4)
         Me.cbxProducto.MaxDropDownItems = 15
         Me.cbxProducto.Name = "cbxProducto"
-        Me.cbxProducto.Size = New System.Drawing.Size(400, 32)
+        Me.cbxProducto.Size = New System.Drawing.Size(532, 37)
         Me.cbxProducto.TabIndex = 11
         '
         'lblCategorias
@@ -352,27 +373,31 @@ Partial Class Ordenes
         Me.lblCategorias.AutoSize = True
         Me.lblCategorias.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCategorias.ForeColor = System.Drawing.SystemColors.Control
-        Me.lblCategorias.Location = New System.Drawing.Point(12, 95)
+        Me.lblCategorias.Location = New System.Drawing.Point(16, 117)
+        Me.lblCategorias.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCategorias.Name = "lblCategorias"
-        Me.lblCategorias.Size = New System.Drawing.Size(104, 24)
+        Me.lblCategorias.Size = New System.Drawing.Size(136, 29)
         Me.lblCategorias.TabIndex = 10
         Me.lblCategorias.Text = "Categorías:"
         '
         'pnlCategorias
         '
         Me.pnlCategorias.AutoScroll = True
-        Me.pnlCategorias.Location = New System.Drawing.Point(16, 122)
+        Me.pnlCategorias.Location = New System.Drawing.Point(21, 150)
+        Me.pnlCategorias.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlCategorias.Name = "pnlCategorias"
-        Me.pnlCategorias.Size = New System.Drawing.Size(615, 447)
+        Me.pnlCategorias.Size = New System.Drawing.Size(820, 550)
         Me.pnlCategorias.TabIndex = 9
         '
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.ContabilidadToolStripMenuItem, Me.AdministradorToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1352, 33)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1803, 40)
         Me.MenuStrip1.TabIndex = 7
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -381,7 +406,7 @@ Partial Class Ordenes
         Me.ArchivoToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ArchivoToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
-        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(88, 29)
+        Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(107, 36)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
         '
         'ContabilidadToolStripMenuItem
@@ -390,121 +415,121 @@ Partial Class Ordenes
         Me.ContabilidadToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ContabilidadToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ContabilidadToolStripMenuItem.Name = "ContabilidadToolStripMenuItem"
-        Me.ContabilidadToolStripMenuItem.Size = New System.Drawing.Size(132, 29)
+        Me.ContabilidadToolStripMenuItem.Size = New System.Drawing.Size(162, 36)
         Me.ContabilidadToolStripMenuItem.Text = "Contabilidad"
         '
         'FondoInicialToolStripMenuItem
         '
         Me.FondoInicialToolStripMenuItem.Name = "FondoInicialToolStripMenuItem"
-        Me.FondoInicialToolStripMenuItem.Size = New System.Drawing.Size(231, 30)
+        Me.FondoInicialToolStripMenuItem.Size = New System.Drawing.Size(280, 36)
         Me.FondoInicialToolStripMenuItem.Text = "Fondo Inicial"
         '
         'CierreCajaToolStripMenuItem
         '
         Me.CierreCajaToolStripMenuItem.Name = "CierreCajaToolStripMenuItem"
-        Me.CierreCajaToolStripMenuItem.Size = New System.Drawing.Size(231, 30)
+        Me.CierreCajaToolStripMenuItem.Size = New System.Drawing.Size(280, 36)
         Me.CierreCajaToolStripMenuItem.Text = "Cierre Caja"
         '
         'ARQUEOToolStripMenuItem
         '
         Me.ARQUEOToolStripMenuItem.Name = "ARQUEOToolStripMenuItem"
-        Me.ARQUEOToolStripMenuItem.Size = New System.Drawing.Size(231, 30)
+        Me.ARQUEOToolStripMenuItem.Size = New System.Drawing.Size(280, 36)
         Me.ARQUEOToolStripMenuItem.Text = "Arqueo"
         '
         'MovimientosToolStripMenuItem
         '
         Me.MovimientosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PagoDeFacturasToolStripMenuItem, Me.SalidasDeEfectivoToolStripMenuItem, Me.IntroduccionesToolStripMenuItem, Me.ValesToolStripMenuItem})
         Me.MovimientosToolStripMenuItem.Name = "MovimientosToolStripMenuItem"
-        Me.MovimientosToolStripMenuItem.Size = New System.Drawing.Size(231, 30)
+        Me.MovimientosToolStripMenuItem.Size = New System.Drawing.Size(280, 36)
         Me.MovimientosToolStripMenuItem.Text = "Movimientos"
         '
         'PagoDeFacturasToolStripMenuItem
         '
         Me.PagoDeFacturasToolStripMenuItem.Name = "PagoDeFacturasToolStripMenuItem"
-        Me.PagoDeFacturasToolStripMenuItem.Size = New System.Drawing.Size(240, 30)
+        Me.PagoDeFacturasToolStripMenuItem.Size = New System.Drawing.Size(294, 36)
         Me.PagoDeFacturasToolStripMenuItem.Text = "Pago de Facturas"
         '
         'SalidasDeEfectivoToolStripMenuItem
         '
         Me.SalidasDeEfectivoToolStripMenuItem.Name = "SalidasDeEfectivoToolStripMenuItem"
-        Me.SalidasDeEfectivoToolStripMenuItem.Size = New System.Drawing.Size(240, 30)
+        Me.SalidasDeEfectivoToolStripMenuItem.Size = New System.Drawing.Size(294, 36)
         Me.SalidasDeEfectivoToolStripMenuItem.Text = "Salidas de Efectivo"
         '
         'IntroduccionesToolStripMenuItem
         '
         Me.IntroduccionesToolStripMenuItem.Name = "IntroduccionesToolStripMenuItem"
-        Me.IntroduccionesToolStripMenuItem.Size = New System.Drawing.Size(240, 30)
+        Me.IntroduccionesToolStripMenuItem.Size = New System.Drawing.Size(294, 36)
         Me.IntroduccionesToolStripMenuItem.Text = "Introducciones"
         '
         'ValesToolStripMenuItem
         '
         Me.ValesToolStripMenuItem.Name = "ValesToolStripMenuItem"
-        Me.ValesToolStripMenuItem.Size = New System.Drawing.Size(240, 30)
+        Me.ValesToolStripMenuItem.Size = New System.Drawing.Size(294, 36)
         Me.ValesToolStripMenuItem.Text = "Vales Y Bonos"
         '
         'AnularFacturaToolStripMenuItem
         '
         Me.AnularFacturaToolStripMenuItem.Name = "AnularFacturaToolStripMenuItem"
-        Me.AnularFacturaToolStripMenuItem.Size = New System.Drawing.Size(231, 30)
+        Me.AnularFacturaToolStripMenuItem.Size = New System.Drawing.Size(280, 36)
         Me.AnularFacturaToolStripMenuItem.Text = "Anular Factura"
         '
         'ModificarFacturaToolStripMenuItem
         '
         Me.ModificarFacturaToolStripMenuItem.Name = "ModificarFacturaToolStripMenuItem"
-        Me.ModificarFacturaToolStripMenuItem.Size = New System.Drawing.Size(231, 30)
+        Me.ModificarFacturaToolStripMenuItem.Size = New System.Drawing.Size(280, 36)
         Me.ModificarFacturaToolStripMenuItem.Text = "Modificar Factura"
         '
         'AdministradorToolStripMenuItem
         '
-        Me.AdministradorToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportesToolStripMenuItem, Me.MenuToolStripMenuItem, Me.ProveedoresToolStripMenuItem})
+        Me.AdministradorToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportesToolStripMenuItem, Me.MenuToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.CierreDeCajaToolStripMenuItem})
         Me.AdministradorToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.25!)
         Me.AdministradorToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.AdministradorToolStripMenuItem.Name = "AdministradorToolStripMenuItem"
-        Me.AdministradorToolStripMenuItem.Size = New System.Drawing.Size(151, 29)
+        Me.AdministradorToolStripMenuItem.Size = New System.Drawing.Size(186, 36)
         Me.AdministradorToolStripMenuItem.Text = "Administración"
         '
         'ReportesToolStripMenuItem
         '
         Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VentasXDíaToolStripMenuItem, Me.ImpuestoDeVentasToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(189, 30)
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(245, 36)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'VentasXDíaToolStripMenuItem
         '
         Me.VentasXDíaToolStripMenuItem.Name = "VentasXDíaToolStripMenuItem"
-        Me.VentasXDíaToolStripMenuItem.Size = New System.Drawing.Size(249, 30)
+        Me.VentasXDíaToolStripMenuItem.Size = New System.Drawing.Size(307, 36)
         Me.VentasXDíaToolStripMenuItem.Text = "Ventas x día"
         '
         'ImpuestoDeVentasToolStripMenuItem
         '
         Me.ImpuestoDeVentasToolStripMenuItem.Name = "ImpuestoDeVentasToolStripMenuItem"
-        Me.ImpuestoDeVentasToolStripMenuItem.Size = New System.Drawing.Size(249, 30)
+        Me.ImpuestoDeVentasToolStripMenuItem.Size = New System.Drawing.Size(307, 36)
         Me.ImpuestoDeVentasToolStripMenuItem.Text = "Impuesto de Ventas"
         '
         'MenuToolStripMenuItem
         '
         Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CategoríaToolStripMenuItem, Me.ProductosToolStripMenuItem})
         Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
-        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(189, 30)
+        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(245, 36)
         Me.MenuToolStripMenuItem.Text = "Menu"
         '
         'CategoríaToolStripMenuItem
         '
         Me.CategoríaToolStripMenuItem.Name = "CategoríaToolStripMenuItem"
-        Me.CategoríaToolStripMenuItem.Size = New System.Drawing.Size(174, 30)
+        Me.CategoríaToolStripMenuItem.Size = New System.Drawing.Size(208, 36)
         Me.CategoríaToolStripMenuItem.Text = "Categorías"
         '
         'ProductosToolStripMenuItem
         '
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
-        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(174, 30)
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(208, 36)
         Me.ProductosToolStripMenuItem.Text = "Productos"
         '
         'ProveedoresToolStripMenuItem
         '
         Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
-        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(189, 30)
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(245, 36)
         Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
         '
         'Timer1
@@ -517,9 +542,10 @@ Partial Class Ordenes
         Me.txtNombreCajero.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(10, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.txtNombreCajero.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombreCajero.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.txtNombreCajero.Location = New System.Drawing.Point(500, 4)
+        Me.txtNombreCajero.Location = New System.Drawing.Point(667, 5)
+        Me.txtNombreCajero.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.txtNombreCajero.Name = "txtNombreCajero"
-        Me.txtNombreCajero.Size = New System.Drawing.Size(419, 29)
+        Me.txtNombreCajero.Size = New System.Drawing.Size(559, 36)
         Me.txtNombreCajero.TabIndex = 8
         Me.txtNombreCajero.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -531,12 +557,18 @@ Partial Class Ordenes
         '
         Me.TimerReproduceSonido.Interval = 5000
         '
+        'CierreDeCajaToolStripMenuItem
+        '
+        Me.CierreDeCajaToolStripMenuItem.Name = "CierreDeCajaToolStripMenuItem"
+        Me.CierreDeCajaToolStripMenuItem.Size = New System.Drawing.Size(245, 36)
+        Me.CierreDeCajaToolStripMenuItem.Text = "Cierre de Caja"
+        '
         'Ordenes
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1352, 729)
+        Me.ClientSize = New System.Drawing.Size(1803, 897)
         Me.Controls.Add(Me.txtNombreCajero)
         Me.Controls.Add(Me.txtHora)
         Me.Controls.Add(Me.pnlPrinCategorias)
@@ -546,6 +578,7 @@ Partial Class Ordenes
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Ordenes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Órdenes"
@@ -625,4 +658,5 @@ Partial Class Ordenes
     Friend WithEvents ValesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProveedoresToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ModificarFacturaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CierreDeCajaToolStripMenuItem As ToolStripMenuItem
 End Class

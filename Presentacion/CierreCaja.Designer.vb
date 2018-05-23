@@ -120,8 +120,9 @@ Partial Class CierreCaja
         Me.Panel3.Controls.Add(Me.lblSubtotalIngresos)
         Me.Panel3.Controls.Add(Me.PictureBox8)
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(378, 393)
+        Me.Panel3.Size = New System.Drawing.Size(504, 484)
         Me.Panel3.TabIndex = 21
         '
         'lblBonosTotalesEfectivo
@@ -130,9 +131,10 @@ Partial Class CierreCaja
         Me.lblBonosTotalesEfectivo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblBonosTotalesEfectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBonosTotalesEfectivo.ForeColor = System.Drawing.Color.White
-        Me.lblBonosTotalesEfectivo.Location = New System.Drawing.Point(282, 261)
+        Me.lblBonosTotalesEfectivo.Location = New System.Drawing.Point(376, 321)
+        Me.lblBonosTotalesEfectivo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblBonosTotalesEfectivo.Name = "lblBonosTotalesEfectivo"
-        Me.lblBonosTotalesEfectivo.Size = New System.Drawing.Size(49, 20)
+        Me.lblBonosTotalesEfectivo.Size = New System.Drawing.Size(61, 25)
         Me.lblBonosTotalesEfectivo.TabIndex = 36
         Me.lblBonosTotalesEfectivo.Text = "00.00"
         '
@@ -141,9 +143,10 @@ Partial Class CierreCaja
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.Color.White
-        Me.Label21.Location = New System.Drawing.Point(3, 261)
+        Me.Label21.Location = New System.Drawing.Point(4, 321)
+        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(55, 20)
+        Me.Label21.Size = New System.Drawing.Size(68, 25)
         Me.Label21.TabIndex = 35
         Me.Label21.Text = "Bonos"
         '
@@ -153,9 +156,10 @@ Partial Class CierreCaja
         Me.lblValesTotalesEfectivo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblValesTotalesEfectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblValesTotalesEfectivo.ForeColor = System.Drawing.Color.White
-        Me.lblValesTotalesEfectivo.Location = New System.Drawing.Point(282, 232)
+        Me.lblValesTotalesEfectivo.Location = New System.Drawing.Point(376, 286)
+        Me.lblValesTotalesEfectivo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblValesTotalesEfectivo.Name = "lblValesTotalesEfectivo"
-        Me.lblValesTotalesEfectivo.Size = New System.Drawing.Size(49, 20)
+        Me.lblValesTotalesEfectivo.Size = New System.Drawing.Size(61, 25)
         Me.lblValesTotalesEfectivo.TabIndex = 34
         Me.lblValesTotalesEfectivo.Text = "00.00"
         '
@@ -164,9 +168,10 @@ Partial Class CierreCaja
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.White
-        Me.Label19.Location = New System.Drawing.Point(3, 232)
+        Me.Label19.Location = New System.Drawing.Point(4, 286)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(49, 20)
+        Me.Label19.Size = New System.Drawing.Size(62, 25)
         Me.Label19.TabIndex = 33
         Me.Label19.Text = "Vales"
         '
@@ -176,9 +181,10 @@ Partial Class CierreCaja
         Me.lblImpVtasCompEfec.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblImpVtasCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblImpVtasCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblImpVtasCompEfec.Location = New System.Drawing.Point(282, 182)
+        Me.lblImpVtasCompEfec.Location = New System.Drawing.Point(376, 224)
+        Me.lblImpVtasCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblImpVtasCompEfec.Name = "lblImpVtasCompEfec"
-        Me.lblImpVtasCompEfec.Size = New System.Drawing.Size(49, 20)
+        Me.lblImpVtasCompEfec.Size = New System.Drawing.Size(61, 25)
         Me.lblImpVtasCompEfec.TabIndex = 32
         Me.lblImpVtasCompEfec.Text = "00.00"
         '
@@ -187,9 +193,10 @@ Partial Class CierreCaja
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.White
-        Me.Label17.Location = New System.Drawing.Point(3, 182)
+        Me.Label17.Location = New System.Drawing.Point(4, 224)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(192, 20)
+        Me.Label17.Size = New System.Drawing.Size(233, 25)
         Me.Label17.TabIndex = 31
         Me.Label17.Text = "Impuesto Ventas Efectivo"
         '
@@ -199,9 +206,10 @@ Partial Class CierreCaja
         Me.lblDiferenciaCompEfec.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.lblDiferenciaCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.lblDiferenciaCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblDiferenciaCompEfec.Location = New System.Drawing.Point(279, 361)
+        Me.lblDiferenciaCompEfec.Location = New System.Drawing.Point(372, 444)
+        Me.lblDiferenciaCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDiferenciaCompEfec.Name = "lblDiferenciaCompEfec"
-        Me.lblDiferenciaCompEfec.Size = New System.Drawing.Size(55, 24)
+        Me.lblDiferenciaCompEfec.Size = New System.Drawing.Size(71, 29)
         Me.lblDiferenciaCompEfec.TabIndex = 30
         Me.lblDiferenciaCompEfec.Text = "00.00"
         '
@@ -210,9 +218,10 @@ Partial Class CierreCaja
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(10, 361)
+        Me.Label12.Location = New System.Drawing.Point(13, 444)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(99, 24)
+        Me.Label12.Size = New System.Drawing.Size(128, 29)
         Me.Label12.TabIndex = 29
         Me.Label12.Text = "Diferencia:"
         '
@@ -222,9 +231,10 @@ Partial Class CierreCaja
         Me.lblFondoFinalCompEfec.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblFondoFinalCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.lblFondoFinalCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblFondoFinalCompEfec.Location = New System.Drawing.Point(279, 331)
+        Me.lblFondoFinalCompEfec.Location = New System.Drawing.Point(372, 407)
+        Me.lblFondoFinalCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblFondoFinalCompEfec.Name = "lblFondoFinalCompEfec"
-        Me.lblFondoFinalCompEfec.Size = New System.Drawing.Size(55, 24)
+        Me.lblFondoFinalCompEfec.Size = New System.Drawing.Size(71, 29)
         Me.lblFondoFinalCompEfec.TabIndex = 28
         Me.lblFondoFinalCompEfec.Text = "00.00"
         '
@@ -233,9 +243,10 @@ Partial Class CierreCaja
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(10, 331)
+        Me.Label11.Location = New System.Drawing.Point(13, 407)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(163, 24)
+        Me.Label11.Size = New System.Drawing.Size(209, 29)
         Me.Label11.TabIndex = 27
         Me.Label11.Text = "Fondo Final Total:"
         '
@@ -245,9 +256,10 @@ Partial Class CierreCaja
         Me.lblIntroduccionesCompEfec.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblIntroduccionesCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIntroduccionesCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblIntroduccionesCompEfec.Location = New System.Drawing.Point(282, 75)
+        Me.lblIntroduccionesCompEfec.Location = New System.Drawing.Point(376, 92)
+        Me.lblIntroduccionesCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblIntroduccionesCompEfec.Name = "lblIntroduccionesCompEfec"
-        Me.lblIntroduccionesCompEfec.Size = New System.Drawing.Size(49, 20)
+        Me.lblIntroduccionesCompEfec.Size = New System.Drawing.Size(61, 25)
         Me.lblIntroduccionesCompEfec.TabIndex = 23
         Me.lblIntroduccionesCompEfec.Text = "00.00"
         '
@@ -256,9 +268,10 @@ Partial Class CierreCaja
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(3, 77)
+        Me.Label7.Location = New System.Drawing.Point(4, 95)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(114, 20)
+        Me.Label7.Size = New System.Drawing.Size(139, 25)
         Me.Label7.TabIndex = 22
         Me.Label7.Text = "Introducciones"
         '
@@ -268,9 +281,10 @@ Partial Class CierreCaja
         Me.lblCuentasCanceladasCompEfec.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblCuentasCanceladasCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCuentasCanceladasCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblCuentasCanceladasCompEfec.Location = New System.Drawing.Point(282, 207)
+        Me.lblCuentasCanceladasCompEfec.Location = New System.Drawing.Point(376, 255)
+        Me.lblCuentasCanceladasCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCuentasCanceladasCompEfec.Name = "lblCuentasCanceladasCompEfec"
-        Me.lblCuentasCanceladasCompEfec.Size = New System.Drawing.Size(49, 20)
+        Me.lblCuentasCanceladasCompEfec.Size = New System.Drawing.Size(61, 25)
         Me.lblCuentasCanceladasCompEfec.TabIndex = 21
         Me.lblCuentasCanceladasCompEfec.Text = "00.00"
         '
@@ -279,9 +293,10 @@ Partial Class CierreCaja
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(3, 207)
+        Me.Label1.Location = New System.Drawing.Point(4, 255)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(154, 20)
+        Me.Label1.Size = New System.Drawing.Size(191, 25)
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Cuentas canceladas"
         '
@@ -289,9 +304,10 @@ Partial Class CierreCaja
         '
         Me.PictureBox1.BackgroundImage = Global.SunChangSystem.My.Resources.Resources.separador
         Me.PictureBox1.Image = Global.SunChangSystem.My.Resources.Resources.separador
-        Me.PictureBox1.Location = New System.Drawing.Point(5, 289)
+        Me.PictureBox1.Location = New System.Drawing.Point(7, 356)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(350, 4)
+        Me.PictureBox1.Size = New System.Drawing.Size(467, 5)
         Me.PictureBox1.TabIndex = 18
         Me.PictureBox1.TabStop = False
         '
@@ -301,9 +317,10 @@ Partial Class CierreCaja
         Me.lblFondoInicialCompEfec.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblFondoInicialCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFondoInicialCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblFondoInicialCompEfec.Location = New System.Drawing.Point(282, 51)
+        Me.lblFondoInicialCompEfec.Location = New System.Drawing.Point(376, 63)
+        Me.lblFondoInicialCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblFondoInicialCompEfec.Name = "lblFondoInicialCompEfec"
-        Me.lblFondoInicialCompEfec.Size = New System.Drawing.Size(49, 20)
+        Me.lblFondoInicialCompEfec.Size = New System.Drawing.Size(61, 25)
         Me.lblFondoInicialCompEfec.TabIndex = 16
         Me.lblFondoInicialCompEfec.Text = "00.00"
         '
@@ -313,9 +330,10 @@ Partial Class CierreCaja
         Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(79, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(9, Byte), Integer))
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(12, 9)
+        Me.Label2.Location = New System.Drawing.Point(16, 11)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(264, 25)
+        Me.Label2.Size = New System.Drawing.Size(332, 31)
         Me.Label2.TabIndex = 17
         Me.Label2.Text = "Comprobación de Efectivo"
         '
@@ -325,9 +343,10 @@ Partial Class CierreCaja
         Me.lblExpressCompEfec.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblExpressCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblExpressCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblExpressCompEfec.Location = New System.Drawing.Point(282, 100)
+        Me.lblExpressCompEfec.Location = New System.Drawing.Point(376, 123)
+        Me.lblExpressCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblExpressCompEfec.Name = "lblExpressCompEfec"
-        Me.lblExpressCompEfec.Size = New System.Drawing.Size(49, 20)
+        Me.lblExpressCompEfec.Size = New System.Drawing.Size(61, 25)
         Me.lblExpressCompEfec.TabIndex = 6
         Me.lblExpressCompEfec.Text = "00.00"
         '
@@ -336,9 +355,10 @@ Partial Class CierreCaja
         Me.lblIntroducciones.AutoSize = True
         Me.lblIntroducciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIntroducciones.ForeColor = System.Drawing.Color.White
-        Me.lblIntroducciones.Location = New System.Drawing.Point(3, 103)
+        Me.lblIntroducciones.Location = New System.Drawing.Point(4, 127)
+        Me.lblIntroducciones.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblIntroducciones.Name = "lblIntroducciones"
-        Me.lblIntroducciones.Size = New System.Drawing.Size(149, 20)
+        Me.lblIntroducciones.Size = New System.Drawing.Size(184, 25)
         Me.lblIntroducciones.TabIndex = 5
         Me.lblIntroducciones.Text = "Express en Efectivo"
         '
@@ -347,9 +367,10 @@ Partial Class CierreCaja
         Me.lblFondoInicial.AutoSize = True
         Me.lblFondoInicial.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFondoInicial.ForeColor = System.Drawing.Color.White
-        Me.lblFondoInicial.Location = New System.Drawing.Point(3, 51)
+        Me.lblFondoInicial.Location = New System.Drawing.Point(4, 63)
+        Me.lblFondoInicial.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblFondoInicial.Name = "lblFondoInicial"
-        Me.lblFondoInicial.Size = New System.Drawing.Size(101, 20)
+        Me.lblFondoInicial.Size = New System.Drawing.Size(126, 25)
         Me.lblFondoInicial.TabIndex = 7
         Me.lblFondoInicial.Text = "Fondo inicial "
         '
@@ -359,9 +380,10 @@ Partial Class CierreCaja
         Me.lblImpServicioCompEfec.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblImpServicioCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblImpServicioCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblImpServicioCompEfec.Location = New System.Drawing.Point(282, 154)
+        Me.lblImpServicioCompEfec.Location = New System.Drawing.Point(376, 190)
+        Me.lblImpServicioCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblImpServicioCompEfec.Name = "lblImpServicioCompEfec"
-        Me.lblImpServicioCompEfec.Size = New System.Drawing.Size(49, 20)
+        Me.lblImpServicioCompEfec.Size = New System.Drawing.Size(61, 25)
         Me.lblImpServicioCompEfec.TabIndex = 2
         Me.lblImpServicioCompEfec.Text = "00.00"
         '
@@ -371,9 +393,10 @@ Partial Class CierreCaja
         Me.lblVentasEfectivoCompEfec.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblVentasEfectivoCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVentasEfectivoCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblVentasEfectivoCompEfec.Location = New System.Drawing.Point(282, 127)
+        Me.lblVentasEfectivoCompEfec.Location = New System.Drawing.Point(376, 156)
+        Me.lblVentasEfectivoCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblVentasEfectivoCompEfec.Name = "lblVentasEfectivoCompEfec"
-        Me.lblVentasEfectivoCompEfec.Size = New System.Drawing.Size(49, 20)
+        Me.lblVentasEfectivoCompEfec.Size = New System.Drawing.Size(61, 25)
         Me.lblVentasEfectivoCompEfec.TabIndex = 4
         Me.lblVentasEfectivoCompEfec.Text = "00.00"
         '
@@ -382,9 +405,10 @@ Partial Class CierreCaja
         Me.lblMontoTotalCompEfec.AutoSize = True
         Me.lblMontoTotalCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMontoTotalCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblMontoTotalCompEfec.Location = New System.Drawing.Point(279, 298)
+        Me.lblMontoTotalCompEfec.Location = New System.Drawing.Point(372, 367)
+        Me.lblMontoTotalCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblMontoTotalCompEfec.Name = "lblMontoTotalCompEfec"
-        Me.lblMontoTotalCompEfec.Size = New System.Drawing.Size(55, 24)
+        Me.lblMontoTotalCompEfec.Size = New System.Drawing.Size(71, 29)
         Me.lblMontoTotalCompEfec.TabIndex = 10
         Me.lblMontoTotalCompEfec.Text = "00.00"
         '
@@ -393,9 +417,10 @@ Partial Class CierreCaja
         Me.lblVentasTarjeta.AutoSize = True
         Me.lblVentasTarjeta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVentasTarjeta.ForeColor = System.Drawing.Color.White
-        Me.lblVentasTarjeta.Location = New System.Drawing.Point(3, 154)
+        Me.lblVentasTarjeta.Location = New System.Drawing.Point(4, 190)
+        Me.lblVentasTarjeta.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblVentasTarjeta.Name = "lblVentasTarjeta"
-        Me.lblVentasTarjeta.Size = New System.Drawing.Size(162, 20)
+        Me.lblVentasTarjeta.Size = New System.Drawing.Size(200, 25)
         Me.lblVentasTarjeta.TabIndex = 3
         Me.lblVentasTarjeta.Text = "Impuestos de servicio"
         '
@@ -404,9 +429,10 @@ Partial Class CierreCaja
         Me.lblVentasEfectivo.AutoSize = True
         Me.lblVentasEfectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVentasEfectivo.ForeColor = System.Drawing.Color.White
-        Me.lblVentasEfectivo.Location = New System.Drawing.Point(3, 127)
+        Me.lblVentasEfectivo.Location = New System.Drawing.Point(4, 156)
+        Me.lblVentasEfectivo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblVentasEfectivo.Name = "lblVentasEfectivo"
-        Me.lblVentasEfectivo.Size = New System.Drawing.Size(121, 20)
+        Me.lblVentasEfectivo.Size = New System.Drawing.Size(148, 25)
         Me.lblVentasEfectivo.TabIndex = 1
         Me.lblVentasEfectivo.Text = "Ventas Efectivo"
         '
@@ -415,9 +441,10 @@ Partial Class CierreCaja
         Me.lblSubtotalIngresos.AutoSize = True
         Me.lblSubtotalIngresos.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSubtotalIngresos.ForeColor = System.Drawing.Color.White
-        Me.lblSubtotalIngresos.Location = New System.Drawing.Point(10, 298)
+        Me.lblSubtotalIngresos.Location = New System.Drawing.Point(13, 367)
+        Me.lblSubtotalIngresos.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSubtotalIngresos.Name = "lblSubtotalIngresos"
-        Me.lblSubtotalIngresos.Size = New System.Drawing.Size(56, 24)
+        Me.lblSubtotalIngresos.Size = New System.Drawing.Size(74, 29)
         Me.lblSubtotalIngresos.TabIndex = 9
         Me.lblSubtotalIngresos.Text = "Total:"
         '
@@ -425,8 +452,9 @@ Partial Class CierreCaja
         '
         Me.PictureBox8.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
         Me.PictureBox8.Location = New System.Drawing.Point(0, 1)
+        Me.PictureBox8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(350, 44)
+        Me.PictureBox8.Size = New System.Drawing.Size(467, 54)
         Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox8.TabIndex = 19
         Me.PictureBox8.TabStop = False
@@ -462,9 +490,10 @@ Partial Class CierreCaja
         Me.Panel1.Controls.Add(Me.lblCuentasCanceladasCompVtas)
         Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Controls.Add(Me.PictureBox3)
-        Me.Panel1.Location = New System.Drawing.Point(393, 0)
+        Me.Panel1.Location = New System.Drawing.Point(524, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(412, 393)
+        Me.Panel1.Size = New System.Drawing.Size(549, 484)
         Me.Panel1.TabIndex = 22
         '
         'lblBonosCanceladosCampVentas
@@ -473,9 +502,10 @@ Partial Class CierreCaja
         Me.lblBonosCanceladosCampVentas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblBonosCanceladosCampVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblBonosCanceladosCampVentas.ForeColor = System.Drawing.Color.White
-        Me.lblBonosCanceladosCampVentas.Location = New System.Drawing.Point(287, 249)
+        Me.lblBonosCanceladosCampVentas.Location = New System.Drawing.Point(383, 306)
+        Me.lblBonosCanceladosCampVentas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblBonosCanceladosCampVentas.Name = "lblBonosCanceladosCampVentas"
-        Me.lblBonosCanceladosCampVentas.Size = New System.Drawing.Size(49, 20)
+        Me.lblBonosCanceladosCampVentas.Size = New System.Drawing.Size(61, 25)
         Me.lblBonosCanceladosCampVentas.TabIndex = 40
         Me.lblBonosCanceladosCampVentas.Text = "00.00"
         '
@@ -484,9 +514,10 @@ Partial Class CierreCaja
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.White
-        Me.Label22.Location = New System.Drawing.Point(13, 249)
+        Me.Label22.Location = New System.Drawing.Point(17, 306)
+        Me.Label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(55, 20)
+        Me.Label22.Size = New System.Drawing.Size(68, 25)
         Me.Label22.TabIndex = 39
         Me.Label22.Text = "Bonos"
         '
@@ -496,9 +527,10 @@ Partial Class CierreCaja
         Me.lblValesCanceladoCampVentas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblValesCanceladoCampVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblValesCanceladoCampVentas.ForeColor = System.Drawing.Color.White
-        Me.lblValesCanceladoCampVentas.Location = New System.Drawing.Point(287, 223)
+        Me.lblValesCanceladoCampVentas.Location = New System.Drawing.Point(383, 274)
+        Me.lblValesCanceladoCampVentas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblValesCanceladoCampVentas.Name = "lblValesCanceladoCampVentas"
-        Me.lblValesCanceladoCampVentas.Size = New System.Drawing.Size(49, 20)
+        Me.lblValesCanceladoCampVentas.Size = New System.Drawing.Size(61, 25)
         Me.lblValesCanceladoCampVentas.TabIndex = 38
         Me.lblValesCanceladoCampVentas.Text = "00.00"
         '
@@ -507,9 +539,10 @@ Partial Class CierreCaja
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.White
-        Me.Label24.Location = New System.Drawing.Point(13, 223)
+        Me.Label24.Location = New System.Drawing.Point(17, 274)
+        Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(49, 20)
+        Me.Label24.Size = New System.Drawing.Size(62, 25)
         Me.Label24.TabIndex = 37
         Me.Label24.Text = "Vales"
         '
@@ -518,9 +551,10 @@ Partial Class CierreCaja
         Me.lblDiferenciaCompVtas.AutoSize = True
         Me.lblDiferenciaCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDiferenciaCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblDiferenciaCompVtas.Location = New System.Drawing.Point(289, 361)
+        Me.lblDiferenciaCompVtas.Location = New System.Drawing.Point(385, 444)
+        Me.lblDiferenciaCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDiferenciaCompVtas.Name = "lblDiferenciaCompVtas"
-        Me.lblDiferenciaCompVtas.Size = New System.Drawing.Size(55, 24)
+        Me.lblDiferenciaCompVtas.Size = New System.Drawing.Size(71, 29)
         Me.lblDiferenciaCompVtas.TabIndex = 34
         Me.lblDiferenciaCompVtas.Text = "00.00"
         '
@@ -530,9 +564,10 @@ Partial Class CierreCaja
         Me.lblIntroduccionesCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblIntroduccionesCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIntroduccionesCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblIntroduccionesCompVtas.Location = New System.Drawing.Point(288, 175)
+        Me.lblIntroduccionesCompVtas.Location = New System.Drawing.Point(384, 215)
+        Me.lblIntroduccionesCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblIntroduccionesCompVtas.Name = "lblIntroduccionesCompVtas"
-        Me.lblIntroduccionesCompVtas.Size = New System.Drawing.Size(49, 20)
+        Me.lblIntroduccionesCompVtas.Size = New System.Drawing.Size(61, 25)
         Me.lblIntroduccionesCompVtas.TabIndex = 30
         Me.lblIntroduccionesCompVtas.Text = "00.00"
         '
@@ -541,9 +576,10 @@ Partial Class CierreCaja
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.White
-        Me.Label20.Location = New System.Drawing.Point(21, 361)
+        Me.Label20.Location = New System.Drawing.Point(28, 444)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(99, 24)
+        Me.Label20.Size = New System.Drawing.Size(128, 29)
         Me.Label20.TabIndex = 33
         Me.Label20.Text = "Diferencia:"
         '
@@ -552,9 +588,10 @@ Partial Class CierreCaja
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(10, 175)
+        Me.Label10.Location = New System.Drawing.Point(13, 215)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(114, 20)
+        Me.Label10.Size = New System.Drawing.Size(139, 25)
         Me.Label10.TabIndex = 29
         Me.Label10.Text = "Introducciones"
         '
@@ -564,9 +601,10 @@ Partial Class CierreCaja
         Me.lblImpServCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblImpServCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblImpServCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblImpServCompVtas.Location = New System.Drawing.Point(288, 125)
+        Me.lblImpServCompVtas.Location = New System.Drawing.Point(384, 154)
+        Me.lblImpServCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblImpServCompVtas.Name = "lblImpServCompVtas"
-        Me.lblImpServCompVtas.Size = New System.Drawing.Size(49, 20)
+        Me.lblImpServCompVtas.Size = New System.Drawing.Size(61, 25)
         Me.lblImpServCompVtas.TabIndex = 27
         Me.lblImpServCompVtas.Text = "00.00"
         '
@@ -575,9 +613,10 @@ Partial Class CierreCaja
         Me.lblTotalVtasSistCompVtas.AutoSize = True
         Me.lblTotalVtasSistCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalVtasSistCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblTotalVtasSistCompVtas.Location = New System.Drawing.Point(289, 336)
+        Me.lblTotalVtasSistCompVtas.Location = New System.Drawing.Point(385, 414)
+        Me.lblTotalVtasSistCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTotalVtasSistCompVtas.Name = "lblTotalVtasSistCompVtas"
-        Me.lblTotalVtasSistCompVtas.Size = New System.Drawing.Size(55, 24)
+        Me.lblTotalVtasSistCompVtas.Size = New System.Drawing.Size(71, 29)
         Me.lblTotalVtasSistCompVtas.TabIndex = 32
         Me.lblTotalVtasSistCompVtas.Text = "00.00"
         '
@@ -586,9 +625,10 @@ Partial Class CierreCaja
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.White
-        Me.Label16.Location = New System.Drawing.Point(12, 125)
+        Me.Label16.Location = New System.Drawing.Point(16, 154)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(154, 20)
+        Me.Label16.Size = New System.Drawing.Size(190, 25)
         Me.Label16.TabIndex = 28
         Me.Label16.Text = "Impuesto de servicio"
         '
@@ -598,9 +638,10 @@ Partial Class CierreCaja
         Me.lblFondoInicialCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblFondoInicialCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFondoInicialCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblFondoInicialCompVtas.Location = New System.Drawing.Point(289, 53)
+        Me.lblFondoInicialCompVtas.Location = New System.Drawing.Point(385, 65)
+        Me.lblFondoInicialCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblFondoInicialCompVtas.Name = "lblFondoInicialCompVtas"
-        Me.lblFondoInicialCompVtas.Size = New System.Drawing.Size(49, 20)
+        Me.lblFondoInicialCompVtas.Size = New System.Drawing.Size(61, 25)
         Me.lblFondoInicialCompVtas.TabIndex = 26
         Me.lblFondoInicialCompVtas.Text = "00.00"
         '
@@ -609,9 +650,10 @@ Partial Class CierreCaja
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.Location = New System.Drawing.Point(21, 336)
+        Me.Label18.Location = New System.Drawing.Point(28, 414)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(149, 24)
+        Me.Label18.Size = New System.Drawing.Size(191, 29)
         Me.Label18.TabIndex = 31
         Me.Label18.Text = "Ventas Sistema: "
         '
@@ -620,9 +662,10 @@ Partial Class CierreCaja
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(10, 53)
+        Me.Label13.Location = New System.Drawing.Point(13, 65)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(101, 20)
+        Me.Label13.Size = New System.Drawing.Size(126, 25)
         Me.Label13.TabIndex = 25
         Me.Label13.Text = "Fondo inicial "
         '
@@ -631,9 +674,10 @@ Partial Class CierreCaja
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(12, 100)
+        Me.Label5.Location = New System.Drawing.Point(16, 123)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(131, 20)
+        Me.Label5.Size = New System.Drawing.Size(159, 25)
         Me.Label5.TabIndex = 22
         Me.Label5.Text = "Impuesto Ventas"
         '
@@ -642,9 +686,10 @@ Partial Class CierreCaja
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(21, 311)
+        Me.Label15.Location = New System.Drawing.Point(28, 383)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(124, 24)
+        Me.Label15.Size = New System.Drawing.Size(159, 29)
         Me.Label15.TabIndex = 9
         Me.Label15.Text = "Total Ventas: "
         '
@@ -654,9 +699,10 @@ Partial Class CierreCaja
         Me.lblImpVtasCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblImpVtasCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblImpVtasCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblImpVtasCompVtas.Location = New System.Drawing.Point(289, 100)
+        Me.lblImpVtasCompVtas.Location = New System.Drawing.Point(385, 123)
+        Me.lblImpVtasCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblImpVtasCompVtas.Name = "lblImpVtasCompVtas"
-        Me.lblImpVtasCompVtas.Size = New System.Drawing.Size(49, 20)
+        Me.lblImpVtasCompVtas.Size = New System.Drawing.Size(61, 25)
         Me.lblImpVtasCompVtas.TabIndex = 21
         Me.lblImpVtasCompVtas.Text = "00.00"
         '
@@ -665,9 +711,10 @@ Partial Class CierreCaja
         Me.lblTotalVentasCompVtas.AutoSize = True
         Me.lblTotalVentasCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalVentasCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblTotalVentasCompVtas.Location = New System.Drawing.Point(289, 311)
+        Me.lblTotalVentasCompVtas.Location = New System.Drawing.Point(385, 383)
+        Me.lblTotalVentasCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTotalVentasCompVtas.Name = "lblTotalVentasCompVtas"
-        Me.lblTotalVentasCompVtas.Size = New System.Drawing.Size(55, 24)
+        Me.lblTotalVentasCompVtas.Size = New System.Drawing.Size(71, 29)
         Me.lblTotalVentasCompVtas.TabIndex = 10
         Me.lblTotalVentasCompVtas.Text = "00.00"
         '
@@ -676,9 +723,10 @@ Partial Class CierreCaja
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(10, 199)
+        Me.Label4.Location = New System.Drawing.Point(13, 245)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(207, 20)
+        Me.Label4.Size = New System.Drawing.Size(259, 25)
         Me.Label4.TabIndex = 20
         Me.Label4.Text = "Cuentas canceladas + vales"
         '
@@ -686,9 +734,10 @@ Partial Class CierreCaja
         '
         Me.PictureBox2.BackgroundImage = Global.SunChangSystem.My.Resources.Resources.separador
         Me.PictureBox2.Image = Global.SunChangSystem.My.Resources.Resources.separador
-        Me.PictureBox2.Location = New System.Drawing.Point(12, 302)
+        Me.PictureBox2.Location = New System.Drawing.Point(16, 372)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(350, 4)
+        Me.PictureBox2.Size = New System.Drawing.Size(467, 5)
         Me.PictureBox2.TabIndex = 18
         Me.PictureBox2.TabStop = False
         '
@@ -698,9 +747,10 @@ Partial Class CierreCaja
         Me.lblFondoFinalCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblFondoFinalCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFondoFinalCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblFondoFinalCompVtas.Location = New System.Drawing.Point(287, 276)
+        Me.lblFondoFinalCompVtas.Location = New System.Drawing.Point(383, 340)
+        Me.lblFondoFinalCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblFondoFinalCompVtas.Name = "lblFondoFinalCompVtas"
-        Me.lblFondoFinalCompVtas.Size = New System.Drawing.Size(49, 20)
+        Me.lblFondoFinalCompVtas.Size = New System.Drawing.Size(61, 25)
         Me.lblFondoFinalCompVtas.TabIndex = 16
         Me.lblFondoFinalCompVtas.Text = "00.00"
         '
@@ -710,9 +760,10 @@ Partial Class CierreCaja
         Me.Label6.BackColor = System.Drawing.Color.FromArgb(CType(CType(79, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(9, Byte), Integer))
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(12, 12)
+        Me.Label6.Location = New System.Drawing.Point(16, 15)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(254, 25)
+        Me.Label6.Size = New System.Drawing.Size(319, 31)
         Me.Label6.TabIndex = 17
         Me.Label6.Text = "Comprobación de Ventas"
         '
@@ -722,9 +773,10 @@ Partial Class CierreCaja
         Me.lblVentasCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblVentasCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVentasCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblVentasCompVtas.Location = New System.Drawing.Point(289, 77)
+        Me.lblVentasCompVtas.Location = New System.Drawing.Point(385, 95)
+        Me.lblVentasCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblVentasCompVtas.Name = "lblVentasCompVtas"
-        Me.lblVentasCompVtas.Size = New System.Drawing.Size(49, 20)
+        Me.lblVentasCompVtas.Size = New System.Drawing.Size(61, 25)
         Me.lblVentasCompVtas.TabIndex = 6
         Me.lblVentasCompVtas.Text = "00.00"
         '
@@ -733,9 +785,10 @@ Partial Class CierreCaja
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(13, 150)
+        Me.Label8.Location = New System.Drawing.Point(17, 185)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(66, 20)
+        Me.Label8.Size = New System.Drawing.Size(83, 25)
         Me.Label8.TabIndex = 5
         Me.Label8.Text = "Express"
         '
@@ -744,9 +797,10 @@ Partial Class CierreCaja
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(13, 276)
+        Me.Label9.Location = New System.Drawing.Point(17, 340)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(132, 20)
+        Me.Label9.Size = New System.Drawing.Size(164, 25)
         Me.Label9.TabIndex = 7
         Me.Label9.Text = "Fondo Final Total"
         '
@@ -756,9 +810,10 @@ Partial Class CierreCaja
         Me.lblExpresCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblExpresCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblExpresCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblExpresCompVtas.Location = New System.Drawing.Point(288, 150)
+        Me.lblExpresCompVtas.Location = New System.Drawing.Point(384, 185)
+        Me.lblExpresCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblExpresCompVtas.Name = "lblExpresCompVtas"
-        Me.lblExpresCompVtas.Size = New System.Drawing.Size(49, 20)
+        Me.lblExpresCompVtas.Size = New System.Drawing.Size(61, 25)
         Me.lblExpresCompVtas.TabIndex = 2
         Me.lblExpresCompVtas.Text = "00.00"
         '
@@ -768,9 +823,10 @@ Partial Class CierreCaja
         Me.lblCuentasCanceladasCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblCuentasCanceladasCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCuentasCanceladasCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblCuentasCanceladasCompVtas.Location = New System.Drawing.Point(288, 199)
+        Me.lblCuentasCanceladasCompVtas.Location = New System.Drawing.Point(384, 245)
+        Me.lblCuentasCanceladasCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCuentasCanceladasCompVtas.Name = "lblCuentasCanceladasCompVtas"
-        Me.lblCuentasCanceladasCompVtas.Size = New System.Drawing.Size(49, 20)
+        Me.lblCuentasCanceladasCompVtas.Size = New System.Drawing.Size(61, 25)
         Me.lblCuentasCanceladasCompVtas.TabIndex = 4
         Me.lblCuentasCanceladasCompVtas.Text = "00.00"
         '
@@ -779,9 +835,10 @@ Partial Class CierreCaja
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(10, 77)
+        Me.Label14.Location = New System.Drawing.Point(13, 95)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(113, 20)
+        Me.Label14.Size = New System.Drawing.Size(140, 25)
         Me.Label14.TabIndex = 1
         Me.Label14.Text = "Ventas Tarjeta"
         '
@@ -789,42 +846,46 @@ Partial Class CierreCaja
         '
         Me.PictureBox3.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
         Me.PictureBox3.Location = New System.Drawing.Point(1, 1)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(350, 44)
+        Me.PictureBox3.Size = New System.Drawing.Size(467, 54)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 19
         Me.PictureBox3.TabStop = False
         '
         'btnPrint
         '
-        Me.btnPrint.Location = New System.Drawing.Point(405, 411)
+        Me.btnPrint.Location = New System.Drawing.Point(540, 506)
+        Me.btnPrint.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnPrint.Name = "btnPrint"
-        Me.btnPrint.Size = New System.Drawing.Size(75, 23)
+        Me.btnPrint.Size = New System.Drawing.Size(100, 28)
         Me.btnPrint.TabIndex = 35
         Me.btnPrint.Text = "Imprimir"
         Me.btnPrint.UseVisualStyleBackColor = True
         '
         'btnModificar
         '
-        Me.btnModificar.Location = New System.Drawing.Point(287, 411)
+        Me.btnModificar.Location = New System.Drawing.Point(383, 506)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnModificar.Name = "btnModificar"
-        Me.btnModificar.Size = New System.Drawing.Size(75, 23)
+        Me.btnModificar.Size = New System.Drawing.Size(100, 28)
         Me.btnModificar.TabIndex = 23
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
         'CierreCaja
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(808, 450)
+        Me.ClientSize = New System.Drawing.Size(1077, 554)
         Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.btnModificar)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.Name = "CierreCaja"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

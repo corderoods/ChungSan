@@ -82,8 +82,8 @@ Partial Class Facturacion
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.btnUber = New System.Windows.Forms.Button()
+        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.btnAgregarPago = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.pnlEfectivo = New System.Windows.Forms.Panel()
@@ -102,6 +102,9 @@ Partial Class Facturacion
         Me.lblTotalPagos = New System.Windows.Forms.Label()
         Me.Label48 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.pnlUber = New System.Windows.Forms.Panel()
+        Me.txtUber = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnTarjeta = New System.Windows.Forms.Button()
         Me.btnEfectivo = New System.Windows.Forms.Button()
         Me.Label27 = New System.Windows.Forms.Label()
@@ -110,7 +113,6 @@ Partial Class Facturacion
         Me.Label34 = New System.Windows.Forms.Label()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
-        Me.lblUber = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.pnlFactura.SuspendLayout()
         Me.Panel5.SuspendLayout()
@@ -127,6 +129,7 @@ Partial Class Facturacion
         Me.pnlEfectivo.SuspendLayout()
         Me.pnlTarjeta.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.pnlUber.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -142,7 +145,7 @@ Partial Class Facturacion
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(548, 897)
+        Me.Panel1.Size = New System.Drawing.Size(548, 975)
         Me.Panel1.TabIndex = 0
         '
         'Label53
@@ -256,7 +259,7 @@ Partial Class Facturacion
         Me.pnlFactura.Location = New System.Drawing.Point(548, 0)
         Me.pnlFactura.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlFactura.Name = "pnlFactura"
-        Me.pnlFactura.Size = New System.Drawing.Size(664, 897)
+        Me.pnlFactura.Size = New System.Drawing.Size(664, 975)
         Me.pnlFactura.TabIndex = 1
         '
         'cbProforma
@@ -306,7 +309,7 @@ Partial Class Facturacion
         Me.Panel5.Controls.Add(Me.Panel8)
         Me.Panel5.Controls.Add(Me.Panel6)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel5.Location = New System.Drawing.Point(0, 662)
+        Me.Panel5.Location = New System.Drawing.Point(0, 740)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(664, 235)
@@ -831,6 +834,7 @@ Partial Class Facturacion
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.pnlUber)
         Me.Panel3.Controls.Add(Me.Panel7)
         Me.Panel3.Controls.Add(Me.Panel2)
         Me.Panel3.Controls.Add(Me.Label23)
@@ -848,11 +852,22 @@ Partial Class Facturacion
         Me.Panel3.Location = New System.Drawing.Point(1212, 0)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(763, 897)
+        Me.Panel3.Size = New System.Drawing.Size(763, 975)
         Me.Panel3.TabIndex = 2
+        '
+        'btnUber
+        '
+        Me.btnUber.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnUber.Image = Global.SunChangSystem.My.Resources.Resources.uberEats1
+        Me.btnUber.Location = New System.Drawing.Point(359, 15)
+        Me.btnUber.Name = "btnUber"
+        Me.btnUber.Size = New System.Drawing.Size(213, 40)
+        Me.btnUber.TabIndex = 10
+        Me.btnUber.UseVisualStyleBackColor = False
         '
         'Panel7
         '
+        Me.Panel7.AutoSize = True
         Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Panel7.Controls.Add(Me.btnUber)
         Me.Panel7.Controls.Add(Me.btnAgregarPago)
@@ -861,18 +876,8 @@ Partial Class Facturacion
         Me.Panel7.Location = New System.Drawing.Point(0, 254)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(763, 79)
+        Me.Panel7.Size = New System.Drawing.Size(763, 72)
         Me.Panel7.TabIndex = 15
-        '
-        'btnUber
-        '
-        Me.btnUber.BackColor = System.Drawing.Color.Gainsboro
-        Me.btnUber.Image = Global.SunChangSystem.My.Resources.Resources.uberEats1
-        Me.btnUber.Location = New System.Drawing.Point(359, 18)
-        Me.btnUber.Name = "btnUber"
-        Me.btnUber.Size = New System.Drawing.Size(221, 48)
-        Me.btnUber.TabIndex = 10
-        Me.btnUber.UseVisualStyleBackColor = False
         '
         'btnAgregarPago
         '
@@ -887,7 +892,7 @@ Partial Class Facturacion
         Me.btnAgregarPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregarPago.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnAgregarPago.Image = Global.SunChangSystem.My.Resources.Resources.btnAgregarPago1
-        Me.btnAgregarPago.Location = New System.Drawing.Point(37, 8)
+        Me.btnAgregarPago.Location = New System.Drawing.Point(35, 8)
         Me.btnAgregarPago.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAgregarPago.Name = "btnAgregarPago"
         Me.btnAgregarPago.Size = New System.Drawing.Size(212, 60)
@@ -913,7 +918,7 @@ Partial Class Facturacion
         Me.pnlEfectivo.Controls.Add(Me.txtEfectivo)
         Me.pnlEfectivo.Controls.Add(Me.Label29)
         Me.pnlEfectivo.Dock = System.Windows.Forms.DockStyle.Left
-        Me.pnlEfectivo.Location = New System.Drawing.Point(547, 0)
+        Me.pnlEfectivo.Location = New System.Drawing.Point(544, 0)
         Me.pnlEfectivo.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlEfectivo.Name = "pnlEfectivo"
         Me.pnlEfectivo.Size = New System.Drawing.Size(763, 124)
@@ -964,14 +969,13 @@ Partial Class Facturacion
         '
         'pnlTarjeta
         '
-        Me.pnlTarjeta.Controls.Add(Me.lblUber)
         Me.pnlTarjeta.Controls.Add(Me.txtTarjeta)
         Me.pnlTarjeta.Controls.Add(Me.Label28)
         Me.pnlTarjeta.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnlTarjeta.Location = New System.Drawing.Point(0, 0)
         Me.pnlTarjeta.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlTarjeta.Name = "pnlTarjeta"
-        Me.pnlTarjeta.Size = New System.Drawing.Size(547, 124)
+        Me.pnlTarjeta.Size = New System.Drawing.Size(544, 124)
         Me.pnlTarjeta.TabIndex = 13
         Me.pnlTarjeta.Visible = False
         '
@@ -1001,7 +1005,7 @@ Partial Class Facturacion
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.ForeColor = System.Drawing.Color.White
-        Me.Label23.Location = New System.Drawing.Point(228, 369)
+        Me.Label23.Location = New System.Drawing.Point(225, 449)
         Me.Label23.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(60, 20)
@@ -1011,7 +1015,7 @@ Partial Class Facturacion
         'pnlPagos
         '
         Me.pnlPagos.AutoScroll = True
-        Me.pnlPagos.Location = New System.Drawing.Point(37, 398)
+        Me.pnlPagos.Location = New System.Drawing.Point(35, 486)
         Me.pnlPagos.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlPagos.Name = "pnlPagos"
         Me.pnlPagos.Size = New System.Drawing.Size(537, 257)
@@ -1029,7 +1033,7 @@ Partial Class Facturacion
         Me.btnConfirmar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnConfirmar.Image = Global.SunChangSystem.My.Resources.Resources.btnConfirmar1
-        Me.btnConfirmar.Location = New System.Drawing.Point(196, 788)
+        Me.btnConfirmar.Location = New System.Drawing.Point(202, 846)
         Me.btnConfirmar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnConfirmar.Name = "btnConfirmar"
         Me.btnConfirmar.Size = New System.Drawing.Size(215, 63)
@@ -1040,7 +1044,7 @@ Partial Class Facturacion
         '
         Me.lblSaldoFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSaldoFactura.ForeColor = System.Drawing.Color.White
-        Me.lblSaldoFactura.Location = New System.Drawing.Point(419, 705)
+        Me.lblSaldoFactura.Location = New System.Drawing.Point(416, 794)
         Me.lblSaldoFactura.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSaldoFactura.Name = "lblSaldoFactura"
         Me.lblSaldoFactura.Size = New System.Drawing.Size(156, 30)
@@ -1053,7 +1057,7 @@ Partial Class Facturacion
         Me.Label50.AutoSize = True
         Me.Label50.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label50.ForeColor = System.Drawing.Color.White
-        Me.Label50.Location = New System.Drawing.Point(157, 705)
+        Me.Label50.Location = New System.Drawing.Point(163, 794)
         Me.Label50.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label50.Name = "Label50"
         Me.Label50.Size = New System.Drawing.Size(210, 29)
@@ -1064,7 +1068,7 @@ Partial Class Facturacion
         '
         Me.lblTotalPagos.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalPagos.ForeColor = System.Drawing.Color.White
-        Me.lblTotalPagos.Location = New System.Drawing.Point(419, 658)
+        Me.lblTotalPagos.Location = New System.Drawing.Point(416, 747)
         Me.lblTotalPagos.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTotalPagos.Name = "lblTotalPagos"
         Me.lblTotalPagos.Size = New System.Drawing.Size(156, 30)
@@ -1077,7 +1081,7 @@ Partial Class Facturacion
         Me.Label48.AutoSize = True
         Me.Label48.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label48.ForeColor = System.Drawing.Color.White
-        Me.Label48.Location = New System.Drawing.Point(293, 658)
+        Me.Label48.Location = New System.Drawing.Point(293, 747)
         Me.Label48.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label48.Name = "Label48"
         Me.Label48.Size = New System.Drawing.Size(80, 29)
@@ -1096,6 +1100,36 @@ Partial Class Facturacion
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(763, 130)
         Me.Panel4.TabIndex = 12
+        '
+        'pnlUber
+        '
+        Me.pnlUber.Controls.Add(Me.txtUber)
+        Me.pnlUber.Controls.Add(Me.Label2)
+        Me.pnlUber.Location = New System.Drawing.Point(25, 351)
+        Me.pnlUber.Name = "pnlUber"
+        Me.pnlUber.Size = New System.Drawing.Size(578, 52)
+        Me.pnlUber.TabIndex = 2
+        Me.pnlUber.Visible = False
+        '
+        'txtUber
+        '
+        Me.txtUber.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.txtUber.Location = New System.Drawing.Point(289, 2)
+        Me.txtUber.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtUber.Name = "txtUber"
+        Me.txtUber.Size = New System.Drawing.Size(232, 34)
+        Me.txtUber.TabIndex = 1
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label2.Location = New System.Drawing.Point(28, 2)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(182, 29)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Pago Uber Eats"
         '
         'btnTarjeta
         '
@@ -1144,7 +1178,7 @@ Partial Class Facturacion
         Me.Label32.AutoSize = True
         Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label32.ForeColor = System.Drawing.Color.White
-        Me.Label32.Location = New System.Drawing.Point(43, 369)
+        Me.Label32.Location = New System.Drawing.Point(42, 449)
         Me.Label32.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(51, 20)
@@ -1156,7 +1190,7 @@ Partial Class Facturacion
         Me.Label33.AutoSize = True
         Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label33.ForeColor = System.Drawing.Color.White
-        Me.Label33.Location = New System.Drawing.Point(127, 369)
+        Me.Label33.Location = New System.Drawing.Point(120, 449)
         Me.Label33.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(59, 20)
@@ -1168,7 +1202,7 @@ Partial Class Facturacion
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label34.ForeColor = System.Drawing.Color.White
-        Me.Label34.Location = New System.Drawing.Point(355, 369)
+        Me.Label34.Location = New System.Drawing.Point(355, 449)
         Me.Label34.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(62, 20)
@@ -1179,23 +1213,12 @@ Partial Class Facturacion
         '
         Me.PrintDialog1.UseEXDialog = True
         '
-        'lblUber
-        '
-        Me.lblUber.AutoSize = True
-        Me.lblUber.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.lblUber.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblUber.Location = New System.Drawing.Point(182, 46)
-        Me.lblUber.Name = "lblUber"
-        Me.lblUber.Size = New System.Drawing.Size(203, 20)
-        Me.lblUber.TabIndex = 2
-        Me.lblUber.Text = "Recibo de UBER EATS"
-        '
         'Facturacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1803, 897)
+        Me.ClientSize = New System.Drawing.Size(1803, 975)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.pnlFactura)
         Me.Controls.Add(Me.Panel1)
@@ -1231,11 +1254,11 @@ Partial Class Facturacion
         Me.pnlTarjeta.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
+        Me.pnlUber.ResumeLayout(False)
+        Me.pnlUber.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents pnlFactura As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents lblNumMesa As Label
@@ -1303,7 +1326,6 @@ Partial Class Facturacion
     Friend WithEvents Label24 As Label
     Friend WithEvents btnTarjeta As Button
     Friend WithEvents btnEfectivo As Button
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents txtDescuento As TextBox
     Friend WithEvents txtExpress As TextBox
     Friend WithEvents lblExpress As Label
@@ -1327,5 +1349,9 @@ Partial Class Facturacion
     Friend WithEvents lblSubtotalDesc As Label
     Friend WithEvents Label25 As Label
     Friend WithEvents btnUber As Button
-    Friend WithEvents lblUber As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents pnlUber As Panel
+    Friend WithEvents txtUber As TextBox
+    Friend WithEvents Label2 As Label
 End Class
