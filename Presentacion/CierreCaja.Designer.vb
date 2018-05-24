@@ -37,7 +37,6 @@ Partial Class CierreCaja
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lblCuentasCanceladasCompEfec = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblFondoInicialCompEfec = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblExpressCompEfec = New System.Windows.Forms.Label()
@@ -49,7 +48,6 @@ Partial Class CierreCaja
         Me.lblVentasTarjeta = New System.Windows.Forms.Label()
         Me.lblVentasEfectivo = New System.Windows.Forms.Label()
         Me.lblSubtotalIngresos = New System.Windows.Forms.Label()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblBonosCanceladosCampVentas = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
@@ -70,7 +68,6 @@ Partial Class CierreCaja
         Me.lblImpVtasCompVtas = New System.Windows.Forms.Label()
         Me.lblTotalVentasCompVtas = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.lblFondoFinalCompVtas = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.lblVentasCompVtas = New System.Windows.Forms.Label()
@@ -79,15 +76,18 @@ Partial Class CierreCaja
         Me.lblExpresCompVtas = New System.Windows.Forms.Label()
         Me.lblCuentasCanceladasCompVtas = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Panel3.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel3
@@ -120,7 +120,7 @@ Partial Class CierreCaja
         Me.Panel3.Controls.Add(Me.lblSubtotalIngresos)
         Me.Panel3.Controls.Add(Me.PictureBox8)
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(504, 484)
         Me.Panel3.TabIndex = 21
@@ -300,17 +300,6 @@ Partial Class CierreCaja
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Cuentas canceladas"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImage = Global.SunChangSystem.My.Resources.Resources.separador
-        Me.PictureBox1.Image = Global.SunChangSystem.My.Resources.Resources.separador
-        Me.PictureBox1.Location = New System.Drawing.Point(7, 356)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(467, 5)
-        Me.PictureBox1.TabIndex = 18
-        Me.PictureBox1.TabStop = False
-        '
         'lblFondoInicialCompEfec
         '
         Me.lblFondoInicialCompEfec.AutoSize = True
@@ -448,17 +437,6 @@ Partial Class CierreCaja
         Me.lblSubtotalIngresos.TabIndex = 9
         Me.lblSubtotalIngresos.Text = "Total:"
         '
-        'PictureBox8
-        '
-        Me.PictureBox8.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.PictureBox8.Location = New System.Drawing.Point(0, 1)
-        Me.PictureBox8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(467, 54)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox8.TabIndex = 19
-        Me.PictureBox8.TabStop = False
-        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.lblBonosCanceladosCampVentas)
@@ -491,7 +469,7 @@ Partial Class CierreCaja
         Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Controls.Add(Me.PictureBox3)
         Me.Panel1.Location = New System.Drawing.Point(524, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(549, 484)
         Me.Panel1.TabIndex = 22
@@ -542,9 +520,9 @@ Partial Class CierreCaja
         Me.Label24.Location = New System.Drawing.Point(17, 274)
         Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(62, 25)
+        Me.Label24.Size = New System.Drawing.Size(98, 25)
         Me.Label24.TabIndex = 37
-        Me.Label24.Text = "Vales"
+        Me.Label24.Text = "Uber Eats"
         '
         'lblDiferenciaCompVtas
         '
@@ -730,17 +708,6 @@ Partial Class CierreCaja
         Me.Label4.TabIndex = 20
         Me.Label4.Text = "Cuentas canceladas + vales"
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackgroundImage = Global.SunChangSystem.My.Resources.Resources.separador
-        Me.PictureBox2.Image = Global.SunChangSystem.My.Resources.Resources.separador
-        Me.PictureBox2.Location = New System.Drawing.Point(16, 372)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(467, 5)
-        Me.PictureBox2.TabIndex = 18
-        Me.PictureBox2.TabStop = False
-        '
         'lblFondoFinalCompVtas
         '
         Me.lblFondoFinalCompVtas.AutoSize = True
@@ -842,21 +809,10 @@ Partial Class CierreCaja
         Me.Label14.TabIndex = 1
         Me.Label14.Text = "Ventas Tarjeta"
         '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.PictureBox3.Location = New System.Drawing.Point(1, 1)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(467, 54)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 19
-        Me.PictureBox3.TabStop = False
-        '
         'btnPrint
         '
         Me.btnPrint.Location = New System.Drawing.Point(540, 506)
-        Me.btnPrint.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnPrint.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(100, 28)
         Me.btnPrint.TabIndex = 35
@@ -866,12 +822,56 @@ Partial Class CierreCaja
         'btnModificar
         '
         Me.btnModificar.Location = New System.Drawing.Point(383, 506)
-        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(100, 28)
         Me.btnModificar.TabIndex = 23
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackgroundImage = Global.SunChangSystem.My.Resources.Resources.separador
+        Me.PictureBox2.Image = Global.SunChangSystem.My.Resources.Resources.separador
+        Me.PictureBox2.Location = New System.Drawing.Point(16, 372)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(467, 5)
+        Me.PictureBox2.TabIndex = 18
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
+        Me.PictureBox3.Location = New System.Drawing.Point(1, 1)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(467, 54)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 19
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.SunChangSystem.My.Resources.Resources.separador
+        Me.PictureBox1.Image = Global.SunChangSystem.My.Resources.Resources.separador
+        Me.PictureBox1.Location = New System.Drawing.Point(7, 356)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(467, 5)
+        Me.PictureBox1.TabIndex = 18
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
+        Me.PictureBox8.Location = New System.Drawing.Point(0, 1)
+        Me.PictureBox8.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(467, 54)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 19
+        Me.PictureBox8.TabStop = False
         '
         'CierreCaja
         '
@@ -885,19 +885,19 @@ Partial Class CierreCaja
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.btnModificar)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "CierreCaja"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cierre de Caja"
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

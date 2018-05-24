@@ -156,7 +156,7 @@
     End Sub
 
     Public Sub reporteVales()
-        movimiento_caja.obtenerReporteVales(InicioSesion.session.EmpleadoSG.Cod_usuarioSG, InicioSesion.session.Hora_primer_ingresoSG)
+        movimiento_caja.obtenerIngresosDeUberEats(InicioSesion.session.EmpleadoSG.Cod_usuarioSG, InicioSesion.session.Hora_primer_ingresoSG)
         Try
             Dim reporte_vales As New Reporte_Vales
             Dim reporte As New Reportes

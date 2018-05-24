@@ -1786,4 +1786,56 @@ Public Class MovimientoCajaDatos
         conexionDB.cerrarConexion()
 
     End Sub
+
+    'Este metodo devuelve los totales de UBER eats
+    Public Function obtenerIngresosDeUberEats(ByVal cod_usuario As String, ByVal fecha_inicio As String) As Double
+        ' se llama al metodo que abre la conexion con la base de datos
+        conexion = conexionDB.abrirConexion()
+
+        ' donde se almacenan los datos de la consulta
+        Dim lector As SqlDataReader
+
+        ' se asigna el tipo de consulta que es. Si es para llamara a procedimineto almacenado o consulta por string
+        cmd.CommandType = CommandType.StoredProcedure
+        cmd.CommandText = "FAC.sp_consulta_UberEats"
+        ' se le asigna la conexion al sqlCommand
+        cmd.Connection = conexion
+
+        ' se asignan los parametros a enviar en el procedimiento almacenado
+        With cmd.Parameters
+            .AddWithValue("@cod_usuario", cod_usuario)
+            .AddWithValue("@fecha_inicio", fecha_inicio)
+            .AddWithValue("@fecha_fin", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+        End With
+
+        Try
+            ' ejecuta la consulta a la base
+            lector = cmd.ExecuteReader
+            ' se obtiene el valor que retorna el procedimiento
+            If lector.HasRows Then
+                ' se recorre hasta obtener todos los registros necesarios
+                While lector.Read
+                    ' se limpian los parametros
+                    cmd.Parameters.Clear()
+                    ' retorna el monto
+                    Return Double.Parse(lector(0).ToString())
+                End While
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            ' limpia los parametros del comando
+            cmd.Parameters.Clear()
+            'cierra la conexion
+            conexionDB.cerrarConexion()
+            Return 0
+        End Try
+        ' limpia los parametros del comando
+        cmd.Parameters.Clear()
+        'cierra la conexion
+        conexionDB.cerrarConexion()
+
+        Return 0
+    End Function
+
+
 End Class
