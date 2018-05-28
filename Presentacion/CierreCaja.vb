@@ -61,8 +61,7 @@ Public Class CierreCaja
         'lblBonosTotalesEfectivo.Text = bonos.ToString("C")
 
 
-        monto_total_efectivo = ((fondoInicial + introducciones + expressEfectivo + ventasEfectivo) -
-                                (impuestosServicioEfectivo + pagosFacturas + salidasEfectivo + impuestoVentasEfectivo))
+        monto_total_efectivo = ((fondoInicial + introducciones + expressEfectivo + ventasEfectivo) - (impuestosServicioEfectivo + pagosFacturas + salidasEfectivo + impuestoVentasEfectivo))
         diferencia = fondoFinal - monto_total_efectivo
         lblDiferenciaCompEfec.Text = (diferencia).ToString("C")
 
@@ -284,10 +283,6 @@ Public Class CierreCaja
             pvisualizar.Value = salidasEfectivo.ToString("C")
             parametro.Add(pvisualizar)
             factura.DataDefinition.ParameterFields("@salidas").ApplyCurrentValues(parametro)
-
-            pvisualizar.Value = vales.ToString("C")
-            parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@vales").ApplyCurrentValues(parametro)
 
 
             pvisualizar.Value = monto_total_efectivo.ToString("C")

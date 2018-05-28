@@ -1795,7 +1795,7 @@ Public Class MovimientoCajaDatos
             conexion = conexionDB.abrirConexion()
             ' se asigna el tipo de consulta que es. Si es para llamara a procedimineto almacenado o consulta por string
             cmd.CommandType = CommandType.StoredProcedure
-            cmd.CommandText = "sp_consulta_reporte_Uber_Eats"
+            cmd.CommandText = "FAC.sp_consulta_reporte_Uber_Eats"
             ' se le asigna la conexion al sqlCommand
             cmd.Connection = conexion
             ' se agregan los parametros
@@ -1806,7 +1806,8 @@ Public Class MovimientoCajaDatos
             End With
 
             ' llama al metodo para crear el xml
-            crearXML(tablas, "C:\XML\ventasExpress.xml", "ventasExpress", cmd)
+            crearXML(tablas, "C:\XML\uberEats.xml", "uberEats", cmd)
+
 
         Catch ex As Exception
             ' limpia los pararmetros

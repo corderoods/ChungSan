@@ -10,6 +10,8 @@ Public Class NuevaOrden
     Dim clientes As New List(Of Cliente)
 
     Dim clienteActivo As New Cliente
+    Public EsUber As Boolean = False
+
 
     Dim mesa As Integer = 0
     Dim contado As Integer = 0
@@ -174,8 +176,11 @@ Public Class NuevaOrden
             If txtNombre.Text.Trim.Length = 0 Then
                 mensaje.lblMensaje.Text = "Debe ingresar el nombre"
                 mensaje.ShowDialog()
+
             Else
-                insertarUber()
+                Me.EsUber = True
+                insertarUber(Me.EsUber)
+
             End If 'llevar
 
 
@@ -187,7 +192,7 @@ Public Class NuevaOrden
         ordenDatos.insertarOrden(S.Name, cbxSalonero.SelectedValue, mesa,
                                  InicioSesion.session.EmpleadoSG.Cod_empleadoSG,
                                  clienteActivo.CodClienteSG, txtDireccion.Text, txtTelefono.Text, txtNombre.Text)
-        ordenes1.mostrarOrdenes(1)
+        ordenes1.mostrarOrdenes(1, EsUber)
         Me.Close()
     End Sub
 
@@ -196,7 +201,7 @@ Public Class NuevaOrden
         ordenDatos.insertarOrden(S.Name, cbxSalonero.SelectedValue, mesa,
                                  InicioSesion.session.EmpleadoSG.Cod_empleadoSG,
                                  clienteActivo.CodClienteSG, txtDireccion.Text, txtTelefono.Text, clienteActivo.NombreClienteSG)
-        ordenes1.mostrarOrdenes(1)
+        ordenes1.mostrarOrdenes(1, EsUber)
         Me.Close()
 
     End Sub
@@ -205,16 +210,16 @@ Public Class NuevaOrden
         ordenDatos.insertarOrden(S.Name, cbxSalonero.SelectedValue, mesa,
                                  InicioSesion.session.EmpleadoSG.Cod_empleadoSG,
                                  clienteActivo.CodClienteSG, txtDireccion.Text, txtTelefono.Text, txtNombre.Text)
-        ordenes1.mostrarOrdenes(1)
+        ordenes1.mostrarOrdenes(1, EsUber)
         Me.Close()
 
     End Sub
 
-    Public Sub insertarUber()
+    Public Sub insertarUber(EsUber As Boolean)
         ordenDatos.insertarOrden(S.Name, cbxSalonero.SelectedValue, mesa,
                                  InicioSesion.session.EmpleadoSG.Cod_empleadoSG,
                                  clienteActivo.CodClienteSG, txtDireccion.Text, txtTelefono.Text, txtNombre.Text)
-        ordenes1.mostrarOrdenes(1)
+        ordenes1.mostrarOrdenes(1, EsUber)
         Me.Close()
     End Sub
 
@@ -272,6 +277,7 @@ Public Class NuevaOrden
         Me.pnlExpress.Visible = False
         Me.pnlSalon.Visible = True
         Me.lblSalonero.Visible = False
+
         Me.cbxSalonero.Visible = False
         Me.btnMesa.Visible = False
         S.Text = "Uber Eats"

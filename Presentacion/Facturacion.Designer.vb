@@ -82,8 +82,11 @@ Partial Class Facturacion
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.btnUber = New System.Windows.Forms.Button()
+        Me.pnlUber = New System.Windows.Forms.Panel()
+        Me.txtUber = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.btnUber = New System.Windows.Forms.Button()
         Me.btnAgregarPago = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.pnlEfectivo = New System.Windows.Forms.Panel()
@@ -102,9 +105,6 @@ Partial Class Facturacion
         Me.lblTotalPagos = New System.Windows.Forms.Label()
         Me.Label48 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.pnlUber = New System.Windows.Forms.Panel()
-        Me.txtUber = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnTarjeta = New System.Windows.Forms.Button()
         Me.btnEfectivo = New System.Windows.Forms.Button()
         Me.Label27 = New System.Windows.Forms.Label()
@@ -124,12 +124,12 @@ Partial Class Facturacion
         Me.Panel6.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        Me.pnlUber.SuspendLayout()
         Me.Panel7.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.pnlEfectivo.SuspendLayout()
         Me.pnlTarjeta.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        Me.pnlUber.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -855,15 +855,35 @@ Partial Class Facturacion
         Me.Panel3.Size = New System.Drawing.Size(763, 975)
         Me.Panel3.TabIndex = 2
         '
-        'btnUber
+        'pnlUber
         '
-        Me.btnUber.BackColor = System.Drawing.Color.Gainsboro
-        Me.btnUber.Image = Global.SunChangSystem.My.Resources.Resources.uberEats1
-        Me.btnUber.Location = New System.Drawing.Point(359, 15)
-        Me.btnUber.Name = "btnUber"
-        Me.btnUber.Size = New System.Drawing.Size(213, 40)
-        Me.btnUber.TabIndex = 10
-        Me.btnUber.UseVisualStyleBackColor = False
+        Me.pnlUber.Controls.Add(Me.txtUber)
+        Me.pnlUber.Controls.Add(Me.Label2)
+        Me.pnlUber.Location = New System.Drawing.Point(25, 351)
+        Me.pnlUber.Name = "pnlUber"
+        Me.pnlUber.Size = New System.Drawing.Size(578, 52)
+        Me.pnlUber.TabIndex = 2
+        Me.pnlUber.Visible = False
+        '
+        'txtUber
+        '
+        Me.txtUber.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.txtUber.Location = New System.Drawing.Point(289, 2)
+        Me.txtUber.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtUber.Name = "txtUber"
+        Me.txtUber.Size = New System.Drawing.Size(232, 34)
+        Me.txtUber.TabIndex = 1
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label2.Location = New System.Drawing.Point(28, 2)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(182, 29)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "Pago Uber Eats"
         '
         'Panel7
         '
@@ -878,6 +898,16 @@ Partial Class Facturacion
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(763, 72)
         Me.Panel7.TabIndex = 15
+        '
+        'btnUber
+        '
+        Me.btnUber.BackColor = System.Drawing.Color.Gainsboro
+        Me.btnUber.Image = Global.SunChangSystem.My.Resources.Resources.uberEats1
+        Me.btnUber.Location = New System.Drawing.Point(359, 15)
+        Me.btnUber.Name = "btnUber"
+        Me.btnUber.Size = New System.Drawing.Size(213, 40)
+        Me.btnUber.TabIndex = 10
+        Me.btnUber.UseVisualStyleBackColor = False
         '
         'btnAgregarPago
         '
@@ -1101,36 +1131,6 @@ Partial Class Facturacion
         Me.Panel4.Size = New System.Drawing.Size(763, 130)
         Me.Panel4.TabIndex = 12
         '
-        'pnlUber
-        '
-        Me.pnlUber.Controls.Add(Me.txtUber)
-        Me.pnlUber.Controls.Add(Me.Label2)
-        Me.pnlUber.Location = New System.Drawing.Point(25, 351)
-        Me.pnlUber.Name = "pnlUber"
-        Me.pnlUber.Size = New System.Drawing.Size(578, 52)
-        Me.pnlUber.TabIndex = 2
-        Me.pnlUber.Visible = False
-        '
-        'txtUber
-        '
-        Me.txtUber.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.txtUber.Location = New System.Drawing.Point(289, 2)
-        Me.txtUber.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtUber.Name = "txtUber"
-        Me.txtUber.Size = New System.Drawing.Size(232, 34)
-        Me.txtUber.TabIndex = 1
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label2.Location = New System.Drawing.Point(28, 2)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(182, 29)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Pago Uber Eats"
-        '
         'btnTarjeta
         '
         Me.btnTarjeta.AutoSize = True
@@ -1226,6 +1226,7 @@ Partial Class Facturacion
         Me.Name = "Facturacion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Facturacion"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.pnlFactura.ResumeLayout(False)
@@ -1245,6 +1246,8 @@ Partial Class Facturacion
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.pnlUber.ResumeLayout(False)
+        Me.pnlUber.PerformLayout()
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         Me.Panel2.ResumeLayout(False)
@@ -1254,8 +1257,6 @@ Partial Class Facturacion
         Me.pnlTarjeta.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        Me.pnlUber.ResumeLayout(False)
-        Me.pnlUber.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

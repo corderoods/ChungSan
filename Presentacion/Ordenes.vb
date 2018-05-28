@@ -6,6 +6,7 @@
     Dim ordenDatos As OrdenDatos
     Dim clienteDatos As ClienteDatos
     Dim facturacionDatos As FacturacionDatos
+    Public EsUber As Boolean
 
     Public Sub New()
         ' Esta llamada es exigida por el diseñador.
@@ -19,7 +20,7 @@
     'Metodo que se ejecuta automaticamente cuando se carga el form 
     Private Sub Ordenes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'llama a cargar todas las ordnes y las categorias existentes
-        mostrarOrdenes(0)
+        mostrarOrdenes(0, EsUber)
         timerLlamaMesero.Enabled = True
     End Sub
 
@@ -91,10 +92,10 @@
         'CType(pnlProductos.Controls(0), Button).PerformClick()
     End Sub
 
-    Public Sub mostrarOrdenes(ByVal indice As Integer)
+    Public Sub mostrarOrdenes(ByVal indice As Integer, ByVal EsUber As Boolean)
         'poscision en el eje Y de cada boton por ordenes
         Dim posY = 0
-
+        Me.EsUber = EsUber
         'inicializa variables y obtiene todas las ordenes sin pagar
         clienteDatos = New ClienteDatos
         ordenDatos = New OrdenDatos
@@ -582,7 +583,7 @@
 
     'llama la pantalla para facturar una orden
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
-        Dim factura As New Facturacion(ordenActiva, Me)
+        Dim factura As New Facturacion(ordenActiva, Me, EsUber)
         factura.ShowDialog()
     End Sub
 
@@ -654,7 +655,7 @@
         'envia la orden a eliminar a la capa de datos
         ordenDatos.eliminarOrden(ordenActiva)
         'carga las ordenes para actualizar la pantalla
-        mostrarOrdenes(0)
+        mostrarOrdenes(0, EsUber)
     End Sub
 
     'metodo para cerrar la sesion

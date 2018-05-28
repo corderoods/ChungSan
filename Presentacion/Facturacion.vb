@@ -31,34 +31,69 @@ Public Class Facturacion
     Public Shared cod_cliente As Double = 0
     ' variable que obtendra el valor del monto del descuento
     Dim monto_descuento As Double = 0, monto_express As Double = 0
+    Dim EsUber As Boolean
 
-    Public Sub New(numOrdenTemp As Integer, ByVal ordenes As Ordenes)
-        numOrdenFacturar = numOrdenTemp
-        Me.ordenes1 = ordenes
+    Public Sub New(numOrdenTemp As Integer, ByVal ordenes As Ordenes, ByVal EsUber As Boolean)
+        If EsUber = False Then
 
-        'instancia de la capa de datos
-        facturaDatos = New FacturacionDatos
-        'llama al metodo que devuelve el objeto de la orden
-        ordenAPagar = facturaDatos.obtenerOrdenPorNumero(numOrdenFacturar)
+            numOrdenFacturar = numOrdenTemp
+            Me.ordenes1 = ordenes
 
-        parametros = facturaDatos.obtenerParametros
+            'instancia de la capa de datos
+            facturaDatos = New FacturacionDatos
+            'llama al metodo que devuelve el objeto de la orden
+            ordenAPagar = facturaDatos.obtenerOrdenPorNumero(numOrdenFacturar)
 
-        productosFactura = New List(Of Object)
-        productosOrden = New List(Of Object)
-        pagosFactura = New List(Of Pago)
-        ' Esta llamada es exigida por el diseñador.
-        InitializeComponent()
+            parametros = facturaDatos.obtenerParametros
 
-        txtEfectivo.Text = 0.ToString("C")
-        txtExpress.Text = parametros.Express_.ToString("C")
-        'txtDescuento.Text = 0.ToString("P")
+            productosFactura = New List(Of Object)
+            productosOrden = New List(Of Object)
+            pagosFactura = New List(Of Pago)
+            ' Esta llamada es exigida por el diseñador.
+            InitializeComponent()
 
-        mostrarProductosFactura()
-        obtenerEncabezadoFactura()
+            txtEfectivo.Text = 0.ToString("C")
+            txtExpress.Text = parametros.Express_.ToString("C")
+            'txtDescuento.Text = 0.ToString("P")
 
-        mensaje = New Mensaje()
+            mostrarProductosFactura()
+            obtenerEncabezadoFactura()
 
-        btnAgregarPago.Visible = False
+            mensaje = New Mensaje()
+
+            btnAgregarPago.Visible = False
+
+        Else
+
+            numOrdenFacturar = numOrdenTemp
+            Me.ordenes1 = ordenes
+
+            'instancia de la capa de datos
+            facturaDatos = New FacturacionDatos
+            'llama al metodo que devuelve el objeto de la orden
+            ordenAPagar = facturaDatos.obtenerOrdenPorNumero(numOrdenFacturar)
+
+            parametros = facturaDatos.obtenerParametros
+
+            productosFactura = New List(Of Object)
+            productosOrden = New List(Of Object)
+            pagosFactura = New List(Of Pago)
+            ' Esta llamada es exigida por el diseñador.
+            InitializeComponent()
+            btnEfectivo.Visible = False
+            btnTarjeta.Visible = False
+            btnDividirFactura.Visible = False
+
+
+            mostrarProductosFactura()
+            obtenerEncabezadoFactura()
+
+            mensaje = New Mensaje()
+
+            btnAgregarPago.Visible = False
+
+        End If
+
 
         If ordenAPagar.Ubicacion_ = "S" Then
             cbProforma.Visible = True
@@ -120,7 +155,7 @@ Public Class Facturacion
         If (productosFactura.Count = 0) Then
             'marca la orden como cancelada en su totalidad
             facturacionDatos.modificaIndicadorPagoOrden(numOrdenFacturar, 1)
-            ordenes1.mostrarOrdenes(0)
+            ordenes1.mostrarOrdenes(0, EsUber)
             Me.Dispose()
         Else
             'Recorre el resultado para crear los controles
@@ -1287,7 +1322,7 @@ Public Class Facturacion
     End Sub
 
     Private Sub Facturacion_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        ordenes1.mostrarOrdenes(0)
+        ordenes1.mostrarOrdenes(0, EsUber)
     End Sub
 
     Public Sub mostrarPagoTarjeta()

@@ -68,11 +68,11 @@ Partial Class Ordenes
         Me.CategoríaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CierreDeCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.txtNombreCajero = New System.Windows.Forms.Label()
         Me.timerLlamaMesero = New System.Windows.Forms.Timer(Me.components)
         Me.TimerReproduceSonido = New System.Windows.Forms.Timer(Me.components)
-        Me.CierreDeCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlPrinOrdenes.SuspendLayout()
@@ -532,6 +532,12 @@ Partial Class Ordenes
         Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(245, 36)
         Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
         '
+        'CierreDeCajaToolStripMenuItem
+        '
+        Me.CierreDeCajaToolStripMenuItem.Name = "CierreDeCajaToolStripMenuItem"
+        Me.CierreDeCajaToolStripMenuItem.Size = New System.Drawing.Size(245, 36)
+        Me.CierreDeCajaToolStripMenuItem.Text = "Cierre de Caja"
+        '
         'Timer1
         '
         Me.Timer1.Enabled = True
@@ -557,12 +563,6 @@ Partial Class Ordenes
         '
         Me.TimerReproduceSonido.Interval = 5000
         '
-        'CierreDeCajaToolStripMenuItem
-        '
-        Me.CierreDeCajaToolStripMenuItem.Name = "CierreDeCajaToolStripMenuItem"
-        Me.CierreDeCajaToolStripMenuItem.Size = New System.Drawing.Size(245, 36)
-        Me.CierreDeCajaToolStripMenuItem.Text = "Cierre de Caja"
-        '
         'Ordenes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -582,6 +582,7 @@ Partial Class Ordenes
         Me.Name = "Ordenes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Órdenes"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
