@@ -3,7 +3,7 @@
 Public Class CierreCaja
     ' variables publicas a utilizar
     Public subtotalIngresos, subtotalEgresos, ventasTarjeta, introducciones, pagosFacturas, impuestosServicio, impuestoVentas, express, uber As Double
-    Public ventasEfectivo, fondoInicial, impuestoVentasEfectivo, expressEfectivo, bonos, vales, salidasEfectivo, impuestosServicioEfectivo, fondoFinal As Double
+    Public ventasEfectivo, fondoInicial, impuestoVentasEfectivo, expressEfectivo, salidasEfectivo, impuestosServicioEfectivo, fondoFinal, ventasSoloEfec As Double
     Public ventasBrutas As Double
     Public monto_total_efectivo As Double = 0
     Public diferencia As Double = 0
@@ -33,7 +33,7 @@ Public Class CierreCaja
 
         '  MovimientosEfectivo.Close()
         'inicializacion de variables
-        subtotalEgresos = fondoFinal = ventasEfectivo = ventasTarjeta = introducciones = fondoInicial = pagosFacturas = vales = salidasEfectivo = impuestosServicio = impuestosServicioEfectivo = impuestoVentas = impuestoVentasEfectivo = expressEfectivo = express = ventasBrutas = 0
+        subtotalEgresos = fondoFinal = ventasEfectivo = ventasTarjeta = introducciones = fondoInicial = pagosFacturas = uber = salidasEfectivo = impuestosServicio = impuestosServicioEfectivo = impuestoVentas = impuestoVentasEfectivo = expressEfectivo = express = ventasBrutas = ventasSoloEfec = 0
 
         ' llama al metodo que se encarga de cargar todos los montos que corresponden a la seccion de ingresos
         cargarEfectivos()
@@ -46,10 +46,13 @@ Public Class CierreCaja
         ' ********COMPROBACION EFECTIVO*********
         ' **************************************
 
+
         lblFondoInicialCompEfec.Text = fondoInicial.ToString("C")
         lblIntroduccionesCompEfec.Text = introducciones.ToString("C")
         lblExpressCompEfec.Text = express.ToString("C")
-        lblVentasEfectivoCompEfec.Text = ventasEfectivo.ToString("C")
+
+        ventasSoloEfec = ventasEfectivo - ventasTarjeta
+        lblVentasEfectivoCompEfec.Text = ventasSoloEfec.ToString("C")
         lblImpServicioCompEfec.Text = impuestosServicio.ToString("C")
         lblCuentasCanceladasCompEfec.Text = (pagosFacturas + salidasEfectivo).ToString("C")
         lblFondoFinalCompEfec.Text = fondoFinal.ToString("C")
@@ -58,8 +61,8 @@ Public Class CierreCaja
         'lblBonosTotalesEfectivo.Text = bonos.ToString("C")
 
 
-        monto_total_efectivo = ((fondoInicial + introducciones + expressEfectivo + ventasEfectivo + impuestoVentasEfectivo) -
-                                (impuestosServicioEfectivo + pagosFacturas + salidasEfectivo))
+        monto_total_efectivo = ((fondoInicial + introducciones + expressEfectivo + ventasEfectivo) -
+                                (impuestosServicioEfectivo + pagosFacturas + salidasEfectivo + impuestoVentasEfectivo))
         diferencia = fondoFinal - monto_total_efectivo
         lblDiferenciaCompEfec.Text = (diferencia).ToString("C")
 
@@ -77,12 +80,11 @@ Public Class CierreCaja
         lblFondoInicialCompVtas.Text = fondoInicial.ToString("C")
         lblVentasCompVtas.Text = ventasTarjeta.ToString("C")
         lblImpVtasCompVtas.Text = impuestoVentas.ToString("C")
-        lblImpServCompVtas.Text = impuestosServicio.ToString("C")
         lblExpresCompVtas.Text = express.ToString("C")
         lblIntroduccionesCompVtas.Text = introducciones.ToString("C")
         lblCuentasCanceladasCompVtas.Text = (pagosFacturas + salidasEfectivo).ToString("C")
-        lblValesCanceladoCampVentas.Text = vales.ToString("C")
-        lblBonosCanceladosCampVentas.Text = bonos.ToString("C")
+        lblUber.Text = uber.ToString("C")
+
         lblFondoFinalCompVtas.Text = fondoFinal.ToString("C")
 
 
@@ -93,7 +95,8 @@ Public Class CierreCaja
         ' esta da como en el excel
         'lblTotalVentasCompVtas.Text = ((fondoFinal + pagosFacturas + salidasEfectivo + ventasTarjeta) - (fondoInicial + expressEfectivo + introducciones)).ToString("C")
 
-        monto_total = (fondoFinal - fondoInicial + pagosFacturas + salidasEfectivo - expressEfectivo - impuestosServicio + ventasTarjeta - introducciones)
+        ' monto_total = (fondoFinal - fondoInicial + pagosFacturas + salidasEfectivo - expressEfectivo - impuestosServicio + ventasTarjeta - introducciones)
+        monto_total = (fondoFinal - impuestoVentas + ventasTarjeta + pagosFacturas - express - fondoInicial - introducciones)
         ventas_sistema = ventasBrutas + (impuestoVentas - impuestoVentasEfectivo)
         diferenciaVentas = monto_total - ventas_sistema
 
@@ -148,7 +151,7 @@ Public Class CierreCaja
 
     'metodo que obtiene el monto de la suma de las ventas que se pagaron en efectivo
     Public Function cargarVentasEfectivo() As Double
-        Return movimiento_caja.obtenerIngresosVentasBrutas(InicioSesion.session.EmpleadoSG.Cod_usuarioSG, InicioSesion.session.Hora_primer_ingresoSG, 1)
+        Return movimiento_caja.obtenerIngresosVentasSoloEfectivo(InicioSesion.session.EmpleadoSG.Cod_usuarioSG, InicioSesion.session.Hora_primer_ingresoSG, 1)
     End Function
 
     'metodo que obtiene el monto de la suma de las ventas que se pagaron
@@ -187,8 +190,8 @@ Public Class CierreCaja
         pagosFacturas = Me.cargarPagoFacturas
         ' monto total de las salidas realizadas por el cajero
         salidasEfectivo = Me.cargarSalidasEfectivo
-        vales = Me.cargarVales
-        bonos = Me.cargarBonos
+        uber = Me.cargarUber
+
         ' monto total correspondiente a los impuestos de servicios 
         impuestosServicio = Me.cargarImpuestoServicio
         ' monto total de los impuestos de ventas realizadas por el cajero si se pone 1 agarra regresa solo en efectivo, con el 0 agarra todos
@@ -215,9 +218,15 @@ Public Class CierreCaja
         Return movimiento_caja.obtenerMontoIntroduccionesSalidas(InicioSesion.session.EmpleadoSG.Cod_usuarioSG, InicioSesion.session.Hora_primer_ingresoSG, 1)
     End Function
 
-    Public Function cargarVales() As Double
-        Return movimiento_caja.obtenerMontoVales(InicioSesion.session.EmpleadoSG.Cod_usuarioSG, InicioSesion.session.Hora_primer_ingresoSG)
+
+
+
+    Public Function cargarUber() As Double
+        Return movimiento_caja.obtenerMontoServiciosUberEats(InicioSesion.session.EmpleadoSG.Cod_usuarioSG, InicioSesion.session.Hora_primer_ingresoSG)
     End Function
+
+
+
     Public Function cargarBonos() As Double
         Return movimiento_caja.obtenerMontoAbonos(InicioSesion.session.EmpleadoSG.Cod_usuarioSG, InicioSesion.session.Hora_primer_ingresoSG)
     End Function
@@ -280,9 +289,6 @@ Public Class CierreCaja
             parametro.Add(pvisualizar)
             factura.DataDefinition.ParameterFields("@vales").ApplyCurrentValues(parametro)
 
-            pvisualizar.Value = bonos.ToString("C")
-            parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@bonos").ApplyCurrentValues(parametro)
 
             pvisualizar.Value = monto_total_efectivo.ToString("C")
             parametro.Add(pvisualizar)
@@ -371,6 +377,13 @@ Public Class CierreCaja
         crear_reportes.reporteExpressEfectivo()
     End Sub
 
+    Private Sub lblUer_Click(sender As Object, e As EventArgs) Handles lblUber.Click
+        'llama al metodo para crear el reporte de Uber Eats
+        crear_reportes.reporteUberEats()
+    End Sub
+
+
+
     Private Sub lblImpuestoServicio_Click(sender As Object, e As EventArgs) Handles lblImpServicioCompEfec.Click
         ' llama al metodo para crear el reporte de los impuestos de servicio ya INICIO
         ' crear_reportes.reporteImpServEfectivo()
@@ -382,9 +395,8 @@ Public Class CierreCaja
 
     End Sub
 
-    Private Sub lblMontoTotalCompEfec_Click(sender As Object, e As EventArgs) Handles lblMontoTotalCompEfec.Click
 
-    End Sub
+
 
     Private Sub lblImpVtasCompEfec_Click(sender As Object, e As EventArgs) Handles lblImpVtasCompEfec.Click
         ' llama al metodo para crear el reporte de los impuestos por ventas en efectivo
@@ -411,7 +423,7 @@ Public Class CierreCaja
         crear_reportes.reporteImpVtas()
     End Sub
 
-    Private Sub lblImpServCompVtas_Click(sender As Object, e As EventArgs) Handles lblImpServCompVtas.Click
+    Private Sub lblImpServCompVtas_Click(sender As Object, e As EventArgs)
         ' llama al metodo para crear el reporte de los impuestos de servicio
         crear_reportes.reporteImpServ()
     End Sub
@@ -431,22 +443,16 @@ Public Class CierreCaja
         crear_reportes.reporteSalidas()
     End Sub
 
-    Private Sub lblValesTotalesEfectivo_Click(sender As Object, e As EventArgs) Handles lblValesTotalesEfectivo.Click
-        ' llama al metodo para crear el reporte del fondo final
-        crear_reportes.reporteVales()
-    End Sub
 
-    Private Sub lblBonosTotalesEfectivo_Click(sender As Object, e As EventArgs) Handles lblBonosTotalesEfectivo.Click
+
+    Private Sub lblBonosTotalesEfectivo_Click(sender As Object, e As EventArgs)
         ' llama al metodo para crear el reporte del fondo final
         crear_reportes.reporteBonos()
     End Sub
 
-    Private Sub lblValesCanceladoCampVentas_Click(sender As Object, e As EventArgs) Handles lblValesCanceladoCampVentas.Click
-        ' llama al metodo para crear el reporte del fondo final
-        crear_reportes.reporteVales()
-    End Sub
 
-    Private Sub lblBonosCanceladosCampVentas_Click(sender As Object, e As EventArgs) Handles lblBonosCanceladosCampVentas.Click
+
+    Private Sub lblBonosCanceladosCampVentas_Click(sender As Object, e As EventArgs)
         ' llama al metodo para crear el reporte del fondo final
         crear_reportes.reporteBonos()
     End Sub

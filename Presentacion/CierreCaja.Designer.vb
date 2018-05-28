@@ -23,10 +23,6 @@ Partial Class CierreCaja
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.lblBonosTotalesEfectivo = New System.Windows.Forms.Label()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.lblValesTotalesEfectivo = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
         Me.lblImpVtasCompEfec = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.lblDiferenciaCompEfec = New System.Windows.Forms.Label()
@@ -37,6 +33,7 @@ Partial Class CierreCaja
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lblCuentasCanceladasCompEfec = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblFondoInicialCompEfec = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblExpressCompEfec = New System.Windows.Forms.Label()
@@ -48,18 +45,15 @@ Partial Class CierreCaja
         Me.lblVentasTarjeta = New System.Windows.Forms.Label()
         Me.lblVentasEfectivo = New System.Windows.Forms.Label()
         Me.lblSubtotalIngresos = New System.Windows.Forms.Label()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblBonosCanceladosCampVentas = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
-        Me.lblValesCanceladoCampVentas = New System.Windows.Forms.Label()
+        Me.lblUber = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.lblDiferenciaCompVtas = New System.Windows.Forms.Label()
         Me.lblIntroduccionesCompVtas = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.lblImpServCompVtas = New System.Windows.Forms.Label()
         Me.lblTotalVtasSistCompVtas = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.lblFondoInicialCompVtas = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -68,6 +62,7 @@ Partial Class CierreCaja
         Me.lblImpVtasCompVtas = New System.Windows.Forms.Label()
         Me.lblTotalVentasCompVtas = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.lblFondoFinalCompVtas = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.lblVentasCompVtas = New System.Windows.Forms.Label()
@@ -76,26 +71,19 @@ Partial Class CierreCaja
         Me.lblExpresCompVtas = New System.Windows.Forms.Label()
         Me.lblCuentasCanceladasCompVtas = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel3
         '
-        Me.Panel3.Controls.Add(Me.lblBonosTotalesEfectivo)
-        Me.Panel3.Controls.Add(Me.Label21)
-        Me.Panel3.Controls.Add(Me.lblValesTotalesEfectivo)
-        Me.Panel3.Controls.Add(Me.Label19)
         Me.Panel3.Controls.Add(Me.lblImpVtasCompEfec)
         Me.Panel3.Controls.Add(Me.Label17)
         Me.Panel3.Controls.Add(Me.lblDiferenciaCompEfec)
@@ -125,56 +113,6 @@ Partial Class CierreCaja
         Me.Panel3.Size = New System.Drawing.Size(504, 484)
         Me.Panel3.TabIndex = 21
         '
-        'lblBonosTotalesEfectivo
-        '
-        Me.lblBonosTotalesEfectivo.AutoSize = True
-        Me.lblBonosTotalesEfectivo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblBonosTotalesEfectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBonosTotalesEfectivo.ForeColor = System.Drawing.Color.White
-        Me.lblBonosTotalesEfectivo.Location = New System.Drawing.Point(376, 321)
-        Me.lblBonosTotalesEfectivo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblBonosTotalesEfectivo.Name = "lblBonosTotalesEfectivo"
-        Me.lblBonosTotalesEfectivo.Size = New System.Drawing.Size(61, 25)
-        Me.lblBonosTotalesEfectivo.TabIndex = 36
-        Me.lblBonosTotalesEfectivo.Text = "00.00"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.ForeColor = System.Drawing.Color.White
-        Me.Label21.Location = New System.Drawing.Point(4, 321)
-        Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(68, 25)
-        Me.Label21.TabIndex = 35
-        Me.Label21.Text = "Bonos"
-        '
-        'lblValesTotalesEfectivo
-        '
-        Me.lblValesTotalesEfectivo.AutoSize = True
-        Me.lblValesTotalesEfectivo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblValesTotalesEfectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblValesTotalesEfectivo.ForeColor = System.Drawing.Color.White
-        Me.lblValesTotalesEfectivo.Location = New System.Drawing.Point(376, 286)
-        Me.lblValesTotalesEfectivo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblValesTotalesEfectivo.Name = "lblValesTotalesEfectivo"
-        Me.lblValesTotalesEfectivo.Size = New System.Drawing.Size(61, 25)
-        Me.lblValesTotalesEfectivo.TabIndex = 34
-        Me.lblValesTotalesEfectivo.Text = "00.00"
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.Color.White
-        Me.Label19.Location = New System.Drawing.Point(4, 286)
-        Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(62, 25)
-        Me.Label19.TabIndex = 33
-        Me.Label19.Text = "Vales"
-        '
         'lblImpVtasCompEfec
         '
         Me.lblImpVtasCompEfec.AutoSize = True
@@ -196,9 +134,9 @@ Partial Class CierreCaja
         Me.Label17.Location = New System.Drawing.Point(4, 224)
         Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(233, 25)
+        Me.Label17.Size = New System.Drawing.Size(159, 25)
         Me.Label17.TabIndex = 31
-        Me.Label17.Text = "Impuesto Ventas Efectivo"
+        Me.Label17.Text = "Impuesto Ventas"
         '
         'lblDiferenciaCompEfec
         '
@@ -300,6 +238,17 @@ Partial Class CierreCaja
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Cuentas canceladas"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.SunChangSystem.My.Resources.Resources.separador
+        Me.PictureBox1.Image = Global.SunChangSystem.My.Resources.Resources.separador
+        Me.PictureBox1.Location = New System.Drawing.Point(7, 356)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(467, 5)
+        Me.PictureBox1.TabIndex = 18
+        Me.PictureBox1.TabStop = False
+        '
         'lblFondoInicialCompEfec
         '
         Me.lblFondoInicialCompEfec.AutoSize = True
@@ -347,9 +296,9 @@ Partial Class CierreCaja
         Me.lblIntroducciones.Location = New System.Drawing.Point(4, 127)
         Me.lblIntroducciones.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblIntroducciones.Name = "lblIntroducciones"
-        Me.lblIntroducciones.Size = New System.Drawing.Size(184, 25)
+        Me.lblIntroducciones.Size = New System.Drawing.Size(83, 25)
         Me.lblIntroducciones.TabIndex = 5
-        Me.lblIntroducciones.Text = "Express en Efectivo"
+        Me.lblIntroducciones.Text = "Express"
         '
         'lblFondoInicial
         '
@@ -437,19 +386,26 @@ Partial Class CierreCaja
         Me.lblSubtotalIngresos.TabIndex = 9
         Me.lblSubtotalIngresos.Text = "Total:"
         '
+        'PictureBox8
+        '
+        Me.PictureBox8.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
+        Me.PictureBox8.Location = New System.Drawing.Point(0, 1)
+        Me.PictureBox8.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(467, 54)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 19
+        Me.PictureBox8.TabStop = False
+        '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.lblBonosCanceladosCampVentas)
-        Me.Panel1.Controls.Add(Me.Label22)
-        Me.Panel1.Controls.Add(Me.lblValesCanceladoCampVentas)
+        Me.Panel1.Controls.Add(Me.lblUber)
         Me.Panel1.Controls.Add(Me.Label24)
         Me.Panel1.Controls.Add(Me.lblDiferenciaCompVtas)
         Me.Panel1.Controls.Add(Me.lblIntroduccionesCompVtas)
         Me.Panel1.Controls.Add(Me.Label20)
         Me.Panel1.Controls.Add(Me.Label10)
-        Me.Panel1.Controls.Add(Me.lblImpServCompVtas)
         Me.Panel1.Controls.Add(Me.lblTotalVtasSistCompVtas)
-        Me.Panel1.Controls.Add(Me.Label16)
         Me.Panel1.Controls.Add(Me.lblFondoInicialCompVtas)
         Me.Panel1.Controls.Add(Me.Label18)
         Me.Panel1.Controls.Add(Me.Label13)
@@ -474,50 +430,25 @@ Partial Class CierreCaja
         Me.Panel1.Size = New System.Drawing.Size(549, 484)
         Me.Panel1.TabIndex = 22
         '
-        'lblBonosCanceladosCampVentas
+        'lblUber
         '
-        Me.lblBonosCanceladosCampVentas.AutoSize = True
-        Me.lblBonosCanceladosCampVentas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblBonosCanceladosCampVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBonosCanceladosCampVentas.ForeColor = System.Drawing.Color.White
-        Me.lblBonosCanceladosCampVentas.Location = New System.Drawing.Point(383, 306)
-        Me.lblBonosCanceladosCampVentas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblBonosCanceladosCampVentas.Name = "lblBonosCanceladosCampVentas"
-        Me.lblBonosCanceladosCampVentas.Size = New System.Drawing.Size(61, 25)
-        Me.lblBonosCanceladosCampVentas.TabIndex = 40
-        Me.lblBonosCanceladosCampVentas.Text = "00.00"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.ForeColor = System.Drawing.Color.White
-        Me.Label22.Location = New System.Drawing.Point(17, 306)
-        Me.Label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(68, 25)
-        Me.Label22.TabIndex = 39
-        Me.Label22.Text = "Bonos"
-        '
-        'lblValesCanceladoCampVentas
-        '
-        Me.lblValesCanceladoCampVentas.AutoSize = True
-        Me.lblValesCanceladoCampVentas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblValesCanceladoCampVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblValesCanceladoCampVentas.ForeColor = System.Drawing.Color.White
-        Me.lblValesCanceladoCampVentas.Location = New System.Drawing.Point(383, 274)
-        Me.lblValesCanceladoCampVentas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblValesCanceladoCampVentas.Name = "lblValesCanceladoCampVentas"
-        Me.lblValesCanceladoCampVentas.Size = New System.Drawing.Size(61, 25)
-        Me.lblValesCanceladoCampVentas.TabIndex = 38
-        Me.lblValesCanceladoCampVentas.Text = "00.00"
+        Me.lblUber.AutoSize = True
+        Me.lblUber.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.lblUber.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUber.ForeColor = System.Drawing.Color.White
+        Me.lblUber.Location = New System.Drawing.Point(383, 249)
+        Me.lblUber.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblUber.Name = "lblUber"
+        Me.lblUber.Size = New System.Drawing.Size(61, 25)
+        Me.lblUber.TabIndex = 38
+        Me.lblUber.Text = "00.00"
         '
         'Label24
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.White
-        Me.Label24.Location = New System.Drawing.Point(17, 274)
+        Me.Label24.Location = New System.Drawing.Point(17, 249)
         Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(98, 25)
@@ -542,7 +473,7 @@ Partial Class CierreCaja
         Me.lblIntroduccionesCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblIntroduccionesCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIntroduccionesCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblIntroduccionesCompVtas.Location = New System.Drawing.Point(384, 215)
+        Me.lblIntroduccionesCompVtas.Location = New System.Drawing.Point(384, 190)
         Me.lblIntroduccionesCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblIntroduccionesCompVtas.Name = "lblIntroduccionesCompVtas"
         Me.lblIntroduccionesCompVtas.Size = New System.Drawing.Size(61, 25)
@@ -566,25 +497,12 @@ Partial Class CierreCaja
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(13, 215)
+        Me.Label10.Location = New System.Drawing.Point(13, 190)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(139, 25)
         Me.Label10.TabIndex = 29
         Me.Label10.Text = "Introducciones"
-        '
-        'lblImpServCompVtas
-        '
-        Me.lblImpServCompVtas.AutoSize = True
-        Me.lblImpServCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.lblImpServCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblImpServCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblImpServCompVtas.Location = New System.Drawing.Point(384, 154)
-        Me.lblImpServCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblImpServCompVtas.Name = "lblImpServCompVtas"
-        Me.lblImpServCompVtas.Size = New System.Drawing.Size(61, 25)
-        Me.lblImpServCompVtas.TabIndex = 27
-        Me.lblImpServCompVtas.Text = "00.00"
         '
         'lblTotalVtasSistCompVtas
         '
@@ -597,18 +515,6 @@ Partial Class CierreCaja
         Me.lblTotalVtasSistCompVtas.Size = New System.Drawing.Size(71, 29)
         Me.lblTotalVtasSistCompVtas.TabIndex = 32
         Me.lblTotalVtasSistCompVtas.Text = "00.00"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.White
-        Me.Label16.Location = New System.Drawing.Point(16, 154)
-        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(190, 25)
-        Me.Label16.TabIndex = 28
-        Me.Label16.Text = "Impuesto de servicio"
         '
         'lblFondoInicialCompVtas
         '
@@ -701,12 +607,23 @@ Partial Class CierreCaja
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(13, 245)
+        Me.Label4.Location = New System.Drawing.Point(13, 220)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(259, 25)
         Me.Label4.TabIndex = 20
         Me.Label4.Text = "Cuentas canceladas + vales"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackgroundImage = Global.SunChangSystem.My.Resources.Resources.separador
+        Me.PictureBox2.Image = Global.SunChangSystem.My.Resources.Resources.separador
+        Me.PictureBox2.Location = New System.Drawing.Point(16, 372)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(467, 5)
+        Me.PictureBox2.TabIndex = 18
+        Me.PictureBox2.TabStop = False
         '
         'lblFondoFinalCompVtas
         '
@@ -714,7 +631,7 @@ Partial Class CierreCaja
         Me.lblFondoFinalCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblFondoFinalCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFondoFinalCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblFondoFinalCompVtas.Location = New System.Drawing.Point(383, 340)
+        Me.lblFondoFinalCompVtas.Location = New System.Drawing.Point(385, 287)
         Me.lblFondoFinalCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblFondoFinalCompVtas.Name = "lblFondoFinalCompVtas"
         Me.lblFondoFinalCompVtas.Size = New System.Drawing.Size(61, 25)
@@ -752,7 +669,7 @@ Partial Class CierreCaja
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(17, 185)
+        Me.Label8.Location = New System.Drawing.Point(17, 160)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(83, 25)
@@ -764,7 +681,7 @@ Partial Class CierreCaja
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(17, 340)
+        Me.Label9.Location = New System.Drawing.Point(17, 287)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(164, 25)
@@ -777,7 +694,7 @@ Partial Class CierreCaja
         Me.lblExpresCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblExpresCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblExpresCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblExpresCompVtas.Location = New System.Drawing.Point(384, 185)
+        Me.lblExpresCompVtas.Location = New System.Drawing.Point(384, 160)
         Me.lblExpresCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblExpresCompVtas.Name = "lblExpresCompVtas"
         Me.lblExpresCompVtas.Size = New System.Drawing.Size(61, 25)
@@ -790,7 +707,7 @@ Partial Class CierreCaja
         Me.lblCuentasCanceladasCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblCuentasCanceladasCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCuentasCanceladasCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblCuentasCanceladasCompVtas.Location = New System.Drawing.Point(384, 245)
+        Me.lblCuentasCanceladasCompVtas.Location = New System.Drawing.Point(384, 220)
         Me.lblCuentasCanceladasCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCuentasCanceladasCompVtas.Name = "lblCuentasCanceladasCompVtas"
         Me.lblCuentasCanceladasCompVtas.Size = New System.Drawing.Size(61, 25)
@@ -808,6 +725,17 @@ Partial Class CierreCaja
         Me.Label14.Size = New System.Drawing.Size(140, 25)
         Me.Label14.TabIndex = 1
         Me.Label14.Text = "Ventas Tarjeta"
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
+        Me.PictureBox3.Location = New System.Drawing.Point(1, 1)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(467, 54)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 19
+        Me.PictureBox3.TabStop = False
         '
         'btnPrint
         '
@@ -829,50 +757,6 @@ Partial Class CierreCaja
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackgroundImage = Global.SunChangSystem.My.Resources.Resources.separador
-        Me.PictureBox2.Image = Global.SunChangSystem.My.Resources.Resources.separador
-        Me.PictureBox2.Location = New System.Drawing.Point(16, 372)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(467, 5)
-        Me.PictureBox2.TabIndex = 18
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.PictureBox3.Location = New System.Drawing.Point(1, 1)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(467, 54)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 19
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImage = Global.SunChangSystem.My.Resources.Resources.separador
-        Me.PictureBox1.Image = Global.SunChangSystem.My.Resources.Resources.separador
-        Me.PictureBox1.Location = New System.Drawing.Point(7, 356)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(467, 5)
-        Me.PictureBox1.TabIndex = 18
-        Me.PictureBox1.TabStop = False
-        '
-        'PictureBox8
-        '
-        Me.PictureBox8.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.PictureBox8.Location = New System.Drawing.Point(0, 1)
-        Me.PictureBox8.Margin = New System.Windows.Forms.Padding(4)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(467, 54)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox8.TabIndex = 19
-        Me.PictureBox8.TabStop = False
-        '
         'CierreCaja
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -892,12 +776,12 @@ Partial Class CierreCaja
         Me.Text = "Cierre de Caja"
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -941,8 +825,6 @@ Partial Class CierreCaja
     Friend WithEvents Label11 As Label
     Friend WithEvents lblFondoInicialCompVtas As Label
     Friend WithEvents Label13 As Label
-    Friend WithEvents lblImpServCompVtas As Label
-    Friend WithEvents Label16 As Label
     Friend WithEvents lblIntroduccionesCompVtas As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents lblImpVtasCompEfec As Label
@@ -954,12 +836,6 @@ Partial Class CierreCaja
     Friend WithEvents lblTotalVentasCompVtas As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents btnPrint As Button
-    Friend WithEvents lblValesTotalesEfectivo As Label
-    Friend WithEvents Label19 As Label
-    Friend WithEvents lblBonosTotalesEfectivo As Label
-    Friend WithEvents Label21 As Label
-    Friend WithEvents lblBonosCanceladosCampVentas As Label
-    Friend WithEvents Label22 As Label
-    Friend WithEvents lblValesCanceladoCampVentas As Label
+    Friend WithEvents lblUber As Label
     Friend WithEvents Label24 As Label
 End Class

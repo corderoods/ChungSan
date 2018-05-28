@@ -183,10 +183,7 @@
         ' llama al metodo para crear el reporte de los bonos
         crear_reportes.reporteBonos()
     End Sub
-    Private Sub lblTotalVales_Click(sender As Object, e As EventArgs) Handles lblTotalVales.Click
-        ' llama al metodo para crear el reporte de los bonos
-        crear_reportes.reporteVales()
-    End Sub
+
 
     ' accion de la etiqueta del monto de salidas
     Private Sub lblTotalSalidasEfectivo_Click(sender As Object, e As EventArgs) Handles lblTotalSalidasEfectivo.Click

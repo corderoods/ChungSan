@@ -155,25 +155,7 @@
         End Try
     End Sub
 
-    Public Sub reporteVales()
-        movimiento_caja.obtenerIngresosDeUberEats(InicioSesion.session.EmpleadoSG.Cod_usuarioSG, InicioSesion.session.Hora_primer_ingresoSG)
-        Try
-            Dim reporte_vales As New Reporte_Vales
-            Dim reporte As New Reportes
-            reporte.VistaReportes.ReportSource = reporte_vales
-            reporte.VistaReportes.RefreshReport()
-            reporte.ShowDialog()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-        ' se elimina el archivo xml generado
-        Try
-            Dim url As String = "C:\XML\reporte_vales.xml"
-            My.Computer.FileSystem.DeleteFile(url)
-        Catch ex As System.IO.FileNotFoundException
 
-        End Try
-    End Sub
 
     Public Sub reporteSalidas()
         movimiento_caja.obtenerReporteIntroduccionesSalidas(InicioSesion.session.EmpleadoSG.Cod_usuarioSG, InicioSesion.session.Hora_primer_ingresoSG, 1)
@@ -329,5 +311,31 @@
 
         End Try
     End Sub
+
+    Public Sub reporteUberEats()
+        movimiento_caja.obtenerReporteUberEats(InicioSesion.session.EmpleadoSG.Cod_usuarioSG, InicioSesion.session.Hora_primer_ingresoSG)
+
+        Try
+            Dim reporte_de_Uber As New Reporte_de_UBER_EATS
+            Dim reporte As New Reportes
+            reporte.VistaReportes.ReportSource = reporte_de_Uber
+            reporte.VistaReportes.RefreshReport()
+            reporte.ShowDialog()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        ' se elimina el archivo xml generado
+        Try
+            Dim url As String = "C:\XML\uberEats.xml"
+            My.Computer.FileSystem.DeleteFile(url)
+        Catch ex As System.IO.FileNotFoundException
+
+        End Try
+    End Sub
+
+
+
+
 
 End Class

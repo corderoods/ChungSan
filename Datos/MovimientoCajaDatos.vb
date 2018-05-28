@@ -572,7 +572,7 @@ Public Class MovimientoCajaDatos
     Public Function obtenerIngresosVentasBrutas(ByVal cod_usuario As String, ByVal fecha_inicio As String, ByVal bandera As Int16) As Double
         ' se llama al metodo que abre la conexion con la base de datos
         conexion = conexionDB.abrirConexion()
-
+        'Para el efectivo
         ' donde se almacenan los datos de la consulta
         Dim lector As SqlDataReader
 
@@ -1788,7 +1788,43 @@ Public Class MovimientoCajaDatos
     End Sub
 
     'Este metodo devuelve los totales de UBER eats
-    Public Function obtenerIngresosDeUberEats(ByVal cod_usuario As String, ByVal fecha_inicio As String) As Double
+    Public Sub obtenerReporteUberEats(ByVal cod_usuario As String, ByVal fecha As String)
+
+        Try
+            ' se llama al metodo que abre la conexion con la base de datos
+            conexion = conexionDB.abrirConexion()
+            ' se asigna el tipo de consulta que es. Si es para llamara a procedimineto almacenado o consulta por string
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.CommandText = "sp_consulta_reporte_Uber_Eats"
+            ' se le asigna la conexion al sqlCommand
+            cmd.Connection = conexion
+            ' se agregan los parametros
+            With cmd.Parameters
+                .AddWithValue("@cod_usuario", cod_usuario)
+                .AddWithValue("@fecha_inicio", fecha)
+                .AddWithValue("@fecha_fin", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+            End With
+
+            ' llama al metodo para crear el xml
+            crearXML(tablas, "C:\XML\ventasExpress.xml", "ventasExpress", cmd)
+
+        Catch ex As Exception
+            ' limpia los pararmetros
+            cmd.Parameters.Clear()
+            ' cierra la conexion
+            conexionDB.cerrarConexion()
+            MsgBox(ex.Message)
+            Return
+        End Try
+        ' limpia los pararmetros
+        cmd.Parameters.Clear()
+        ' cierra la conexion
+        conexionDB.cerrarConexion()
+    End Sub
+
+
+    ' metodo que se encarga de obtener el monto total que corresponde a los servicios por UBER EATS
+    Public Function obtenerMontoServiciosUberEats(ByVal cod_usuario As String, ByVal fecha_inicio As String) As Double
         ' se llama al metodo que abre la conexion con la base de datos
         conexion = conexionDB.abrirConexion()
 
@@ -1806,6 +1842,60 @@ Public Class MovimientoCajaDatos
             .AddWithValue("@cod_usuario", cod_usuario)
             .AddWithValue("@fecha_inicio", fecha_inicio)
             .AddWithValue("@fecha_fin", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+            '.AddWithValue("@monto_total", monto_total).Direction = ParameterDirection.Output
+        End With
+
+        Try
+            ' ejecuta la consulta a la base
+            lector = cmd.ExecuteReader
+            ' se obtiene el valor que retorna el procedimiento
+            If lector.HasRows Then
+                ' se recorre hasta obtener todos los registros necesarios
+                While lector.Read
+                    ' se limpian los parametros
+                    cmd.Parameters.Clear()
+                    ' retorna el monto
+
+                    Return Double.Parse(lector(0).ToString())
+                End While
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            ' limpia los parametros del comando
+            cmd.Parameters.Clear()
+            'cierra la conexion
+            conexionDB.cerrarConexion()
+            Return 0
+        End Try
+        cmd.Parameters.Clear()
+        'cierra la conexion
+        conexionDB.cerrarConexion()
+        Return 0
+    End Function
+
+
+    ' metodo que se encarga de obtener el monto que corresponde al total de las ventas sea en efectivo o en tarjeta para el cajero a consultar
+    ' El monto es de lñas ventas brutas (Subtotal de cada factura)
+    Public Function obtenerIngresosVentasSoloEfectivo(ByVal cod_usuario As String, ByVal fecha_inicio As String, ByVal bandera As Int16) As Double
+        ' se llama al metodo que abre la conexion con la base de datos
+        conexion = conexionDB.abrirConexion()
+        'Para el efectivo
+        ' donde se almacenan los datos de la consulta
+        Dim lector As SqlDataReader
+
+        ' se asigna el tipo de consulta que es. Si es para llamara a procedimineto almacenado o consulta por string
+        cmd.CommandType = CommandType.StoredProcedure
+        cmd.CommandText = "FAC.sp_consulta_ingreso_ventas_burtas2"
+        ' se le asigna la conexion al sqlCommand
+        cmd.Connection = conexion
+
+        ' se asignan los parametros a enviar en el procedimiento almacenado
+        With cmd.Parameters
+            .AddWithValue("@cod_usuario", cod_usuario)
+            .AddWithValue("@fecha_inicio", fecha_inicio)
+            .AddWithValue("@fecha_fin", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+            .AddWithValue("@flag", bandera)
         End With
 
         Try
