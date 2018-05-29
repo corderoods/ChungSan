@@ -14,9 +14,10 @@ Public Class ConexionBD
         'Me.cadenaConexion = "Data Source=10.188.225.137;Initial Catalog=Restaurante_V4_Produccion;User ID=marlon;Password=racoton"
         'Me.cadenaConexion = "Data Source=DESKTOP-VQ0OCGJ\SQLEXPRESS;Initial Catalog=Restaurante_V4_Produccion;Integrated Security = True"
         'Me.cadenaConexion = "Data Source=PC1-PC\SQLEXPRESS;Initial Catalog=Restaurante_V4_Produccion;User ID=sa;Password=racoton"
-
         'Me.cadenaConexion = "Data Source=ODS06\ODSSQLSERVER2016;Initial Catalog=Restaurante_V4_Produccion;Integrated Security = True"
+
         Me.cadenaConexion = "Data Source=localhost\SQLEXPRESS01;Initial Catalog=Restaurante_V4_Produccion;Integrated Security = True;"
+
     End Sub
 
     'Metodo donde se abren las conexiones

@@ -52,18 +52,13 @@ Partial Class Ordenes
         Me.ContabilidadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FondoInicialToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CierreCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ARQUEOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MovimientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PagoDeFacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalidasDeEfectivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IntroduccionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ValesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AnularFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModificarFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministradorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VentasXDíaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ImpuestoDeVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CategoríaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -73,6 +68,7 @@ Partial Class Ordenes
         Me.txtNombreCajero = New System.Windows.Forms.Label()
         Me.timerLlamaMesero = New System.Windows.Forms.Timer(Me.components)
         Me.TimerReproduceSonido = New System.Windows.Forms.Timer(Me.components)
+        Me.VentasPorDíaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlPrinOrdenes.SuspendLayout()
@@ -411,7 +407,7 @@ Partial Class Ordenes
         '
         'ContabilidadToolStripMenuItem
         '
-        Me.ContabilidadToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FondoInicialToolStripMenuItem, Me.CierreCajaToolStripMenuItem, Me.ARQUEOToolStripMenuItem, Me.MovimientosToolStripMenuItem, Me.AnularFacturaToolStripMenuItem, Me.ModificarFacturaToolStripMenuItem})
+        Me.ContabilidadToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FondoInicialToolStripMenuItem, Me.CierreCajaToolStripMenuItem, Me.MovimientosToolStripMenuItem, Me.AnularFacturaToolStripMenuItem, Me.ModificarFacturaToolStripMenuItem})
         Me.ContabilidadToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ContabilidadToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.ContabilidadToolStripMenuItem.Name = "ContabilidadToolStripMenuItem"
@@ -430,15 +426,9 @@ Partial Class Ordenes
         Me.CierreCajaToolStripMenuItem.Size = New System.Drawing.Size(280, 36)
         Me.CierreCajaToolStripMenuItem.Text = "Cierre Caja"
         '
-        'ARQUEOToolStripMenuItem
-        '
-        Me.ARQUEOToolStripMenuItem.Name = "ARQUEOToolStripMenuItem"
-        Me.ARQUEOToolStripMenuItem.Size = New System.Drawing.Size(280, 36)
-        Me.ARQUEOToolStripMenuItem.Text = "Arqueo"
-        '
         'MovimientosToolStripMenuItem
         '
-        Me.MovimientosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PagoDeFacturasToolStripMenuItem, Me.SalidasDeEfectivoToolStripMenuItem, Me.IntroduccionesToolStripMenuItem, Me.ValesToolStripMenuItem})
+        Me.MovimientosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PagoDeFacturasToolStripMenuItem, Me.SalidasDeEfectivoToolStripMenuItem, Me.IntroduccionesToolStripMenuItem})
         Me.MovimientosToolStripMenuItem.Name = "MovimientosToolStripMenuItem"
         Me.MovimientosToolStripMenuItem.Size = New System.Drawing.Size(280, 36)
         Me.MovimientosToolStripMenuItem.Text = "Movimientos"
@@ -461,12 +451,6 @@ Partial Class Ordenes
         Me.IntroduccionesToolStripMenuItem.Size = New System.Drawing.Size(294, 36)
         Me.IntroduccionesToolStripMenuItem.Text = "Introducciones"
         '
-        'ValesToolStripMenuItem
-        '
-        Me.ValesToolStripMenuItem.Name = "ValesToolStripMenuItem"
-        Me.ValesToolStripMenuItem.Size = New System.Drawing.Size(294, 36)
-        Me.ValesToolStripMenuItem.Text = "Vales Y Bonos"
-        '
         'AnularFacturaToolStripMenuItem
         '
         Me.AnularFacturaToolStripMenuItem.Name = "AnularFacturaToolStripMenuItem"
@@ -481,37 +465,18 @@ Partial Class Ordenes
         '
         'AdministradorToolStripMenuItem
         '
-        Me.AdministradorToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportesToolStripMenuItem, Me.MenuToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.CierreDeCajaToolStripMenuItem})
+        Me.AdministradorToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.CierreDeCajaToolStripMenuItem, Me.VentasPorDíaToolStripMenuItem})
         Me.AdministradorToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 14.25!)
         Me.AdministradorToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.AdministradorToolStripMenuItem.Name = "AdministradorToolStripMenuItem"
         Me.AdministradorToolStripMenuItem.Size = New System.Drawing.Size(186, 36)
         Me.AdministradorToolStripMenuItem.Text = "Administración"
         '
-        'ReportesToolStripMenuItem
-        '
-        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VentasXDíaToolStripMenuItem, Me.ImpuestoDeVentasToolStripMenuItem})
-        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
-        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(245, 36)
-        Me.ReportesToolStripMenuItem.Text = "Reportes"
-        '
-        'VentasXDíaToolStripMenuItem
-        '
-        Me.VentasXDíaToolStripMenuItem.Name = "VentasXDíaToolStripMenuItem"
-        Me.VentasXDíaToolStripMenuItem.Size = New System.Drawing.Size(307, 36)
-        Me.VentasXDíaToolStripMenuItem.Text = "Ventas x día"
-        '
-        'ImpuestoDeVentasToolStripMenuItem
-        '
-        Me.ImpuestoDeVentasToolStripMenuItem.Name = "ImpuestoDeVentasToolStripMenuItem"
-        Me.ImpuestoDeVentasToolStripMenuItem.Size = New System.Drawing.Size(307, 36)
-        Me.ImpuestoDeVentasToolStripMenuItem.Text = "Impuesto de Ventas"
-        '
         'MenuToolStripMenuItem
         '
         Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CategoríaToolStripMenuItem, Me.ProductosToolStripMenuItem})
         Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
-        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(245, 36)
+        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(248, 36)
         Me.MenuToolStripMenuItem.Text = "Menu"
         '
         'CategoríaToolStripMenuItem
@@ -529,13 +494,13 @@ Partial Class Ordenes
         'ProveedoresToolStripMenuItem
         '
         Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
-        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(245, 36)
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(248, 36)
         Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
         '
         'CierreDeCajaToolStripMenuItem
         '
         Me.CierreDeCajaToolStripMenuItem.Name = "CierreDeCajaToolStripMenuItem"
-        Me.CierreDeCajaToolStripMenuItem.Size = New System.Drawing.Size(245, 36)
+        Me.CierreDeCajaToolStripMenuItem.Size = New System.Drawing.Size(248, 36)
         Me.CierreDeCajaToolStripMenuItem.Text = "Cierre de Caja"
         '
         'Timer1
@@ -562,6 +527,12 @@ Partial Class Ordenes
         'TimerReproduceSonido
         '
         Me.TimerReproduceSonido.Interval = 5000
+        '
+        'VentasPorDíaToolStripMenuItem
+        '
+        Me.VentasPorDíaToolStripMenuItem.Name = "VentasPorDíaToolStripMenuItem"
+        Me.VentasPorDíaToolStripMenuItem.Size = New System.Drawing.Size(248, 36)
+        Me.VentasPorDíaToolStripMenuItem.Text = "Ventas por día"
         '
         'Ordenes
         '
@@ -644,20 +615,16 @@ Partial Class Ordenes
     Friend WithEvents Label2 As Label
     Friend WithEvents cbxProducto As ComboBox
     Friend WithEvents btnAgregar As Button
-    Friend WithEvents ARQUEOToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnLimpiar As Button
     Friend WithEvents AnularFacturaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AdministradorToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents VentasXDíaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CategoríaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProductosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents timerLlamaMesero As Timer
     Friend WithEvents TimerReproduceSonido As Timer
-    Friend WithEvents ImpuestoDeVentasToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ValesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ProveedoresToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ModificarFacturaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CierreDeCajaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VentasPorDíaToolStripMenuItem As ToolStripMenuItem
 End Class

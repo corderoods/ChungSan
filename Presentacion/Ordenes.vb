@@ -7,6 +7,7 @@
     Dim clienteDatos As ClienteDatos
     Dim facturacionDatos As FacturacionDatos
     Public EsUber As Boolean
+    Dim esNombre As String
 
     Public Sub New()
         ' Esta llamada es exigida por el diseñador.
@@ -138,14 +139,18 @@
                     'numero de orden al boton, sino se le pone solo el numero de la mesa
                     If cant > 1 Then
                         If ordenes(i).NombreCliente_ = "CONTADO" Then
+                            Me.esNombre = ""
                             text = "Mesa " & ordenes(i).NumMesa & " Orden " & ordenes(i).NumOrden
                         Else
+                            Me.esNombre = ""
                             text = "Mesa " & ordenes(i).NumMesa & "  " & ordenes(i).NombreCliente_
                         End If
                     Else
                         If ordenes(i).NombreCliente_ = "CONTADO" Then
+                            Me.esNombre = ""
                             text = "Mesa " & ordenes(i).NumMesa
                         Else
+                            Me.esNombre = ""
                             text = "Mesa " & ordenes(i).NumMesa & "  " & ordenes(i).NombreCliente_
                         End If
                     End If 'fin del salon
@@ -154,24 +159,30 @@
                     'si la orden es express, va a buscar el nombre 
                     'del Cliente al que pertenece la orden para ponerle el nombre
                     If ordenes(i).NombreCliente_ = "" Then
+                        Me.esNombre = ""
                         text = "Express " & clienteDatos.obtenerClientePorId(ordenes(i).CodCliente).NombreClienteSG
                     Else
+                        Me.esNombre = ""
                         text = "Express " & ordenes(i).NombreCliente_
                     End If ' fin delexpress
 
                 ElseIf ordenes(i).Ubicacion_ = "L" Then
                     'si la orden es para llevar, le pone el numero de la orden
                     If ordenes(i).NombreCliente_ = "CONTADO" Then
+                        Me.esNombre = ""
                         text = "Llevar " & ordenes(i).NumOrden
                     Else
+                        Me.esNombre = ""
                         text = "Llevar " & ordenes(i).NombreCliente_
                     End If 'Fin de llevar
 
                 ElseIf ordenes(i).Ubicacion_ = "U" Then
                     'si la orden es para Uber, le pone el numero de la orden
                     If ordenes(i).NombreCliente_ = "UBER" Then
+                        Me.esNombre = "Uber"
                         text = "Uber Eats " & ordenes(i).NumOrden
                     Else
+                        Me.esNombre = "Uber"
                         text = "Uber Eats " & ordenes(i).NombreCliente_
                     End If
 
@@ -583,8 +594,14 @@
 
     'llama la pantalla para facturar una orden
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
-        Dim factura As New Facturacion(ordenActiva, Me, EsUber)
-        factura.ShowDialog()
+        If esNombre = "Uber" Then
+            Dim factura As New Facturacion(ordenActiva, Me, EsUber)
+            factura.ShowDialog()
+        Else
+            EsUber = False
+            Dim factura As New Facturacion(ordenActiva, Me, EsUber)
+            factura.ShowDialog()
+        End If
     End Sub
 
     Private Sub FondoInicialToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FondoInicialToolStripMenuItem.Click
@@ -699,7 +716,7 @@
         agregarProductoADetalleOrden(cbxProducto.SelectedValue)
     End Sub
 
-    Private Sub ARQUEOToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ARQUEOToolStripMenuItem.Click
+    Private Sub ARQUEOToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim CierreFinal As New Arqueo
         CierreFinal.Show()
     End Sub
@@ -718,11 +735,7 @@
         anular_factura.ShowDialog()
     End Sub
 
-    Private Sub VentasXDíaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasXDíaToolStripMenuItem.Click
-        Dim reporte As New ReporteAdministrativos
-        reporte.ventas_dia = True
-        reporte.ShowDialog()
-        reporte.ventas_dia = False
+    Private Sub VentasXDíaToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -769,7 +782,7 @@
         s.Play()
     End Sub
 
-    Private Sub ImpuestoDeVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImpuestoDeVentasToolStripMenuItem.Click
+    Private Sub ImpuestoDeVentasToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim reporte_admin As New ReporteAdministrativos
 
         reporte_admin.cbxUsuario.Visible = False
@@ -795,7 +808,7 @@
 
     End Sub
 
-    Private Sub ValesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ValesToolStripMenuItem.Click
+    Private Sub ValesToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim vales As New Vales
         vales.ShowDialog()
     End Sub
@@ -813,5 +826,13 @@
     Private Sub CierreDeCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CierreDeCajaToolStripMenuItem.Click
         Dim formularioDeVenta As New CierreCaja
         formularioDeVenta.ShowDialog()
+    End Sub
+
+    Private Sub VentasPorDíaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasPorDíaToolStripMenuItem.Click
+        Dim reporte As New ReporteAdministrativos
+        reporte.ventas_dia = True
+        reporte.ShowDialog()
+        reporte.ventas_dia = False
+
     End Sub
 End Class

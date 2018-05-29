@@ -34,10 +34,11 @@ Public Class Facturacion
     Dim EsUber As Boolean
 
     Public Sub New(numOrdenTemp As Integer, ByVal ordenes As Ordenes, ByVal EsUber As Boolean)
-        If EsUber = False Then
 
-            numOrdenFacturar = numOrdenTemp
+
+        numOrdenFacturar = numOrdenTemp
             Me.ordenes1 = ordenes
+            Dim nomOrden As String
 
             'instancia de la capa de datos
             facturaDatos = New FacturacionDatos
@@ -57,42 +58,12 @@ Public Class Facturacion
             'txtDescuento.Text = 0.ToString("P")
 
             mostrarProductosFactura()
-            obtenerEncabezadoFactura()
-
-            mensaje = New Mensaje()
-
-            btnAgregarPago.Visible = False
-
-        Else
-
-            numOrdenFacturar = numOrdenTemp
-            Me.ordenes1 = ordenes
-
-            'instancia de la capa de datos
-            facturaDatos = New FacturacionDatos
-            'llama al metodo que devuelve el objeto de la orden
-            ordenAPagar = facturaDatos.obtenerOrdenPorNumero(numOrdenFacturar)
-
-            parametros = facturaDatos.obtenerParametros
-
-            productosFactura = New List(Of Object)
-            productosOrden = New List(Of Object)
-            pagosFactura = New List(Of Pago)
-            ' Esta llamada es exigida por el diseñador.
-            InitializeComponent()
-            btnEfectivo.Visible = False
-            btnTarjeta.Visible = False
-            btnDividirFactura.Visible = False
+        obtenerEncabezadoFactura()
 
 
-            mostrarProductosFactura()
-            obtenerEncabezadoFactura()
-
-            mensaje = New Mensaje()
+        mensaje = New Mensaje()
 
             btnAgregarPago.Visible = False
-
-        End If
 
 
         If ordenAPagar.Ubicacion_ = "S" Then
@@ -756,6 +727,13 @@ Public Class Facturacion
         lblMesa.Text = encabezado(0).NumMesa
         lblNumMesa.Text = encabezado(0).NumMesa
         lblFecha.Text = DateTime.Now.ToString
+        If txtNombre.Text = "UBER" Then
+            btnEfectivo.Visible = False
+            btnTarjeta.Visible = False
+            btnDividirFactura.Visible = False
+        Else
+            btnUber.Visible = False
+        End If
     End Sub
 
     'METODO QUE AGREGA PAGOS DE LA FACTURA
