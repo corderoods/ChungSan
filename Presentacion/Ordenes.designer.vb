@@ -64,11 +64,11 @@ Partial Class Ordenes
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CierreDeCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VentasPorDíaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.txtNombreCajero = New System.Windows.Forms.Label()
         Me.timerLlamaMesero = New System.Windows.Forms.Timer(Me.components)
         Me.TimerReproduceSonido = New System.Windows.Forms.Timer(Me.components)
-        Me.VentasPorDíaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlPrinOrdenes.SuspendLayout()
@@ -424,7 +424,7 @@ Partial Class Ordenes
         '
         Me.CierreCajaToolStripMenuItem.Name = "CierreCajaToolStripMenuItem"
         Me.CierreCajaToolStripMenuItem.Size = New System.Drawing.Size(280, 36)
-        Me.CierreCajaToolStripMenuItem.Text = "Cierre Caja"
+        Me.CierreCajaToolStripMenuItem.Text = "Arqueo de caja"
         '
         'MovimientosToolStripMenuItem
         '
@@ -503,6 +503,12 @@ Partial Class Ordenes
         Me.CierreDeCajaToolStripMenuItem.Size = New System.Drawing.Size(248, 36)
         Me.CierreDeCajaToolStripMenuItem.Text = "Cierre de Caja"
         '
+        'VentasPorDíaToolStripMenuItem
+        '
+        Me.VentasPorDíaToolStripMenuItem.Name = "VentasPorDíaToolStripMenuItem"
+        Me.VentasPorDíaToolStripMenuItem.Size = New System.Drawing.Size(248, 36)
+        Me.VentasPorDíaToolStripMenuItem.Text = "Ventas por día"
+        '
         'Timer1
         '
         Me.Timer1.Enabled = True
@@ -527,12 +533,6 @@ Partial Class Ordenes
         'TimerReproduceSonido
         '
         Me.TimerReproduceSonido.Interval = 5000
-        '
-        'VentasPorDíaToolStripMenuItem
-        '
-        Me.VentasPorDíaToolStripMenuItem.Name = "VentasPorDíaToolStripMenuItem"
-        Me.VentasPorDíaToolStripMenuItem.Size = New System.Drawing.Size(248, 36)
-        Me.VentasPorDíaToolStripMenuItem.Text = "Ventas por día"
         '
         'Ordenes
         '

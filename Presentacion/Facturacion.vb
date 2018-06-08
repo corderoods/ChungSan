@@ -329,6 +329,7 @@ Public Class Facturacion
             pagoUber = False
             pnlEfectivo.Visible = False
             pnlTarjeta.Visible = False
+            pnlUber.Visible = False
             txtUber.Text = 0.ToString("C")
 
         End If

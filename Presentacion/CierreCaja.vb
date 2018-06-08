@@ -52,7 +52,9 @@ Public Class CierreCaja
         lblExpressCompEfec.Text = express.ToString("C")
 
         ventasSoloEfec = ventasEfectivo - ventasTarjeta
-        lblVentasEfectivoCompEfec.Text = ventasSoloEfec.ToString("C")
+        'lblVentasEfectivoCompEfec.Text = ventasSoloEfec.ToString("C")
+        Dim ventasefectivassistema As Double = ventas_sistema - ventasTarjeta + impuestosServicio
+        lblVentasEfectivoCompEfec.Text = ventasefectivassistema.ToString("C")
         lblImpServicioCompEfec.Text = impuestosServicio.ToString("C")
         lblCuentasCanceladasCompEfec.Text = (pagosFacturas + salidasEfectivo).ToString("C")
         lblFondoFinalCompEfec.Text = fondoFinal.ToString("C")
@@ -61,7 +63,12 @@ Public Class CierreCaja
         'lblBonosTotalesEfectivo.Text = bonos.ToString("C")
 
 
-        monto_total_efectivo = ((fondoInicial + introducciones + expressEfectivo + ventasEfectivo) - (impuestosServicioEfectivo + pagosFacturas + salidasEfectivo + impuestoVentasEfectivo))
+        'monto_total_efectivo = ((fondoInicial + introducciones + expressEfectivo + ventasEfectivo) - (impuestosServicioEfectivo + pagosFacturas + salidasEfectivo + impuestoVentasEfectivo))
+
+        'JC
+        monto_total_efectivo = fondoInicial + introducciones + expressEfectivo + ventasefectivassistema - impuestosServicio - pagosFacturas - salidasEfectivo - impuestoVentas
+        'JC
+
         diferencia = fondoFinal - monto_total_efectivo
         lblDiferenciaCompEfec.Text = (diferencia).ToString("C")
 
@@ -95,7 +102,13 @@ Public Class CierreCaja
         'lblTotalVentasCompVtas.Text = ((fondoFinal + pagosFacturas + salidasEfectivo + ventasTarjeta) - (fondoInicial + expressEfectivo + introducciones)).ToString("C")
 
         ' monto_total = (fondoFinal - fondoInicial + pagosFacturas + salidasEfectivo - expressEfectivo - impuestosServicio + ventasTarjeta - introducciones)
-        monto_total = (fondoFinal - impuestoVentas + ventasTarjeta + pagosFacturas - express - fondoInicial - introducciones)
+
+        'monto_total = (fondoFinal - impuestoVentas + ventasTarjeta + pagosFacturas - express - fondoInicial - introducciones)
+
+        'JC
+        monto_total = fondoFinal - impuestoVentas + ventasTarjeta + pagosFacturas - express - fondoInicial - introducciones + uber
+        'JC
+
         ventas_sistema = ventasBrutas + (impuestoVentas - impuestoVentasEfectivo)
         diferenciaVentas = monto_total - ventas_sistema
 
@@ -377,7 +390,9 @@ Public Class CierreCaja
         crear_reportes.reporteUberEats()
     End Sub
 
+    Private Sub lblTotalVtasSistCompVtas_Click(sender As Object, e As EventArgs) Handles lblTotalVtasSistCompVtas.Click
 
+    End Sub
 
     Private Sub lblImpuestoServicio_Click(sender As Object, e As EventArgs) Handles lblImpServicioCompEfec.Click
         ' llama al metodo para crear el reporte de los impuestos de servicio ya INICIO

@@ -53,16 +53,18 @@ Partial Class InicioSesion
         Me.Panel1.Controls.Add(Me.txtCodigo)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(704, 362)
+        Me.Panel1.Size = New System.Drawing.Size(938, 446)
         Me.Panel1.TabIndex = 0
         '
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.SunChangSystem.My.Resources.Resources.odsLogo
-        Me.PictureBox2.Location = New System.Drawing.Point(549, 303)
+        Me.PictureBox2.Location = New System.Drawing.Point(732, 373)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(134, 44)
+        Me.PictureBox2.Size = New System.Drawing.Size(179, 54)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 18
         Me.PictureBox2.TabStop = False
@@ -78,9 +80,10 @@ Partial Class InicioSesion
         Me.btnCerrar.Font = New System.Drawing.Font("Microsoft YaHei UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnCerrar.Image = Global.SunChangSystem.My.Resources.Resources.btnCancelar
-        Me.btnCerrar.Location = New System.Drawing.Point(197, 296)
+        Me.btnCerrar.Location = New System.Drawing.Point(263, 364)
+        Me.btnCerrar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(161, 51)
+        Me.btnCerrar.Size = New System.Drawing.Size(215, 63)
         Me.btnCerrar.TabIndex = 17
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
@@ -89,18 +92,20 @@ Partial Class InicioSesion
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(119, 56)
+        Me.Label2.Location = New System.Drawing.Point(159, 69)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(134, 29)
+        Me.Label2.Size = New System.Drawing.Size(164, 36)
         Me.Label2.TabIndex = 16
         Me.Label2.Text = "Bienvenido"
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SunChangSystem.My.Resources.Resources.cover21
-        Me.PictureBox1.Location = New System.Drawing.Point(378, 56)
+        Me.PictureBox1.Location = New System.Drawing.Point(504, 69)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(280, 211)
+        Me.PictureBox1.Size = New System.Drawing.Size(373, 260)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox1.TabIndex = 15
         Me.PictureBox1.TabStop = False
@@ -116,9 +121,10 @@ Partial Class InicioSesion
         Me.btnIngresar.Font = New System.Drawing.Font("Microsoft YaHei UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnIngresar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnIngresar.Image = Global.SunChangSystem.My.Resources.Resources.btnLogin1
-        Me.btnIngresar.Location = New System.Drawing.Point(17, 289)
+        Me.btnIngresar.Location = New System.Drawing.Point(23, 356)
+        Me.btnIngresar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnIngresar.Name = "btnIngresar"
-        Me.btnIngresar.Size = New System.Drawing.Size(161, 64)
+        Me.btnIngresar.Size = New System.Drawing.Size(215, 79)
         Me.btnIngresar.TabIndex = 14
         Me.btnIngresar.UseVisualStyleBackColor = True
         '
@@ -127,9 +133,10 @@ Partial Class InicioSesion
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(82, 200)
+        Me.Label1.Location = New System.Drawing.Point(109, 246)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(96, 20)
+        Me.Label1.Size = New System.Drawing.Size(120, 25)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Contraseña:"
         '
@@ -138,39 +145,41 @@ Partial Class InicioSesion
         Me.lblPagoFacturas.AutoSize = True
         Me.lblPagoFacturas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPagoFacturas.ForeColor = System.Drawing.Color.White
-        Me.lblPagoFacturas.Location = New System.Drawing.Point(37, 142)
+        Me.lblPagoFacturas.Location = New System.Drawing.Point(49, 175)
+        Me.lblPagoFacturas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPagoFacturas.Name = "lblPagoFacturas"
-        Me.lblPagoFacturas.Size = New System.Drawing.Size(141, 20)
+        Me.lblPagoFacturas.Size = New System.Drawing.Size(177, 25)
         Me.lblPagoFacturas.TabIndex = 12
         Me.lblPagoFacturas.Text = "Código de usuario:"
         '
         'txtContrasenna
         '
         Me.txtContrasenna.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContrasenna.Location = New System.Drawing.Point(185, 194)
+        Me.txtContrasenna.Location = New System.Drawing.Point(247, 239)
+        Me.txtContrasenna.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtContrasenna.Name = "txtContrasenna"
         Me.txtContrasenna.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtContrasenna.Size = New System.Drawing.Size(148, 29)
+        Me.txtContrasenna.Size = New System.Drawing.Size(196, 34)
         Me.txtContrasenna.TabIndex = 1
-        Me.txtContrasenna.Text = "luiscruz12"
         '
         'txtCodigo
         '
         Me.txtCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigo.Location = New System.Drawing.Point(185, 136)
+        Me.txtCodigo.Location = New System.Drawing.Point(247, 167)
+        Me.txtCodigo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(148, 29)
+        Me.txtCodigo.Size = New System.Drawing.Size(196, 34)
         Me.txtCodigo.TabIndex = 0
-        Me.txtCodigo.Text = "adriana cruz"
         '
         'InicioSesion
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(704, 362)
+        Me.ClientSize = New System.Drawing.Size(939, 446)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "InicioSesion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inicio de Sesión"

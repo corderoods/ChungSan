@@ -235,6 +235,7 @@
                 txtFechaFactura.Text = listaPagoFacturas(i).Fecha_facturaSG.ToString
                 txtNumeroFactura.Text = listaPagoFacturas(i).Numero_facturaSG
                 txtMontoPago.Text = listaPagoFacturas(i).Monto_facturaSG
+                maskMontoPago.Text = listaPagoFacturas(1).Monto_facturaSG
                 'cbxElementoPago.SelectedItem = 4
                 txtObservaciones.Text = listaPagoFacturas(i).ObservacionesSG
 
@@ -348,7 +349,8 @@
                             factura_pago.Numero_facturaSG = CDbl(txtNumeroFactura.Text)
 
                             Try
-                                factura_pago.Monto_facturaSG = CDbl(txtMontoPago.Text)
+                                'factura_pago.Monto_facturaSG = CDbl(txtMontoPago.Text)
+                                factura_pago.Monto_facturaSG = maskMontoPago.Text
 
                                 Try
                                     ' valida que se haya seleccionado algun elemento de pago
@@ -515,6 +517,10 @@
     End Sub
 
     Private Sub txtMontoPago_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMontoPago.KeyPress
+
+        Dim cadena As String = txtMontoPago.Text
+        Dim filtro As String = "0123456789"
+
         ' valida que sea un digito
         If e.KeyChar.IsDigit(e.KeyChar) Then
             e.Handled = False
@@ -523,7 +529,37 @@
         Else
             e.Handled = True
         End If
-    End Sub
+
+
+        'Cuando hay mas de un digito ya ingresado, permite agregar el punto decimal
+        'If Len(cadena) > 0 Then
+        '    filtro += "."
+        'End If
+
+        'For Each caracter In filtro
+        '    If e.KeyChar = caracter Then
+        '        e.Handled = False
+        '        Exit For
+        '    Else
+
+        '        e.Handled = True
+        '    End If
+
+        'Next
+
+
+
+        'If Char.IsControl(e.KeyChar) Then
+        '    e.Handled = False
+        'End If
+
+
+        'If e.KeyChar = "." And Not cadena.IndexOf(".") Then
+        '    e.Handled = True
+
+        'End If
+
+    End Sub ' Fin del metodo
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim eliminarFactura As New EliminarFacturaProveedor

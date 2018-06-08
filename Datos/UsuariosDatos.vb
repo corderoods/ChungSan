@@ -108,7 +108,10 @@ Public Class UsuariosDatos
                 conexion = conexionDB.abrirConexion()
                 ' consulta a la base de datos po el empleado que cumpla con las credenciales proporcionadas al iniciar la sesion
                 cmd = New SqlCommand("SELECT em.* FROM RRHH.empleados AS em, RRHH.usuarios AS us WHERE em.cod_usuario = us.cod_usuario
-			                        AND us.cod_usuario = '" + cod_usuario + "' AND us.contrasena = '" + contrasenna + "'")
+                                   And us.cod_usuario = '" + cod_usuario + "' AND us.contrasena = '" + contrasenna + "'")
+
+
+
                 ' se asigna el tipo de consulta que es. Si es para llamara a procedimineto almacenado o consulta por string
                 cmd.CommandType = CommandType.Text
                 ' se le asigna la conexion al sqlCommand

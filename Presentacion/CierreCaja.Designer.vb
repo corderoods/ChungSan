@@ -370,9 +370,9 @@ Partial Class CierreCaja
         Me.lblVentasEfectivo.Location = New System.Drawing.Point(4, 156)
         Me.lblVentasEfectivo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblVentasEfectivo.Name = "lblVentasEfectivo"
-        Me.lblVentasEfectivo.Size = New System.Drawing.Size(148, 25)
+        Me.lblVentasEfectivo.Size = New System.Drawing.Size(253, 25)
         Me.lblVentasEfectivo.TabIndex = 1
-        Me.lblVentasEfectivo.Text = "Ventas Efectivo"
+        Me.lblVentasEfectivo.Text = "Ventas x Sistema - Tarjetas"
         '
         'lblSubtotalIngresos
         '
@@ -610,9 +610,9 @@ Partial Class CierreCaja
         Me.Label4.Location = New System.Drawing.Point(13, 220)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(259, 25)
+        Me.Label4.Size = New System.Drawing.Size(191, 25)
         Me.Label4.TabIndex = 20
-        Me.Label4.Text = "Cuentas canceladas + vales"
+        Me.Label4.Text = "Cuentas canceladas"
         '
         'PictureBox2
         '

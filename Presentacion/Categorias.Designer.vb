@@ -52,8 +52,9 @@ Partial Class Categorias
         Me.Panel1.Controls.Add(Me.txtNombre)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Location = New System.Drawing.Point(1, 1)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(870, 372)
+        Me.Panel1.Size = New System.Drawing.Size(1160, 458)
         Me.Panel1.TabIndex = 0
         '
         'btnSubcategorias
@@ -65,9 +66,10 @@ Partial Class Categorias
         Me.btnSubcategorias.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSubcategorias.ForeColor = System.Drawing.Color.White
         Me.btnSubcategorias.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.btnSubcategorias.Location = New System.Drawing.Point(348, 218)
+        Me.btnSubcategorias.Location = New System.Drawing.Point(464, 268)
+        Me.btnSubcategorias.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnSubcategorias.Name = "btnSubcategorias"
-        Me.btnSubcategorias.Size = New System.Drawing.Size(126, 51)
+        Me.btnSubcategorias.Size = New System.Drawing.Size(168, 63)
         Me.btnSubcategorias.TabIndex = 39
         Me.btnSubcategorias.Text = "Subcategorias"
         Me.btnSubcategorias.UseVisualStyleBackColor = False
@@ -83,9 +85,10 @@ Partial Class Categorias
         Me.btnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnNuevo.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.btnNuevo.Location = New System.Drawing.Point(23, 218)
+        Me.btnNuevo.Location = New System.Drawing.Point(31, 268)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(100, 51)
+        Me.btnNuevo.Size = New System.Drawing.Size(133, 63)
         Me.btnNuevo.TabIndex = 38
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = False
@@ -99,9 +102,10 @@ Partial Class Categorias
         Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.ForeColor = System.Drawing.Color.White
         Me.btnEliminar.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.btnEliminar.Location = New System.Drawing.Point(240, 218)
+        Me.btnEliminar.Location = New System.Drawing.Point(320, 268)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(100, 51)
+        Me.btnEliminar.Size = New System.Drawing.Size(133, 63)
         Me.btnEliminar.TabIndex = 37
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = False
@@ -117,9 +121,10 @@ Partial Class Categorias
         Me.btnConfirmar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConfirmar.ForeColor = System.Drawing.Color.White
         Me.btnConfirmar.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.btnConfirmar.Location = New System.Drawing.Point(134, 218)
+        Me.btnConfirmar.Location = New System.Drawing.Point(179, 268)
+        Me.btnConfirmar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnConfirmar.Name = "btnConfirmar"
-        Me.btnConfirmar.Size = New System.Drawing.Size(100, 51)
+        Me.btnConfirmar.Size = New System.Drawing.Size(133, 63)
         Me.btnConfirmar.TabIndex = 36
         Me.btnConfirmar.Text = "Guardar"
         Me.btnConfirmar.UseVisualStyleBackColor = False
@@ -130,11 +135,12 @@ Partial Class Categorias
         Me.cbxBebida.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.cbxBebida.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.cbxBebida.ForeColor = System.Drawing.Color.White
-        Me.cbxBebida.Location = New System.Drawing.Point(194, 132)
+        Me.cbxBebida.Location = New System.Drawing.Point(259, 162)
+        Me.cbxBebida.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cbxBebida.Name = "cbxBebida"
-        Me.cbxBebida.Size = New System.Drawing.Size(88, 28)
+        Me.cbxBebida.Size = New System.Drawing.Size(72, 33)
         Me.cbxBebida.TabIndex = 24
-        Me.cbxBebida.Text = "Bebida"
+        Me.cbxBebida.Text = "Bar"
         Me.cbxBebida.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.cbxBebida.UseVisualStyleBackColor = True
         '
@@ -143,9 +149,10 @@ Partial Class Categorias
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(583, 34)
+        Me.Label1.Location = New System.Drawing.Point(777, 42)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(168, 24)
+        Me.Label1.Size = New System.Drawing.Size(220, 29)
         Me.Label1.TabIndex = 22
         Me.Label1.Text = "Lista de Categorías"
         '
@@ -175,7 +182,8 @@ Partial Class Categorias
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvCategorias.DefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvCategorias.Location = New System.Drawing.Point(480, 70)
+        Me.dgvCategorias.Location = New System.Drawing.Point(640, 86)
+        Me.dgvCategorias.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgvCategorias.MultiSelect = False
         Me.dgvCategorias.Name = "dgvCategorias"
         Me.dgvCategorias.ReadOnly = True
@@ -187,15 +195,16 @@ Partial Class Categorias
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvCategorias.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvCategorias.Size = New System.Drawing.Size(374, 267)
+        Me.dgvCategorias.Size = New System.Drawing.Size(499, 329)
         Me.dgvCategorias.TabIndex = 21
         '
         'txtNombre
         '
         Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.Location = New System.Drawing.Point(116, 70)
+        Me.txtNombre.Location = New System.Drawing.Point(155, 86)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(252, 29)
+        Me.txtNombre.Size = New System.Drawing.Size(335, 34)
         Me.txtNombre.TabIndex = 20
         '
         'Label2
@@ -203,20 +212,22 @@ Partial Class Categorias
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(190, 34)
+        Me.Label2.Location = New System.Drawing.Point(253, 42)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(84, 24)
+        Me.Label2.Size = New System.Drawing.Size(107, 29)
         Me.Label2.TabIndex = 19
         Me.Label2.Text = "Nombre:"
         '
         'Categorias
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(869, 371)
+        Me.ClientSize = New System.Drawing.Size(1159, 457)
         Me.Controls.Add(Me.Panel1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Categorias"
         Me.Text = "Categorias"
         Me.Panel1.ResumeLayout(False)

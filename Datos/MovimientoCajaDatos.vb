@@ -1383,6 +1383,7 @@ Public Class MovimientoCajaDatos
             ' se asigna el tipo de consulta que es. Si es para llamara a procedimineto almacenado o consulta por string
             cmd.CommandType = CommandType.StoredProcedure
             cmd.CommandText = "FAC.sp_consulta_reporte_ventas"
+            'cmd.CommandText = "sp_consulta_ingreso_ventas_burtas"
             ' se le asigna la conexion al sqlCommand
             cmd.Connection = conexion
             ' se agregan los parametros
@@ -1879,6 +1880,7 @@ Public Class MovimientoCajaDatos
     ' metodo que se encarga de obtener el monto que corresponde al total de las ventas sea en efectivo o en tarjeta para el cajero a consultar
     ' El monto es de lñas ventas brutas (Subtotal de cada factura)
     Public Function obtenerIngresosVentasSoloEfectivo(ByVal cod_usuario As String, ByVal fecha_inicio As String, ByVal bandera As Int16) As Double
+        'Ventas X Sistema - Tarjetas
         ' se llama al metodo que abre la conexion con la base de datos
         conexion = conexionDB.abrirConexion()
         'Para el efectivo
@@ -1887,7 +1889,8 @@ Public Class MovimientoCajaDatos
 
         ' se asigna el tipo de consulta que es. Si es para llamara a procedimineto almacenado o consulta por string
         cmd.CommandType = CommandType.StoredProcedure
-        cmd.CommandText = "FAC.sp_consulta_ingreso_ventas_burtas2"
+        'cmd.CommandText = "FAC.sp_consulta_ingreso_ventas_burtas2"
+        cmd.CommandText = "FAC.sp_consulta_reporte_ventas"
         ' se le asigna la conexion al sqlCommand
         cmd.Connection = conexion
 
