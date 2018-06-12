@@ -33,7 +33,6 @@ Partial Class PagoFactura
         Me.txtFechaFactura = New System.Windows.Forms.MaskedTextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtMontoPago = New System.Windows.Forms.MaskedTextBox()
         Me.txtNumeroFactura = New System.Windows.Forms.TextBox()
         Me.cbxTipoPago = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -191,15 +190,6 @@ Partial Class PagoFactura
         Me.Label9.TabIndex = 10
         Me.Label9.Text = "Elemento"
         '
-        'txtMontoPago
-        '
-        Me.txtMontoPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMontoPago.Location = New System.Drawing.Point(487, 230)
-        Me.txtMontoPago.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txtMontoPago.Name = "txtMontoPago"
-        Me.txtMontoPago.Size = New System.Drawing.Size(165, 34)
-        Me.txtMontoPago.TabIndex = 7
-        '
         'txtNumeroFactura
         '
         Me.txtNumeroFactura.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -353,7 +343,6 @@ Partial Class PagoFactura
         Me.Panel2.Controls.Add(Me.txtConceptoPago)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Controls.Add(Me.cbxTipoPago)
-        Me.Panel2.Controls.Add(Me.txtMontoPago)
         Me.Panel2.Controls.Add(Me.Label9)
         Me.Panel2.Controls.Add(Me.txtObservaciones)
         Me.Panel2.Controls.Add(Me.Label7)
@@ -485,7 +474,7 @@ Partial Class PagoFactura
         'maskMontoPago
         '
         Me.maskMontoPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.maskMontoPago.Location = New System.Drawing.Point(487, 284)
+        Me.maskMontoPago.Location = New System.Drawing.Point(485, 231)
         Me.maskMontoPago.Margin = New System.Windows.Forms.Padding(4)
         Me.maskMontoPago.Mask = "999,999.999"
         Me.maskMontoPago.Name = "maskMontoPago"
@@ -540,7 +529,6 @@ Partial Class PagoFactura
     Friend WithEvents txtFechaFactura As MaskedTextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents txtMontoPago As MaskedTextBox
     Friend WithEvents txtNumeroFactura As TextBox
     Friend WithEvents cbxTipoPago As ComboBox
     Friend WithEvents Label8 As Label

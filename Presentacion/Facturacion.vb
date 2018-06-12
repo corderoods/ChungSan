@@ -27,6 +27,12 @@ Public Class Facturacion
     Dim parametros As Parametros
     'declara el objeto de ordenes para recargar la pagina
     Dim ordenes1 As Ordenes
+    'declara el objeto datafono para cargar la pagina
+    Dim datafono As Datafono
+    Dim datafonolist As List(Of Datafono)
+    Dim fonoInt As Integer = 0
+    Dim fonoStr As String = ""
+    Dim contado As Integer
     ' declara la variable que almacenara el codigo del cliente
     Public Shared cod_cliente As Double = 0
     ' variable que obtendra el valor del monto del descuento
@@ -35,40 +41,49 @@ Public Class Facturacion
 
     Public Sub New(numOrdenTemp As Integer, ByVal ordenes As Ordenes, ByVal EsUber As Boolean)
 
+        Me.datafono = New Datafono
 
         numOrdenFacturar = numOrdenTemp
-            Me.ordenes1 = ordenes
-            Dim nomOrden As String
+        Me.ordenes1 = ordenes
+        Dim nomOrden As String
 
-            'instancia de la capa de datos
-            facturaDatos = New FacturacionDatos
-            'llama al metodo que devuelve el objeto de la orden
-            ordenAPagar = facturaDatos.obtenerOrdenPorNumero(numOrdenFacturar)
+        'instancia de la capa de datos
+        facturaDatos = New FacturacionDatos
+        'llama al metodo que devuelve el objeto de la orden
+        ordenAPagar = facturaDatos.obtenerOrdenPorNumero(numOrdenFacturar)
 
-            parametros = facturaDatos.obtenerParametros
+        parametros = facturaDatos.obtenerParametros
 
-            productosFactura = New List(Of Object)
-            productosOrden = New List(Of Object)
-            pagosFactura = New List(Of Pago)
-            ' Esta llamada es exigida por el diseñador.
-            InitializeComponent()
+        productosFactura = New List(Of Object)
+        productosOrden = New List(Of Object)
+        pagosFactura = New List(Of Pago)
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
 
-            txtEfectivo.Text = 0.ToString("C")
-            txtExpress.Text = parametros.Express_.ToString("C")
-            'txtDescuento.Text = 0.ToString("P")
+        txtEfectivo.Text = 0.ToString("C")
+        txtExpress.Text = parametros.Express_.ToString("C")
+        'txtDescuento.Text = 0.ToString("P")
 
-            mostrarProductosFactura()
+        mostrarProductosFactura()
         obtenerEncabezadoFactura()
 
 
         mensaje = New Mensaje()
 
-            btnAgregarPago.Visible = False
+        btnAgregarPago.Visible = False
 
 
         If ordenAPagar.Ubicacion_ = "S" Then
             cbProforma.Visible = True
-        Else
+            Me.fonoStr = "Salon"
+        ElseIf ordenAPagar.Ubicacion_ = "L" Then
+            Me.fonoStr = "Llevar"
+            cbProforma.Visible = False
+        ElseIf ordenAPagar.Ubicacion_ = "U" Then
+            Me.fonoStr = "Uber"
+            cbProforma.Visible = False
+        ElseIf ordenAPagar.Ubicacion_ = "E" Then
+            Me.fonoStr = "Express"
             cbProforma.Visible = False
         End If
     End Sub
@@ -728,6 +743,7 @@ Public Class Facturacion
         lblMesa.Text = encabezado(0).NumMesa
         lblNumMesa.Text = encabezado(0).NumMesa
         lblFecha.Text = DateTime.Now.ToString
+
         If txtNombre.Text = "UBER" Then
             btnEfectivo.Visible = False
             btnTarjeta.Visible = False
@@ -1072,7 +1088,7 @@ Public Class Facturacion
         factura.Porcentaje_descuentoSG = Double.Parse(desc)
         factura.ImpservSG = CDbl(lblImpServicio.Text)
         factura.ImpvtasSG = CDbl(lblImpVentas.Text)
-
+        factura.cod_DatafonoSG = Convert.ToInt32(cbDatafono.SelectedIndex)
         If (ordenAPagar.Ubicacion_.CompareTo("E") = 0) Then
             factura.ExpressSG = CDbl(txtExpress.Text)
         Else
@@ -1104,6 +1120,7 @@ Public Class Facturacion
         subTotal += orden.ImpVtas_
 
         factura.SubtotalSG = (CDbl(lblSubTotal.Text) - factura.Monto_descuentoSG)
+
         'guarda la factura en la base de datos
         Dim result = facturaDatos.ingresarFactura(factura)
         'si pudo ingresar la factura ingresa el detalle de la factura en la base
@@ -1206,7 +1223,8 @@ Public Class Facturacion
     End Sub
 
     Private Sub btnTarjeta_Click(sender As Object, e As EventArgs) Handles btnTarjeta.Click
-        mostrarPagoTarjeta()
+
+        mostrarPagoTarjeta(fonoStr)
         Me.btnDividirFactura.Enabled = True
         btnAgregarPago.Visible = True
     End Sub
@@ -1304,8 +1322,16 @@ Public Class Facturacion
         ordenes1.mostrarOrdenes(0, EsUber)
     End Sub
 
-    Public Sub mostrarPagoTarjeta()
+    Public Sub mostrarPagoTarjeta(fono As String)
         pnlTarjeta.Visible = True
+        cargarDatafono()
+        If fono = "Express" Then
+            fonoInt = 1
+        Else
+            fonoInt = 0
+        End If
+
+        Me.cbDatafono.SelectedIndex = Me.fonoInt
         txtTarjeta.Text = saldoFactura.ToString("C")
         Me.pnlUber.Visible = False
         pagoTarjeta = True
@@ -1514,4 +1540,29 @@ Public Class Facturacion
         End If
 
     End Sub
+
+    Public Sub cargarDatafono()
+        datafonolist = datafono.cargaDatafonos()
+        Dim i As Integer
+        Dim dt As DataTable = New DataTable
+        dt.Columns.Add("cod_Datafono", System.Type.GetType("System.Int32"))
+        dt.Columns.Add("nombre_Datafono", System.Type.GetType("System.String"))
+        Dim dr As DataRow = dt.NewRow
+
+        For i = 0 To datafonolist.Count - 1
+            dr = dt.NewRow
+            dr("cod_Datafono") = datafonolist(i).cod_DatafonoSG
+            dr("nombre_Datafono") = datafonolist(i).nombre_DatafonoSG
+            dt.Rows.Add(dr)
+            If datafonolist(i).cod_DatafonoSG = 0 Then
+                contado = i
+            End If
+        Next i
+        cbDatafono.ValueMember = "cod_Datafono"
+        cbDatafono.DisplayMember = "nombre_Datafono"
+        cbDatafono.DataSource = dt
+
+    End Sub
+
+
 End Class

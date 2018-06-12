@@ -234,7 +234,8 @@
                 'cbxTipoPago.SelectedItem = 4
                 txtFechaFactura.Text = listaPagoFacturas(i).Fecha_facturaSG.ToString
                 txtNumeroFactura.Text = listaPagoFacturas(i).Numero_facturaSG
-                txtMontoPago.Text = listaPagoFacturas(i).Monto_facturaSG
+
+
                 maskMontoPago.Text = listaPagoFacturas(1).Monto_facturaSG
                 'cbxElementoPago.SelectedItem = 4
                 txtObservaciones.Text = listaPagoFacturas(i).ObservacionesSG
@@ -350,7 +351,7 @@
 
                             Try
                                 'factura_pago.Monto_facturaSG = CDbl(txtMontoPago.Text)
-                                factura_pago.Monto_facturaSG = maskMontoPago.Text
+                                factura_pago.Monto_facturaSG = CDbl(maskMontoPago.Text.Trim("_"))
 
                                 Try
                                     ' valida que se haya seleccionado algun elemento de pago
@@ -444,7 +445,10 @@
                                                 ' se limpian los espacios del formulario
                                                 txtConceptoPago.Text = ""
                                                 txtNumeroFactura.Text = ""
-                                                txtMontoPago.Text = ""
+
+                                                maskMontoPago.Clear()
+
+
                                                 txtObservaciones.Text = ""
 
                                             End If
@@ -481,7 +485,7 @@
 
         txtConceptoPago.Text = ""
         txtNumeroFactura.Text = ""
-        txtMontoPago.Text = ""
+        maskMontoPago.Clear()
         txtObservaciones.Text = ""
     End Sub
 
@@ -516,9 +520,9 @@
         End If
     End Sub
 
-    Private Sub txtMontoPago_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMontoPago.KeyPress
+    Private Sub txtMontoPago_KeyPress(sender As Object, e As KeyPressEventArgs)
 
-        Dim cadena As String = txtMontoPago.Text
+        'Dim cadena As String = txtMontoPago.Text
         Dim filtro As String = "0123456789"
 
         ' valida que sea un digito

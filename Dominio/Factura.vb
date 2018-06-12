@@ -1,5 +1,5 @@
 ﻿Public Class Factura
-    Private num_factura, num_orden, monto_total As Integer
+    Private num_factura, num_orden, monto_total, cod_Datafono As Integer
     Private fecha_factura As DateTime
     Private cod_estado_factura, nombreCliente, estado As String
     Private descuento As Double
@@ -136,4 +136,15 @@
             express = value
         End Set
     End Property
+
+    Public Property cod_DatafonoSG As Integer
+        Get
+            Return cod_Datafono
+        End Get
+        Set(value As Integer)
+            cod_Datafono = value
+        End Set
+    End Property
+
+
 End Class

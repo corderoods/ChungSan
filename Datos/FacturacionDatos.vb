@@ -318,6 +318,7 @@ Public Class FacturacionDatos
             .AddWithValue("@impserv", nuevaFactura.ImpservSG)
             .AddWithValue("@impvtas", nuevaFactura.ImpvtasSG)
             .AddWithValue("@express", nuevaFactura.ExpressSG)
+            .AddWithValue("@cod_Datafono", nuevaFactura.cod_DatafonoSG)
 
         End With
         Try

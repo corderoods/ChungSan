@@ -11,6 +11,7 @@ Public Class NuevaOrden
 
     Dim clienteActivo As New Cliente
     Public EsUber As Boolean = False
+    Dim fono As String
 
 
     Dim mesa As Integer = 0
@@ -29,7 +30,7 @@ Public Class NuevaOrden
         cargarClientes()
         cbxCliente.SelectedIndex = contado
         txtDireccion.Text = ""
-        txtTelefono.Text = ""
+        maskTelefono.Text = ""
     End Sub
 
     Private Sub btn1_Click(sender As Object, e As EventArgs) Handles btnSalon.Click
@@ -118,13 +119,14 @@ Public Class NuevaOrden
     End Sub
 
     Private Sub cbxCliente_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxCliente.SelectedIndexChanged
-        txtTelefono.Text = ""
+
         txtDireccion.Text = ""
+        maskTelefono.Text = ""
         Try
             clienteActivo = clienteDatos.obtenerClientePorId(cbxCliente.SelectedValue)
+            maskTelefono.Text = clienteActivo.Telefonos_(0).Telefono_
+            maskTelefono.Name = clienteActivo.Telefonos_(0).CodTelefono_
 
-            txtTelefono.Text = clienteActivo.Telefonos_(0).Telefono_
-            txtTelefono.Name = clienteActivo.Telefonos_(0).CodTelefono_
             txtDireccion.Text = clienteActivo.Direcciones_(0).Direccion_
             txtDireccion.Name = clienteActivo.Direcciones_(0).CodDireccion_
 
@@ -159,8 +161,8 @@ Public Class NuevaOrden
             If txtDireccion.Text.Trim.Length = 0 Then
                 mensaje.lblMensaje.Text = "Debe ingesar una direccion"
                 mensaje.ShowDialog()
-            ElseIf txtTelefono.Text.Trim.Length < 8 Then
-                mensaje.lblMensaje.Text = "Debe ingesar un telefono valido."
+            ElseIf maskTelefono.Text.Trim.Length < 8 Then
+                mensaje.lblMensaje.Text = "Debe ingesar un telefono"
                 mensaje.ShowDialog()
             Else
                 insertarExpress()
@@ -191,7 +193,8 @@ Public Class NuevaOrden
     Public Sub insertarSalon()
         ordenDatos.insertarOrden(S.Name, cbxSalonero.SelectedValue, mesa,
                                  InicioSesion.session.EmpleadoSG.Cod_empleadoSG,
-                                 clienteActivo.CodClienteSG, txtDireccion.Text, txtTelefono.Text, txtNombre.Text)
+                                 clienteActivo.CodClienteSG, txtDireccion.Text, maskTelefono.Text.Trim("-"), txtNombre.Text)
+       
         ordenes1.mostrarOrdenes(1, EsUber)
         Me.Close()
     End Sub
@@ -200,7 +203,7 @@ Public Class NuevaOrden
 
         ordenDatos.insertarOrden(S.Name, cbxSalonero.SelectedValue, mesa,
                                  InicioSesion.session.EmpleadoSG.Cod_empleadoSG,
-                                 clienteActivo.CodClienteSG, txtDireccion.Text, txtTelefono.Text, clienteActivo.NombreClienteSG)
+                                 clienteActivo.CodClienteSG, txtDireccion.Text, maskTelefono.Text.Trim, clienteActivo.NombreClienteSG)
         ordenes1.mostrarOrdenes(1, EsUber)
         Me.Close()
 
@@ -209,7 +212,7 @@ Public Class NuevaOrden
     Public Sub insertarLlevar()
         ordenDatos.insertarOrden(S.Name, cbxSalonero.SelectedValue, mesa,
                                  InicioSesion.session.EmpleadoSG.Cod_empleadoSG,
-                                 clienteActivo.CodClienteSG, txtDireccion.Text, txtTelefono.Text, txtNombre.Text)
+                                 clienteActivo.CodClienteSG, txtDireccion.Text, maskTelefono.Text.Trim("-"), txtNombre.Text)
         ordenes1.mostrarOrdenes(1, EsUber)
         Me.Close()
 
@@ -218,7 +221,7 @@ Public Class NuevaOrden
     Public Sub insertarUber(EsUber As Boolean)
         ordenDatos.insertarOrden(S.Name, cbxSalonero.SelectedValue, mesa,
                                  InicioSesion.session.EmpleadoSG.Cod_empleadoSG,
-                                 clienteActivo.CodClienteSG, txtDireccion.Text, txtTelefono.Text, txtNombre.Text)
+                                 clienteActivo.CodClienteSG, txtDireccion.Text, maskTelefono.Text.Trim("-"), txtNombre.Text)
         ordenes1.mostrarOrdenes(1, EsUber)
         Me.Close()
     End Sub
@@ -258,13 +261,14 @@ Public Class NuevaOrden
 
     Private Sub btnSigTelefono_Click(sender As Object, e As EventArgs) Handles btnSigTelefono.Click
         For i = 0 To clienteActivo.Telefonos_.Count - 1
-            If txtTelefono.Name = clienteActivo.Telefonos_(i).CodTelefono_ Then
+            If maskTelefono.Name = clienteActivo.Telefonos_(i).CodTelefono_ Then
                 If (i + 1) = clienteActivo.Telefonos_.Count Then
-                    txtTelefono.Text = clienteActivo.Telefonos_(0).Telefono_
-                    txtTelefono.Name = clienteActivo.Telefonos_(0).CodTelefono_
+                    maskTelefono.Text = clienteActivo.Telefonos_(0).Telefono_
+                    maskTelefono.Name = clienteActivo.Telefonos_(0).CodTelefono_
+
                 Else
-                    txtTelefono.Text = clienteActivo.Telefonos_(i + 1).Telefono_
-                    txtTelefono.Name = clienteActivo.Telefonos_(i + 1).CodTelefono_
+                    maskTelefono.Text = clienteActivo.Telefonos_(i + 1).Telefono_
+                    maskTelefono.Name = clienteActivo.Telefonos_(i + 1).CodTelefono_
                 End If
                 Exit Sub
             End If
@@ -282,6 +286,10 @@ Public Class NuevaOrden
         Me.btnMesa.Visible = False
         S.Text = "Uber Eats"
         S.Name = "U"
+    End Sub
+
+    Private Sub txtTelefono_TextChanged(sender As Object, e As EventArgs)
+
     End Sub
 
 

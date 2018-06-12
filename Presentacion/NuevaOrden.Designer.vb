@@ -24,8 +24,8 @@ Partial Class NuevaOrden
     Private Sub InitializeComponent()
         Me.pnlPricipal = New System.Windows.Forms.Panel()
         Me.pnlExpress = New System.Windows.Forms.Panel()
+        Me.maskTelefono = New System.Windows.Forms.MaskedTextBox()
         Me.btnSigTelefono = New System.Windows.Forms.Button()
-        Me.txtTelefono = New System.Windows.Forms.TextBox()
         Me.txtDireccion = New System.Windows.Forms.TextBox()
         Me.btnSigDireccion = New System.Windows.Forms.Button()
         Me.lblDireccion = New System.Windows.Forms.Label()
@@ -63,8 +63,8 @@ Partial Class NuevaOrden
         '
         'pnlExpress
         '
+        Me.pnlExpress.Controls.Add(Me.maskTelefono)
         Me.pnlExpress.Controls.Add(Me.btnSigTelefono)
-        Me.pnlExpress.Controls.Add(Me.txtTelefono)
         Me.pnlExpress.Controls.Add(Me.txtDireccion)
         Me.pnlExpress.Controls.Add(Me.btnSigDireccion)
         Me.pnlExpress.Controls.Add(Me.lblDireccion)
@@ -79,6 +79,16 @@ Partial Class NuevaOrden
         Me.pnlExpress.TabIndex = 9
         Me.pnlExpress.Visible = False
         '
+        'maskTelefono
+        '
+        Me.maskTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.maskTelefono.Location = New System.Drawing.Point(145, 103)
+        Me.maskTelefono.Margin = New System.Windows.Forms.Padding(4)
+        Me.maskTelefono.Mask = "0000-0000"
+        Me.maskTelefono.Name = "maskTelefono"
+        Me.maskTelefono.Size = New System.Drawing.Size(295, 34)
+        Me.maskTelefono.TabIndex = 23
+        '
         'btnSigTelefono
         '
         Me.btnSigTelefono.Cursor = System.Windows.Forms.Cursors.Hand
@@ -90,17 +100,6 @@ Partial Class NuevaOrden
         Me.btnSigTelefono.Text = ">"
         Me.btnSigTelefono.UseVisualStyleBackColor = True
         Me.btnSigTelefono.Visible = False
-        '
-        'txtTelefono
-        '
-        Me.txtTelefono.BackColor = System.Drawing.SystemColors.Menu
-        Me.txtTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTelefono.Location = New System.Drawing.Point(143, 98)
-        Me.txtTelefono.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtTelefono.Multiline = True
-        Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(309, 38)
-        Me.txtTelefono.TabIndex = 19
         '
         'txtDireccion
         '
@@ -424,8 +423,8 @@ Partial Class NuevaOrden
     Friend WithEvents Label3 As Label
     Friend WithEvents btnMesa As Button
     Friend WithEvents btnSigDireccion As Button
-    Friend WithEvents txtTelefono As TextBox
     Friend WithEvents txtDireccion As TextBox
     Friend WithEvents btnSigTelefono As Button
     Friend WithEvents UberEats As Button
+    Friend WithEvents maskTelefono As MaskedTextBox
 End Class

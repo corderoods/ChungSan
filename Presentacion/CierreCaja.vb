@@ -10,6 +10,8 @@ Public Class CierreCaja
     Public monto_total As Double = 0
     Public ventas_sistema As Double = 0
     Public diferenciaVentas As Double = 0
+    Public dataExpress, dataSalon As Double
+
     'declaracion de instancia
     Public movimiento_caja As New MovimientoCajaDatos
     ' instancia de la clase que se encarga de llamara los metodos que comuinican con la base de datos para crear los xml
@@ -33,7 +35,7 @@ Public Class CierreCaja
 
         '  MovimientosEfectivo.Close()
         'inicializacion de variables
-        subtotalEgresos = fondoFinal = ventasEfectivo = ventasTarjeta = introducciones = fondoInicial = pagosFacturas = uber = salidasEfectivo = impuestosServicio = impuestosServicioEfectivo = impuestoVentas = impuestoVentasEfectivo = expressEfectivo = express = ventasBrutas = ventasSoloEfec = 0
+        subtotalEgresos = fondoFinal = ventasEfectivo = ventasTarjeta = introducciones = fondoInicial = pagosFacturas = uber = salidasEfectivo = impuestosServicio = impuestosServicioEfectivo = impuestoVentas = impuestoVentasEfectivo = expressEfectivo = express = ventasBrutas = ventasSoloEfec = dataSalon = dataExpress = 0
 
         ' llama al metodo que se encarga de cargar todos los montos que corresponden a la seccion de ingresos
         cargarEfectivos()
@@ -59,6 +61,9 @@ Public Class CierreCaja
         lblCuentasCanceladasCompEfec.Text = (pagosFacturas + salidasEfectivo).ToString("C")
         lblFondoFinalCompEfec.Text = fondoFinal.ToString("C")
         lblImpVtasCompEfec.Text = impuestoVentasEfectivo.ToString("C")
+        lblDataExpress.Text = dataExpress.ToString("C")
+        lblDataSalon.Text = dataSalon.ToString("C")
+
         'lblValesTotalesEfectivo.Text = vales.ToString("C")
         'lblBonosTotalesEfectivo.Text = bonos.ToString("C")
 
@@ -66,7 +71,7 @@ Public Class CierreCaja
         'monto_total_efectivo = ((fondoInicial + introducciones + expressEfectivo + ventasEfectivo) - (impuestosServicioEfectivo + pagosFacturas + salidasEfectivo + impuestoVentasEfectivo))
 
         'JC
-        monto_total_efectivo = fondoInicial + introducciones + expressEfectivo + ventasefectivassistema - impuestosServicio - pagosFacturas - salidasEfectivo - impuestoVentas
+        monto_total_efectivo = fondoInicial + introducciones + expressEfectivo + ventasefectivassistema - impuestosServicio - pagosFacturas - salidasEfectivo + impuestoVentas - uber
         'JC
 
         diferencia = fondoFinal - monto_total_efectivo
@@ -153,12 +158,25 @@ Public Class CierreCaja
         impuestosServicioEfectivo = Me.cargarImpuestoServicio
         ' monto total correspondiente al impuesto de ventas 
         impuestoVentasEfectivo = Me.cargarImpuestoVentas(0)
+        'Ventas por datafono
+        dataExpress = Me.cargarVentasDatafonoExpress()
+        dataSalon = Me.cargarVentasDatafonoSalon()
 
     End Sub
 
     ' metodo que se encarga de cargar el monto de las ventas brutas ya sea por efectivo o por tarjeta
     Public Function cargarVentasTarjetas()
         Return movimiento_caja.obtenerIngresosVentas(InicioSesion.session.EmpleadoSG.Cod_usuarioSG, InicioSesion.session.Hora_primer_ingresoSG, 1)
+    End Function
+
+    ' metodo que se encarga de cargar el monto de las ventas brutas ya sea por efectivo o por tarjeta
+    Public Function cargarVentasDatafonoExpress()
+        Return movimiento_caja.obtenerVentasPorDatafono(InicioSesion.session.EmpleadoSG.Cod_usuarioSG, InicioSesion.session.Hora_primer_ingresoSG, 1)
+    End Function
+
+    ' metodo que se encarga de cargar el monto de las ventas brutas ya sea por efectivo o por tarjeta
+    Public Function cargarVentasDatafonoSalon()
+        Return movimiento_caja.obtenerVentasPorDatafono(InicioSesion.session.EmpleadoSG.Cod_usuarioSG, InicioSesion.session.Hora_primer_ingresoSG, 0)
     End Function
 
     'metodo que obtiene el monto de la suma de las ventas que se pagaron en efectivo
@@ -425,7 +443,7 @@ Public Class CierreCaja
 
     Private Sub lblVentasTarjetas_Click(sender As Object, e As EventArgs) Handles lblVentasCompVtas.Click
         ' llama al metodo para crear el reporte de las ventas por sistema en tarjeta
-        crear_reportes.reporteVentasTarjeta()
+        'crear_reportes.reporteVentasTarjeta()
     End Sub
 
     Private Sub lblImpVtasCompVtas_Click(sender As Object, e As EventArgs) Handles lblImpVtasCompVtas.Click

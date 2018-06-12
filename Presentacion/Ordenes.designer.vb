@@ -90,7 +90,7 @@ Partial Class Ordenes
         Me.Panel1.Location = New System.Drawing.Point(0, 40)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1803, 102)
+        Me.Panel1.Size = New System.Drawing.Size(1914, 102)
         Me.Panel1.TabIndex = 0
         '
         'btnLimpiar
@@ -129,7 +129,7 @@ Partial Class Ordenes
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SunChangSystem.My.Resources.Resources.cover21
-        Me.PictureBox1.Location = New System.Drawing.Point(1543, 4)
+        Me.PictureBox1.Location = New System.Drawing.Point(1645, 0)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(256, 94)
@@ -318,10 +318,10 @@ Partial Class Ordenes
         Me.pnlPrinCategorias.Controls.Add(Me.lblCategorias)
         Me.pnlPrinCategorias.Controls.Add(Me.pnlCategorias)
         Me.pnlPrinCategorias.Dock = System.Windows.Forms.DockStyle.Right
-        Me.pnlPrinCategorias.Location = New System.Drawing.Point(952, 142)
+        Me.pnlPrinCategorias.Location = New System.Drawing.Point(956, 142)
         Me.pnlPrinCategorias.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlPrinCategorias.Name = "pnlPrinCategorias"
-        Me.pnlPrinCategorias.Size = New System.Drawing.Size(851, 755)
+        Me.pnlPrinCategorias.Size = New System.Drawing.Size(958, 806)
         Me.pnlPrinCategorias.TabIndex = 6
         '
         'btnAgregar
@@ -331,7 +331,7 @@ Partial Class Ordenes
         Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregar.Image = Global.SunChangSystem.My.Resources.Resources.btnAgregar1
         Me.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnAgregar.Location = New System.Drawing.Point(708, 33)
+        Me.btnAgregar.Location = New System.Drawing.Point(821, 31)
         Me.btnAgregar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(133, 55)
@@ -361,7 +361,7 @@ Partial Class Ordenes
         Me.cbxProducto.Margin = New System.Windows.Forms.Padding(4)
         Me.cbxProducto.MaxDropDownItems = 15
         Me.cbxProducto.Name = "cbxProducto"
-        Me.cbxProducto.Size = New System.Drawing.Size(532, 37)
+        Me.cbxProducto.Size = New System.Drawing.Size(668, 37)
         Me.cbxProducto.TabIndex = 11
         '
         'lblCategorias
@@ -379,10 +379,10 @@ Partial Class Ordenes
         'pnlCategorias
         '
         Me.pnlCategorias.AutoScroll = True
-        Me.pnlCategorias.Location = New System.Drawing.Point(21, 150)
+        Me.pnlCategorias.Location = New System.Drawing.Point(4, 150)
         Me.pnlCategorias.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlCategorias.Name = "pnlCategorias"
-        Me.pnlCategorias.Size = New System.Drawing.Size(820, 550)
+        Me.pnlCategorias.Size = New System.Drawing.Size(941, 656)
         Me.pnlCategorias.TabIndex = 9
         '
         'MenuStrip1
@@ -393,7 +393,7 @@ Partial Class Ordenes
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(1803, 40)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1914, 40)
         Me.MenuStrip1.TabIndex = 7
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -539,7 +539,7 @@ Partial Class Ordenes
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1803, 897)
+        Me.ClientSize = New System.Drawing.Size(1914, 948)
         Me.Controls.Add(Me.txtNombreCajero)
         Me.Controls.Add(Me.txtHora)
         Me.Controls.Add(Me.pnlPrinCategorias)

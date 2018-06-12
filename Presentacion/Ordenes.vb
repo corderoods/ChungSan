@@ -5,9 +5,11 @@
     Dim productoDatos As ProductoDatos = New ProductoDatos
     Dim ordenDatos As OrdenDatos
     Dim clienteDatos As ClienteDatos
+    Dim fono As Datafono
     Dim facturacionDatos As FacturacionDatos
     Public EsUber As Boolean
     Dim esNombre As String
+    Dim fonoStr As String
 
     Public Sub New()
         ' Esta llamada es exigida por el diseñador.
@@ -100,6 +102,7 @@
         'inicializa variables y obtiene todas las ordenes sin pagar
         clienteDatos = New ClienteDatos
         ordenDatos = New OrdenDatos
+        fono = New Datafono
         Dim ordenes = ordenDatos.obtenerOrdenSinPagar()
 
         'limpia el panel de ordenes y el que contiene el detalle de pedidos de cada orden
@@ -140,17 +143,23 @@
                     If cant > 1 Then
                         If ordenes(i).NombreCliente_ = "CONTADO" Then
                             Me.esNombre = ""
+                            Me.fonoStr = "Salon"
                             text = "Mesa " & ordenes(i).NumMesa & " Orden " & ordenes(i).NumOrden
                         Else
                             Me.esNombre = ""
+                            Me.fonoStr = "Salon"
+
                             text = "Mesa " & ordenes(i).NumMesa & "  " & ordenes(i).NombreCliente_
                         End If
                     Else
                         If ordenes(i).NombreCliente_ = "CONTADO" Then
                             Me.esNombre = ""
+                            Me.fonoStr = "Salon"
                             text = "Mesa " & ordenes(i).NumMesa
                         Else
                             Me.esNombre = ""
+                            Me.fonoStr = "Salon"
+
                             text = "Mesa " & ordenes(i).NumMesa & "  " & ordenes(i).NombreCliente_
                         End If
                     End If 'fin del salon
@@ -160,9 +169,11 @@
                     'del Cliente al que pertenece la orden para ponerle el nombre
                     If ordenes(i).NombreCliente_ = "" Then
                         Me.esNombre = ""
+                        Me.fonoStr = "Express"
                         text = "Express " & clienteDatos.obtenerClientePorId(ordenes(i).CodCliente).NombreClienteSG
                     Else
                         Me.esNombre = ""
+                        Me.fonoStr = "Express"
                         text = "Express " & ordenes(i).NombreCliente_
                     End If ' fin delexpress
 
@@ -170,9 +181,11 @@
                     'si la orden es para llevar, le pone el numero de la orden
                     If ordenes(i).NombreCliente_ = "CONTADO" Then
                         Me.esNombre = ""
+                        Me.fonoStr = "Llevar"
                         text = "Llevar " & ordenes(i).NumOrden
                     Else
                         Me.esNombre = ""
+                        Me.fonoStr = "Llevar"
                         text = "Llevar " & ordenes(i).NombreCliente_
                     End If 'Fin de llevar
 
@@ -180,9 +193,11 @@
                     'si la orden es para Uber, le pone el numero de la orden
                     If ordenes(i).NombreCliente_ = "UBER" Then
                         Me.esNombre = "Uber"
+                        Me.fonoStr = ""
                         text = "Uber Eats " & ordenes(i).NumOrden
                     Else
                         Me.esNombre = "Uber"
+                        Me.fonoStr = ""
                         text = "Uber Eats " & ordenes(i).NombreCliente_
                     End If
 
@@ -833,6 +848,10 @@
         reporte.ventas_dia = True
         reporte.ShowDialog()
         reporte.ventas_dia = False
+
+    End Sub
+
+    Private Sub cbxProducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxProducto.SelectedIndexChanged
 
     End Sub
 End Class
