@@ -1466,6 +1466,10 @@ Public Class Facturacion
         txtEfectivo.Text = 0.ToString("C")
     End Sub
 
+    Private Sub cbDatafono_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbDatafono.SelectedIndexChanged
+
+    End Sub
+
 
     ' metodo para imprimir la factura
     ' llama al reporte de Facturas que obtiene los datos de la base de datos

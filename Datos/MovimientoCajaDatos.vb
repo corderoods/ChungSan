@@ -80,7 +80,7 @@ Public Class MovimientoCajaDatos
     End Function
 
     ' metodo que se encargar de almacenar el fondo final obtenido por el cajero
-    Public Function almacenarFondoFinal(ByVal denominacionesMonedas As DenominacionMonedas) As Boolean
+    Public Function almacenarFondoFinal(ByVal denominacionesMonedas As DenominacionMonedas, dataExPpress As Double, dataSalon As Double) As Boolean
         ' se llama al metodo que abre la conexion con la base de datos
         conexion = conexionDB.abrirConexion()
 
@@ -105,6 +105,9 @@ Public Class MovimientoCajaDatos
                 .AddWithValue("@cod_moneda", listaDenominaciones(i).Codigo_monedaSG)
                 .AddWithValue("@cantidad_cierre", listaDenominaciones(i).CantidadSG)
                 .AddWithValue("@subtotal_cierre", listaDenominaciones(i).SubtotalSG)
+                .AddWithValue("@fonoExpress", dataExPpress)
+                .AddWithValue("@fonoSalon", dataSalon)
+                .AddWithValue("@fecha_fin", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"))
                 'valida si es la primer iteracion (i=0) para indicar en la bandera
                 .AddWithValue("@flag", IIf(i = 0, 1, 0))
             End With
@@ -136,7 +139,7 @@ Public Class MovimientoCajaDatos
     End Function
 
     ' metodo que se encargar de almacenar el arqueo de caja realizado
-    Public Function almacenarArqueoDeCaja(ByVal denominacionesMonedas As DenominacionMonedas) As Boolean
+    Public Function almacenarArqueoDeCaja(ByVal denominacionesMonedas As DenominacionMonedas, ByVal fonoExpres As Double, ByVal fonoSalon As Double) As Boolean
         ' se llama al metodo que abre la conexion con la base de datos
         conexion = conexionDB.abrirConexion()
         ' se asigna el tipo de consulta que es. Si es para llamar a procedimiento almacenado o consulta por string
@@ -390,6 +393,7 @@ Public Class MovimientoCajaDatos
         denominaciones.Add(obtenerDenominacionesColones)
         ' agrega a la lista las denominaciones de dolares al llamar al metodo que las obtiene de la base de datos
         denominaciones.Add(obtenerDenominacionesDolares)
+
 
         Return denominaciones
 
@@ -1941,7 +1945,6 @@ Public Class MovimientoCajaDatos
 
         ' se asigna el tipo de consulta que es. Si es para llamara a procedimineto almacenado o consulta por string
         cmd.CommandType = CommandType.StoredProcedure
-        'cmd.CommandText = "FAC.sp_consulta_reporte_ventas"
         cmd.CommandText = "FAC.sp_consulta_Ventas_Por_Datafono"
         ' se le asigna la conexion al sqlCommand
         cmd.Connection = conexion
@@ -1963,6 +1966,7 @@ Public Class MovimientoCajaDatos
                 While lector.Read
                     ' se limpian los parametros
                     cmd.Parameters.Clear()
+
                     ' retorna el monto
                     Return Double.Parse(lector(0).ToString())
                 End While
@@ -1982,7 +1986,6 @@ Public Class MovimientoCajaDatos
 
         Return 0
     End Function
-
 
 
 

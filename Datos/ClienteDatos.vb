@@ -7,6 +7,7 @@ Public Class ClienteDatos
 
     Dim clienteTelefono As New ClienteTelefonoDatos
     Dim clienteDireccion As New ClienteDireccionDatos
+    Dim clientex As New Cliente
 
     Public Sub New()
         conexionDB = New ConexionBD
@@ -228,6 +229,52 @@ Public Class ClienteDatos
             conexionDB.cerrarConexion()
             Return 0
         End Try
+    End Function
+
+
+
+
+    Public Function obtenerClientePorTelefono2(ByVal telefono As String) As Cliente
+        ' lista que obtendrá todos los clientes
+        ' objeto que obtendrá a los clientes
+        Dim cliente As Cliente = New Cliente
+        ' donde se almacenan los datos de la consulta
+        Dim lector As SqlDataReader
+
+        Try
+            Using (conexion)
+                ' se llama al metodo que abre la conexion con la base de datos
+                conexion = conexionDB.abrirConexion()
+                ' consulta a la base de datos por todos los meseros de la base de datos
+                cmd = New SqlCommand("select c.cod_cliente, d.direccion, c.nombre_cliente from fac.clientes c
+                                      INNER JOIN [FAC].[clientes_telefonos] t ON c.cod_cliente = t.cod_cliente
+                                      INNER JOIN FAC.clientes_direcciones d ON c.cod_cliente = d.cod_cliente
+                                      WHERE t.telefono = '" & telefono & "'")
+
+                ' se asigna el tipo de consulta que es. Si es para llamara a procedimineto almacenado o consulta por string
+                cmd.CommandType = CommandType.Text
+                ' se le asigna la conexion al sqlCommand
+                cmd.Connection = conexion
+                ' se ejecuta la consulta 
+                lector = cmd.ExecuteReader
+                ' se recorre hasta obtener todos los registros
+                While lector.Read
+                    'instancia del objeto
+                    ' se asignan los datos del cliente
+                    cliente.CodClienteSG = ConversionDatosDB.VerificarNulo(lector("cod_cliente"), -1)
+                    cliente.NombreClienteSG = ConversionDatosDB.VerificarNulo(lector("nombre_cliente"), "Desconocido")
+                    cliente.DireccionSG = ConversionDatosDB.VerificarNulo(lector("direccion"), "Desconocido")
+                End While
+
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+
+        cliente.Telefonos_ = clienteTelefono.obtenerTelefonosPorCliente(cliente)
+
+        Return cliente
     End Function
 
 End Class

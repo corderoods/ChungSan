@@ -5,6 +5,7 @@
     Private tipo_moneda As Integer
     Private cantidad As Integer
     Private subtotal As Double
+    Private subtotal_Cierre As Double
     Private tipo_cambio As Double
 
     Public Sub New()
@@ -83,4 +84,14 @@
             tipo_cambio = value
         End Set
     End Property
+
+    Public Property Subtotal_CierreSG As Double
+        Get
+            Return subtotal_Cierre
+        End Get
+        Set(value As Double)
+            subtotal_Cierre = value
+        End Set
+    End Property
+
 End Class

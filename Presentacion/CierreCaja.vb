@@ -11,7 +11,7 @@ Public Class CierreCaja
     Public ventas_sistema As Double = 0
     Public diferenciaVentas As Double = 0
     Public dataExpress, dataSalon As Double
-
+    Dim ventasefectivassistema As Double
     'declaracion de instancia
     Public movimiento_caja As New MovimientoCajaDatos
     ' instancia de la clase que se encarga de llamara los metodos que comuinican con la base de datos para crear los xml
@@ -55,7 +55,7 @@ Public Class CierreCaja
 
         ventasSoloEfec = ventasEfectivo - ventasTarjeta
         'lblVentasEfectivoCompEfec.Text = ventasSoloEfec.ToString("C")
-        Dim ventasefectivassistema As Double = ventas_sistema - ventasTarjeta + impuestosServicio
+        ventasefectivassistema = ventas_sistema - ventasTarjeta + impuestosServicio
         lblVentasEfectivoCompEfec.Text = ventasefectivassistema.ToString("C")
         lblImpServicioCompEfec.Text = impuestosServicio.ToString("C")
         lblCuentasCanceladasCompEfec.Text = (pagosFacturas + salidasEfectivo).ToString("C")
@@ -281,10 +281,11 @@ Public Class CierreCaja
         Try
             Dim parametro As New ParameterValues
             Dim numero_factura As New ParameterValues
+            Dim coin As New Monedas
 
             Dim pvisualizar As New ParameterDiscreteValue
 
-
+            'el reporte
             Dim factura As New Facturas
 
             pvisualizar.Value = fondoInicial.ToString("C")
@@ -295,7 +296,7 @@ Public Class CierreCaja
             parametro.Add(pvisualizar)
             factura.DataDefinition.ParameterFields("@Introducciones").ApplyCurrentValues(parametro)
 
-            pvisualizar.Value = ventasEfectivo.ToString("C")
+            pvisualizar.Value = ventasefectivassistema.ToString("C")
             parametro.Add(pvisualizar)
             factura.DataDefinition.ParameterFields("@ventas_efectivo").ApplyCurrentValues(parametro)
 
@@ -356,9 +357,18 @@ Public Class CierreCaja
             parametro.Add(pvisualizar)
             factura.DataDefinition.ParameterFields("@diferencia_vtas").ApplyCurrentValues(parametro)
 
+            pvisualizar.Value = dataExpress.ToString("C")
+            parametro.Add(pvisualizar)
+            factura.DataDefinition.ParameterFields("@datafono_Express").ApplyCurrentValues(parametro)
+
+            pvisualizar.Value = dataSalon.ToString("C")
+            parametro.Add(pvisualizar)
+            factura.DataDefinition.ParameterFields("@datafono_Salon").ApplyCurrentValues(parametro)
+
             pvisualizar.Value = (InicioSesion.session.EmpleadoSG.NombreSG + " " + InicioSesion.session.EmpleadoSG.Apellido1SG)
             parametro.Add(pvisualizar)
             factura.DataDefinition.ParameterFields("@usuario").ApplyCurrentValues(parametro)
+
 
 
             Dim reporte As New Reportes
@@ -503,6 +513,7 @@ Public Class CierreCaja
         fondoFinal.fondoFinal = True
         ' llama al metodo para cargar y mostrar las nominaciones
         fondoFinal.cargarDenominaciones()
+
         fondoFinal.ShowDialog()
         ' coloca la variable de fondoFinal en false para saber que la accion ya se realizo
         fondoFinal.fondoFinal = False

@@ -292,6 +292,28 @@ Public Class NuevaOrden
 
     End Sub
 
+    Private Sub maskTelefono_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles maskTelefono.MaskInputRejected
+
+
+    End Sub
+
+    Private Sub maskTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles maskTelefono.KeyPress
+
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Enter) Then
+            Dim Clie As Cliente
+
+            Dim cadena As String = Trim(maskTelefono.Text.Trim("-"))
+            While cadena.Contains("-")
+                cadena = cadena.Replace("-", "")
+            End While
+            Clie = clienteDatos.obtenerClientePorTelefono2(cadena)
+            txtDireccion.Text = Clie.DireccionSG
+            Me.cbxCliente.SelectedValue = Clie.CodClienteSG
+
+        End If
+
+    End Sub
+
 
 
     'Private Sub txtTelefono_TextChanged(sender As Object, e As EventArgs) Handles txtTelefono.TextChanged

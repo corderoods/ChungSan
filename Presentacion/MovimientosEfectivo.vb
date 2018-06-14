@@ -7,11 +7,15 @@ Public Class MovimientosEfectivo
     Public fondoFinal As Boolean = False
     Public introducciones As Boolean = False
     Public salidasEfectivo As Boolean = False
+
     Public arqueo As Boolean = False
     Public arqueo_diseno As New Arqueo
     Public denominacionesColones As DataTable
     Public denominacionesDolares As DataTable
+    Public denominacionesDatafono As DataTable
     Public usuariosDatos As New UsuariosDatos
+    Public fonoExpres As Double = 0
+    Public fonoSalon As Double = 0
     ' instancia a la clase que conecta con la base de datos
     Dim denominacionMonedasDatos As MovimientoCajaDatos
 
@@ -72,26 +76,37 @@ Public Class MovimientosEfectivo
     Public Sub cargarDenominaciones()
         If fondoInicial Then
             lblTipoMovimiento.Text = "Apertura de caja"
+            rbDatafono.Visible = False
+            pnlDatafonos.Hide()
             PanelIntroducciones.Hide()
             PanelSalidas.Hide()
             PanelFondos.Show()
         ElseIf fondoFinal Then
             lblTipoMovimiento.Text = "Cierre de caja"
+            rbDatafono.Visible = True
             PanelIntroducciones.Hide()
             PanelSalidas.Hide()
             PanelFondos.Show()
+            pnlDatafonos.Show()
+
         ElseIf introducciones Then
             lblTipoMovimiento.Text = "Introducciones"
+            rbDatafono.Visible = False
+            pnlDatafonos.Hide()
             PanelFondos.Hide()
             PanelSalidas.Hide()
             PanelIntroducciones.Show()
         ElseIf salidasEfectivo Then
             lblTipoMovimiento.Text = "Salidas de Efectivo"
+            rbDatafono.Visible = False
+            pnlDatafonos.Hide()
             PanelFondos.Hide()
             PanelIntroducciones.Hide()
             PanelSalidas.Show()
         ElseIf arqueo Then
             lblTipoMovimiento.Text = "Arqueo de Caja"
+            rbDatafono.Visible = True
+            pnlDatafonos.Show()
             PanelIntroducciones.Hide()
             PanelSalidas.Hide()
             PanelFondos.Show()
@@ -108,7 +123,7 @@ Public Class MovimientosEfectivo
         ' variable que tendra las denominaciones a obtener
         denominacionesColones = listaDenominaciones(0)
         denominacionesDolares = listaDenominaciones(1)
-
+        'denominacionesDatafono = listaDenominaciones(2)
         If fondoFinal Or arqueo Then
             Dim cantidades_cierre_datos = New MovimientoCajaDatos
             cantidades_cierre = cantidades_cierre_datos.obtenerDenominacionesCierreCaja(InicioSesion.session.EmpleadoSG.Cod_usuarioSG, InicioSesion.session.Hora_primer_ingresoSG)
@@ -256,6 +271,11 @@ Public Class MovimientosEfectivo
 
     ' funcion del boton aceptar. Comunica con datos para almacenar los montos
     Private Sub btnAccept_Click(sender As Object, e As EventArgs) Handles btnAccept.Click
+        If pnlDatafonos.Visible = True Then
+            fonoSalon = CDbl(mskSalon.Text.Trim("_"))
+            fonoExpres = CDbl(mskExpress.Text.Trim("_"))
+        End If
+
         If txtAdminPassword.TextLength > 0 Then
 
             denominacionesAEntregar.Clear()
@@ -294,39 +314,53 @@ Public Class MovimientosEfectivo
                         End If
                     End If
                 ElseIf fondoFinal Then
+
                     ' se agrega el monto de los colones y se almacena en la base de datos
                     If agregarDenominacionesALista(pnlDenominacionesColones, denominacionesColones, 0, 0) Then
                         ' valida que se haya ingresado correctamente
-                        If denominacionMonedasDatos.almacenarFondoFinal(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG)) Then
-                            denominacionesAEntregar.Clear()
-                            ' se agrega el monto de los dolares y se almacena en la base de datos
-                            'If agregarDenominacionesALista(pnlDenominacionesDolares, denominacionesDolares, 1, tipo_cambio) Then
-                            ' valida que se haya ingresado correctamente
-                            'If denominacionMonedasDatos.almacenarFondoFinal(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG)) Then
-                            '                   MsgBox("Se almacenó correctamente el fondo final")
-                            ' instancia para ir a la ventana de cierre de caja
-                            'cierre_caja_diseno = New CierreCaja
-                            'Dim cierre_caja As New CierreCaja
-                            '' muestra la ventana
-                            'cierre_caja.ShowDialog()
-                            Close()
-                            'If cierre_caja_diseno.modificar_cierre Then
-                            '    MsgBox("cerrar")
-                            '    Ordenes.Close()
-                            '    InicioSesion.Show()
-                            '    cierre_caja_diseno.modificar_cierre = False
-                            'End If
+                        If fonoExpres = 0 Then
+                            If fonoSalon = 0 Then
 
-                            '    Else
-                            'mensaje.lblMensaje.Text = "Error al almacenar el fondo final de dólares"
-                            'mensaje.ShowDialog()
-                            '    End If
-                            'End If
-                        Else
+
+
+                                If denominacionMonedasDatos.almacenarFondoFinal(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), fonoExpres, fonoSalon) Then
+                                    denominacionesAEntregar.Clear()
+                                    ' se agrega el monto de los dolares y se almacena en la base de datos
+                                    'If agregarDenominacionesALista(pnlDenominacionesDolares, denominacionesDolares, 1, tipo_cambio) Then
+                                    ' valida que se haya ingresado correctamente
+                                    'If denominacionMonedasDatos.almacenarFondoFinal(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG)) Then
+                                    '                   MsgBox("Se almacenó correctamente el fondo final")
+                                    ' instancia para ir a la ventana de cierre de caja
+                                    'cierre_caja_diseno = New CierreCaja
+                                    'Dim cierre_caja As New CierreCaja
+                                    '' muestra la ventana
+                                    'cierre_caja.ShowDialog()
+                                    Close()
+                                    'If cierre_caja_diseno.modificar_cierre Then
+                                    '    MsgBox("cerrar")
+                                    '    Ordenes.Close()
+                                    '    InicioSesion.Show()
+                                    '    cierre_caja_diseno.modificar_cierre = False
+                                    'End If
+
+                                    '    Else
+                                    'mensaje.lblMensaje.Text = "Error al almacenar el fondo final de dólares"
+                                    'mensaje.ShowDialog()
+                                    '    End If
+                                    'End If
+                                Else
+                                    mensaje.tipoMensaje("error")
+                                    mensaje.lblMensaje.Text = "Error al almacenar el fondo final de colones"
+                                    mensaje.ShowDialog()
+                                End If
+                            End If
                             mensaje.tipoMensaje("error")
-                            mensaje.lblMensaje.Text = "Error al almacenar el fondo final de colones"
+                            mensaje.lblMensaje.Text = "Debe ingresar el monto del datafono del Salon"
                             mensaje.ShowDialog()
                         End If
+                        mensaje.tipoMensaje("error")
+                        mensaje.lblMensaje.Text = "Debe ingresar el monto del datafono Express"
+                        mensaje.ShowDialog()
                     End If
                 ElseIf salidasEfectivo Then
                     ' se agrega el monto de los colones y se almacena en la base de datos
@@ -377,17 +411,33 @@ Public Class MovimientosEfectivo
                     ' se agrega el monto de los colones y se almacena en la base de datos
                     If agregarDenominacionesALista(pnlDenominacionesColones, denominacionesColones, 0, 0) Then
                         ' valida que se haya ingresado correctamente
-                        If denominacionMonedasDatos.almacenarArqueoDeCaja(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG)) Then
-                            denominacionesAEntregar.Clear()
-                            arqueo_diseno.arqueo = True
-                            Close()
-                        Else
+                        If fonoSalon = 0 Then
+                            If fonoExpres = 0 Then
+
+                                If denominacionMonedasDatos.almacenarArqueoDeCaja(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), fonoExpres, fonoSalon) Then
+                                    denominacionesAEntregar.Clear()
+                                    arqueo_diseno.arqueo = True
+                                    Close()
+                                Else
+                                    mensaje.tipoMensaje("error")
+                                    mensaje.lblMensaje.Text = "Error al almacenar el arqueo de caja"
+                                    mensaje.ShowDialog()
+                                End If
+                                mensaje.tipoMensaje("error")
+                                mensaje.lblMensaje.Text = "Debe ingresar el monto del datafono Express"
+                                mensaje.ShowDialog()
+
+                            End If ' Fin del if express
                             mensaje.tipoMensaje("error")
-                            mensaje.lblMensaje.Text = "Error al almacenar el arqueo de caja"
+                            mensaje.lblMensaje.Text = "Debe ingresar el monto del datafono del Salon"
                             mensaje.ShowDialog()
-                        End If
+
+                        End If ''Fin del if del salon
                     End If
+
                 End If
+
+
             Else
                 mensaje.tipoMensaje("error")
                 mensaje.lblMensaje.Text = "Contraseña o usuario inválido"
@@ -417,6 +467,7 @@ Public Class MovimientosEfectivo
                         ' se valida que la cantidad no este sin valor
                         If panel.Controls.Item("txtCantidad" + tipoDenominacion.Rows(i).Item(0).ToString).Text <> "" Or
                             Not IsNothing(panel.Controls.Item("txtCantidad" + tipoDenominacion.Rows(i).Item(0).ToString).Text) Then
+
                             monto = CDbl(panel.Controls.Item("lblDenominacion" + tipoDenominacion.Rows(i).Item(0).ToString).Text)
                             ' se obtiene la cantidad de esa moneda
                             cantidad = CInt(panel.Controls.Item("txtCantidad" + tipoDenominacion.Rows(i).Item(0).ToString).Text)
@@ -804,6 +855,15 @@ Public Class MovimientosEfectivo
     End Sub
 
     Private Sub pnlDenominacionesColones_Paint(sender As Object, e As PaintEventArgs) Handles pnlDenominacionesColones.Paint
+
+    End Sub
+
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles rbDatafono.CheckedChanged
+        pnlDatafonos.Visible = True
+
+    End Sub
+
+    Private Sub lblCambio_Click(sender As Object, e As EventArgs) Handles lblCambio.Click
 
     End Sub
 End Class

@@ -47,6 +47,10 @@ Partial Class CierreCaja
         Me.lblSubtotalIngresos = New System.Windows.Forms.Label()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblDataSalon = New System.Windows.Forms.Label()
+        Me.lblDataExpress = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.lblUber = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.lblDiferenciaCompVtas = New System.Windows.Forms.Label()
@@ -74,10 +78,6 @@ Partial Class CierreCaja
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.btnPrint = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.lblDataExpress = New System.Windows.Forms.Label()
-        Me.lblDataSalon = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -123,7 +123,7 @@ Partial Class CierreCaja
         Me.lblImpVtasCompEfec.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblImpVtasCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblImpVtasCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblImpVtasCompEfec.Location = New System.Drawing.Point(376, 224)
+        Me.lblImpVtasCompEfec.Location = New System.Drawing.Point(378, 284)
         Me.lblImpVtasCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblImpVtasCompEfec.Name = "lblImpVtasCompEfec"
         Me.lblImpVtasCompEfec.Size = New System.Drawing.Size(61, 25)
@@ -135,7 +135,7 @@ Partial Class CierreCaja
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.White
-        Me.Label17.Location = New System.Drawing.Point(4, 224)
+        Me.Label17.Location = New System.Drawing.Point(6, 284)
         Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(159, 25)
@@ -148,7 +148,7 @@ Partial Class CierreCaja
         Me.lblDiferenciaCompEfec.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.lblDiferenciaCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.lblDiferenciaCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblDiferenciaCompEfec.Location = New System.Drawing.Point(376, 520)
+        Me.lblDiferenciaCompEfec.Location = New System.Drawing.Point(378, 499)
         Me.lblDiferenciaCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDiferenciaCompEfec.Name = "lblDiferenciaCompEfec"
         Me.lblDiferenciaCompEfec.Size = New System.Drawing.Size(71, 29)
@@ -160,7 +160,7 @@ Partial Class CierreCaja
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(17, 520)
+        Me.Label12.Location = New System.Drawing.Point(6, 499)
         Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(128, 29)
@@ -173,7 +173,7 @@ Partial Class CierreCaja
         Me.lblFondoFinalCompEfec.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblFondoFinalCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.lblFondoFinalCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblFondoFinalCompEfec.Location = New System.Drawing.Point(376, 483)
+        Me.lblFondoFinalCompEfec.Location = New System.Drawing.Point(378, 462)
         Me.lblFondoFinalCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblFondoFinalCompEfec.Name = "lblFondoFinalCompEfec"
         Me.lblFondoFinalCompEfec.Size = New System.Drawing.Size(71, 29)
@@ -185,7 +185,7 @@ Partial Class CierreCaja
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(17, 483)
+        Me.Label11.Location = New System.Drawing.Point(6, 462)
         Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(209, 29)
@@ -198,7 +198,7 @@ Partial Class CierreCaja
         Me.lblIntroduccionesCompEfec.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblIntroduccionesCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIntroduccionesCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblIntroduccionesCompEfec.Location = New System.Drawing.Point(376, 92)
+        Me.lblIntroduccionesCompEfec.Location = New System.Drawing.Point(378, 152)
         Me.lblIntroduccionesCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblIntroduccionesCompEfec.Name = "lblIntroduccionesCompEfec"
         Me.lblIntroduccionesCompEfec.Size = New System.Drawing.Size(61, 25)
@@ -210,7 +210,7 @@ Partial Class CierreCaja
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(4, 95)
+        Me.Label7.Location = New System.Drawing.Point(6, 155)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(139, 25)
@@ -223,7 +223,7 @@ Partial Class CierreCaja
         Me.lblCuentasCanceladasCompEfec.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblCuentasCanceladasCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCuentasCanceladasCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblCuentasCanceladasCompEfec.Location = New System.Drawing.Point(376, 255)
+        Me.lblCuentasCanceladasCompEfec.Location = New System.Drawing.Point(378, 315)
         Me.lblCuentasCanceladasCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCuentasCanceladasCompEfec.Name = "lblCuentasCanceladasCompEfec"
         Me.lblCuentasCanceladasCompEfec.Size = New System.Drawing.Size(61, 25)
@@ -235,7 +235,7 @@ Partial Class CierreCaja
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(4, 255)
+        Me.Label1.Location = New System.Drawing.Point(6, 315)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(191, 25)
@@ -246,7 +246,7 @@ Partial Class CierreCaja
         '
         Me.PictureBox1.BackgroundImage = Global.SunChangSystem.My.Resources.Resources.separador
         Me.PictureBox1.Image = Global.SunChangSystem.My.Resources.Resources.separador
-        Me.PictureBox1.Location = New System.Drawing.Point(11, 432)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 411)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(467, 5)
@@ -259,7 +259,7 @@ Partial Class CierreCaja
         Me.lblFondoInicialCompEfec.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblFondoInicialCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFondoInicialCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblFondoInicialCompEfec.Location = New System.Drawing.Point(376, 63)
+        Me.lblFondoInicialCompEfec.Location = New System.Drawing.Point(378, 123)
         Me.lblFondoInicialCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblFondoInicialCompEfec.Name = "lblFondoInicialCompEfec"
         Me.lblFondoInicialCompEfec.Size = New System.Drawing.Size(61, 25)
@@ -285,7 +285,7 @@ Partial Class CierreCaja
         Me.lblExpressCompEfec.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblExpressCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblExpressCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblExpressCompEfec.Location = New System.Drawing.Point(376, 123)
+        Me.lblExpressCompEfec.Location = New System.Drawing.Point(378, 183)
         Me.lblExpressCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblExpressCompEfec.Name = "lblExpressCompEfec"
         Me.lblExpressCompEfec.Size = New System.Drawing.Size(61, 25)
@@ -297,7 +297,7 @@ Partial Class CierreCaja
         Me.lblIntroducciones.AutoSize = True
         Me.lblIntroducciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIntroducciones.ForeColor = System.Drawing.Color.White
-        Me.lblIntroducciones.Location = New System.Drawing.Point(4, 127)
+        Me.lblIntroducciones.Location = New System.Drawing.Point(6, 187)
         Me.lblIntroducciones.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblIntroducciones.Name = "lblIntroducciones"
         Me.lblIntroducciones.Size = New System.Drawing.Size(83, 25)
@@ -309,7 +309,7 @@ Partial Class CierreCaja
         Me.lblFondoInicial.AutoSize = True
         Me.lblFondoInicial.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFondoInicial.ForeColor = System.Drawing.Color.White
-        Me.lblFondoInicial.Location = New System.Drawing.Point(4, 63)
+        Me.lblFondoInicial.Location = New System.Drawing.Point(6, 123)
         Me.lblFondoInicial.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblFondoInicial.Name = "lblFondoInicial"
         Me.lblFondoInicial.Size = New System.Drawing.Size(126, 25)
@@ -322,7 +322,7 @@ Partial Class CierreCaja
         Me.lblImpServicioCompEfec.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblImpServicioCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblImpServicioCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblImpServicioCompEfec.Location = New System.Drawing.Point(376, 190)
+        Me.lblImpServicioCompEfec.Location = New System.Drawing.Point(378, 250)
         Me.lblImpServicioCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblImpServicioCompEfec.Name = "lblImpServicioCompEfec"
         Me.lblImpServicioCompEfec.Size = New System.Drawing.Size(61, 25)
@@ -335,7 +335,7 @@ Partial Class CierreCaja
         Me.lblVentasEfectivoCompEfec.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblVentasEfectivoCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVentasEfectivoCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblVentasEfectivoCompEfec.Location = New System.Drawing.Point(376, 156)
+        Me.lblVentasEfectivoCompEfec.Location = New System.Drawing.Point(378, 216)
         Me.lblVentasEfectivoCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblVentasEfectivoCompEfec.Name = "lblVentasEfectivoCompEfec"
         Me.lblVentasEfectivoCompEfec.Size = New System.Drawing.Size(61, 25)
@@ -347,7 +347,7 @@ Partial Class CierreCaja
         Me.lblMontoTotalCompEfec.AutoSize = True
         Me.lblMontoTotalCompEfec.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMontoTotalCompEfec.ForeColor = System.Drawing.Color.White
-        Me.lblMontoTotalCompEfec.Location = New System.Drawing.Point(376, 443)
+        Me.lblMontoTotalCompEfec.Location = New System.Drawing.Point(378, 422)
         Me.lblMontoTotalCompEfec.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblMontoTotalCompEfec.Name = "lblMontoTotalCompEfec"
         Me.lblMontoTotalCompEfec.Size = New System.Drawing.Size(71, 29)
@@ -359,7 +359,7 @@ Partial Class CierreCaja
         Me.lblVentasTarjeta.AutoSize = True
         Me.lblVentasTarjeta.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVentasTarjeta.ForeColor = System.Drawing.Color.White
-        Me.lblVentasTarjeta.Location = New System.Drawing.Point(4, 190)
+        Me.lblVentasTarjeta.Location = New System.Drawing.Point(6, 250)
         Me.lblVentasTarjeta.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblVentasTarjeta.Name = "lblVentasTarjeta"
         Me.lblVentasTarjeta.Size = New System.Drawing.Size(200, 25)
@@ -371,7 +371,7 @@ Partial Class CierreCaja
         Me.lblVentasEfectivo.AutoSize = True
         Me.lblVentasEfectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVentasEfectivo.ForeColor = System.Drawing.Color.White
-        Me.lblVentasEfectivo.Location = New System.Drawing.Point(4, 156)
+        Me.lblVentasEfectivo.Location = New System.Drawing.Point(6, 216)
         Me.lblVentasEfectivo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblVentasEfectivo.Name = "lblVentasEfectivo"
         Me.lblVentasEfectivo.Size = New System.Drawing.Size(253, 25)
@@ -383,7 +383,7 @@ Partial Class CierreCaja
         Me.lblSubtotalIngresos.AutoSize = True
         Me.lblSubtotalIngresos.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSubtotalIngresos.ForeColor = System.Drawing.Color.White
-        Me.lblSubtotalIngresos.Location = New System.Drawing.Point(17, 443)
+        Me.lblSubtotalIngresos.Location = New System.Drawing.Point(6, 422)
         Me.lblSubtotalIngresos.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSubtotalIngresos.Name = "lblSubtotalIngresos"
         Me.lblSubtotalIngresos.Size = New System.Drawing.Size(74, 29)
@@ -438,13 +438,57 @@ Partial Class CierreCaja
         Me.Panel1.Size = New System.Drawing.Size(549, 553)
         Me.Panel1.TabIndex = 22
         '
+        'lblDataSalon
+        '
+        Me.lblDataSalon.AutoSize = True
+        Me.lblDataSalon.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.lblDataSalon.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.lblDataSalon.Location = New System.Drawing.Point(404, 151)
+        Me.lblDataSalon.Name = "lblDataSalon"
+        Me.lblDataSalon.Size = New System.Drawing.Size(61, 25)
+        Me.lblDataSalon.TabIndex = 42
+        Me.lblDataSalon.Text = "00.00"
+        '
+        'lblDataExpress
+        '
+        Me.lblDataExpress.AutoSize = True
+        Me.lblDataExpress.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.lblDataExpress.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.lblDataExpress.Location = New System.Drawing.Point(404, 122)
+        Me.lblDataExpress.Name = "lblDataExpress"
+        Me.lblDataExpress.Size = New System.Drawing.Size(61, 25)
+        Me.lblDataExpress.TabIndex = 41
+        Me.lblDataExpress.Text = "00.00"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Label16.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label16.Location = New System.Drawing.Point(33, 151)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(147, 25)
+        Me.Label16.TabIndex = 40
+        Me.Label16.Text = "Datafono Salon"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label3.Location = New System.Drawing.Point(33, 118)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(167, 25)
+        Me.Label3.TabIndex = 39
+        Me.Label3.Text = "Datafono Express"
+        '
         'lblUber
         '
         Me.lblUber.AutoSize = True
         Me.lblUber.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblUber.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblUber.ForeColor = System.Drawing.Color.White
-        Me.lblUber.Location = New System.Drawing.Point(384, 350)
+        Me.lblUber.Location = New System.Drawing.Point(405, 313)
         Me.lblUber.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblUber.Name = "lblUber"
         Me.lblUber.Size = New System.Drawing.Size(61, 25)
@@ -456,7 +500,7 @@ Partial Class CierreCaja
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.White
-        Me.Label24.Location = New System.Drawing.Point(13, 350)
+        Me.Label24.Location = New System.Drawing.Point(34, 313)
         Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(98, 25)
@@ -468,7 +512,7 @@ Partial Class CierreCaja
         Me.lblDiferenciaCompVtas.AutoSize = True
         Me.lblDiferenciaCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDiferenciaCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblDiferenciaCompVtas.Location = New System.Drawing.Point(390, 515)
+        Me.lblDiferenciaCompVtas.Location = New System.Drawing.Point(394, 480)
         Me.lblDiferenciaCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDiferenciaCompVtas.Name = "lblDiferenciaCompVtas"
         Me.lblDiferenciaCompVtas.Size = New System.Drawing.Size(71, 29)
@@ -481,7 +525,7 @@ Partial Class CierreCaja
         Me.lblIntroduccionesCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblIntroduccionesCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIntroduccionesCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblIntroduccionesCompVtas.Location = New System.Drawing.Point(385, 291)
+        Me.lblIntroduccionesCompVtas.Location = New System.Drawing.Point(406, 254)
         Me.lblIntroduccionesCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblIntroduccionesCompVtas.Name = "lblIntroduccionesCompVtas"
         Me.lblIntroduccionesCompVtas.Size = New System.Drawing.Size(61, 25)
@@ -493,7 +537,7 @@ Partial Class CierreCaja
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.White
-        Me.Label20.Location = New System.Drawing.Point(33, 515)
+        Me.Label20.Location = New System.Drawing.Point(37, 480)
         Me.Label20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(128, 29)
@@ -505,7 +549,7 @@ Partial Class CierreCaja
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(13, 291)
+        Me.Label10.Location = New System.Drawing.Point(34, 254)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(139, 25)
@@ -517,7 +561,7 @@ Partial Class CierreCaja
         Me.lblTotalVtasSistCompVtas.AutoSize = True
         Me.lblTotalVtasSistCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalVtasSistCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblTotalVtasSistCompVtas.Location = New System.Drawing.Point(390, 485)
+        Me.lblTotalVtasSistCompVtas.Location = New System.Drawing.Point(394, 450)
         Me.lblTotalVtasSistCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTotalVtasSistCompVtas.Name = "lblTotalVtasSistCompVtas"
         Me.lblTotalVtasSistCompVtas.Size = New System.Drawing.Size(71, 29)
@@ -530,7 +574,7 @@ Partial Class CierreCaja
         Me.lblFondoInicialCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblFondoInicialCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFondoInicialCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblFondoInicialCompVtas.Location = New System.Drawing.Point(385, 65)
+        Me.lblFondoInicialCompVtas.Location = New System.Drawing.Point(405, 60)
         Me.lblFondoInicialCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblFondoInicialCompVtas.Name = "lblFondoInicialCompVtas"
         Me.lblFondoInicialCompVtas.Size = New System.Drawing.Size(61, 25)
@@ -542,7 +586,7 @@ Partial Class CierreCaja
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.White
-        Me.Label18.Location = New System.Drawing.Point(33, 485)
+        Me.Label18.Location = New System.Drawing.Point(37, 450)
         Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(191, 29)
@@ -554,7 +598,7 @@ Partial Class CierreCaja
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(13, 65)
+        Me.Label13.Location = New System.Drawing.Point(33, 60)
         Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(126, 25)
@@ -566,7 +610,7 @@ Partial Class CierreCaja
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(17, 224)
+        Me.Label5.Location = New System.Drawing.Point(38, 187)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(159, 25)
@@ -578,7 +622,7 @@ Partial Class CierreCaja
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.White
-        Me.Label15.Location = New System.Drawing.Point(33, 454)
+        Me.Label15.Location = New System.Drawing.Point(37, 419)
         Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(159, 29)
@@ -591,7 +635,7 @@ Partial Class CierreCaja
         Me.lblImpVtasCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblImpVtasCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblImpVtasCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblImpVtasCompVtas.Location = New System.Drawing.Point(386, 224)
+        Me.lblImpVtasCompVtas.Location = New System.Drawing.Point(407, 187)
         Me.lblImpVtasCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblImpVtasCompVtas.Name = "lblImpVtasCompVtas"
         Me.lblImpVtasCompVtas.Size = New System.Drawing.Size(61, 25)
@@ -603,7 +647,7 @@ Partial Class CierreCaja
         Me.lblTotalVentasCompVtas.AutoSize = True
         Me.lblTotalVentasCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTotalVentasCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblTotalVentasCompVtas.Location = New System.Drawing.Point(390, 454)
+        Me.lblTotalVentasCompVtas.Location = New System.Drawing.Point(394, 419)
         Me.lblTotalVentasCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblTotalVentasCompVtas.Name = "lblTotalVentasCompVtas"
         Me.lblTotalVentasCompVtas.Size = New System.Drawing.Size(71, 29)
@@ -615,7 +659,7 @@ Partial Class CierreCaja
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(13, 321)
+        Me.Label4.Location = New System.Drawing.Point(34, 284)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(191, 25)
@@ -626,7 +670,7 @@ Partial Class CierreCaja
         '
         Me.PictureBox2.BackgroundImage = Global.SunChangSystem.My.Resources.Resources.separador
         Me.PictureBox2.Image = Global.SunChangSystem.My.Resources.Resources.separador
-        Me.PictureBox2.Location = New System.Drawing.Point(21, 443)
+        Me.PictureBox2.Location = New System.Drawing.Point(25, 408)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(467, 5)
@@ -639,7 +683,7 @@ Partial Class CierreCaja
         Me.lblFondoFinalCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblFondoFinalCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFondoFinalCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblFondoFinalCompVtas.Location = New System.Drawing.Point(386, 388)
+        Me.lblFondoFinalCompVtas.Location = New System.Drawing.Point(407, 351)
         Me.lblFondoFinalCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblFondoFinalCompVtas.Name = "lblFondoFinalCompVtas"
         Me.lblFondoFinalCompVtas.Size = New System.Drawing.Size(61, 25)
@@ -665,7 +709,7 @@ Partial Class CierreCaja
         Me.lblVentasCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblVentasCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVentasCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblVentasCompVtas.Location = New System.Drawing.Point(385, 95)
+        Me.lblVentasCompVtas.Location = New System.Drawing.Point(405, 90)
         Me.lblVentasCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblVentasCompVtas.Name = "lblVentasCompVtas"
         Me.lblVentasCompVtas.Size = New System.Drawing.Size(61, 25)
@@ -677,7 +721,7 @@ Partial Class CierreCaja
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(13, 255)
+        Me.Label8.Location = New System.Drawing.Point(34, 218)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(83, 25)
@@ -689,7 +733,7 @@ Partial Class CierreCaja
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(17, 388)
+        Me.Label9.Location = New System.Drawing.Point(38, 351)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(164, 25)
@@ -702,7 +746,7 @@ Partial Class CierreCaja
         Me.lblExpresCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblExpresCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblExpresCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblExpresCompVtas.Location = New System.Drawing.Point(386, 255)
+        Me.lblExpresCompVtas.Location = New System.Drawing.Point(407, 218)
         Me.lblExpresCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblExpresCompVtas.Name = "lblExpresCompVtas"
         Me.lblExpresCompVtas.Size = New System.Drawing.Size(61, 25)
@@ -715,7 +759,7 @@ Partial Class CierreCaja
         Me.lblCuentasCanceladasCompVtas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.lblCuentasCanceladasCompVtas.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCuentasCanceladasCompVtas.ForeColor = System.Drawing.Color.White
-        Me.lblCuentasCanceladasCompVtas.Location = New System.Drawing.Point(385, 321)
+        Me.lblCuentasCanceladasCompVtas.Location = New System.Drawing.Point(406, 284)
         Me.lblCuentasCanceladasCompVtas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCuentasCanceladasCompVtas.Name = "lblCuentasCanceladasCompVtas"
         Me.lblCuentasCanceladasCompVtas.Size = New System.Drawing.Size(61, 25)
@@ -727,7 +771,7 @@ Partial Class CierreCaja
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(13, 95)
+        Me.Label14.Location = New System.Drawing.Point(33, 90)
         Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(140, 25)
@@ -764,50 +808,6 @@ Partial Class CierreCaja
         Me.btnModificar.TabIndex = 23
         Me.btnModificar.Text = "Modificar"
         Me.btnModificar.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label3.Location = New System.Drawing.Point(13, 123)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(167, 25)
-        Me.Label3.TabIndex = 39
-        Me.Label3.Text = "Datafono Express"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.Label16.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label16.Location = New System.Drawing.Point(13, 156)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(147, 25)
-        Me.Label16.TabIndex = 40
-        Me.Label16.Text = "Datafono Salon"
-        '
-        'lblDataExpress
-        '
-        Me.lblDataExpress.AutoSize = True
-        Me.lblDataExpress.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.lblDataExpress.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.lblDataExpress.Location = New System.Drawing.Point(384, 127)
-        Me.lblDataExpress.Name = "lblDataExpress"
-        Me.lblDataExpress.Size = New System.Drawing.Size(61, 25)
-        Me.lblDataExpress.TabIndex = 41
-        Me.lblDataExpress.Text = "00.00"
-        '
-        'lblDataSalon
-        '
-        Me.lblDataSalon.AutoSize = True
-        Me.lblDataSalon.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.lblDataSalon.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.lblDataSalon.Location = New System.Drawing.Point(384, 156)
-        Me.lblDataSalon.Name = "lblDataSalon"
-        Me.lblDataSalon.Size = New System.Drawing.Size(61, 25)
-        Me.lblDataSalon.TabIndex = 42
-        Me.lblDataSalon.Text = "00.00"
         '
         'CierreCaja
         '
