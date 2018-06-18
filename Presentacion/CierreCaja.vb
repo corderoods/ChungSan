@@ -1,5 +1,7 @@
 ﻿Imports CrystalDecisions.Shared
 
+Imports System.Data.SqlClient
+
 Public Class CierreCaja
     ' variables publicas a utilizar
     Public subtotalIngresos, subtotalEgresos, ventasTarjeta, introducciones, pagosFacturas, impuestosServicio, impuestoVentas, express, uber As Double
@@ -21,6 +23,12 @@ Public Class CierreCaja
     ' indica si se cambia el cierre de caja
     Public modificar_cierre As Boolean = False
 
+
+    Public conexion As SqlConnection
+    Public cmd As SqlCommand
+    Public conexionDB As ConexionBD
+
+
     ' constructor
     Public Sub New()
         ' Esta llamada es exigida por el diseñador.
@@ -28,6 +36,9 @@ Public Class CierreCaja
 
         ' llama al metodo que se encarga de cargar toda la informaacion para poder mostrarlas
         cargarInformacion()
+
+        conexionDB = New ConexionBD
+        cmd = New SqlCommand
     End Sub
 
     'metodo que se encarga de cargar toda la informaacion para poder mostrarla
@@ -281,11 +292,10 @@ Public Class CierreCaja
         Try
             Dim parametro As New ParameterValues
             Dim numero_factura As New ParameterValues
-            Dim coin As New Monedas
 
             Dim pvisualizar As New ParameterDiscreteValue
 
-            'el reporte
+
             Dim factura As New Facturas
 
             pvisualizar.Value = fondoInicial.ToString("C")
@@ -296,7 +306,7 @@ Public Class CierreCaja
             parametro.Add(pvisualizar)
             factura.DataDefinition.ParameterFields("@Introducciones").ApplyCurrentValues(parametro)
 
-            pvisualizar.Value = ventasefectivassistema.ToString("C")
+            pvisualizar.Value = ventasEfectivo.ToString("C")
             parametro.Add(pvisualizar)
             factura.DataDefinition.ParameterFields("@ventas_efectivo").ApplyCurrentValues(parametro)
 
@@ -357,24 +367,24 @@ Public Class CierreCaja
             parametro.Add(pvisualizar)
             factura.DataDefinition.ParameterFields("@diferencia_vtas").ApplyCurrentValues(parametro)
 
-            pvisualizar.Value = dataExpress.ToString("C")
-            parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@datafono_Express").ApplyCurrentValues(parametro)
-
-            pvisualizar.Value = dataSalon.ToString("C")
-            parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@datafono_Salon").ApplyCurrentValues(parametro)
-
             pvisualizar.Value = (InicioSesion.session.EmpleadoSG.NombreSG + " " + InicioSesion.session.EmpleadoSG.Apellido1SG)
             parametro.Add(pvisualizar)
             factura.DataDefinition.ParameterFields("@usuario").ApplyCurrentValues(parametro)
 
+            'factura.Parameter_fecha_fin(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+            pvisualizar.Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+            parametro.Add(pvisualizar)
+            factura.DataDefinition.ParameterFields("@fecha_fin").ApplyCurrentValues(parametro)
 
+            pvisualizar.Value = InicioSesion.session.Hora_primer_ingresoSG
+            parametro.Add(pvisualizar)
+            factura.DataDefinition.ParameterFields("@fecha_inicio").ApplyCurrentValues(parametro)
 
             Dim reporte As New Reportes
             reporte.VistaReportes.ReportSource = factura
             'reporte.ShowDialog()
             reporte.VistaReportes.PrintReport()
+
 
         Catch ex As Exception
             MsgBox(ex.Message)

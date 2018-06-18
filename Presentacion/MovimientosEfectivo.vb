@@ -272,182 +272,357 @@ Public Class MovimientosEfectivo
     ' funcion del boton aceptar. Comunica con datos para almacenar los montos
     Private Sub btnAccept_Click(sender As Object, e As EventArgs) Handles btnAccept.Click
         If pnlDatafonos.Visible = True Then
-            fonoSalon = CDbl(mskSalon.Text.Trim("_"))
-            fonoExpres = CDbl(mskExpress.Text.Trim("_"))
-        End If
+            'fonoSalon = CDbl(mskSalon.Text.Trim("_"))
+            If mskSalon.Text = "       ," Then
+                mensaje.tipoMensaje("error")
+                mensaje.lblMensaje.Text = "Debe ingresar el monto de los datafonos"
+                mensaje.ShowDialog()
+            Else
+                If mskExpress.Text = "       ," Then
+                    mensaje.tipoMensaje("error")
+                    mensaje.lblMensaje.Text = "Debe ingresar el monto de los datafonos"
+                    mensaje.ShowDialog()
+                Else
+                    fonoSalon = CDbl(mskSalon.Text.Trim("_"))
+                    fonoExpres = CDbl(mskExpress.Text.Trim("_"))
+#Region "Con dafono"
 
-        If txtAdminPassword.TextLength > 0 Then
+                    If txtAdminPassword.TextLength > 0 Then
 
-            denominacionesAEntregar.Clear()
-            'valida en la base de datos si es correcta la contraseña
-            If usuariosDatos.validarAdministador(cbxAdministrador.SelectedValue, txtAdminPassword.Text) Then
-                ' se valida cual movimiento es el que se está haciendo
-                If fondoInicial Then
-                    ' se valida que se agregue el monto de los colones para almacenarlos en la base de datos
-                    If agregarDenominacionesALista(pnlDenominacionesColones, denominacionesColones, 0, 0) Then
-                        ' valida que se haya ingresado correctamente
-                        If denominacionMonedasDatos.almacenarFondoInicial(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG)) Then
-                            denominacionesAEntregar.Clear()
-                            ' se valida que se agregue el monto de los dolares y se almacena en la base de datos
-                            'If agregarDenominacionesALista(pnlDenominacionesDolares, denominacionesDolares, 1, tipo_cambio) Then
-                            ' valida que se haya ingresado correctamente
-                            'If denominacionMonedasDatos.almacenarFondoInicial(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG)) Then
-                            '                   MsgBox("Se almacenó correctamente el fondo inicial")
-                            ' se desabilita la opcion de ingresar el fondo inicial
-                            Ordenes.FondoInicialToolStripMenuItem.Enabled = False
-                            ' se muestra la ventana de ordenes
-                            Ordenes.Show()
-                            ' una vez realizado el ingreso. Se coloca la variable inicio de UsuarioDatos como 
-                            ' false para saber que ya hizo su primer asignacion del fondo inicial
-                            UsuariosDatos.inicio = False
-                            ' se cierra esta ventana
-                            Close()
-                            'Else
-                            'mensaje.lblMensaje.Text = "Error al almacenar el fondo inicial de dólares"
-                            'mensaje.ShowDialog()
-                            'End If
-                            'End If
+                        denominacionesAEntregar.Clear()
+                        'valida en la base de datos si es correcta la contraseña
+                        If usuariosDatos.validarAdministador(cbxAdministrador.SelectedValue, txtAdminPassword.Text) Then
+                            ' se valida cual movimiento es el que se está haciendo
+                            If fondoInicial Then
+                                ' se valida que se agregue el monto de los colones para almacenarlos en la base de datos
+                                If agregarDenominacionesALista(pnlDenominacionesColones, denominacionesColones, 0, 0) Then
+                                    ' valida que se haya ingresado correctamente
+                                    If denominacionMonedasDatos.almacenarFondoInicial(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG)) Then
+                                        denominacionesAEntregar.Clear()
+                                        ' se valida que se agregue el monto de los dolares y se almacena en la base de datos
+                                        'If agregarDenominacionesALista(pnlDenominacionesDolares, denominacionesDolares, 1, tipo_cambio) Then
+                                        ' valida que se haya ingresado correctamente
+                                        'If denominacionMonedasDatos.almacenarFondoInicial(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG)) Then
+                                        '                   MsgBox("Se almacenó correctamente el fondo inicial")
+                                        ' se desabilita la opcion de ingresar el fondo inicial
+                                        Ordenes.FondoInicialToolStripMenuItem.Enabled = False
+                                        ' se muestra la ventana de ordenes
+                                        Ordenes.Show()
+                                        ' una vez realizado el ingreso. Se coloca la variable inicio de UsuarioDatos como 
+                                        ' false para saber que ya hizo su primer asignacion del fondo inicial
+                                        UsuariosDatos.inicio = False
+                                        ' se cierra esta ventana
+                                        Close()
+                                        'Else
+                                        'mensaje.lblMensaje.Text = "Error al almacenar el fondo inicial de dólares"
+                                        'mensaje.ShowDialog()
+                                        'End If
+                                        'End If
+                                    Else
+                                        mensaje.tipoMensaje("error")
+                                        mensaje.lblMensaje.Text = "Error al almacenar el fondo inicial de colones"
+                                        mensaje.ShowDialog()
+                                    End If
+                                End If
+                            ElseIf fondoFinal Then
+
+                                ' se agrega el monto de los colones y se almacena en la base de datos
+                                If agregarDenominacionesALista(pnlDenominacionesColones, denominacionesColones, 0, 0) Then
+                                    ' valida que se haya ingresado correctamente
+
+
+                                    If denominacionMonedasDatos.almacenarFondoFinal(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), fonoExpres, fonoSalon) Then
+                                        denominacionesAEntregar.Clear()
+                                        ' se agrega el monto de los dolares y se almacena en la base de datos
+                                        'If agregarDenominacionesALista(pnlDenominacionesDolares, denominacionesDolares, 1, tipo_cambio) Then
+                                        ' valida que se haya ingresado correctamente
+                                        'If denominacionMonedasDatos.almacenarFondoFinal(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG)) Then
+                                        '                   MsgBox("Se almacenó correctamente el fondo final")
+                                        ' instancia para ir a la ventana de cierre de caja
+                                        'cierre_caja_diseno = New CierreCaja
+                                        'Dim cierre_caja As New CierreCaja
+                                        '' muestra la ventana
+                                        'cierre_caja.ShowDialog()
+                                        Close()
+                                        'If cierre_caja_diseno.modificar_cierre Then
+                                        '    MsgBox("cerrar")
+                                        '    Ordenes.Close()
+                                        '    InicioSesion.Show()
+                                        '    cierre_caja_diseno.modificar_cierre = False
+                                        'End If
+
+                                        '    Else
+                                        'mensaje.lblMensaje.Text = "Error al almacenar el fondo final de dólares"
+                                        'mensaje.ShowDialog()
+                                        '    End If
+                                        'End If
+                                    Else
+                                        mensaje.tipoMensaje("error")
+                                        mensaje.lblMensaje.Text = "Error al almacenar el fondo final de colones"
+                                        mensaje.ShowDialog()
+                                    End If
+                                End If
+                            ElseIf salidasEfectivo Then
+                                ' se agrega el monto de los colones y se almacena en la base de datos
+                                If agregarDenominacionesALista(pnlDenominacionesColones, denominacionesColones, 0, 0) Then
+                                    ' valida que se haya almacenado la salida de efectivo de colones
+                                    If denominacionMonedasDatos.almacenarIntroduccionesSalidasEfectivo(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), InicioSesion.session.EmpleadoSG.ContrasennaSG, 1) Then
+                                        denominacionesAEntregar.Clear()
+                                        ' se agrega el monto de los dolares y se almacena en la base de datos
+                                        'If agregarDenominacionesALista(pnlDenominacionesDolares, denominacionesDolares, 1, tipo_cambio) Then
+                                        ' valida que se haya ingresado correctamente
+                                        'If denominacionMonedasDatos.almacenarIntroduccionesSalidasEfectivo(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), InicioSesion.session.EmpleadoSG.ContrasennaSG, 1) Then
+                                        '                   MsgBox("Se almacenó correctamente la salida de efectivo")
+                                        Close()
+                                        'Else
+                                        ''mensaje.lblMensaje.Text = "Error al almacenar la salida de efectivo de dólares"
+                                        ''mensaje.ShowDialog()
+                                        ''End If
+                                        'End If
+                                    Else
+                                        mensaje.tipoMensaje("error")
+                                        mensaje.lblMensaje.Text = "Error al almacenar la salida de efectivo de colones"
+                                        mensaje.ShowDialog()
+                                    End If
+                                End If
+                            ElseIf introducciones Then
+                                ' se agrega el monto de los colones y se almacena en la base de datos
+                                If agregarDenominacionesALista(pnlDenominacionesColones, denominacionesColones, 0, 0) Then
+                                    If denominacionMonedasDatos.almacenarIntroduccionesSalidasEfectivo(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), InicioSesion.session.EmpleadoSG.ContrasennaSG, 0) Then
+                                        denominacionesAEntregar.Clear()
+                                        ' se agrega el monto de los dolares y se almacena en la base de datos
+                                        '                          If agregarDenominacionesALista(pnlDenominacionesDolares, denominacionesDolares, 1, tipo_cambio) Then
+                                        ' valida que se haya ingresado correctamente
+                                        '                               If denominacionMonedasDatos.almacenarIntroduccionesSalidasEfectivo(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), InicioSesion.session.EmpleadoSG.ContrasennaSG, 0) Then
+                                        '                   MsgBox("Se almacenó correctamente la introducción de efectivo")
+                                        Close()
+                                        '                                Else
+                                        '     mensaje.lblMensaje.Text = "Error al almacenar la introducción de efectivo de dólares"
+                                        '      mensaje.ShowDialog()
+                                        '   End If
+                                        'End If
+                                    Else
+                                        mensaje.tipoMensaje("error")
+                                        mensaje.lblMensaje.Text = "Error al almacenar la introducción de efectivo de colones"
+                                        mensaje.ShowDialog()
+                                    End If
+                                End If
+                            ElseIf arqueo Then
+                                ' se agrega el monto de los colones y se almacena en la base de datos
+                                If agregarDenominacionesALista(pnlDenominacionesColones, denominacionesColones, 0, 0) Then
+                                    ' valida que se haya ingresado correctamente
+
+
+                                    If denominacionMonedasDatos.almacenarArqueoDeCaja(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), fonoExpres, fonoSalon) Then
+                                                denominacionesAEntregar.Clear()
+                                                arqueo_diseno.arqueo = True
+                                                Close()
+                                            Else
+                                                mensaje.tipoMensaje("error")
+                                                mensaje.lblMensaje.Text = "Error al almacenar el arqueo de caja"
+                                                mensaje.ShowDialog()
+                                            End If
+
+                                End If
+
+                            End If
+
+
                         Else
                             mensaje.tipoMensaje("error")
-                            mensaje.lblMensaje.Text = "Error al almacenar el fondo inicial de colones"
+                            mensaje.lblMensaje.Text = "Contraseña o usuario inválido"
                             mensaje.ShowDialog()
                         End If
-                    End If
-                ElseIf fondoFinal Then
-
-                    ' se agrega el monto de los colones y se almacena en la base de datos
-                    If agregarDenominacionesALista(pnlDenominacionesColones, denominacionesColones, 0, 0) Then
-                        ' valida que se haya ingresado correctamente
-                        If fonoExpres = 0 Then
-                            If fonoSalon = 0 Then
-
-
-
-                                If denominacionMonedasDatos.almacenarFondoFinal(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), fonoExpres, fonoSalon) Then
-                                    denominacionesAEntregar.Clear()
-                                    ' se agrega el monto de los dolares y se almacena en la base de datos
-                                    'If agregarDenominacionesALista(pnlDenominacionesDolares, denominacionesDolares, 1, tipo_cambio) Then
-                                    ' valida que se haya ingresado correctamente
-                                    'If denominacionMonedasDatos.almacenarFondoFinal(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG)) Then
-                                    '                   MsgBox("Se almacenó correctamente el fondo final")
-                                    ' instancia para ir a la ventana de cierre de caja
-                                    'cierre_caja_diseno = New CierreCaja
-                                    'Dim cierre_caja As New CierreCaja
-                                    '' muestra la ventana
-                                    'cierre_caja.ShowDialog()
-                                    Close()
-                                    'If cierre_caja_diseno.modificar_cierre Then
-                                    '    MsgBox("cerrar")
-                                    '    Ordenes.Close()
-                                    '    InicioSesion.Show()
-                                    '    cierre_caja_diseno.modificar_cierre = False
-                                    'End If
-
-                                    '    Else
-                                    'mensaje.lblMensaje.Text = "Error al almacenar el fondo final de dólares"
-                                    'mensaje.ShowDialog()
-                                    '    End If
-                                    'End If
-                                Else
-                                    mensaje.tipoMensaje("error")
-                                    mensaje.lblMensaje.Text = "Error al almacenar el fondo final de colones"
-                                    mensaje.ShowDialog()
-                                End If
-                            End If
-                            mensaje.tipoMensaje("error")
-                            mensaje.lblMensaje.Text = "Debe ingresar el monto del datafono del Salon"
-                            mensaje.ShowDialog()
-                        End If
+                    Else
                         mensaje.tipoMensaje("error")
-                        mensaje.lblMensaje.Text = "Debe ingresar el monto del datafono Express"
+                        mensaje.lblMensaje.Text = "Administrador no ingresó la contraseña"
                         mensaje.ShowDialog()
                     End If
-                ElseIf salidasEfectivo Then
-                    ' se agrega el monto de los colones y se almacena en la base de datos
-                    If agregarDenominacionesALista(pnlDenominacionesColones, denominacionesColones, 0, 0) Then
-                        ' valida que se haya almacenado la salida de efectivo de colones
-                        If denominacionMonedasDatos.almacenarIntroduccionesSalidasEfectivo(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), InicioSesion.session.EmpleadoSG.ContrasennaSG, 1) Then
-                            denominacionesAEntregar.Clear()
-                            ' se agrega el monto de los dolares y se almacena en la base de datos
-                            'If agregarDenominacionesALista(pnlDenominacionesDolares, denominacionesDolares, 1, tipo_cambio) Then
-                            ' valida que se haya ingresado correctamente
-                            'If denominacionMonedasDatos.almacenarIntroduccionesSalidasEfectivo(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), InicioSesion.session.EmpleadoSG.ContrasennaSG, 1) Then
-                            '                   MsgBox("Se almacenó correctamente la salida de efectivo")
-                            Close()
-                            'Else
-                            ''mensaje.lblMensaje.Text = "Error al almacenar la salida de efectivo de dólares"
-                            ''mensaje.ShowDialog()
-                            ''End If
-                            'End If
-                        Else
-                            mensaje.tipoMensaje("error")
-                            mensaje.lblMensaje.Text = "Error al almacenar la salida de efectivo de colones"
-                            mensaje.ShowDialog()
-                        End If
-                    End If
-                ElseIf introducciones Then
-                    ' se agrega el monto de los colones y se almacena en la base de datos
-                    If agregarDenominacionesALista(pnlDenominacionesColones, denominacionesColones, 0, 0) Then
-                        If denominacionMonedasDatos.almacenarIntroduccionesSalidasEfectivo(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), InicioSesion.session.EmpleadoSG.ContrasennaSG, 0) Then
-                            denominacionesAEntregar.Clear()
-                            ' se agrega el monto de los dolares y se almacena en la base de datos
-                            '                          If agregarDenominacionesALista(pnlDenominacionesDolares, denominacionesDolares, 1, tipo_cambio) Then
-                            ' valida que se haya ingresado correctamente
-                            '                               If denominacionMonedasDatos.almacenarIntroduccionesSalidasEfectivo(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), InicioSesion.session.EmpleadoSG.ContrasennaSG, 0) Then
-                            '                   MsgBox("Se almacenó correctamente la introducción de efectivo")
-                            Close()
-                            '                                Else
-                            '     mensaje.lblMensaje.Text = "Error al almacenar la introducción de efectivo de dólares"
-                            '      mensaje.ShowDialog()
-                            '   End If
-                            'End If
-                        Else
-                            mensaje.tipoMensaje("error")
-                            mensaje.lblMensaje.Text = "Error al almacenar la introducción de efectivo de colones"
-                            mensaje.ShowDialog()
-                        End If
-                    End If
-                ElseIf arqueo Then
-                    ' se agrega el monto de los colones y se almacena en la base de datos
-                    If agregarDenominacionesALista(pnlDenominacionesColones, denominacionesColones, 0, 0) Then
-                        ' valida que se haya ingresado correctamente
-                        If fonoSalon = 0 Then
-                            If fonoExpres = 0 Then
 
-                                If denominacionMonedasDatos.almacenarArqueoDeCaja(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), fonoExpres, fonoSalon) Then
-                                    denominacionesAEntregar.Clear()
-                                    arqueo_diseno.arqueo = True
-                                    Close()
-                                Else
-                                    mensaje.tipoMensaje("error")
-                                    mensaje.lblMensaje.Text = "Error al almacenar el arqueo de caja"
-                                    mensaje.ShowDialog()
-                                End If
+#End Region
+                End If 'fin del fono express              
+            End If 'Fin del fono salon
+        Else
+#Region "Sin datafono"
+
+
+            If txtAdminPassword.TextLength > 0 Then
+
+                denominacionesAEntregar.Clear()
+                'valida en la base de datos si es correcta la contraseña
+                If usuariosDatos.validarAdministador(cbxAdministrador.SelectedValue, txtAdminPassword.Text) Then
+                    ' se valida cual movimiento es el que se está haciendo
+                    If fondoInicial Then
+                        ' se valida que se agregue el monto de los colones para almacenarlos en la base de datos
+                        If agregarDenominacionesALista(pnlDenominacionesColones, denominacionesColones, 0, 0) Then
+                            ' valida que se haya ingresado correctamente
+                            If denominacionMonedasDatos.almacenarFondoInicial(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG)) Then
+                                denominacionesAEntregar.Clear()
+                                ' se valida que se agregue el monto de los dolares y se almacena en la base de datos
+                                'If agregarDenominacionesALista(pnlDenominacionesDolares, denominacionesDolares, 1, tipo_cambio) Then
+                                ' valida que se haya ingresado correctamente
+                                'If denominacionMonedasDatos.almacenarFondoInicial(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG)) Then
+                                '                   MsgBox("Se almacenó correctamente el fondo inicial")
+                                ' se desabilita la opcion de ingresar el fondo inicial
+                                Ordenes.FondoInicialToolStripMenuItem.Enabled = False
+                                ' se muestra la ventana de ordenes
+                                Ordenes.Show()
+                                ' una vez realizado el ingreso. Se coloca la variable inicio de UsuarioDatos como 
+                                ' false para saber que ya hizo su primer asignacion del fondo inicial
+                                UsuariosDatos.inicio = False
+                                ' se cierra esta ventana
+                                Close()
+                                'Else
+                                'mensaje.lblMensaje.Text = "Error al almacenar el fondo inicial de dólares"
+                                'mensaje.ShowDialog()
+                                'End If
+                                'End If
+                            Else
                                 mensaje.tipoMensaje("error")
-                                mensaje.lblMensaje.Text = "Debe ingresar el monto del datafono Express"
+                                mensaje.lblMensaje.Text = "Error al almacenar el fondo inicial de colones"
+                                mensaje.ShowDialog()
+                            End If
+                        End If
+                    ElseIf fondoFinal Then
+
+                        ' se agrega el monto de los colones y se almacena en la base de datos
+                        If agregarDenominacionesALista(pnlDenominacionesColones, denominacionesColones, 0, 0) Then
+                            ' valida que se haya ingresado correctamente
+                            If fonoExpres <> 0 Then
+                                If fonoSalon <> 0 Then
+
+
+
+                                    If denominacionMonedasDatos.almacenarFondoFinal(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), fonoExpres, fonoSalon) Then
+                                        denominacionesAEntregar.Clear()
+                                        ' se agrega el monto de los dolares y se almacena en la base de datos
+                                        'If agregarDenominacionesALista(pnlDenominacionesDolares, denominacionesDolares, 1, tipo_cambio) Then
+                                        ' valida que se haya ingresado correctamente
+                                        'If denominacionMonedasDatos.almacenarFondoFinal(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG)) Then
+                                        '                   MsgBox("Se almacenó correctamente el fondo final")
+                                        ' instancia para ir a la ventana de cierre de caja
+                                        'cierre_caja_diseno = New CierreCaja
+                                        'Dim cierre_caja As New CierreCaja
+                                        '' muestra la ventana
+                                        'cierre_caja.ShowDialog()
+                                        Close()
+                                        'If cierre_caja_diseno.modificar_cierre Then
+                                        '    MsgBox("cerrar")
+                                        '    Ordenes.Close()
+                                        '    InicioSesion.Show()
+                                        '    cierre_caja_diseno.modificar_cierre = False
+                                        'End If
+
+                                        '    Else
+                                        'mensaje.lblMensaje.Text = "Error al almacenar el fondo final de dólares"
+                                        'mensaje.ShowDialog()
+                                        '    End If
+                                        'End If
+                                    Else
+                                        mensaje.tipoMensaje("error")
+                                        mensaje.lblMensaje.Text = "Error al almacenar el fondo final de colones"
+                                        mensaje.ShowDialog()
+                                    End If
+                                End If
+                            Else
+                                mensaje.tipoMensaje("error")
+                                mensaje.lblMensaje.Text = "Debe ingresar el monto del datafono del Salon"
+                                mensaje.ShowDialog()
+                            End If
+                        Else
+                            mensaje.tipoMensaje("error")
+                            mensaje.lblMensaje.Text = "Debe ingresar el monto del datafono Express"
+                            mensaje.ShowDialog()
+                        End If
+                    ElseIf salidasEfectivo Then
+                        ' se agrega el monto de los colones y se almacena en la base de datos
+                        If agregarDenominacionesALista(pnlDenominacionesColones, denominacionesColones, 0, 0) Then
+                            ' valida que se haya almacenado la salida de efectivo de colones
+                            If denominacionMonedasDatos.almacenarIntroduccionesSalidasEfectivo(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), InicioSesion.session.EmpleadoSG.ContrasennaSG, 1) Then
+                                denominacionesAEntregar.Clear()
+                                ' se agrega el monto de los dolares y se almacena en la base de datos
+                                'If agregarDenominacionesALista(pnlDenominacionesDolares, denominacionesDolares, 1, tipo_cambio) Then
+                                ' valida que se haya ingresado correctamente
+                                'If denominacionMonedasDatos.almacenarIntroduccionesSalidasEfectivo(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), InicioSesion.session.EmpleadoSG.ContrasennaSG, 1) Then
+                                '                   MsgBox("Se almacenó correctamente la salida de efectivo")
+                                Close()
+                                'Else
+                                ''mensaje.lblMensaje.Text = "Error al almacenar la salida de efectivo de dólares"
+                                ''mensaje.ShowDialog()
+                                ''End If
+                                'End If
+                            Else
+                                mensaje.tipoMensaje("error")
+                                mensaje.lblMensaje.Text = "Error al almacenar la salida de efectivo de colones"
+                                mensaje.ShowDialog()
+                            End If
+                        End If
+                    ElseIf introducciones Then
+                        ' se agrega el monto de los colones y se almacena en la base de datos
+                        If agregarDenominacionesALista(pnlDenominacionesColones, denominacionesColones, 0, 0) Then
+                            If denominacionMonedasDatos.almacenarIntroduccionesSalidasEfectivo(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), InicioSesion.session.EmpleadoSG.ContrasennaSG, 0) Then
+                                denominacionesAEntregar.Clear()
+                                ' se agrega el monto de los dolares y se almacena en la base de datos
+                                '                          If agregarDenominacionesALista(pnlDenominacionesDolares, denominacionesDolares, 1, tipo_cambio) Then
+                                ' valida que se haya ingresado correctamente
+                                '                               If denominacionMonedasDatos.almacenarIntroduccionesSalidasEfectivo(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), InicioSesion.session.EmpleadoSG.ContrasennaSG, 0) Then
+                                '                   MsgBox("Se almacenó correctamente la introducción de efectivo")
+                                Close()
+                                '                                Else
+                                '     mensaje.lblMensaje.Text = "Error al almacenar la introducción de efectivo de dólares"
+                                '      mensaje.ShowDialog()
+                                '   End If
+                                'End If
+                            Else
+                                mensaje.tipoMensaje("error")
+                                mensaje.lblMensaje.Text = "Error al almacenar la introducción de efectivo de colones"
+                                mensaje.ShowDialog()
+                            End If
+                        End If
+                    ElseIf arqueo Then
+                        ' se agrega el monto de los colones y se almacena en la base de datos
+                        If agregarDenominacionesALista(pnlDenominacionesColones, denominacionesColones, 0, 0) Then
+                            ' valida que se haya ingresado correctamente
+                            If fonoSalon = 0 Then
+                                If fonoExpres = 0 Then
+
+                                    If denominacionMonedasDatos.almacenarArqueoDeCaja(New DenominacionMonedas(denominacionesAEntregar, cbxAdministrador.SelectedValue, InicioSesion.session.EmpleadoSG.Cod_usuarioSG), fonoExpres, fonoSalon) Then
+                                        denominacionesAEntregar.Clear()
+                                        arqueo_diseno.arqueo = True
+                                        Close()
+                                    Else
+                                        mensaje.tipoMensaje("error")
+                                        mensaje.lblMensaje.Text = "Error al almacenar el arqueo de caja"
+                                        mensaje.ShowDialog()
+                                    End If
+                                    mensaje.tipoMensaje("error")
+                                    mensaje.lblMensaje.Text = "Debe ingresar el monto del datafono Express"
+                                    mensaje.ShowDialog()
+
+                                End If ' Fin del if express
+                                mensaje.tipoMensaje("error")
+                                mensaje.lblMensaje.Text = "Debe ingresar el monto del datafono del Salon"
                                 mensaje.ShowDialog()
 
-                            End If ' Fin del if express
-                            mensaje.tipoMensaje("error")
-                            mensaje.lblMensaje.Text = "Debe ingresar el monto del datafono del Salon"
-                            mensaje.ShowDialog()
+                            End If ''Fin del if del salon
+                        End If
 
-                        End If ''Fin del if del salon
                     End If
 
+
+                Else
+                    mensaje.tipoMensaje("error")
+                    mensaje.lblMensaje.Text = "Contraseña o usuario inválido"
+                    mensaje.ShowDialog()
                 End If
-
-
             Else
                 mensaje.tipoMensaje("error")
-                mensaje.lblMensaje.Text = "Contraseña o usuario inválido"
+                mensaje.lblMensaje.Text = "Administrador no ingresó la contraseña"
                 mensaje.ShowDialog()
             End If
-        Else
-            mensaje.tipoMensaje("error")
-            mensaje.lblMensaje.Text = "Administrador no ingresó la contraseña"
-            mensaje.ShowDialog()
-        End If
+#End Region
+        End If 'Fin del panel visible
+
     End Sub
 
     ' metodo que se encarga de agregar las denominaciones a una lista para mandarla a almacenar en la base
