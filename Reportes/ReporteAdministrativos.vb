@@ -174,8 +174,8 @@ Public Class ReporteAdministrativos
 
     ' evento para cuando se cara elo formulario
     Private Sub ReporteAdministrativos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' muestra las fechas del dia
-        FechaInicio.Text = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
-        FechaFin.Text = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+        '' muestra las fechas del dia
+        'FechaInicio.Text = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+        'FechaFin.Text = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
     End Sub
 End Class

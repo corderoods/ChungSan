@@ -61,9 +61,10 @@ Partial Class ReporteMovimientosCajas
         Me.pnlLista.Controls.Add(Me.lblOpcion2)
         Me.pnlLista.Controls.Add(Me.pbSegundaOpcion)
         Me.pnlLista.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlLista.Location = New System.Drawing.Point(0, 171)
+        Me.pnlLista.Location = New System.Drawing.Point(0, 211)
+        Me.pnlLista.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnlLista.Name = "pnlLista"
-        Me.pnlLista.Size = New System.Drawing.Size(927, 378)
+        Me.pnlLista.Size = New System.Drawing.Size(1236, 465)
         Me.pnlLista.TabIndex = 0
         '
         'lblOpcion2
@@ -72,18 +73,20 @@ Partial Class ReporteMovimientosCajas
         Me.lblOpcion2.BackColor = System.Drawing.Color.FromArgb(CType(CType(79, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(9, Byte), Integer))
         Me.lblOpcion2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblOpcion2.ForeColor = System.Drawing.Color.White
-        Me.lblOpcion2.Location = New System.Drawing.Point(33, 22)
+        Me.lblOpcion2.Location = New System.Drawing.Point(44, 27)
+        Me.lblOpcion2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblOpcion2.Name = "lblOpcion2"
-        Me.lblOpcion2.Size = New System.Drawing.Size(77, 25)
+        Me.lblOpcion2.Size = New System.Drawing.Size(95, 31)
         Me.lblOpcion2.TabIndex = 0
         Me.lblOpcion2.Text = "Label1"
         '
         'pbSegundaOpcion
         '
         Me.pbSegundaOpcion.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.pbSegundaOpcion.Location = New System.Drawing.Point(12, 12)
+        Me.pbSegundaOpcion.Location = New System.Drawing.Point(16, 15)
+        Me.pbSegundaOpcion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbSegundaOpcion.Name = "pbSegundaOpcion"
-        Me.pbSegundaOpcion.Size = New System.Drawing.Size(350, 47)
+        Me.pbSegundaOpcion.Size = New System.Drawing.Size(467, 58)
         Me.pbSegundaOpcion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbSegundaOpcion.TabIndex = 23
         Me.pbSegundaOpcion.TabStop = False
@@ -98,8 +101,9 @@ Partial Class ReporteMovimientosCajas
         Me.Panel2.Controls.Add(Me.btnImprimir)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(927, 83)
+        Me.Panel2.Size = New System.Drawing.Size(1236, 102)
         Me.Panel2.TabIndex = 3
         '
         'lblReporte
@@ -108,17 +112,19 @@ Partial Class ReporteMovimientosCajas
         Me.lblReporte.BackColor = System.Drawing.Color.FromArgb(CType(CType(79, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(9, Byte), Integer))
         Me.lblReporte.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblReporte.ForeColor = System.Drawing.Color.White
-        Me.lblReporte.Location = New System.Drawing.Point(298, 30)
+        Me.lblReporte.Location = New System.Drawing.Point(397, 37)
+        Me.lblReporte.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblReporte.Name = "lblReporte"
-        Me.lblReporte.Size = New System.Drawing.Size(0, 25)
+        Me.lblReporte.Size = New System.Drawing.Size(0, 31)
         Me.lblReporte.TabIndex = 22
         '
         'pbPrimerOpcion
         '
         Me.pbPrimerOpcion.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.pbPrimerOpcion.Location = New System.Drawing.Point(276, 22)
+        Me.pbPrimerOpcion.Location = New System.Drawing.Point(368, 27)
+        Me.pbPrimerOpcion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pbPrimerOpcion.Name = "pbPrimerOpcion"
-        Me.pbPrimerOpcion.Size = New System.Drawing.Size(350, 47)
+        Me.pbPrimerOpcion.Size = New System.Drawing.Size(467, 58)
         Me.pbPrimerOpcion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbPrimerOpcion.TabIndex = 21
         Me.pbPrimerOpcion.TabStop = False
@@ -126,9 +132,10 @@ Partial Class ReporteMovimientosCajas
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.SunChangSystem.My.Resources.Resources.cover2
-        Me.PictureBox2.Location = New System.Drawing.Point(709, 3)
+        Me.PictureBox2.Location = New System.Drawing.Point(945, 4)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(193, 76)
+        Me.PictureBox2.Size = New System.Drawing.Size(257, 94)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 5
         Me.PictureBox2.TabStop = False
@@ -136,9 +143,10 @@ Partial Class ReporteMovimientosCajas
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SunChangSystem.My.Resources.Resources.cover2
-        Me.PictureBox1.Location = New System.Drawing.Point(1157, 3)
+        Me.PictureBox1.Location = New System.Drawing.Point(1543, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(192, 76)
+        Me.PictureBox1.Size = New System.Drawing.Size(256, 94)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
@@ -154,9 +162,10 @@ Partial Class ReporteMovimientosCajas
         Me.btnImprimir.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnImprimir.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnImprimir.Image = Global.SunChangSystem.My.Resources.Resources.btnImprimirOrden1
-        Me.btnImprimir.Location = New System.Drawing.Point(38, 9)
+        Me.btnImprimir.Location = New System.Drawing.Point(51, 11)
+        Me.btnImprimir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(155, 62)
+        Me.btnImprimir.Size = New System.Drawing.Size(207, 76)
         Me.btnImprimir.TabIndex = 2
         Me.btnImprimir.UseVisualStyleBackColor = False
         '
@@ -191,8 +200,9 @@ Partial Class ReporteMovimientosCajas
         'lblDenominacion
         '
         Me.lblDenominacion.Location = New System.Drawing.Point(0, 0)
+        Me.lblDenominacion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDenominacion.Name = "lblDenominacion"
-        Me.lblDenominacion.Size = New System.Drawing.Size(100, 23)
+        Me.lblDenominacion.Size = New System.Drawing.Size(133, 28)
         Me.lblDenominacion.TabIndex = 0
         '
         'pnlSuperior
@@ -207,60 +217,68 @@ Partial Class ReporteMovimientosCajas
         Me.pnlSuperior.Controls.Add(Me.lblDenominacion)
         Me.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlSuperior.Location = New System.Drawing.Point(0, 0)
+        Me.pnlSuperior.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnlSuperior.Name = "pnlSuperior"
-        Me.pnlSuperior.Size = New System.Drawing.Size(927, 549)
+        Me.pnlSuperior.Size = New System.Drawing.Size(1236, 676)
         Me.pnlSuperior.TabIndex = 12
         '
         'lblSubtotalFondo
         '
         Me.lblSubtotalFondo.Location = New System.Drawing.Point(0, 0)
+        Me.lblSubtotalFondo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSubtotalFondo.Name = "lblSubtotalFondo"
-        Me.lblSubtotalFondo.Size = New System.Drawing.Size(100, 23)
+        Me.lblSubtotalFondo.Size = New System.Drawing.Size(133, 28)
         Me.lblSubtotalFondo.TabIndex = 0
         '
         'lblCantidadFondo
         '
         Me.lblCantidadFondo.Location = New System.Drawing.Point(0, 0)
+        Me.lblCantidadFondo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblCantidadFondo.Name = "lblCantidadFondo"
-        Me.lblCantidadFondo.Size = New System.Drawing.Size(100, 23)
+        Me.lblCantidadFondo.Size = New System.Drawing.Size(133, 28)
         Me.lblCantidadFondo.TabIndex = 1
         '
         'lblDenominacionFondo
         '
         Me.lblDenominacionFondo.Location = New System.Drawing.Point(0, 0)
+        Me.lblDenominacionFondo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDenominacionFondo.Name = "lblDenominacionFondo"
-        Me.lblDenominacionFondo.Size = New System.Drawing.Size(100, 23)
+        Me.lblDenominacionFondo.Size = New System.Drawing.Size(133, 28)
         Me.lblDenominacionFondo.TabIndex = 2
         '
         'lblMonedaFondo
         '
         Me.lblMonedaFondo.Location = New System.Drawing.Point(0, 0)
+        Me.lblMonedaFondo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblMonedaFondo.Name = "lblMonedaFondo"
-        Me.lblMonedaFondo.Size = New System.Drawing.Size(100, 23)
+        Me.lblMonedaFondo.Size = New System.Drawing.Size(133, 28)
         Me.lblMonedaFondo.TabIndex = 3
         '
         'lblFechaInicioFondo
         '
         Me.lblFechaInicioFondo.Location = New System.Drawing.Point(0, 0)
+        Me.lblFechaInicioFondo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblFechaInicioFondo.Name = "lblFechaInicioFondo"
-        Me.lblFechaInicioFondo.Size = New System.Drawing.Size(100, 23)
+        Me.lblFechaInicioFondo.Size = New System.Drawing.Size(133, 28)
         Me.lblFechaInicioFondo.TabIndex = 4
         '
         'lblEmpleadoRecibeFondo
         '
         Me.lblEmpleadoRecibeFondo.Location = New System.Drawing.Point(0, 0)
+        Me.lblEmpleadoRecibeFondo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblEmpleadoRecibeFondo.Name = "lblEmpleadoRecibeFondo"
-        Me.lblEmpleadoRecibeFondo.Size = New System.Drawing.Size(100, 23)
+        Me.lblEmpleadoRecibeFondo.Size = New System.Drawing.Size(133, 28)
         Me.lblEmpleadoRecibeFondo.TabIndex = 5
         '
         'ReporteMovimientosCajas
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(927, 549)
+        Me.ClientSize = New System.Drawing.Size(1236, 676)
         Me.Controls.Add(Me.pnlLista)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.pnlSuperior)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
         Me.Name = "ReporteMovimientosCajas"
         Me.ShowIcon = False

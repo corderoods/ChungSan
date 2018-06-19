@@ -458,4 +458,8 @@ Public Class ReporteMovimientosCajas
 
         End If
     End Sub
+
+    Private Sub ReporteMovimientosCajas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

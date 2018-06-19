@@ -171,13 +171,13 @@ Public Class UsuariosDatos
                 conexion = conexionDB.abrirConexion()
                 ' consulta a la base de datos po el empleado que cumpla con las credenciales proporcionadas al iniciar la sesion
                 'Revisa que sea el cod usuario el mismo que inició la sesion
-                ' cmd = New SqlCommand("SELECT TOP 1 concat(datepart(year,fecha), '-', right(CONCAT('0',datepart(month, fecha)),2), '-', right(CONCAT('0',datepart(day, fecha)),2), ' ', datepart(hour, fecha), ':', datepart(minute, fecha), ':', datepart(second, fecha)) FROM fac.flujocaja_m WHERE (estado_caja = 'A' OR estado_caja = 'R') AND cod_usuario_recibe = '" + empleado.Cod_usuarioSG +
-                '                     "' AND concat(datepart(year,fecha), '-', right(CONCAT('0',datepart(month, fecha)),2), '-', right(CONCAT('0',datepart(day, fecha)),2)) = concat(datepart(year,'" + fecha_actual + "'), '-', right(CONCAT('0',datepart(month, '" + fecha_actual + "')),2), '-', right(CONCAT('0',datepart(day, '" + fecha_actual + "')),2)) order by fecha desc")
+                cmd = New SqlCommand("SELECT TOP 1 concat(datepart(year,fecha), '-', right(CONCAT('0',datepart(month, fecha)),2), '-', right(CONCAT('0',datepart(day, fecha)),2), ' ', datepart(hour, fecha), ':', datepart(minute, fecha), ':', datepart(second, fecha)) FROM fac.flujocaja_m WHERE (estado_caja = 'A' OR estado_caja = 'R') AND cod_usuario_recibe = '" + empleado.Cod_usuarioSG +
+                                    "' AND concat(datepart(year,fecha), '-', right(CONCAT('0',datepart(month, fecha)),2), '-', right(CONCAT('0',datepart(day, fecha)),2)) = concat(datepart(year,'" + fecha_actual + "'), '-', right(CONCAT('0',datepart(month, '" + fecha_actual + "')),2), '-', right(CONCAT('0',datepart(day, '" + fecha_actual + "')),2)) order by fecha desc")
 
 
                 'Revisa que la sesion se haya abierto sin importar quien haya abierto la sesion antes
-                cmd = New SqlCommand("SELECT TOP 1 concat(datepart(year,fecha), '-', right(CONCAT('0',datepart(month, fecha)),2), '-', right(CONCAT('0',datepart(day, fecha)),2), ' ', datepart(hour, fecha), ':', datepart(minute, fecha), ':', datepart(second, fecha)) FROM fac.flujocaja_m WHERE (estado_caja = 'A' OR estado_caja = 'R') AND concat(datepart(year,fecha), " +
-                                     "'-', right(CONCAT('0',datepart(month, fecha)),2), '-', right(CONCAT('0',datepart(day, fecha)),2)) = concat(datepart(year,'" + fecha_actual + "'), '-', right(CONCAT('0',datepart(month, '" + fecha_actual + "')),2), '-', right(CONCAT('0',datepart(day, '" + fecha_actual + "')),2)) order by fecha desc")
+                'cmd = New SqlCommand("SELECT TOP 1 concat(datepart(year,fecha), '-', right(CONCAT('0',datepart(month, fecha)),2), '-', right(CONCAT('0',datepart(day, fecha)),2), ' ', datepart(hour, fecha), ':', datepart(minute, fecha), ':', datepart(second, fecha)) FROM fac.flujocaja_m WHERE (estado_caja = 'A' OR estado_caja = 'R') AND concat(datepart(year,fecha), " +
+                '                     "'-', right(CONCAT('0',datepart(month, fecha)),2), '-', right(CONCAT('0',datepart(day, fecha)),2)) = concat(datepart(year,'" + fecha_actual + "'), '-', right(CONCAT('0',datepart(month, '" + fecha_actual + "')),2), '-', right(CONCAT('0',datepart(day, '" + fecha_actual + "')),2)) order by fecha desc")
 
 
                 ' se asigna el tipo de consulta que es. Si es para llamara a procedimineto almacenado o consulta por string

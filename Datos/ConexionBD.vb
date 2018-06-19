@@ -8,7 +8,7 @@ Public Class ConexionBD
     Public Sub New()
         'Me.cadenaConexion = "Data Source=WIN-DTO4BTFAAR3;Initial Catalog=Restaurante_V4_Produccion;Integrated Security = True"
         'Me.cadenaConexion = "Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=Restaurante_V4_Produccion;Integrated Security = True"
-        'Me.cadenaConexion = "Data Source=JC-TOSHIBA\SQLEXPRESS2012;Initial Catalog=Restaurante_V4_Produccion;User ID=sa;Password=racoton"
+        'Me.cadenaConexion = "Data Source=JC-TOSHIBA\SQLEXPRESS2012;Initial Catalog=Restaurante_V4_C:\Users\ODS\Desktop\2018-05-29 SunChangSystem\SunChangSystem\Datos\ConexionBD.vbProduccion;User ID=sa;Password=racoton"
         'Me.cadenaConexion = "Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=Restaurante_V4_Produccion;Integrated Security = True"
         'Me.cadenaConexion = "Data Source=CCASAW\SQLEXPRESS;Initial Catalog=Restaurante_V4_Produccion;Integrated Security = True"
         'Me.cadenaConexion = "Data Source=10.188.225.137;Initial Catalog=Restaurante_V4_Produccion;User ID=marlon;Password=racoton"

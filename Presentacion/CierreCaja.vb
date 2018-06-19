@@ -300,60 +300,60 @@ Public Class CierreCaja
 
             pvisualizar.Value = fondoInicial.ToString("C")
             numero_factura.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@fondo_inicial").ApplyCurrentValues(numero_factura)
+            factura.DataDefinition.ParameterFields("@fondo_inicial").ApplyCurrentValues(numero_factura) 's
 
             pvisualizar.Value = introducciones.ToString("C")
             parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@Introducciones").ApplyCurrentValues(parametro)
+            factura.DataDefinition.ParameterFields("@Introducciones").ApplyCurrentValues(parametro) 's
 
             pvisualizar.Value = ventasEfectivo.ToString("C")
             parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@ventas_efectivo").ApplyCurrentValues(parametro)
+            factura.DataDefinition.ParameterFields("@ventas_efectivo").ApplyCurrentValues(parametro) 's
 
             pvisualizar.Value = expressEfectivo.ToString("C")
             parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@express_efectivo").ApplyCurrentValues(parametro)
+            factura.DataDefinition.ParameterFields("@express_efectivo").ApplyCurrentValues(parametro) 's
 
             pvisualizar.Value = impuestosServicioEfectivo.ToString("C")
             parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@imp_serv_efec").ApplyCurrentValues(parametro)
+            factura.DataDefinition.ParameterFields("@imp_serv_efec").ApplyCurrentValues(parametro) 's
 
             pvisualizar.Value = impuestoVentasEfectivo.ToString("C")
             parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@imp_vtas_efec").ApplyCurrentValues(parametro)
+            factura.DataDefinition.ParameterFields("@imp_vtas_efec").ApplyCurrentValues(parametro) 's
 
             pvisualizar.Value = salidasEfectivo.ToString("C")
             parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@salidas").ApplyCurrentValues(parametro)
+            factura.DataDefinition.ParameterFields("@salidas").ApplyCurrentValues(parametro) 's
 
 
             pvisualizar.Value = monto_total_efectivo.ToString("C")
             parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@total_efec").ApplyCurrentValues(parametro)
+            factura.DataDefinition.ParameterFields("@total_efec").ApplyCurrentValues(parametro) 's
 
             pvisualizar.Value = fondoFinal.ToString("C")
             parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@fondo_final").ApplyCurrentValues(parametro)
+            factura.DataDefinition.ParameterFields("@fondo_final").ApplyCurrentValues(parametro) 's
 
             pvisualizar.Value = diferencia.ToString("C")
             parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@diferencia_efec").ApplyCurrentValues(parametro)
+            factura.DataDefinition.ParameterFields("@diferencia_efec").ApplyCurrentValues(parametro) 's
 
             pvisualizar.Value = ventasTarjeta.ToString("C")
             parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@vtas_tarjeta").ApplyCurrentValues(parametro)
+            factura.DataDefinition.ParameterFields("@vtas_tarjeta").ApplyCurrentValues(parametro) 's
 
             pvisualizar.Value = impuestoVentas.ToString("C")
             parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@imp_vtas").ApplyCurrentValues(parametro)
+            factura.DataDefinition.ParameterFields("@imp_vtas").ApplyCurrentValues(parametro) 's
 
             pvisualizar.Value = impuestosServicio.ToString("C")
             parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@imp_serv").ApplyCurrentValues(parametro)
+            factura.DataDefinition.ParameterFields("@imp_serv").ApplyCurrentValues(parametro) 's
 
             pvisualizar.Value = express.ToString("C")
             parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@express").ApplyCurrentValues(parametro)
+            factura.DataDefinition.ParameterFields("@express").ApplyCurrentValues(parametro) 's
 
             pvisualizar.Value = monto_total.ToString("C")
             parametro.Add(pvisualizar)
@@ -366,10 +366,18 @@ Public Class CierreCaja
             pvisualizar.Value = diferenciaVentas.ToString("C")
             parametro.Add(pvisualizar)
             factura.DataDefinition.ParameterFields("@diferencia_vtas").ApplyCurrentValues(parametro)
-
+            
             pvisualizar.Value = (InicioSesion.session.EmpleadoSG.NombreSG + " " + InicioSesion.session.EmpleadoSG.Apellido1SG)
             parametro.Add(pvisualizar)
-            factura.DataDefinition.ParameterFields("@usuario").ApplyCurrentValues(parametro)
+            factura.DataDefinition.ParameterFields("@usuario").ApplyCurrentValues(parametro) 's
+
+            pvisualizar.Value = dataExpress.ToString("c")
+            parametro.Add(pvisualizar)
+            factura.DataDefinition.ParameterFields("@datafono_Express").ApplyCurrentValues(parametro)
+
+            pvisualizar.Value = dataSalon.ToString("C")
+            parametro.Add(pvisualizar)
+            factura.DataDefinition.ParameterFields("@datafono_Salon").ApplyCurrentValues(parametro)
 
             'factura.Parameter_fecha_fin(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
             pvisualizar.Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
@@ -379,6 +387,16 @@ Public Class CierreCaja
             pvisualizar.Value = InicioSesion.session.Hora_primer_ingresoSG
             parametro.Add(pvisualizar)
             factura.DataDefinition.ParameterFields("@fecha_inicio").ApplyCurrentValues(parametro)
+
+            'pvisualizar.Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+            'parametro.Add(pvisualizar)
+            'factura.DataDefinition.ParameterFields("Parameter_ReporteCierredeCajarpt_fecha_fin").ApplyCurrentValues(parametro)
+
+
+            'pvisualizar.Value = InicioSesion.session.Hora_primer_ingresoSG
+            'parametro.Add(pvisualizar)
+            'factura.DataDefinition.ParameterFields("Parameter_ReporteCierredeCajarpt_fecha_inicio").ApplyCurrentValues(parametro)
+            ''factura.DataDefinition.ParameterFields("").ApplyCurrentValues(parametro)
 
             Dim reporte As New Reportes
             reporte.VistaReportes.ReportSource = factura
