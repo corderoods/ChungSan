@@ -23,6 +23,7 @@ Public Class MovimientoCajaDatos
     Public Function almacenarFondoInicial(ByVal denominacionesMonedas As DenominacionMonedas) As Boolean
         ' se obtiene la fecha actual del sistema para enviarla como la hora de ingreso del fondo inicial
         Dim fecha As DateTime = DateTime.Parse(DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"))
+
         ' se llama al metodo que abre la conexion con la base de datos
         conexion = conexionDB.abrirConexion()
 
@@ -51,6 +52,7 @@ Public Class MovimientoCajaDatos
                 'valida si es la primer iteracion (i=0) para indicar en la bandera
                 .AddWithValue("@flag", IIf(i = 0, 1, 0))
                 .AddWithValue("@tipo_cambio", listaDenominaciones(i).Tipo_cambioSG)
+                .AddWithValue("@fecha_inicio", InicioSesion.session.Hora_primer_ingresoSG)
                 '.AddWithValue("@cantidad_cierre", 0)
                 '.AddWithValue("@subtotal_cierre", 0)
             End With
@@ -112,6 +114,7 @@ Public Class MovimientoCajaDatos
                 .AddWithValue("@fecha_fin", DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"))
                 'valida si es la primer iteracion (i=0) para indicar en la bandera
                 .AddWithValue("@flag", IIf(i = 0, 1, 0))
+                .AddWithValue("@fecha_inicio", InicioSesion.session.Hora_primer_ingresoSG)
             End With
             'MsgBox(DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"))
             Try
@@ -1557,7 +1560,8 @@ Public Class MovimientoCajaDatos
     '********************************************************
 
     ' metodo que obtiene el reporte que corresponde a las ventas realizadas por cajeros en un rango de fechas
-    Public Function reporteVentasRangoFechas(fecha_inicio As String, fecha_fin As String, usuario As String, tipo As Int16) As DataTable
+    Public Function reporteVentasRangoFechas(fecha_inicio As String, fecha_fin As String, usuario As String, tipo As Int16, salonStr As String, llevarStr As String,
+                                             expressStr As String, uberStr As String, efectivoStr As String, tarjetaStr As String) As DataTable
         Try
             ' se llama al metodo que abre la conexion con la base de datos
             conexion = conexionDB.abrirConexion()
@@ -1572,6 +1576,13 @@ Public Class MovimientoCajaDatos
                 .AddWithValue("@fecha_inicio", fecha_inicio)
                 .AddWithValue("@fecha_fin", fecha_fin)
                 .AddWithValue("@flag", tipo)
+                .AddWithValue("@salon", salonStr)
+                .AddWithValue("@llevar", llevarStr)
+                .AddWithValue("@express", expressStr)
+                .AddWithValue("@uber", uberStr)
+                .AddWithValue("@efectivo", efectivoStr)
+                .AddWithValue("@tarjeta", tarjetaStr)
+
             End With
 
             If cmd.ExecuteNonQuery Then
@@ -1989,6 +2000,54 @@ Public Class MovimientoCajaDatos
         Return 0
     End Function
 
+    Public Function obtenerMontoDatafono(ByVal cod_usuario As String, ByVal cod_datafono As Integer) As Double
+        Dim fechaIni As DateTime = InicioSesion.session.Hora_primer_ingresoSG
+        ' se llama al metodo que abre la conexion con la base de datos
+        conexion = conexionDB.abrirConexion()
 
+        ' donde se almacenan los datos de la consulta
+        Dim lector As SqlDataReader
+
+        ' se asigna el tipo de consulta que es. Si es para llamara a procedimineto almacenado o consulta por string
+        cmd.CommandType = CommandType.StoredProcedure
+        cmd.CommandText = "FAC.sp_consulta_monto_datafono"
+        ' se le asigna la conexion al sqlCommand
+        cmd.Connection = conexion
+
+        ' se asignan los parametros a enviar en el procedimiento almacenado
+        With cmd.Parameters
+            .AddWithValue("@cod_usuario", cod_usuario)
+            .AddWithValue("@fecha_inicio", fechaIni)
+            .AddWithValue("@cod_Datafono", cod_datafono)
+            '.AddWithValue("@monto_total", monto_total).Direction = ParameterDirection.Output
+        End With
+
+        Try
+            ' ejecuta la consulta a la base
+            lector = cmd.ExecuteReader
+            ' se obtiene el valor que retorna el procedimiento
+            If lector.Read Then
+
+                ' se recorre hasta obtener todos los registros necesarios
+                ' While lector.Read
+                ' se limpian los parametros
+                cmd.Parameters.Clear()
+                    ' retorna el monto
+                    Return Double.Parse(lector(0).ToString())
+                'End While
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            ' limpia los parametros del comando
+            cmd.Parameters.Clear()
+            'cierra la conexion
+            conexionDB.cerrarConexion()
+            Return 0
+        End Try
+        cmd.Parameters.Clear()
+        'cierra la conexion
+        conexionDB.cerrarConexion()
+        Return 0
+    End Function
 
 End Class

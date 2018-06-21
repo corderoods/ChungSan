@@ -1,6 +1,7 @@
 ﻿Imports CrystalDecisions.Shared
 
 Imports System.Data.SqlClient
+Imports ReporteCierredeCaja
 
 Public Class CierreCaja
     ' variables publicas a utilizar
@@ -12,7 +13,7 @@ Public Class CierreCaja
     Public monto_total As Double = 0
     Public ventas_sistema As Double = 0
     Public diferenciaVentas As Double = 0
-    Public dataExpress, dataSalon As Double
+    Public dataExpress, dataSalon, salonBD, expressBD As Double
     Dim ventasefectivassistema As Double
     'declaracion de instancia
     Public movimiento_caja As New MovimientoCajaDatos
@@ -72,6 +73,7 @@ Public Class CierreCaja
         lblCuentasCanceladasCompEfec.Text = (pagosFacturas + salidasEfectivo).ToString("C")
         lblFondoFinalCompEfec.Text = fondoFinal.ToString("C")
         lblImpVtasCompEfec.Text = impuestoVentasEfectivo.ToString("C")
+
         lblDataExpress.Text = dataExpress.ToString("C")
         lblDataSalon.Text = dataSalon.ToString("C")
 
@@ -87,6 +89,19 @@ Public Class CierreCaja
 
         diferencia = fondoFinal - monto_total_efectivo
         lblDiferenciaCompEfec.Text = (diferencia).ToString("C")
+
+        expressBD = movimiento_caja.obtenerMontoDatafono(InicioSesion.session.EmpleadoSG.Cod_usuarioSG, 1)
+        salonBD = movimiento_caja.obtenerMontoDatafono(InicioSesion.session.EmpleadoSG.Cod_usuarioSG, 0)
+        If dataExpress <> expressBD Then
+            mensaje.lblMensaje.Text = "Hay una diferencia entre el datafono del express."
+            mensaje.tipoMensaje("Error")
+            mensaje.ShowDialog()
+        ElseIf dataSalon <> salonBD Then
+            mensaje.lblMensaje.Text = "Hay una diferencia entre el datafono del salon."
+            mensaje.tipoMensaje("Error")
+            mensaje.ShowDialog()
+        End If
+
 
         If diferencia > 5000 Or diferencia < -5000 Then
             mensaje.lblMensaje.Text = "Hay una gran diferencia. Verifique los montos."
@@ -225,6 +240,7 @@ Public Class CierreCaja
     '*******************************************************************
 
     ' metodo que se encarga de llamar a los metodos para cargar los datos que corresponden a los egresos'
+
     Public Sub cargarEgresos()
         ' se obtienen los valores de los montos llamando a los metodos que consultan en la base de datos
         ' monto total del pago de facturas realizadas por el cajero
@@ -379,14 +395,31 @@ Public Class CierreCaja
             parametro.Add(pvisualizar)
             factura.DataDefinition.ParameterFields("@datafono_Salon").ApplyCurrentValues(parametro)
 
-            'factura.Parameter_fecha_fin(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
-            pvisualizar.Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+
+            pvisualizar.Value = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
             parametro.Add(pvisualizar)
             factura.DataDefinition.ParameterFields("@fecha_fin").ApplyCurrentValues(parametro)
 
-            pvisualizar.Value = InicioSesion.session.Hora_primer_ingresoSG
+            pvisualizar.Value = Convert.ToDateTime(InicioSesion.session.Hora_primer_ingresoSG)
             parametro.Add(pvisualizar)
             factura.DataDefinition.ParameterFields("@fecha_inicio").ApplyCurrentValues(parametro)
+            'Dim fechaini As String = InicioSesion.session.Hora_primer_ingresoSG
+            'Dim fechaFin As String = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+
+            'Dim rep As New ReporteCierredeCaja
+
+            'pvisualizar.Value = fechaFin
+            'parametro.Add(pvisualizar)
+            'rep.DataDefinition.ParameterFields("@fechaFin").ApplyCurrentValues(parametro)
+
+            'pvisualizar.Value = fechaini
+            'parametro.Add(pvisualizar)
+            'rep.DataDefinition.ParameterFields("@fechaInc").ApplyCurrentValues(parametro)
+
+
+
+            'rep.SetParameterValue("@fecha_inicio", fechaini)
+            'rep.SetParameterValue("@fecha_fin", fechaFin)
 
             'pvisualizar.Value = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
             'parametro.Add(pvisualizar)

@@ -270,17 +270,17 @@ Public Class Facturas
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_ReporteCierredeCajarpt_fecha_inicio() As CrystalDecisions.[Shared].IParameterField
+    Public ReadOnly Property Parameter_ReporteCierredeCajarpt_fechaInc() As CrystalDecisions.[Shared].IParameterField
         Get
-            Return Me.DataDefinition.ParameterFields(22)
+            Return Me.DataDefinition.ParameterFields(24)
         End Get
     End Property
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_ReporteCierredeCajarpt_fecha_fin() As CrystalDecisions.[Shared].IParameterField
+    Public ReadOnly Property Parameter_ReporteCierredeCajarpt_fechafin() As CrystalDecisions.[Shared].IParameterField
         Get
-            Return Me.DataDefinition.ParameterFields(23)
+            Return Me.DataDefinition.ParameterFields(25)
         End Get
     End Property
 End Class

@@ -1041,4 +1041,8 @@ Public Class MovimientosEfectivo
     Private Sub lblCambio_Click(sender As Object, e As EventArgs) Handles lblCambio.Click
 
     End Sub
+
+    Private Sub MovimientosEfectivo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

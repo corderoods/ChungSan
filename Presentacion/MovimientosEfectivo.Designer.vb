@@ -43,6 +43,7 @@ Partial Class MovimientosEfectivo
         Me.btnAccept = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.rbDatafono = New System.Windows.Forms.RadioButton()
         Me.lblMoneda = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -73,14 +74,13 @@ Partial Class MovimientosEfectivo
         Me.lblFonfoCajaColones = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.pnlDatafonos = New System.Windows.Forms.Panel()
-        Me.rbDatafono = New System.Windows.Forms.RadioButton()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.mskExpress = New System.Windows.Forms.MaskedTextBox()
         Me.mskSalon = New System.Windows.Forms.MaskedTextBox()
+        Me.mskExpress = New System.Windows.Forms.MaskedTextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.pnlDenominacionesDolares.SuspendLayout()
         Me.pnlDenominacionesColones.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -342,6 +342,20 @@ Partial Class MovimientosEfectivo
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(479, 52)
         Me.Panel2.TabIndex = 23
+        '
+        'rbDatafono
+        '
+        Me.rbDatafono.AutoSize = True
+        Me.rbDatafono.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.rbDatafono.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.rbDatafono.Location = New System.Drawing.Point(292, 12)
+        Me.rbDatafono.Name = "rbDatafono"
+        Me.rbDatafono.Size = New System.Drawing.Size(142, 33)
+        Me.rbDatafono.TabIndex = 22
+        Me.rbDatafono.TabStop = True
+        Me.rbDatafono.Text = "Datafonos"
+        Me.rbDatafono.UseVisualStyleBackColor = True
+        Me.rbDatafono.Visible = False
         '
         'lblMoneda
         '
@@ -682,60 +696,21 @@ Partial Class MovimientosEfectivo
         Me.pnlDatafonos.TabIndex = 18
         Me.pnlDatafonos.Visible = False
         '
-        'rbDatafono
+        'mskSalon
         '
-        Me.rbDatafono.AutoSize = True
-        Me.rbDatafono.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.rbDatafono.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.rbDatafono.Location = New System.Drawing.Point(292, 12)
-        Me.rbDatafono.Name = "rbDatafono"
-        Me.rbDatafono.Size = New System.Drawing.Size(142, 33)
-        Me.rbDatafono.TabIndex = 22
-        Me.rbDatafono.TabStop = True
-        Me.rbDatafono.Text = "Datafonos"
-        Me.rbDatafono.UseVisualStyleBackColor = True
-        Me.rbDatafono.Visible = False
+        Me.mskSalon.Location = New System.Drawing.Point(274, 93)
+        Me.mskSalon.Mask = "999,999.999"
+        Me.mskSalon.Name = "mskSalon"
+        Me.mskSalon.Size = New System.Drawing.Size(189, 30)
+        Me.mskSalon.TabIndex = 5
         '
-        'Label6
+        'mskExpress
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label6.Location = New System.Drawing.Point(38, 8)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(91, 25)
-        Me.Label6.TabIndex = 0
-        Me.Label6.Text = "Datafono"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label10.Location = New System.Drawing.Point(292, 8)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(84, 25)
-        Me.Label10.TabIndex = 1
-        Me.Label10.Text = "Subtotal"
-        '
-        'Panel5
-        '
-        Me.Panel5.Controls.Add(Me.PanelSalidas)
-        Me.Panel5.Controls.Add(Me.PanelFondos)
-        Me.Panel5.Controls.Add(Me.PanelIntroducciones)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel5.Location = New System.Drawing.Point(0, 408)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(479, 120)
-        Me.Panel5.TabIndex = 25
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label15.Location = New System.Drawing.Point(22, 47)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(167, 25)
-        Me.Label15.TabIndex = 2
-        Me.Label15.Text = "Datafono Express"
+        Me.mskExpress.Location = New System.Drawing.Point(274, 44)
+        Me.mskExpress.Mask = "999,999.999"
+        Me.mskExpress.Name = "mskExpress"
+        Me.mskExpress.Size = New System.Drawing.Size(189, 30)
+        Me.mskExpress.TabIndex = 4
         '
         'Label17
         '
@@ -747,21 +722,46 @@ Partial Class MovimientosEfectivo
         Me.Label17.TabIndex = 3
         Me.Label17.Text = "Datafono Salon"
         '
-        'mskExpress
+        'Label15
         '
-        Me.mskExpress.Location = New System.Drawing.Point(274, 44)
-        Me.mskExpress.Mask = "999,999.999"
-        Me.mskExpress.Name = "mskExpress"
-        Me.mskExpress.Size = New System.Drawing.Size(189, 30)
-        Me.mskExpress.TabIndex = 4
+        Me.Label15.AutoSize = True
+        Me.Label15.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label15.Location = New System.Drawing.Point(22, 47)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(167, 25)
+        Me.Label15.TabIndex = 2
+        Me.Label15.Text = "Datafono Express"
         '
-        'mskSalon
+        'Label10
         '
-        Me.mskSalon.Location = New System.Drawing.Point(274, 93)
-        Me.mskSalon.Mask = "999,999.999"
-        Me.mskSalon.Name = "mskSalon"
-        Me.mskSalon.Size = New System.Drawing.Size(189, 30)
-        Me.mskSalon.TabIndex = 5
+        Me.Label10.AutoSize = True
+        Me.Label10.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label10.Location = New System.Drawing.Point(292, 8)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(84, 25)
+        Me.Label10.TabIndex = 1
+        Me.Label10.Text = "Subtotal"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label6.Location = New System.Drawing.Point(38, 8)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(91, 25)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Datafono"
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.PanelSalidas)
+        Me.Panel5.Controls.Add(Me.PanelFondos)
+        Me.Panel5.Controls.Add(Me.PanelIntroducciones)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel5.Location = New System.Drawing.Point(0, 408)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(479, 120)
+        Me.Panel5.TabIndex = 25
         '
         'MovimientosEfectivo
         '
