@@ -31,13 +31,17 @@ Public Class NuevaOrden
         cbxCliente.SelectedIndex = contado
         txtDireccion.Text = ""
         maskTelefono.Text = ""
+        Me.pnlExpress.Visible = True
+        Me.pnlSalon.Visible = False
+
+
     End Sub
 
     Private Sub btn1_Click(sender As Object, e As EventArgs) Handles btnSalon.Click
-        Me.pnlExpress.Visible = False
-        Me.pnlSalon.Visible = True
-        Me.txtNombre.Text = "CONTADO"
-        Me.txtNombre.Enabled = True
+        Me.pnlExpress.Visible = True
+        Me.pnlSalon.Visible = False
+        'Me.txtNombre.Text = "CONTADO"
+        'Me.txtNombre.Enabled = True
         Me.lblSalonero.Visible = True
         Me.cbxSalonero.Visible = True
         Me.btnMesa.Visible = True
@@ -49,6 +53,9 @@ Public Class NuevaOrden
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnExpress.Click
         Me.pnlExpress.Visible = True
         Me.pnlSalon.Visible = False
+        Me.lblSalonero.Visible = False
+        Me.cbxSalonero.Visible = False
+        Me.btnMesa.Visible = False
         S.Text = "Orden Express"
         S.Name = "E"
 
@@ -56,13 +63,13 @@ Public Class NuevaOrden
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnLlevar.Click
-        Me.pnlExpress.Visible = False
-        Me.pnlSalon.Visible = True
+        Me.pnlExpress.Visible = True
+        Me.pnlSalon.Visible = False
         Me.lblSalonero.Visible = False
         Me.cbxSalonero.Visible = False
         Me.btnMesa.Visible = False
-        Me.txtNombre.Text = "CONTADO"
-        Me.txtNombre.Enabled = True
+        'Me.txtNombre.Text = "CONTADO"
+        'Me.txtNombre.Enabled = True
 
         S.Text = "Orden Llevar"
         S.Name = "L"
@@ -80,7 +87,7 @@ Public Class NuevaOrden
         For i = 0 To clientes.Count - 1
             dr = dt.NewRow
             dr("Codigo") = clientes(i).CodClienteSG
-            dr("Nombre") = clientes(i).NombreClienteSG & " " & clientes(i).ApellidoSG
+            dr("Nombre") = clientes(i).NombreClienteSG ' & " " & clientes(i).ApellidoSG
             dt.Rows.Add(dr)
             If clientes(i).CodClienteSG = 0 Then
                 contado = i
@@ -193,8 +200,8 @@ Public Class NuevaOrden
     Public Sub insertarSalon()
         ordenDatos.insertarOrden(S.Name, cbxSalonero.SelectedValue, mesa,
                                  InicioSesion.session.EmpleadoSG.Cod_empleadoSG,
-                                 clienteActivo.CodClienteSG, txtDireccion.Text, maskTelefono.Text.Trim("-"), txtNombre.Text)
-       
+                                 clienteActivo.CodClienteSG, txtDireccion.Text, maskTelefono.Text.Trim("-"), clienteActivo.NombreClienteSG)
+
         ordenes1.mostrarOrdenes(1, EsUber)
         Me.Close()
     End Sub
@@ -212,7 +219,7 @@ Public Class NuevaOrden
     Public Sub insertarLlevar()
         ordenDatos.insertarOrden(S.Name, cbxSalonero.SelectedValue, mesa,
                                  InicioSesion.session.EmpleadoSG.Cod_empleadoSG,
-                                 clienteActivo.CodClienteSG, txtDireccion.Text, maskTelefono.Text.Trim("-"), txtNombre.Text)
+                                 clienteActivo.CodClienteSG, txtDireccion.Text, maskTelefono.Text.Trim("-"), clienteActivo.NombreClienteSG)
         ordenes1.mostrarOrdenes(1, EsUber)
         Me.Close()
 
@@ -307,10 +314,14 @@ Public Class NuevaOrden
                 cadena = cadena.Replace("-", "")
             End While
             Clie = clienteDatos.obtenerClientePorTelefono2(cadena)
-            txtDireccion.Text = Clie.DireccionSG
+            'txtDireccion.Text = Clie.DireccionSG
             Me.cbxCliente.SelectedValue = Clie.CodClienteSG
 
         End If
+
+    End Sub
+
+    Private Sub lblSalonero_Click(sender As Object, e As EventArgs) Handles lblSalonero.Click
 
     End Sub
 

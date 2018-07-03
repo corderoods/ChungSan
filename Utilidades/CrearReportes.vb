@@ -49,7 +49,13 @@
     End Sub
 
     Public Sub reporteVentasBrutasTotales()
-        movimiento_caja.reporteVentasRangoFechas(InicioSesion.session.Hora_primer_ingresoSG, DateTime.Now.ToString("yyyy-MM-dd"), InicioSesion.session.EmpleadoSG.Cod_usuarioSG, 1)
+        Dim salonStr As String = "S"
+        Dim llevarStr As String = "L"
+        Dim expressStr As String = "E"
+        Dim uberStr As String = "U"
+        Dim tarjetaStr As String = "T"
+        Dim efectivoStr As String = "E"
+        movimiento_caja.reporteVentasRangoFechas(InicioSesion.session.Hora_primer_ingresoSG, DateTime.Now.ToString("yyyy-MM-dd"), InicioSesion.session.EmpleadoSG.Cod_usuarioSG, 1, salonStr, llevarStr, expressStr, uberStr, efectivoStr, tarjetaStr)
         Dim reporte_ventas As New Reporte_Admin_Ventas
         Dim reporte As New Reportes
 

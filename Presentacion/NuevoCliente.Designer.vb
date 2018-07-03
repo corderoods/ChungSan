@@ -30,6 +30,21 @@ Partial Class NuevoCliente
         Me.dtgClientes = New System.Windows.Forms.DataGridView()
         Me.btnNuevo = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtIdentificacion = New System.Windows.Forms.TextBox()
+        Me.Identificacion = New System.Windows.Forms.Label()
+        Me.txtCorreo = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtOtrasSenas = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cbTipoIden = New System.Windows.Forms.ComboBox()
+        Me.checkDiplomatico = New System.Windows.Forms.CheckBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtApellido1 = New System.Windows.Forms.TextBox()
+        Me.txtApellido2 = New System.Windows.Forms.TextBox()
         CType(Me.dtgClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -38,19 +53,21 @@ Partial Class NuevoCliente
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(50, 29)
+        Me.Label6.Location = New System.Drawing.Point(27, 27)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(84, 24)
+        Me.Label6.Size = New System.Drawing.Size(107, 29)
         Me.Label6.TabIndex = 9
         Me.Label6.Text = "Nombre:"
         '
         'txtNombre
         '
         Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.txtNombre.Location = New System.Drawing.Point(146, 26)
+        Me.txtNombre.Location = New System.Drawing.Point(312, 24)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(280, 29)
-        Me.txtNombre.TabIndex = 23
+        Me.txtNombre.Size = New System.Drawing.Size(372, 34)
+        Me.txtNombre.TabIndex = 1
         '
         'btnNuevoTelefono
         '
@@ -62,9 +79,10 @@ Partial Class NuevoCliente
         Me.btnNuevoTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNuevoTelefono.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnNuevoTelefono.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.btnNuevoTelefono.Location = New System.Drawing.Point(342, 91)
+        Me.btnNuevoTelefono.Location = New System.Drawing.Point(684, 623)
+        Me.btnNuevoTelefono.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNuevoTelefono.Name = "btnNuevoTelefono"
-        Me.btnNuevoTelefono.Size = New System.Drawing.Size(100, 49)
+        Me.btnNuevoTelefono.Size = New System.Drawing.Size(133, 60)
         Me.btnNuevoTelefono.TabIndex = 28
         Me.btnNuevoTelefono.Text = "Telefonos"
         Me.btnNuevoTelefono.UseVisualStyleBackColor = True
@@ -81,9 +99,10 @@ Partial Class NuevoCliente
         Me.btnConfirmar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnConfirmar.Image = Global.SunChangSystem.My.Resources.Resources.btnGuardar
-        Me.btnConfirmar.Location = New System.Drawing.Point(120, 192)
+        Me.btnConfirmar.Location = New System.Drawing.Point(1065, 637)
+        Me.btnConfirmar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnConfirmar.Name = "btnConfirmar"
-        Me.btnConfirmar.Size = New System.Drawing.Size(161, 51)
+        Me.btnConfirmar.Size = New System.Drawing.Size(215, 63)
         Me.btnConfirmar.TabIndex = 22
         Me.btnConfirmar.UseVisualStyleBackColor = False
         '
@@ -97,9 +116,10 @@ Partial Class NuevoCliente
         Me.btnNuevaDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNuevaDireccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnNuevaDireccion.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.btnNuevaDireccion.Location = New System.Drawing.Point(230, 90)
+        Me.btnNuevaDireccion.Location = New System.Drawing.Point(206, 637)
+        Me.btnNuevaDireccion.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNuevaDireccion.Name = "btnNuevaDireccion"
-        Me.btnNuevaDireccion.Size = New System.Drawing.Size(100, 49)
+        Me.btnNuevaDireccion.Size = New System.Drawing.Size(133, 60)
         Me.btnNuevaDireccion.TabIndex = 32
         Me.btnNuevaDireccion.Text = "Direcciones"
         Me.btnNuevaDireccion.UseVisualStyleBackColor = True
@@ -112,11 +132,12 @@ Partial Class NuevoCliente
         Me.dtgClientes.ColumnHeadersHeight = 25
         Me.dtgClientes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dtgClientes.GridColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(10, Byte), Integer))
-        Me.dtgClientes.Location = New System.Drawing.Point(448, 12)
+        Me.dtgClientes.Location = New System.Drawing.Point(927, 13)
+        Me.dtgClientes.Margin = New System.Windows.Forms.Padding(4)
         Me.dtgClientes.Name = "dtgClientes"
         Me.dtgClientes.RowHeadersVisible = False
         Me.dtgClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        Me.dtgClientes.Size = New System.Drawing.Size(303, 252)
+        Me.dtgClientes.Size = New System.Drawing.Size(404, 208)
         Me.dtgClientes.TabIndex = 33
         '
         'btnNuevo
@@ -130,9 +151,10 @@ Partial Class NuevoCliente
         Me.btnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnNuevo.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.btnNuevo.Location = New System.Drawing.Point(16, 89)
+        Me.btnNuevo.Location = New System.Drawing.Point(13, 638)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(100, 51)
+        Me.btnNuevo.Size = New System.Drawing.Size(133, 63)
         Me.btnNuevo.TabIndex = 34
         Me.btnNuevo.Text = "Nuevo"
         Me.btnNuevo.UseVisualStyleBackColor = False
@@ -147,21 +169,195 @@ Partial Class NuevoCliente
         Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnEliminar.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.btnEliminar.Location = New System.Drawing.Point(122, 91)
+        Me.btnEliminar.Location = New System.Drawing.Point(521, 636)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(100, 49)
+        Me.btnEliminar.Size = New System.Drawing.Size(133, 60)
         Me.btnEliminar.TabIndex = 35
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
+        'txtTelefono
+        '
+        Me.txtTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.txtTelefono.Location = New System.Drawing.Point(312, 203)
+        Me.txtTelefono.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(372, 34)
+        Me.txtTelefono.TabIndex = 4
+        '
+        'Label1
+        '
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(27, 205)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(135, 30)
+        Me.Label1.TabIndex = 48
+        Me.Label1.Text = "Telefono:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(27, 453)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(121, 29)
+        Me.Label5.TabIndex = 53
+        Me.Label5.Text = "Direccion:"
+        '
+        'txtIdentificacion
+        '
+        Me.txtIdentificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.txtIdentificacion.Location = New System.Drawing.Point(312, 265)
+        Me.txtIdentificacion.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtIdentificacion.Name = "txtIdentificacion"
+        Me.txtIdentificacion.Size = New System.Drawing.Size(372, 34)
+        Me.txtIdentificacion.TabIndex = 5
+        '
+        'Identificacion
+        '
+        Me.Identificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Identificacion.ForeColor = System.Drawing.Color.White
+        Me.Identificacion.Location = New System.Drawing.Point(27, 267)
+        Me.Identificacion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Identificacion.Name = "Identificacion"
+        Me.Identificacion.Size = New System.Drawing.Size(175, 30)
+        Me.Identificacion.TabIndex = 54
+        Me.Identificacion.Text = "Identificacion:"
+        '
+        'txtCorreo
+        '
+        Me.txtCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.txtCorreo.Location = New System.Drawing.Point(312, 391)
+        Me.txtCorreo.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtCorreo.Name = "txtCorreo"
+        Me.txtCorreo.Size = New System.Drawing.Size(372, 34)
+        Me.txtCorreo.TabIndex = 7
+        '
+        'Label2
+        '
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(27, 395)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(229, 30)
+        Me.Label2.TabIndex = 56
+        Me.Label2.Text = "Correo electronico:"
+        '
+        'txtOtrasSenas
+        '
+        Me.txtOtrasSenas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.txtOtrasSenas.Location = New System.Drawing.Point(312, 448)
+        Me.txtOtrasSenas.Multiline = True
+        Me.txtOtrasSenas.Name = "txtOtrasSenas"
+        Me.txtOtrasSenas.Size = New System.Drawing.Size(372, 132)
+        Me.txtOtrasSenas.TabIndex = 8
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(27, 326)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(263, 29)
+        Me.Label3.TabIndex = 59
+        Me.Label3.Text = "Tipo de Indentificacion:"
+        '
+        'cbTipoIden
+        '
+        Me.cbTipoIden.AccessibleName = "me.cbTipoIden"
+        Me.cbTipoIden.BackColor = System.Drawing.SystemColors.Control
+        Me.cbTipoIden.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbTipoIden.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.cbTipoIden.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.cbTipoIden.FormattingEnabled = True
+        Me.cbTipoIden.IntegralHeight = False
+        Me.cbTipoIden.Items.AddRange(New Object() {"Seleccione un tipo", "Cédula Fisica", "Cédula Juridica", "DIMEX", "Asignado Tributario", "Pasaporte"})
+        Me.cbTipoIden.Location = New System.Drawing.Point(312, 323)
+        Me.cbTipoIden.Name = "cbTipoIden"
+        Me.cbTipoIden.Size = New System.Drawing.Size(372, 37)
+        Me.cbTipoIden.TabIndex = 6
+        '
+        'checkDiplomatico
+        '
+        Me.checkDiplomatico.AutoSize = True
+        Me.checkDiplomatico.Enabled = False
+        Me.checkDiplomatico.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.checkDiplomatico.ForeColor = System.Drawing.Color.White
+        Me.checkDiplomatico.Location = New System.Drawing.Point(703, 327)
+        Me.checkDiplomatico.Name = "checkDiplomatico"
+        Me.checkDiplomatico.Size = New System.Drawing.Size(163, 33)
+        Me.checkDiplomatico.TabIndex = 61
+        Me.checkDiplomatico.Text = "Diplomatico"
+        Me.checkDiplomatico.UseVisualStyleBackColor = True
+        Me.checkDiplomatico.Visible = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(27, 89)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(143, 29)
+        Me.Label4.TabIndex = 62
+        Me.Label4.Text = "1er Apellido"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(27, 146)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(149, 29)
+        Me.Label7.TabIndex = 63
+        Me.Label7.Text = "2do Apellido"
+        '
+        'txtApellido1
+        '
+        Me.txtApellido1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.txtApellido1.Location = New System.Drawing.Point(312, 84)
+        Me.txtApellido1.Name = "txtApellido1"
+        Me.txtApellido1.Size = New System.Drawing.Size(372, 34)
+        Me.txtApellido1.TabIndex = 2
+        '
+        'txtApellido2
+        '
+        Me.txtApellido2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
+        Me.txtApellido2.Location = New System.Drawing.Point(312, 143)
+        Me.txtApellido2.Name = "txtApellido2"
+        Me.txtApellido2.Size = New System.Drawing.Size(372, 34)
+        Me.txtApellido2.TabIndex = 3
+        '
         'NuevoCliente
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(763, 276)
+        Me.ClientSize = New System.Drawing.Size(1344, 761)
+        Me.Controls.Add(Me.txtApellido2)
+        Me.Controls.Add(Me.txtApellido1)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.checkDiplomatico)
+        Me.Controls.Add(Me.cbTipoIden)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.txtOtrasSenas)
+        Me.Controls.Add(Me.txtCorreo)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.txtIdentificacion)
+        Me.Controls.Add(Me.Identificacion)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.txtTelefono)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.dtgClientes)
@@ -170,6 +366,7 @@ Partial Class NuevoCliente
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.btnConfirmar)
         Me.Controls.Add(Me.Label6)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "NuevoCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "NuevoCliente"
@@ -186,4 +383,19 @@ Partial Class NuevoCliente
     Friend WithEvents dtgClientes As DataGridView
     Friend WithEvents btnNuevo As Button
     Friend WithEvents btnEliminar As Button
+    Friend WithEvents txtTelefono As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtIdentificacion As TextBox
+    Friend WithEvents Identificacion As Label
+    Friend WithEvents txtCorreo As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtOtrasSenas As TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents cbTipoIden As ComboBox
+    Friend WithEvents checkDiplomatico As CheckBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtApellido1 As TextBox
+    Friend WithEvents txtApellido2 As TextBox
 End Class

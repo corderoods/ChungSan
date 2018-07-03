@@ -55,7 +55,7 @@ Partial Class NuevaOrden
         Me.pnlPricipal.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.pnlPricipal.Controls.Add(Me.pnlExpress)
         Me.pnlPricipal.Controls.Add(Me.pnlSalon)
-        Me.pnlPricipal.Location = New System.Drawing.Point(16, 101)
+        Me.pnlPricipal.Location = New System.Drawing.Point(25, 101)
         Me.pnlPricipal.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlPricipal.Name = "pnlPricipal"
         Me.pnlPricipal.Size = New System.Drawing.Size(1159, 361)
@@ -64,7 +64,10 @@ Partial Class NuevaOrden
         'pnlExpress
         '
         Me.pnlExpress.Controls.Add(Me.maskTelefono)
+        Me.pnlExpress.Controls.Add(Me.btnMesa)
         Me.pnlExpress.Controls.Add(Me.btnSigTelefono)
+        Me.pnlExpress.Controls.Add(Me.lblSalonero)
+        Me.pnlExpress.Controls.Add(Me.cbxSalonero)
         Me.pnlExpress.Controls.Add(Me.txtDireccion)
         Me.pnlExpress.Controls.Add(Me.btnSigDireccion)
         Me.pnlExpress.Controls.Add(Me.lblDireccion)
@@ -72,7 +75,7 @@ Partial Class NuevaOrden
         Me.pnlExpress.Controls.Add(Me.cbxCliente)
         Me.pnlExpress.Controls.Add(Me.lblTelefono)
         Me.pnlExpress.Controls.Add(Me.lblCliente)
-        Me.pnlExpress.Location = New System.Drawing.Point(17, 18)
+        Me.pnlExpress.Location = New System.Drawing.Point(4, 4)
         Me.pnlExpress.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlExpress.Name = "pnlExpress"
         Me.pnlExpress.Size = New System.Drawing.Size(1123, 343)
@@ -195,15 +198,12 @@ Partial Class NuevaOrden
         '
         'pnlSalon
         '
-        Me.pnlSalon.Controls.Add(Me.btnMesa)
         Me.pnlSalon.Controls.Add(Me.txtNombre)
         Me.pnlSalon.Controls.Add(Me.Label3)
-        Me.pnlSalon.Controls.Add(Me.cbxSalonero)
-        Me.pnlSalon.Controls.Add(Me.lblSalonero)
-        Me.pnlSalon.Location = New System.Drawing.Point(17, 18)
+        Me.pnlSalon.Location = New System.Drawing.Point(4, 4)
         Me.pnlSalon.Margin = New System.Windows.Forms.Padding(4)
         Me.pnlSalon.Name = "pnlSalon"
-        Me.pnlSalon.Size = New System.Drawing.Size(917, 164)
+        Me.pnlSalon.Size = New System.Drawing.Size(1072, 95)
         Me.pnlSalon.TabIndex = 5
         '
         'btnMesa
@@ -217,7 +217,7 @@ Partial Class NuevaOrden
         Me.btnMesa.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnMesa.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnMesa.Image = Global.SunChangSystem.My.Resources.Resources.btnProducto
-        Me.btnMesa.Location = New System.Drawing.Point(484, 30)
+        Me.btnMesa.Location = New System.Drawing.Point(599, 69)
         Me.btnMesa.Margin = New System.Windows.Forms.Padding(4)
         Me.btnMesa.Name = "btnMesa"
         Me.btnMesa.Size = New System.Drawing.Size(215, 86)
@@ -254,7 +254,7 @@ Partial Class NuevaOrden
         Me.cbxSalonero.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.cbxSalonero.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxSalonero.FormattingEnabled = True
-        Me.cbxSalonero.Location = New System.Drawing.Point(129, 95)
+        Me.cbxSalonero.Location = New System.Drawing.Point(741, 12)
         Me.cbxSalonero.Margin = New System.Windows.Forms.Padding(4)
         Me.cbxSalonero.Name = "cbxSalonero"
         Me.cbxSalonero.Size = New System.Drawing.Size(309, 37)
@@ -265,7 +265,7 @@ Partial Class NuevaOrden
         Me.lblSalonero.AutoSize = True
         Me.lblSalonero.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSalonero.ForeColor = System.Drawing.Color.White
-        Me.lblSalonero.Location = New System.Drawing.Point(4, 98)
+        Me.lblSalonero.Location = New System.Drawing.Point(594, 15)
         Me.lblSalonero.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblSalonero.Name = "lblSalonero"
         Me.lblSalonero.Size = New System.Drawing.Size(117, 29)

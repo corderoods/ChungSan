@@ -1,4 +1,7 @@
 ﻿Imports CrystalDecisions.Shared
+Imports System.IO
+Imports System.Xml
+Imports CrystalDecisions.CrystalReports.Engine
 
 Public Class Facturacion
     'establece el numero de orden
@@ -35,6 +38,7 @@ Public Class Facturacion
     Dim contado As Integer
     ' declara la variable que almacenara el codigo del cliente
     Public Shared cod_cliente As Double = 0
+
     ' variable que obtendra el valor del monto del descuento
     Dim monto_descuento As Double = 0, monto_express As Double = 0
     Dim EsUber As Boolean
@@ -1067,6 +1071,7 @@ Public Class Facturacion
     'METODO QUE INSERTAR UNA FACTURA EN LA BASE DE DATOS
     Private Sub btnConfirmar_Click(sender As Object, e As EventArgs) Handles btnConfirmar.Click
         'nueva instancia de la clase de datos
+        Dim facturaDetalle As New FacturaDetalle
         Dim facturaDatos = New FacturacionDatos
         Dim desc As Double
         If (txtDescuento.Text.CompareTo("") = 0) Then
@@ -1100,6 +1105,7 @@ Public Class Facturacion
         'subtotal
         Dim subTotal = lblSubTotal.Text
 
+
         orden.ImpServ_ = 0
         orden.ImpVtas_ = 0
         orden.Express_ = 0
@@ -1120,6 +1126,7 @@ Public Class Facturacion
         subTotal += orden.ImpVtas_
 
         factura.SubtotalSG = (CDbl(lblSubTotal.Text) - factura.Monto_descuentoSG)
+        factura.cod_ClienteSG = cod_cliente
 
         'guarda la factura en la base de datos
         Dim result = facturaDatos.ingresarFactura(factura)
@@ -1127,7 +1134,7 @@ Public Class Facturacion
         If (result) Then
             'recorre la lista de los productos que pago en la factura
             For Each productoFactura In productosFactura
-                Dim facturaDetalle As New FacturaDetalle
+                'Dim facturaDetalle As New FacturaDetalle
                 facturaDetalle.NumFactura = lblNumFactura.Text
                 facturaDetalle.CodEstadoFactura = "A"
                 facturaDetalle.NumOrden = numOrdenFacturar
@@ -1192,13 +1199,13 @@ Public Class Facturacion
             productosOrden.Clear()
             'borra los controles de la orden
             detalleProductoControl.Clear()
-            'borra los productos de la factura
-            productosFactura.Clear()
+
             'borra los productos de los controles de la factura
             detalleFacturaControl.Clear()
 
-            imprimirFactura(factura.NumFactura)
-
+            imprimirFactura(factura)
+            'borra los productos de la factura
+            productosFactura.Clear()
             'muestra los productos de la factura
             mostrarProductosFactura()
         Else
@@ -1473,11 +1480,11 @@ Public Class Facturacion
 
     ' metodo para imprimir la factura
     ' llama al reporte de Facturas que obtiene los datos de la base de datos
-    Public Function imprimirFactura(num_factura As Double) As Boolean
+    Public Function imprimirFactura(fac As Factura) As Boolean
         Try
 
             Dim facturaDatos = New FacturacionDatos
-            facturaDatos.crearFactura(CInt(num_factura), InicioSesion.session.EmpleadoSG.Cod_usuarioSG)
+            facturaDatos.crearFactura(CInt(fac.NumFactura), InicioSesion.session.EmpleadoSG.Cod_usuarioSG)
 
             Dim factura As New Factura2
 
@@ -1486,6 +1493,8 @@ Public Class Facturacion
             reporte.VistaReportes.ReportSource = factura
             reporte.VistaReportes.RefreshReport()
             'reporte.ShowDialog()
+
+
             reporte.VistaReportes.PrintReport()
 
             Dim mensaje_confirmacion As New MensajeConfirmacion
@@ -1502,14 +1511,72 @@ Public Class Facturacion
 
             ' valida si seimprimio o no la factura
             If Not mensaje_confirmacion.decision Then
-                imprimirFactura(num_factura)
+                imprimirFactura(fac)
             End If
+
+
+            'Si se imprimió una vez que cree el PDF y el xml
+            Me.ExportToPDF(factura, "Factura" + fac.NumFactura.ToString() + ".pdf")
+            Dim det As String = ""
+            For Each productoFactura In productosFactura
+
+                det += " " + productoFactura(1).CodProducto.ToString()
+            Next
+
+            Dim xml As String
+            Dim org As Organizacion
+            org = facturaDatos.obtenerOrganizacion()
+
+            '            xml = "{'Clave' " + org.claveSG +
+            '               "'Emisor'{" +
+            '                          "'Nombre'" + org.nombreSG +
+            '                         "'Identificacion'{" +
+            '                            "'Tipo'" + org.tipoIdentSG +
+            '                           "'Numero'" + org.numeroIdentSG +
+            '   "}" +
+            '    "'NombreComercial'" + org.nombreComerSG +
+            '     "'Ubicacion'{" +
+            '          "'Provincia'" + org.provinciaSG +
+            '           "'Caton'" + org.cantonSG +
+            '            "'Distrito'" + org.distritoSG +
+            ''    "'Barrio'" + org.barrioSG +
+            '     "'OtrasSenas'" + org.OtrasSenasSG +
+            '  "}" +
+            '   "'Telefono'{" +
+            '        "'CodigoPais'" + org.codTelefonoSG +
+            '         "'Telefono'" + org.telefonoSG +
+            '      "}" +
+            '       "'Fax'{" +
+            '            "'CodigoPais'" + org.codFaxSG +
+            '             "'Fax'" + org.faxSG +
+            '          "}" +
+            '           "'CorreoElectronico'" + org.correoElectronicoSG +
+            '            "}/emisor}/todo"
+
+            Dim prodlis As List(Of Producto)
+            Dim prod As Producto
+            prodlis = facturaDatos.obtenerproductosPorCodProd(fac.NumFactura)
+
+            Dim i As Integer = 0
+            Dim pr As String = ""
+            Dim cl As String = ""
+            For Each prod In prodlis
+                pr += " " + prodlis.Item(i).Nombre_
+                i += 1
+            Next
+
+            Dim Ccliente As Cliente = facturaDatos.obtenerClientePago(fac.NumFactura)
+
+            cl = Ccliente.NombreClienteSG + " " + Ccliente.CodClienteSG.ToString()
+
+            Console.WriteLine(org.nombreComerSG & pr)
+
 
             If ordenAPagar.Ubicacion_ = "E" Then
                 ' imprimirFacturaCocina(num_factura)
-                imprimirFacturaCocina(num_factura)
+                imprimirFacturaCocina(fac.NumFactura)
             ElseIf ordenAPagar.Ubicacion_ = "L" Then
-                imprimirFacturaCocina(num_factura)
+                imprimirFacturaCocina(fac.NumFactura)
             End If
 
         Catch ex As Exception
@@ -1567,6 +1634,28 @@ Public Class Facturacion
         cbDatafono.DataSource = dt
 
     End Sub
+
+
+    Public Function ExportToPDF(ByVal rpt As ReportDocument, ByVal NombreArchivo As String) As String
+        Dim vFileName As String
+        Dim diskOpts As New DiskFileDestinationOptions
+        Try
+            With rpt.ExportOptions
+                .ExportDestinationType = ExportDestinationType.DiskFile
+                .ExportFormatType = ExportFormatType.PortableDocFormat
+            End With
+
+            vFileName = "C:\Users\ODS\Desktop\2018-05-29 SunChangSystem\" & NombreArchivo
+            If File.Exists(vFileName) Then File.Delete(vFileName)
+            diskOpts.DiskFileName = vFileName
+            rpt.ExportOptions.DestinationOptions = diskOpts
+            rpt.Export()
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return vFileName
+    End Function
 
 
 End Class

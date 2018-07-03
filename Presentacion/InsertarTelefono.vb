@@ -82,4 +82,8 @@
         txtTelefono.Text = ""
         accion = "I"
     End Sub
+
+    Private Sub txtTelefono_TextChanged(sender As Object, e As EventArgs) Handles txtTelefono.TextChanged
+
+    End Sub
 End Class

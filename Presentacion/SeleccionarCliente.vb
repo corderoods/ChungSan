@@ -28,7 +28,7 @@
         For i = 0 To clientes.Count - 1
             dr = dt.NewRow
             dr("Codigo") = clientes(i).CodClienteSG
-            dr("Nombre") = clientes(i).NombreClienteSG & " " & clientes(i).ApellidoSG
+            dr("Nombre") = clientes(i).NombreClienteSG '& " " & clientes(i).ApellidoSG
             dt.Rows.Add(dr)
             cbxClientes.ValueMember = "Codigo"
             cbxClientes.DisplayMember = "Nombre"
