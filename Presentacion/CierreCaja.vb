@@ -1,7 +1,7 @@
 ﻿Imports CrystalDecisions.Shared
-
+Imports System.IO
+Imports CrystalDecisions.CrystalReports.Engine
 Imports System.Data.SqlClient
-Imports ReporteCierredeCaja
 
 Public Class CierreCaja
     ' variables publicas a utilizar
@@ -403,6 +403,7 @@ Public Class CierreCaja
             pvisualizar.Value = Convert.ToDateTime(InicioSesion.session.Hora_primer_ingresoSG)
             parametro.Add(pvisualizar)
             factura.DataDefinition.ParameterFields("@fecha_inicio").ApplyCurrentValues(parametro)
+
             'Dim fechaini As String = InicioSesion.session.Hora_primer_ingresoSG
             'Dim fechaFin As String = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
 
@@ -434,6 +435,7 @@ Public Class CierreCaja
             Dim reporte As New Reportes
             reporte.VistaReportes.ReportSource = factura
             'reporte.ShowDialog()
+
             reporte.VistaReportes.PrintReport()
 
 
@@ -582,5 +584,7 @@ Public Class CierreCaja
         ' llama al metodo que se encarga de cargar toda la informaacion para poder mostrarlas
         cargarInformacion()
     End Sub
+
+
 
 End Class

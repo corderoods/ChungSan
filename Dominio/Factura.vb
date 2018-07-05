@@ -1,7 +1,7 @@
 ﻿Public Class Factura
     Private num_factura, num_orden, monto_total, cod_Datafono As Integer
     Private fecha_factura As DateTime
-    Private cod_estado_factura, nombreCliente, estado As String
+    Private cod_estado_factura, nombreCliente, estado, cod_Cliente As String
     Private descuento As Double
 
     Private subtotal, monto_descuento, porcentaje_descuento, impserv, impvtas, express As Double
@@ -146,5 +146,13 @@
         End Set
     End Property
 
+    Public Property cod_ClienteSG As String
+        Get
+            Return cod_Cliente
+        End Get
+        Set(value As String)
+            Me.cod_Cliente = value
+        End Set
+    End Property
 
 End Class

@@ -91,7 +91,7 @@ Public Class ClienteDireccionDatos
         End Try
     End Sub
 
-    Public Function obtenerDireccionPorId(ByVal codDireccion As Integer) As ClienteDireccion
+    Public Function obtenerDireccionPorId(ByVal codCliente As Integer) As ClienteDireccion
         ' lista que obtendrá todos los clientes
         ' objeto que obtendrá a los clientes
         Dim direccion As New ClienteDireccion
@@ -103,7 +103,7 @@ Public Class ClienteDireccionDatos
                 ' se llama al metodo que abre la conexion con la base de datos
                 conexion = conexionDB.abrirConexion()
                 ' consulta a la base de datos por todos los meseros de la base de datos
-                cmd = New SqlCommand("SELECT * FROM FAC.clientes_direcciones where cod_direccion = " & codDireccion)
+                cmd = New SqlCommand("SELECT * FROM FAC.clientes_direcciones where cod_cliente = " & codCliente)
                 ' se asigna el tipo de consulta que es. Si es para llamara a procedimineto almacenado o consulta por string
                 cmd.CommandType = CommandType.Text
                 ' se le asigna la conexion al sqlCommand

@@ -319,7 +319,7 @@ Public Class FacturacionDatos
             .AddWithValue("@impvtas", nuevaFactura.ImpvtasSG)
             .AddWithValue("@express", nuevaFactura.ExpressSG)
             .AddWithValue("@cod_Datafono", nuevaFactura.cod_DatafonoSG)
-
+            .AddWithValue("@cod_Cliente", nuevaFactura.cod_ClienteSG)
         End With
         Try
             ' ejecuta la consulta a la base
@@ -643,6 +643,7 @@ Public Class FacturacionDatos
                     detalle.CodProducto = ConversionDatosDB.VerificarNulo(lector(1), 0)
                     detalle.Cantidad_ = ConversionDatosDB.VerificarNulo(lector(2), 0)
                     detalle.SubTotal = ConversionDatosDB.VerificarNulo(lector(3), 0)
+
                     lista.Add(detalle)
                 End While
             End Using
@@ -1041,5 +1042,146 @@ Public Class FacturacionDatos
             Return False
         End Try
     End Function
+
+    Public Function obtenerOrganizacion() As Organizacion
+        'lista de los productos de la orden
+        Dim org = New Organizacion
+        'Lector de los resultados
+        Dim lector As SqlDataReader
+
+        Try
+            Using (conexion)
+                'se abre la conexion
+                conexion = conexionDB.abrirConexion()
+                'consulta que se va a hacer a la BD
+                cmd = New SqlCommand("SELECT * FROM FAC.organizacion")
+                'especifica el tipo de consulta
+                cmd.CommandType = CommandType.Text
+                'se asigna la conexion a la BD
+                cmd.Connection = conexion
+                'se ejecuta la consulta
+                lector = cmd.ExecuteReader
+                'se recorre para obtener los registros
+                While lector.Read
+                    org.claveSG = ConversionDatosDB.VerificarNulo(lector(0), 0)
+                    org.nombreSG = ConversionDatosDB.VerificarNulo(lector(1), 0)
+                    org.tipoIdentSG = ConversionDatosDB.VerificarNulo(lector(2), 0)
+                    org.numeroIdentSG = ConversionDatosDB.VerificarNulo(lector(3), 0)
+                    org.nombreComerSG = ConversionDatosDB.VerificarNulo(lector(4), 0)
+                    org.provinciaSG = ConversionDatosDB.VerificarNulo(lector(5), 0)
+                    org.cantonSG = ConversionDatosDB.VerificarNulo(lector(7), 0)
+                    org.distritoSG = ConversionDatosDB.VerificarNulo(lector(8), 0)
+                    org.barrioSG = ConversionDatosDB.VerificarNulo(lector(9), 0)
+                    org.OtrasSenasSG = ConversionDatosDB.VerificarNulo(lector(10), 0)
+                    org.codTelefonoSG = ConversionDatosDB.VerificarNulo(lector(11), 0)
+                    org.telefonoSG = ConversionDatosDB.VerificarNulo(lector(12), 0)
+                    org.codFaxSG = ConversionDatosDB.VerificarNulo(lector(13), 0)
+                    org.faxSG = ConversionDatosDB.VerificarNulo(lector(14), 0)
+                    org.correoElectronicoSG = ConversionDatosDB.VerificarNulo(lector(15), 0)
+
+                End While
+            End Using
+        Catch ex As Exception
+
+        End Try
+        Return org
+    End Function
+
+    Public Function obtenerproductosPorCodProd(ByVal numFactura As Integer) As List(Of Producto)
+        'objeto de parametros
+        Dim lista = New List(Of Producto)
+        'Lector de los resultados
+        Dim lector As SqlDataReader
+
+
+
+        Try
+            Using (conexion)
+                'se abre la conexion
+                conexion = conexionDB.abrirConexion()
+                'consulta que se va a hacer a la BD
+                cmd = New SqlCommand("select p.* from fac.factura_d d INNER JOIN INV.productos p ON d.cod_producto = p.cod_producto WHERE num_factura =" & numFactura)
+                'especifica el tipo de consulta
+                cmd.CommandType = CommandType.Text
+                'se asigna la conexion a la BD
+                cmd.Connection = conexion
+                'se ejecuta la consulta
+                lector = cmd.ExecuteReader
+                'se recorre para obtener los registros
+                While lector.Read
+                    Dim prod As New Producto
+                    prod.CodProducto = ConversionDatosDB.VerificarNulo(lector(0), 0)
+                    prod.Nombre_ = ConversionDatosDB.VerificarNulo(lector(1), "")
+                    prod.PrecioVenta = ConversionDatosDB.VerificarNulo(lector(2), 0)
+                    prod.Promocion_ = ConversionDatosDB.VerificarNulo(lector(4), 0)
+                    prod.Descuento_ = ConversionDatosDB.VerificarNulo(lector(5), 0)
+                    prod.AfectaInventario = ConversionDatosDB.VerificarNulo(lector(6), 0)
+                    prod.CodBarra = ConversionDatosDB.VerificarNulo(lector(7), 0)
+                    prod.CantDisponible = ConversionDatosDB.VerificarNulo(lector(8), 0)
+                    prod.IdTipoProducto = ConversionDatosDB.VerificarNulo(lector(9), 0)
+                    prod.Compuesto_ = ConversionDatosDB.VerificarNulo(lector(10), 0)
+                    prod.Subcategoria_ = ConversionDatosDB.VerificarNulo(lector(11), 0)
+
+
+                    lista.Add(prod)
+                End While
+            End Using
+        Catch ex As Exception
+
+        End Try
+        Return lista
+    End Function
+
+
+    Public Function obtenerClientePago(numFactura As Integer) As Cliente
+        'lista de los productos de la orden
+        Dim detalle As New Object()
+        'Lector de los resultados
+        Dim lector As SqlDataReader
+        Dim direccion As ClienteDireccion = New ClienteDireccion
+        Dim telefono As ClienteTelefono = New ClienteTelefono
+        Dim cliente As Cliente = New Cliente
+
+        Try
+            Using (conexion)
+                conexion = conexionDB.abrirConexion()
+                ' se asigna el tipo de consulta que es. Si es para llamara a procedimineto almacenado o consulta por string
+                cmd.CommandType = CommandType.StoredProcedure
+                cmd.CommandText = "FAC.sp_obtener_cliente_por_factura"
+                ' se le asigna la conexion al sqlCommand
+                cmd.Connection = conexion
+                cmd.Parameters.Clear()
+                ' se asignan los parametros a enviar en el procedimiento almacenado
+                With cmd.Parameters
+                    .AddWithValue("@numFactura", numFactura)
+                End With
+                ' se ejecuta la consulta 
+                lector = cmd.ExecuteReader
+
+                While lector.Read
+
+
+                    'se asignan los datos
+
+                    'Informacion del cliente
+                    cliente.CodClienteSG = ConversionDatosDB.VerificarNulo(lector("cod_cliente"), -1)
+                    cliente.NombreClienteSG = ConversionDatosDB.VerificarNulo(lector("nombre_cliente"), "Desconocido")
+                    cliente.tipoIdentSG = ConversionDatosDB.VerificarNulo(lector("tipoIdentificacion"), 0)
+                    cliente.identificacionSG = ConversionDatosDB.VerificarNulo(lector("identificacion"), 0)
+                    cliente.Apellido1SG = ConversionDatosDB.VerificarNulo(lector("apellido1"), "Desconocido")
+                    cliente.Apellido2SG = ConversionDatosDB.VerificarNulo(lector("apellido2"), "Desconocido")
+
+
+                    'vector que contiene el producto con la orden
+                    'detalle = {cliente, direccion, telefono}
+                End While
+
+            End Using
+        Catch ex As Exception
+            'MsgBox(ex)
+        End Try
+        Return cliente
+    End Function
+
 
 End Class

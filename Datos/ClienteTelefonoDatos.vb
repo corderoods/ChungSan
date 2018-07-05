@@ -96,7 +96,7 @@ Public Class ClienteTelefonoDatos
                 ' se llama al metodo que abre la conexion con la base de datos
                 conexion = conexionDB.abrirConexion()
                 ' consulta a la base de datos por todos los meseros de la base de datos
-                cmd = New SqlCommand("SELECT * FROM FAC.clientes_telefonos where cod_telefono = " & codCliente)
+                cmd = New SqlCommand("SELECT * FROM FAC.clientes_telefonos where cod_cliente = " & codCliente)
                 ' se asigna el tipo de consulta que es. Si es para llamara a procedimineto almacenado o consulta por string
                 cmd.CommandType = CommandType.Text
                 ' se le asigna la conexion al sqlCommand

@@ -81,6 +81,11 @@ Public Class ClienteDatos
                     ' se asignan los datos del cliente
                     cliente.CodClienteSG = ConversionDatosDB.VerificarNulo(lector("cod_cliente"), -1)
                     cliente.NombreClienteSG = ConversionDatosDB.VerificarNulo(lector("nombre_cliente"), "Desconocido")
+                    cliente.tipoIdentSG = ConversionDatosDB.VerificarNulo(lector("tipoIdentificacion"), 0)
+                    cliente.identificacionSG = ConversionDatosDB.VerificarNulo(lector("identificacion"), 0)
+                    cliente.Apellido1SG = ConversionDatosDB.VerificarNulo(lector("apellido1"), "Desconocido")
+                    cliente.Apellido2SG = ConversionDatosDB.VerificarNulo(lector("apellido2"), "Desconocido")
+                    cliente.diplomaticoSG = ConversionDatosDB.VerificarNulo(lector("diplomatico"), 0)
                 End While
 
             End Using
@@ -120,11 +125,12 @@ Public Class ClienteDatos
                     ' se asignan los datos del cliente
                     cliente.CodClienteSG = ConversionDatosDB.VerificarNulo(lector(0), -1)
                     cliente.NombreClienteSG = ConversionDatosDB.VerificarNulo(lector(1), "Desconocido")
-                    cliente.ApellidoSG = ConversionDatosDB.VerificarNulo(lector(8), "")
-                    cliente.TelefonoSG = ConversionDatosDB.VerificarNulo(lector(4), "No tiene")
-                    cliente.DireccionSG = ConversionDatosDB.VerificarNulo(lector(2), "Desconocida")
-                    cliente.EMailSG = ConversionDatosDB.VerificarNulo(lector(3), "No tiene")
-                    cliente.CreditoSG = ConversionDatosDB.VerificarNulo(lector(5), 0)
+                    cliente.CreditoSG = ConversionDatosDB.VerificarNulo(lector(2), 0)
+                    cliente.tipoIdentSG = ConversionDatosDB.VerificarNulo(lector(5), 0)
+                    cliente.identificacionSG = ConversionDatosDB.VerificarNulo(lector(6), 0)
+                    cliente.Apellido1SG = ConversionDatosDB.VerificarNulo(lector(7), "")
+                    cliente.Apellido2SG = ConversionDatosDB.VerificarNulo(lector(8), "")
+                    cliente.diplomaticoSG = ConversionDatosDB.VerificarNulo(lector(9), 0)
                 End While
 
             End Using
@@ -143,7 +149,8 @@ Public Class ClienteDatos
         Try
             Using (conexion)
 
-                cmd = New SqlCommand("INSERT INTO FAC.clientes(cod_cliente, nombre_cliente, e_mail, telefono, credito, cheque, padre, apellido, madre, encargado, num_emergencia, foto, nivel) VALUES (" & codigoCliente() & ", '" & cliente.NombreClienteSG & "', NULL, NULL, 0, 0, NULL, NULL , NULL, NULL, NULL, NULL, NULL)")
+                cmd = New SqlCommand("INSERT INTO FAC.clientes(cod_cliente, nombre_cliente,credito, cheque, tipoIdentificacion, identificacion, apellido1, apellido2, diplomatico) VALUES (" & codigoCliente() & ", '" & cliente.NombreClienteSG & "', NULL, NULL," & cliente.tipoIdentSG & ", " & cliente.identificacionSG & ", '" & cliente.Apellido1SG & "', '" & cliente.Apellido2SG & "' ," & cliente.diplomaticoSG & ")")
+
                 cmd.CommandType = CommandType.Text
 
                 conexion = conexionDB.abrirConexion()
@@ -168,7 +175,7 @@ Public Class ClienteDatos
             Using (conexion)
 
                 'cmd = New SqlCommand("INSERT INTO FAC.clientes(cod_cliente, nombre_cliente, e_mail, telefono, credito, cheque, padre, apellido, madre, encargado, num_emergencia, foto, nivel) VALUES (" & codigoCliente() & ", '" & cliente.NombreClienteSG & "', " & cliente.EMailSG & ", '" & cliente.TelefonoSG & "', " & cliente.CreditoSG & ", 0, NULL, '" & cliente.ApellidoSG & "' , NULL, NULL, NULL, NULL, NULL)")
-                cmd = New SqlCommand("UPDATE FAC.clientes set nombre_cliente = '" & cliente.NombreClienteSG & "' WHERE cod_cliente = " & cliente.CodClienteSG)
+                cmd = New SqlCommand("UPDATE FAC.clientes set nombre_cliente = '" & cliente.NombreClienteSG & "', apellido1 = '" & cliente.Apellido1SG & "', apellido2 = '" & cliente.Apellido2SG & "', tipoIdentificacion = " & cliente.tipoIdentSG & ", identificacion = " & cliente.identificacionSG & ", diplomatico = " & cliente.diplomaticoSG & " WHERE cod_cliente = " & cliente.CodClienteSG)
                 cmd.CommandType = CommandType.Text
 
                 conexion = conexionDB.abrirConexion()
@@ -246,7 +253,7 @@ Public Class ClienteDatos
                 ' se llama al metodo que abre la conexion con la base de datos
                 conexion = conexionDB.abrirConexion()
                 ' consulta a la base de datos por todos los meseros de la base de datos
-                cmd = New SqlCommand("select c.cod_cliente, d.direccion, c.nombre_cliente from fac.clientes c
+                cmd = New SqlCommand("select c.cod_cliente,  c.nombre_cliente from fac.clientes c
                                       INNER JOIN [FAC].[clientes_telefonos] t ON c.cod_cliente = t.cod_cliente
                                       INNER JOIN FAC.clientes_direcciones d ON c.cod_cliente = d.cod_cliente
                                       WHERE t.telefono = '" & telefono & "'")
@@ -263,7 +270,7 @@ Public Class ClienteDatos
                     ' se asignan los datos del cliente
                     cliente.CodClienteSG = ConversionDatosDB.VerificarNulo(lector("cod_cliente"), -1)
                     cliente.NombreClienteSG = ConversionDatosDB.VerificarNulo(lector("nombre_cliente"), "Desconocido")
-                    cliente.DireccionSG = ConversionDatosDB.VerificarNulo(lector("direccion"), "Desconocido")
+
                 End While
 
             End Using

@@ -22,6 +22,10 @@ Partial Class NuevoCliente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.btnNuevoTelefono = New System.Windows.Forms.Button()
@@ -45,7 +49,11 @@ Partial Class NuevoCliente
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtApellido1 = New System.Windows.Forms.TextBox()
         Me.txtApellido2 = New System.Windows.Forms.TextBox()
+        Me.dtgTelefonos = New System.Windows.Forms.DataGridView()
+        Me.dtgDirecciones = New System.Windows.Forms.DataGridView()
         CType(Me.dtgClientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtgTelefonos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dtgDirecciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label6
@@ -79,7 +87,7 @@ Partial Class NuevoCliente
         Me.btnNuevoTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNuevoTelefono.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnNuevoTelefono.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.btnNuevoTelefono.Location = New System.Drawing.Point(684, 623)
+        Me.btnNuevoTelefono.Location = New System.Drawing.Point(401, 688)
         Me.btnNuevoTelefono.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNuevoTelefono.Name = "btnNuevoTelefono"
         Me.btnNuevoTelefono.Size = New System.Drawing.Size(133, 60)
@@ -99,7 +107,7 @@ Partial Class NuevoCliente
         Me.btnConfirmar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnConfirmar.Image = Global.SunChangSystem.My.Resources.Resources.btnGuardar
-        Me.btnConfirmar.Location = New System.Drawing.Point(1065, 637)
+        Me.btnConfirmar.Location = New System.Drawing.Point(555, 685)
         Me.btnConfirmar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnConfirmar.Name = "btnConfirmar"
         Me.btnConfirmar.Size = New System.Drawing.Size(215, 63)
@@ -116,7 +124,7 @@ Partial Class NuevoCliente
         Me.btnNuevaDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNuevaDireccion.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnNuevaDireccion.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.btnNuevaDireccion.Location = New System.Drawing.Point(206, 637)
+        Me.btnNuevaDireccion.Location = New System.Drawing.Point(29, 688)
         Me.btnNuevaDireccion.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNuevaDireccion.Name = "btnNuevaDireccion"
         Me.btnNuevaDireccion.Size = New System.Drawing.Size(133, 60)
@@ -151,7 +159,7 @@ Partial Class NuevoCliente
         Me.btnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNuevo.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnNuevo.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.btnNuevo.Location = New System.Drawing.Point(13, 638)
+        Me.btnNuevo.Location = New System.Drawing.Point(703, 24)
         Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(133, 63)
@@ -169,7 +177,7 @@ Partial Class NuevoCliente
         Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.btnEliminar.Image = Global.SunChangSystem.My.Resources.Resources.btnOrden2
-        Me.btnEliminar.Location = New System.Drawing.Point(521, 636)
+        Me.btnEliminar.Location = New System.Drawing.Point(228, 688)
         Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(133, 60)
@@ -213,8 +221,9 @@ Partial Class NuevoCliente
         Me.txtIdentificacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.txtIdentificacion.Location = New System.Drawing.Point(312, 265)
         Me.txtIdentificacion.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtIdentificacion.Multiline = True
         Me.txtIdentificacion.Name = "txtIdentificacion"
-        Me.txtIdentificacion.Size = New System.Drawing.Size(372, 34)
+        Me.txtIdentificacion.Size = New System.Drawing.Size(372, 32)
         Me.txtIdentificacion.TabIndex = 5
         '
         'Identificacion
@@ -286,7 +295,6 @@ Partial Class NuevoCliente
         'checkDiplomatico
         '
         Me.checkDiplomatico.AutoSize = True
-        Me.checkDiplomatico.Enabled = False
         Me.checkDiplomatico.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.checkDiplomatico.ForeColor = System.Drawing.Color.White
         Me.checkDiplomatico.Location = New System.Drawing.Point(703, 327)
@@ -335,6 +343,74 @@ Partial Class NuevoCliente
         Me.txtApellido2.Size = New System.Drawing.Size(372, 34)
         Me.txtApellido2.TabIndex = 3
         '
+        'dtgTelefonos
+        '
+        Me.dtgTelefonos.AllowUserToResizeColumns = False
+        Me.dtgTelefonos.AllowUserToResizeRows = False
+        Me.dtgTelefonos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.dtgTelefonos.BorderStyle = System.Windows.Forms.BorderStyle.None
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgTelefonos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.dtgTelefonos.ColumnHeadersHeight = 35
+        Me.dtgTelefonos.Cursor = System.Windows.Forms.Cursors.Hand
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dtgTelefonos.DefaultCellStyle = DataGridViewCellStyle6
+        Me.dtgTelefonos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.dtgTelefonos.GridColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(10, Byte), Integer))
+        Me.dtgTelefonos.Location = New System.Drawing.Point(927, 229)
+        Me.dtgTelefonos.Margin = New System.Windows.Forms.Padding(4)
+        Me.dtgTelefonos.Name = "dtgTelefonos"
+        Me.dtgTelefonos.RowHeadersVisible = False
+        Me.dtgTelefonos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
+        Me.dtgTelefonos.Size = New System.Drawing.Size(404, 142)
+        Me.dtgTelefonos.TabIndex = 64
+        '
+        'dtgDirecciones
+        '
+        Me.dtgDirecciones.AllowUserToResizeColumns = False
+        Me.dtgDirecciones.AllowUserToResizeRows = False
+        Me.dtgDirecciones.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.dtgDirecciones.BorderStyle = System.Windows.Forms.BorderStyle.None
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtgDirecciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        Me.dtgDirecciones.ColumnHeadersHeight = 35
+        Me.dtgDirecciones.Cursor = System.Windows.Forms.Cursors.Hand
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dtgDirecciones.DefaultCellStyle = DataGridViewCellStyle8
+        Me.dtgDirecciones.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.dtgDirecciones.GridColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(10, Byte), Integer))
+        Me.dtgDirecciones.Location = New System.Drawing.Point(802, 378)
+        Me.dtgDirecciones.Margin = New System.Windows.Forms.Padding(4)
+        Me.dtgDirecciones.Name = "dtgDirecciones"
+        Me.dtgDirecciones.RowHeadersVisible = False
+        Me.dtgDirecciones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
+        Me.dtgDirecciones.Size = New System.Drawing.Size(541, 370)
+        Me.dtgDirecciones.TabIndex = 65
+        '
         'NuevoCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -343,6 +419,8 @@ Partial Class NuevoCliente
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1344, 761)
+        Me.Controls.Add(Me.dtgDirecciones)
+        Me.Controls.Add(Me.dtgTelefonos)
         Me.Controls.Add(Me.txtApellido2)
         Me.Controls.Add(Me.txtApellido1)
         Me.Controls.Add(Me.Label7)
@@ -371,6 +449,8 @@ Partial Class NuevoCliente
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "NuevoCliente"
         CType(Me.dtgClientes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtgTelefonos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dtgDirecciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -398,4 +478,6 @@ Partial Class NuevoCliente
     Friend WithEvents Label7 As Label
     Friend WithEvents txtApellido1 As TextBox
     Friend WithEvents txtApellido2 As TextBox
+    Friend WithEvents dtgTelefonos As DataGridView
+    Friend WithEvents dtgDirecciones As DataGridView
 End Class

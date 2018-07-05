@@ -3,11 +3,11 @@
 Public Class Cliente
     Private codCliente As Int32
     Private nombreCliente As String
-    Private apellido As String
-    Private direccion As String
-    Private eMail As String
-    Private telefono As String
+    Private apellido1, apellido2 As String
     Private credito As Int32
+    Private tipoIdent As Integer
+    Private identificacion As Int64
+    Private diplomatico As Integer
     Private direcciones As LinkedList(Of ClienteDireccion)
     Private telefonos As LinkedList(Of ClienteTelefono)
 
@@ -29,39 +29,21 @@ Public Class Cliente
         End Set
     End Property
 
-    Public Property DireccionSG As String
+    Public Property Apellido1SG As String
         Get
-            Return direccion
+            Return apellido1
         End Get
         Set(value As String)
-            direccion = value
+            apellido1 = value
         End Set
     End Property
 
-    Public Property EMailSG As String
+    Public Property Apellido2SG As String
         Get
-            Return eMail
+            Return apellido2
         End Get
         Set(value As String)
-            eMail = value
-        End Set
-    End Property
-
-    Public Property TelefonoSG As String
-        Get
-            Return telefono
-        End Get
-        Set(value As String)
-            telefono = value
-        End Set
-    End Property
-
-    Public Property ApellidoSG As String
-        Get
-            Return apellido
-        End Get
-        Set(value As String)
-            apellido = value
+            apellido2 = value
         End Set
     End Property
 
@@ -89,6 +71,33 @@ Public Class Cliente
         End Get
         Set(value As LinkedList(Of ClienteTelefono))
             telefonos = value
+        End Set
+    End Property
+
+    Public Property tipoIdentSG As Integer
+        Get
+            Return Me.tipoIdent
+        End Get
+        Set(value As Integer)
+            Me.tipoIdent = value
+        End Set
+    End Property
+
+    Public Property identificacionSG As Int64
+        Get
+            Return Me.identificacion
+        End Get
+        Set(value As Int64)
+            Me.identificacion = value
+        End Set
+    End Property
+
+    Public Property diplomaticoSG As Integer
+        Get
+            Return diplomatico
+        End Get
+        Set(value As Integer)
+            Me.diplomatico = value
         End Set
     End Property
 

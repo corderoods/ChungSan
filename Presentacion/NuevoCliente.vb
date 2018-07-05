@@ -6,6 +6,8 @@
     Dim emailDatos As New ClienteEmailDatos
     Dim clientes As List(Of Cliente)
 
+    Dim telefonoActivo As ClienteTelefono
+
     Dim accion As String
     Dim clienteActivo As Cliente
     Dim direc As ClienteDireccion
@@ -39,6 +41,7 @@
     Public Sub cargarClientes()
         Me.clientes = clienteDatos.obtenerClientes
         Dim dt As DataTable = New DataTable
+        Dim ap1, ap2 As String
         dt.Columns.Add("Codigo", System.Type.GetType("System.Int32"))
         dt.Columns.Add("Nombre", System.Type.GetType("System.String"))
 
@@ -48,7 +51,14 @@
             If clientes(i).NombreClienteSG.Trim.Length <> 0 Then
                 dr = dt.NewRow
                 dr("Codigo") = clientes(i).CodClienteSG
-                dr("Nombre") = clientes(i).NombreClienteSG
+
+                If clientes(i).Apellido1SG = "" Then
+                    ap1 = clientes(i).Apellido1SG
+                ElseIf clientes(i).Apellido2SG = "" Then
+                    ap2 = clientes(i).Apellido2SG
+                End If
+
+                dr("Nombre") = clientes(i).NombreClienteSG + ap1 + ap2
                 dt.Rows.Add(dr)
             End If
 
@@ -83,6 +93,8 @@
 
                 'Asigna la informacion
                 txtNombre.Text = clienteActivo.NombreClienteSG
+                txtApellido1.Text = clienteActivo.Apellido1SG
+                txtApellido2.Text = clienteActivo.Apellido2SG
                 txtIdentificacion.Text = clienteActivo.identificacionSG
                 cbTipoIden.SelectedIndex = clienteActivo.tipoIdentSG
                 If cbTipoIden.SelectedIndex = 5 Then
@@ -99,6 +111,8 @@
                 txtTelefono.Text = tele.Telefono_
                 txtOtrasSenas.Text = direc.Direccion_
                 txtCorreo.Text = email.correo_ElectronicoSG
+                cargarTelefonos()
+                cargarDirecciones()
             End If
         Catch ex As Exception
 
@@ -170,10 +184,12 @@
         Else
             cliente.diplomaticoSG = 0
         End If
-        cliente.identificacionSG = txtIdentificacion.Text
+        cliente.identificacionSG = Convert.ToInt64(txtIdentificacion.Text)
         cliente.CodClienteSG = clienteDatos.codigoCliente
         telefono.Telefono_ = txtTelefono.Text
         email.correo_ElectronicoSG = txtCorreo.Text
+
+
         direccion.Direccion_ = txtOtrasSenas.Text.ToUpper
 
 
@@ -220,19 +236,77 @@
         cargarClientes()
     End Sub
 
-    Private Sub txtTelefono_TextChanged(sender As Object, e As EventArgs) Handles txtTelefono.TextChanged
 
-    End Sub
 
     Private Sub cbTipoIden_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbTipoIden.SelectedIndexChanged
         If cbTipoIden.SelectedIndex = 5 Then
             checkDiplomatico.Visible = True
+            checkDiplomatico.Enabled = True
         Else
             checkDiplomatico.Visible = False
+            checkDiplomatico.Enabled = False
         End If
     End Sub
 
+    Public Sub cargarTelefonos()
+        Dim dt As DataTable = New DataTable
+        dt.Columns.Add("Cod", System.Type.GetType("System.Int32"))
+        dt.Columns.Add("Telefono", System.Type.GetType("System.String"))
+
+        Dim dr As DataRow = dt.NewRow
+        dr = dt.NewRow
+        clienteActivo.Telefonos_ = telefonoDatos.obtenerTelefonosPorCliente(clienteActivo)
+        For i = 0 To clienteActivo.Telefonos_.Count - 1
+            If clienteActivo.Telefonos_(i).Telefono_.Trim.Length <> 0 Then
+                dr = dt.NewRow
+                dr("Cod") = clienteActivo.Telefonos_(i).CodTelefono_
+                dr("telefono") = clienteActivo.Telefonos_(i).Telefono_
+                dt.Rows.Add(dr)
+            End If
+
+        Next i
+        dtgTelefonos.DataSource = dt
+        dtgTelefonos.Columns(0).Width = 50
+        dtgTelefonos.Columns(1).Width = 100
+    End Sub
+
+    Public Sub cargarDirecciones()
+        Dim dt As DataTable = New DataTable
+        dt.Columns.Add("Cod", System.Type.GetType("System.Int32"))
+        dt.Columns.Add("Direccion", System.Type.GetType("System.String"))
+
+        Dim dr As DataRow = dt.NewRow
+        dr = dt.NewRow
+        For i = 0 To clienteActivo.Direcciones_.Count - 1
+            If clienteActivo.Direcciones_(i).Direccion_.Trim.Length <> 0 Then
+                dr = dt.NewRow
+                dr("Cod") = clienteActivo.Direcciones_(i).CodDireccion_
+                dr("Direccion") = clienteActivo.Direcciones_(i).Direccion_
+                dt.Rows.Add(dr)
+            End If
+
+        Next i
+        dtgDirecciones.DataSource = dt
+        dtgDirecciones.Columns(0).Width = 50
+        dtgDirecciones.Columns(1).Width = 355
+    End Sub
+
+
+
     Private Sub dtgClientes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgClientes.CellContentClick
+
+    End Sub
+
+    Private Sub txtTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelefono.KeyPress
+        If Not IsNumeric(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtIdentificacion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtIdentificacion.KeyPress
+        If Not IsNumeric(e.KeyChar) Then
+            e.Handled = True
+        End If
 
     End Sub
 End Class

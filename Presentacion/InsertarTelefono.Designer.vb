@@ -61,20 +61,22 @@ Partial Class InsertarTelefono
         Me.dtgTelefonos.DefaultCellStyle = DataGridViewCellStyle2
         Me.dtgTelefonos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.dtgTelefonos.GridColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(10, Byte), Integer))
-        Me.dtgTelefonos.Location = New System.Drawing.Point(470, 12)
+        Me.dtgTelefonos.Location = New System.Drawing.Point(627, 15)
+        Me.dtgTelefonos.Margin = New System.Windows.Forms.Padding(4)
         Me.dtgTelefonos.Name = "dtgTelefonos"
         Me.dtgTelefonos.RowHeadersVisible = False
         Me.dtgTelefonos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
-        Me.dtgTelefonos.Size = New System.Drawing.Size(168, 232)
+        Me.dtgTelefonos.Size = New System.Drawing.Size(224, 286)
         Me.dtgTelefonos.TabIndex = 45
         '
         'txtNombre
         '
         Me.txtNombre.Enabled = False
         Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.txtNombre.Location = New System.Drawing.Point(142, 27)
+        Me.txtNombre.Location = New System.Drawing.Point(189, 33)
+        Me.txtNombre.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(280, 29)
+        Me.txtNombre.Size = New System.Drawing.Size(372, 34)
         Me.txtNombre.TabIndex = 40
         '
         'Label6
@@ -82,9 +84,10 @@ Partial Class InsertarTelefono
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(46, 30)
+        Me.Label6.Location = New System.Drawing.Point(61, 37)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(84, 24)
+        Me.Label6.Size = New System.Drawing.Size(107, 29)
         Me.Label6.TabIndex = 37
         Me.Label6.Text = "Nombre:"
         '
@@ -101,27 +104,30 @@ Partial Class InsertarTelefono
         Me.btnConfirmar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnConfirmar.Image = Global.SunChangSystem.My.Resources.Resources.btnGuardar
-        Me.btnConfirmar.Location = New System.Drawing.Point(163, 173)
+        Me.btnConfirmar.Location = New System.Drawing.Point(217, 213)
+        Me.btnConfirmar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnConfirmar.Name = "btnConfirmar"
-        Me.btnConfirmar.Size = New System.Drawing.Size(161, 51)
+        Me.btnConfirmar.Size = New System.Drawing.Size(215, 63)
         Me.btnConfirmar.TabIndex = 39
         Me.btnConfirmar.UseVisualStyleBackColor = False
         '
         'txtTelefono
         '
         Me.txtTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
-        Me.txtTelefono.Location = New System.Drawing.Point(104, 123)
+        Me.txtTelefono.Location = New System.Drawing.Point(139, 151)
+        Me.txtTelefono.Margin = New System.Windows.Forms.Padding(4)
         Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(280, 29)
+        Me.txtTelefono.Size = New System.Drawing.Size(372, 34)
         Me.txtTelefono.TabIndex = 47
         '
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(43, 85)
+        Me.Label1.Location = New System.Drawing.Point(57, 105)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(188, 24)
+        Me.Label1.Size = New System.Drawing.Size(251, 30)
         Me.Label1.TabIndex = 46
         Me.Label1.Text = "Nuevo Telefono:"
         '
@@ -137,9 +143,10 @@ Partial Class InsertarTelefono
         Me.btnNuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNuevo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnNuevo.Image = Global.SunChangSystem.My.Resources.Resources.btnNuevoCliente1
-        Me.btnNuevo.Location = New System.Drawing.Point(50, 173)
+        Me.btnNuevo.Location = New System.Drawing.Point(67, 213)
+        Me.btnNuevo.Margin = New System.Windows.Forms.Padding(4)
         Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(107, 51)
+        Me.btnNuevo.Size = New System.Drawing.Size(143, 63)
         Me.btnNuevo.TabIndex = 48
         Me.btnNuevo.UseVisualStyleBackColor = False
         '
@@ -156,20 +163,21 @@ Partial Class InsertarTelefono
         Me.btnEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnEliminar.Image = Global.SunChangSystem.My.Resources.Resources.btnBorrar
-        Me.btnEliminar.Location = New System.Drawing.Point(330, 176)
+        Me.btnEliminar.Location = New System.Drawing.Point(440, 217)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(60, 45)
+        Me.btnEliminar.Size = New System.Drawing.Size(80, 55)
         Me.btnEliminar.TabIndex = 49
         Me.btnEliminar.UseVisualStyleBackColor = False
         '
         'InsertarTelefono
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(31, Byte), Integer), CType(CType(16, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(674, 272)
+        Me.ClientSize = New System.Drawing.Size(899, 335)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.txtTelefono)
@@ -178,6 +186,7 @@ Partial Class InsertarTelefono
         Me.Controls.Add(Me.txtNombre)
         Me.Controls.Add(Me.btnConfirmar)
         Me.Controls.Add(Me.Label6)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "InsertarTelefono"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Insertar Telefono"

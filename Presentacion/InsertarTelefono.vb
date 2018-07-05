@@ -86,4 +86,8 @@
     Private Sub txtTelefono_TextChanged(sender As Object, e As EventArgs) Handles txtTelefono.TextChanged
 
     End Sub
+
+    Private Sub dtgTelefonos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dtgTelefonos.CellContentClick
+
+    End Sub
 End Class

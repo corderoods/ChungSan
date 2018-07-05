@@ -1,6 +1,6 @@
 ﻿Public Class FacturaDetalle
     Private num_factura, num_orden, cod_producto, cantidad, sub_total As Integer
-    Private cod_estado_factura As String
+    Private cod_estado_factura, nomProducto As String
 
     Public Sub New()
     End Sub
@@ -56,6 +56,15 @@
         End Get
         Set(value As String)
             cod_estado_factura = value
+        End Set
+    End Property
+
+    Public Property nomProductoSG As String
+        Get
+            Return nomProducto
+        End Get
+        Set(value As String)
+            Me.nomProductoSG = value
         End Set
     End Property
 End Class
